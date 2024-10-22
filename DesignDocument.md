@@ -6,7 +6,7 @@
 - Round based
 - Make your civilization thrive
 
-## Gamplay
+## Gameplay
 - Round starts with choosing one of three tiles
 - During the round the player must collect and distribute resources to the tiles
 - Round ends with clicking 'Finish Round' --> collections and distributions get executed
