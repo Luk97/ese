@@ -1,6 +1,6 @@
 # Version 0.1 (22.10.2024)
 
-## Overall Idea
+## General Ideas
 - 2D Game (isometric or hexagonic)
 - Pixelart
 - Round based
