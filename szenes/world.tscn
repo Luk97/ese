@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2rmmj4jaeqyg"]
+
+[ext_resource type="Script" path="res://szenes/world.gd" id="1_htl8q"]
+[ext_resource type="TileSet" uid="uid://crd6g2q3ow7a1" path="res://assets/tiles_sets/main_tiles.tres" id="1_kugf7"]
+[ext_resource type="Script" path="res://szenes/camera.gd" id="2_2k1fm"]
+
+[node name="World" type="Node2D" node_paths=PackedStringArray("groundLayer", "worldLayer", "skyLayer")]
+script = ExtResource("1_htl8q")
+groundLayer = NodePath("GroundLayer")
+worldLayer = NodePath("WorldLayer")
+skyLayer = NodePath("SkyLayer")
+
+[node name="DEBUG-CAM" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+script = ExtResource("2_2k1fm")
+
+[node name="GroundLayer" type="TileMapLayer" parent="."]
+position = Vector2(-16, 8)
+tile_set = ExtResource("1_kugf7")
+
+[node name="WorldLayer" type="TileMapLayer" parent="."]
+z_index = 1
+position = Vector2(-16, -8)
+tile_set = ExtResource("1_kugf7")
+
+[node name="SkyLayer" type="TileMapLayer" parent="."]
+z_index = 2
+position = Vector2(-16, -24)
+tile_set = ExtResource("1_kugf7")
