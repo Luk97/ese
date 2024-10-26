@@ -4,8 +4,9 @@
 [ext_resource type="TileSet" uid="uid://crd6g2q3ow7a1" path="res://assets/tiles_sets/main_tiles.tres" id="1_kugf7"]
 [ext_resource type="Script" path="res://szenes/camera.gd" id="2_2k1fm"]
 
-[node name="World" type="Node2D" node_paths=PackedStringArray("groundLayer", "worldLayer", "skyLayer")]
+[node name="World" type="Node2D" node_paths=PackedStringArray("debug_log", "groundLayer", "worldLayer", "skyLayer")]
 script = ExtResource("1_htl8q")
+debug_log = NodePath("DEBUG-CAM/DebugLog")
 groundLayer = NodePath("GroundLayer")
 worldLayer = NodePath("WorldLayer")
 skyLayer = NodePath("SkyLayer")
@@ -13,6 +14,13 @@ skyLayer = NodePath("SkyLayer")
 [node name="DEBUG-CAM" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
 script = ExtResource("2_2k1fm")
+
+[node name="DebugLog" type="Label" parent="DEBUG-CAM"]
+z_index = 10
+offset_left = -274.0
+offset_top = -149.0
+text = "Curser: 0, 0
+Chunk: 0, 0"
 
 [node name="GroundLayer" type="TileMapLayer" parent="."]
 position = Vector2(-16, 8)
