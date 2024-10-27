@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6e7epvcn0xfs"
-path="res://.godot/imported/HexTiles.png-4b9a6eecb8b838cea6097a206f619469.ctex"
+uid="uid://bj7tpix5ynok2"
+path="res://.godot/imported/MainTiles.png-d1247438757253e830cccf26d94d935b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/HexTiles.png"
-dest_files=["res://.godot/imported/HexTiles.png-4b9a6eecb8b838cea6097a206f619469.ctex"]
+source_file="res://assets/tiles/MainTiles.png"
+dest_files=["res://.godot/imported/MainTiles.png-d1247438757253e830cccf26d94d935b.ctex"]
 
 [params]
 

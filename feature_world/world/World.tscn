@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://ncp2pxfii11a"]
+
+[ext_resource type="Script" path="res://feature_world/world/world.gd" id="1_htl8q"]
+[ext_resource type="TileSet" uid="uid://crd6g2q3ow7a1" path="res://assets/tiles_sets/main_tiles.tres" id="1_kugf7"]
+
+[node name="World" type="Node2D" node_paths=PackedStringArray("debug_log", "groundLayer", "worldLayer", "skyLayer")]
+script = ExtResource("1_htl8q")
+debug_log = NodePath("DebugLog")
+groundLayer = NodePath("GroundLayer")
+worldLayer = NodePath("WorldLayer")
+skyLayer = NodePath("SkyLayer")
+
+[node name="GroundLayer" type="TileMapLayer" parent="."]
+position = Vector2(-16, 8)
+tile_set = ExtResource("1_kugf7")
+
+[node name="WorldLayer" type="TileMapLayer" parent="."]
+z_index = 1
+position = Vector2(-16, -8)
+tile_set = ExtResource("1_kugf7")
+
+[node name="SkyLayer" type="TileMapLayer" parent="."]
+z_index = 2
+position = Vector2(-16, -24)
+tile_set = ExtResource("1_kugf7")
+
+[node name="DebugLog" type="Label" parent="."]
+z_index = 10
+offset_left = -274.0
+offset_top = -149.0
+text = "Curser: 0, 0
+Chunk: 0, 0"

@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8vtbfoghoh3y"]
+
+[ext_resource type="Script" path="res://feature_world/world/world.gd" id="1_128s4"]
+[ext_resource type="TileSet" uid="uid://crd6g2q3ow7a1" path="res://assets/tiles_sets/main_tiles.tres" id="2_wv515"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_128s4")
+
+[node name="GroundLayer" type="TileMapLayer" parent="."]
+position = Vector2(-16, 8)
+tile_set = ExtResource("2_wv515")
+
+[node name="WorldLayer" type="TileMapLayer" parent="."]
+z_index = 1
+position = Vector2(-16, -8)
+tile_set = ExtResource("2_wv515")
+
+[node name="SkyLayer" type="TileMapLayer" parent="."]
+z_index = 2
+position = Vector2(-16, -24)
+tile_set = ExtResource("2_wv515")
