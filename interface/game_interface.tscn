@@ -1,39 +1,39 @@
-[gd_scene load_steps=3 format=3 uid="uid://bna15bbgjgwfe"]
+[gd_scene load_steps=4 format=3 uid="uid://bna15bbgjgwfe"]
 
 [ext_resource type="Script" path="res://interface/game_interface.gd" id="1_bnx4o"]
-[ext_resource type="PackedScene" uid="uid://dgbq5goh7yrtn" path="res://interface/round_counter.tscn" id="2_4d6ly"]
+[ext_resource type="PackedScene" uid="uid://dgbq5goh7yrtn" path="res://interface/round_counter_label.tscn" id="2_4d6ly"]
+[ext_resource type="PackedScene" uid="uid://c7uwlhqoc4cq1" path="res://interface/finish_round_button.tscn" id="2_bd0v6"]
 
 [node name="GameInterface" type="CanvasLayer"]
+script = ExtResource("1_bnx4o")
 
 [node name="Elements" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = 4.0
+offset_right = -1.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_bnx4o")
+mouse_filter = 1
 
-[node name="FinishRound" type="Button" parent="Elements"]
+[node name="FinishRoundButton" parent="Elements" instance=ExtResource("2_bd0v6")]
+unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -118.0
-offset_top = -40.0
-offset_right = -9.0
-offset_bottom = -9.0
-grow_horizontal = 0
-grow_vertical = 0
-text = "Finish Round"
+offset_left = 460.0
+offset_top = 285.5
+offset_right = 569.0
+offset_bottom = 316.5
 
-[node name="RoundCounter" parent="Elements" instance=ExtResource("2_4d6ly")]
+[node name="RoundCounterLabel" parent="Elements" instance=ExtResource("2_4d6ly")]
+unique_name_in_owner = true
 layout_mode = 0
-offset_left = 26.0
-offset_top = 20.0
-offset_right = 125.0
-offset_bottom = 57.0
+offset_left = 9.0
+offset_top = 11.0
+offset_right = 110.0
+offset_bottom = 60.0
 
-[connection signal="pressed" from="Elements/FinishRound" to="Elements" method="_on_finish_round_pressed"]
+[connection signal="pressed" from="Elements/FinishRoundButton" to="." method="_on_finish_round_button_pressed"]

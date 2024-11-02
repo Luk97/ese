@@ -1,12 +1,11 @@
-extends Control
+extends CanvasLayer
 
-@onready var round_counter = $RoundCounter
+signal round_finished()
 
-signal finish_round()
+@onready var round_counter_label: NinePatchRect = %RoundCounterLabel
 
-func _ready():
-	mouse_filter = Control.MouseFilter.MOUSE_FILTER_PASS
+func set_round_count(rounds: int) -> void:
+	round_counter_label.set_round_count(rounds)
 
-func _on_finish_round_pressed() -> void:
-	round_counter.increase_round_count()
-	emit_signal("finish_round")
+func _on_finish_round_button_pressed() -> void:
+	emit_signal("round_finished")

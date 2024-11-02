@@ -12,7 +12,7 @@
 - [x] Create starter grass tile
 - [ ] Create chunk system for an infinite world
 - [ ] Make all tiles water tiles besides the starter tile
-      
+	  
 ### User Interface
 - [x] Label: round count
 - [x] Button: finish round

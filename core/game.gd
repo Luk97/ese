@@ -1,8 +1,14 @@
 extends Node2D
 
-@onready var world = $World
+@export var rounds: int = 1
 
-# Called when the node enters the scene tree for the first time.
+@onready var game_interface: CanvasLayer = %GameInterface
+@onready var world: Node2D = %World
+
 func _ready() -> void:
-	$GameInterface.get_node("Elements").connect("finish_round", world.on_round_finished)
-	world.on_round_finished()
+	world.enable_preview()
+
+func _on_round_finished() -> void:
+	rounds += 1
+	game_interface.set_round_count(rounds)
+	world.enable_preview()
