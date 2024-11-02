@@ -7,29 +7,10 @@
 - Make your civilization thrive
 
 ## Gameplay
-- [ ] Round starts with choosing one of three tiles
-- [ ] During the round the player must collect and distribute resources to the tiles
-- [ ] Round ends with clicking 'Finish Round' --> collections and distributions get executed
-- [ ] Needs of the population (e.g. food and warmth) needs to be fulfilled
-- [ ] Two type of tiles: terrain and building tiles
+Round based tileplacement to create a more and more complex civilization. The player needs to fulfill the needs of the population by providing certain resources. The rounds starts with choosing a tile of the tile pool. This tile can be a terrain tile and is used to extend the world. There are also building tiles, which fulfill a purpose like producing or further processing resources. The resources keep the population alive.
 
-## User Interface
-- [ ] Label: food supply
-- [ ] Label: wood supply
-- [ ] Label: round count
-- [ ] Button: "Finish Round"
-
-## Tiles
-- [ ] Water tile (terrain) --> not placable
-- [ ] Grass tile (terrain)
-- [ ] Forest tile (terrain)
-- [ ] Farmer tile (building --> on top of grass tile)
-- [ ] Wood cutter tile (building --> on top of forest tile)
-
-## World
-- [ ] One starter tile (grass), the rest are all water tiles
-- [ ] Terrain tiles expand the land mass
-- [ ] Building tiles needs to be placed on top of terrain tiles
+## Game Over
+The game can theoretically run forever. The score is determined by the round count. The game ends when the population runs out of one of the needed resources.
 
 ## Further Ideas
 - Spreaded out islands in the distance with one time resources
