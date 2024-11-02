@@ -7,5 +7,6 @@ Simple 2D topdown strategy game. Name is pending.
 - Lukas Nickel
 
 # Quick Links
-- [Design Document](https://github.com/Luk97/ese/blob/master/DesignDocument.md)
+- [TODO](TODO.md)
+- [Design Document](DesignDocument.md)
 - [Gitmoji](https://gitmoji.dev/)
