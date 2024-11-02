@@ -26,5 +26,17 @@ func zoom_out():
 		clamp(new_zoom.y, MIN_ZOOM, MAX_ZOOM)
 	)
 	
-func getGlobalPosition() -> Vector2:
-	return get_viewport().get_camera_2d().global_position
+func getMousePosition() -> Vector2:
+	return get_viewport().get_mouse_position()
+	
+func get_visible_tile_area(tile_size: Vector2) -> Rect2:
+	var screen_size = get_viewport().size
+	var scaled_screen_size = Vector2(screen_size.x / zoom.x, screen_size.y / zoom.y)
+
+	var top_left_world = global_position - Vector2(scaled_screen_size.x / 2, scaled_screen_size.y / 2)
+	var bottom_right_world = global_position + Vector2(scaled_screen_size.x * zoom.x / 2, scaled_screen_size.y * zoom.y / 2)
+
+	var top_left_tile = top_left_world / tile_size
+	var bottom_right_tile = bottom_right_world / tile_size
+	
+	return Rect2(top_left_tile, bottom_right_tile - top_left_tile)

@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="Ese"
-run/main_scene="res://szenes/game.tscn"
+run/main_scene="res://core/game.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://assets/icon.svg"
 
 [autoload]
 
-CameraController="*res://feature_camera/CameraController.gd"
+CameraController="*res://camera/CameraController.gd"
+
+[debug]
+
+gdscript/warnings/integer_division=0
 
 [rendering]
 
