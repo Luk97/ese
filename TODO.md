@@ -22,7 +22,7 @@
 - [x] Click finish round button to start the preview
 - [x] Preview is disabled after placing a tile
 - [x] Placed tiles are grass tiles
-- [ ] Allow tile placement only next to grass tiles
+- [x] Allow tile placement only next to grass tiles
 
 ### Camera
 - [x] Implement camera zooming
