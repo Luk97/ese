@@ -5,6 +5,8 @@ const MAX_ZOOM = 3.0
 
 var zoom_speed = 0.1
 
+func _ready() -> void:
+	zoom = Vector2(3.0, 3.0)
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP and event.pressed:

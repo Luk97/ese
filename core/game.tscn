@@ -1,13 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://cc30mnccj5g6g"]
 
 [ext_resource type="Script" path="res://core/game.gd" id="1_5b6wp"]
-[ext_resource type="PackedScene" uid="uid://ncp2pxfii11a" path="res://world/world/World.tscn" id="3_60nti"]
+[ext_resource type="PackedScene" uid="uid://ncp2pxfii11a" path="res://world/world.tscn" id="3_60nti"]
 [ext_resource type="PackedScene" uid="uid://bna15bbgjgwfe" path="res://interface/game_interface.tscn" id="3_fm1gd"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_5b6wp")
 
 [node name="GameInterface" parent="." instance=ExtResource("3_fm1gd")]
+unique_name_in_owner = true
 
 [node name="World" parent="." instance=ExtResource("3_60nti")]
+unique_name_in_owner = true
 position = Vector2(2, 2)
+
+[connection signal="round_finished" from="GameInterface" to="." method="_on_round_finished"]

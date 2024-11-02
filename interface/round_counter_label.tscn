@@ -1,19 +1,20 @@
 [gd_scene load_steps=3 format=3 uid="uid://dgbq5goh7yrtn"]
 
-[ext_resource type="Texture2D" uid="uid://cyx45bcefi3ym" path="res://assets/theme/label_bg.png" id="1_rx42l"]
-[ext_resource type="Script" path="res://interface/round_counter.gd" id="2_dutpj"]
+[ext_resource type="Texture2D" uid="uid://cyx45bcefi3ym" path="res://assets/theme/label_bg.png" id="1_8rnqp"]
+[ext_resource type="Script" path="res://interface/round_counter_label.gd" id="2_wuhaq"]
 
-[node name="RoundCounter" type="NinePatchRect"]
+[node name="Container" type="NinePatchRect"]
 offset_right = 101.0
 offset_bottom = 49.0
-texture = ExtResource("1_rx42l")
+texture = ExtResource("1_8rnqp")
 patch_margin_left = 8
 patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
-script = ExtResource("2_dutpj")
+script = ExtResource("2_wuhaq")
 
 [node name="RoundCounterLabel" type="Label" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
