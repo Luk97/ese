@@ -7,12 +7,18 @@ var possible_placements_positions: Array = []
 var previous_tile_coords: Vector2i
 var show_preview: bool
 
-func _ready() -> void:
-	tile_manager.create_starter_tiles()
-
 func _process(delta: float) -> void:
 	if show_preview:
 		_show_tile_preview()
+		
+func create_new_world(new_world: Array) -> void:
+	for i in range(-16, 16):
+		for j in range(-16, 16):
+			var coords = Vector2i(i, j)
+			if new_world[i+16][j+16] == 0:
+				tile_manager.place_tile(WaterTile.new(coords))
+			else:
+				tile_manager.place_tile(GrassTile.new(coords))
 
 func enable_preview() -> void:
 	# TODO: it is hardcoded for a grass tile for now. Generalize it.
