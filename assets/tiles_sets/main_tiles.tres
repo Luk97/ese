@@ -16,15 +16,10 @@ texture_region_size = Vector2i(32, 32)
 0:0/animation_frame_3/duration = 1.0
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, 8)
-0:0/0/custom_data_0 = "Water"
 4:0/0 = 0
 4:0/0/texture_origin = Vector2i(0, 8)
-4:0/0/custom_data_0 = "Grass"
-4:0/0/custom_data_1 = ["Water"]
 5:0/0 = 0
 5:0/0/texture_origin = Vector2i(0, 8)
-5:0/0/custom_data_0 = "Forest"
-5:0/0/custom_data_1 = ["Water"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0wdk4"]
 texture = ExtResource("1_gxxj3")
@@ -85,10 +80,6 @@ tile_shape = 3
 tile_layout = 5
 tile_offset_axis = 1
 tile_size = Vector2i(32, 16)
-custom_data_layer_0/name = "Name"
-custom_data_layer_0/type = 4
-custom_data_layer_1/name = "allowed_replacements "
-custom_data_layer_1/type = 28
 sources/2 = SubResource("TileSetAtlasSource_uo7mx")
 sources/10 = SubResource("TileSetAtlasSource_n7ibq")
 sources/1 = SubResource("TileSetAtlasSource_0wdk4")
