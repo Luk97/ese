@@ -16,29 +16,34 @@ const ISLAND_CHANCE_THREE_LAND_NEIGHBOURS = 0.2
 const ISLAND_CHANCE_FOUR_LAND_NEIGHBOURS = 0.4
 const ISLAND_CHANCE_FIVE_LAND_NEIGHBOURS = 0.8
 const ISLAND_CHANCE_SIX_LAND_NEIGHBOURS = 0.9
-const ISLAND_CHANCE_BECOME_WATER = 0.1
+
+const ISLAND_CHANCE_SPREAD_LAND = 0.5
+const ISLAND_CHANCE_BECOME_WATER = 0.25
 
 var rng: RandomNumberGenerator
 
 # Inspired by: https://www.alanzucconi.com/2022/06/05/minecraft-world-generation/
-func create_island_layer(rng: RandomNumberGenerator) -> Array:
-	self.rng = rng
+func create_island_layer(random_number_generator: RandomNumberGenerator) -> Array:
+	self.rng = random_number_generator
 	
-	var first_world_iteration = _first_zoom_iteration()
-	_island_iteration(first_world_iteration)
-	var second_world_iteration = _zoom_iteration(first_world_iteration)
-	_island_iteration(second_world_iteration)
-	_island_iteration(second_world_iteration)
-	_island_iteration(second_world_iteration)
-	_island_iteration(second_world_iteration)
-	var third_world_iteration = _zoom_iteration(second_world_iteration)
-	var fourth_world_iteration = _zoom_iteration(third_world_iteration)
-	_island_iteration(fourth_world_iteration)
+	var first_buffer: Array
+	var second_buffer: Array
+	
+	first_buffer = _first_zoom_iteration()
+	_island_iteration(first_buffer)
+	second_buffer = _zoom_iteration(first_buffer)
+	first_buffer = _island_iteration(second_buffer)
+	second_buffer = _island_iteration(first_buffer)
+	first_buffer = _island_iteration(second_buffer)
+	second_buffer = _island_iteration(first_buffer)
+	first_buffer = _zoom_iteration(second_buffer)
+	second_buffer = _zoom_iteration(first_buffer)
+	first_buffer = _island_iteration(second_buffer)
 	#var fifth_world_iteration = _zoom_iteration(fourth_world_iteration)
 	#var sixth_world_iteration = _zoom_iteration(fifth_world_iteration)
 	#var seventh_world_iteration = _zoom_iteration(sixth_world_iteration)
 	#var eigth_world_iteration = _zoom_iteration(seventh_world_iteration)
-	return fourth_world_iteration
+	return first_buffer
 	
 
 # Create a 4x4 world with 10 percent beeing landmass.
@@ -47,10 +52,8 @@ func _first_zoom_iteration() -> Array:
 	for x in range(INITIAL_WORLD_SIZE):
 		new_world.append([])
 		for y in range(INITIAL_WORLD_SIZE):
-			if rng.randf() <= LAND_CHANCE_INITIAL:
-				new_world[x].append(LAND)
-			else:
-				new_world[x].append(WATER)
+			var cell_value = LAND if rng.randf() <= LAND_CHANCE_INITIAL else WATER
+			new_world[x].append(cell_value)
 	return new_world
 
 # Create a world where the previous landmass is scaled up with factor 2 to new world dimensions.
@@ -75,26 +78,32 @@ func _zoom_iteration(previous_world: Array) -> Array:
 			new_world[x].append(cell_value)
 	return new_world
 	
-func _island_iteration(world: Array) -> void:
+func _island_iteration(world: Array) -> Array:
+	var new_world = world.duplicate()
 	var world_size = world.size()
 	for x in range(world_size):
 		for y in range(world_size):
-			if world[x][y] == WATER:
-				var land_neighbours = _get_land_neighbours_count(world, x, y)
-				var land_chance: float
-				match land_neighbours:
-					0: land_chance = ISLAND_CHANCE_ZERO_LAND_NEIGHBOURS
-					1: land_chance = ISLAND_CHANCE_ONE_LAND_NEIGHBOURS
-					2: land_chance = ISLAND_CHANCE_TWO_LAND_NEIGHBOURS
-					3: land_chance = ISLAND_CHANCE_THREE_LAND_NEIGHBOURS
-					4: land_chance = ISLAND_CHANCE_FOUR_LAND_NEIGHBOURS
-					5: land_chance = ISLAND_CHANCE_FIVE_LAND_NEIGHBOURS
-					6: land_chance = ISLAND_CHANCE_SIX_LAND_NEIGHBOURS
-				world[x][y] = LAND if rng.randf() <= land_chance else WATER
-			else:
-				world[x][y] = WATER if rng.randf() <= ISLAND_CHANCE_BECOME_WATER else LAND
+			if world[x][y] == LAND:
+				var water_neighbours = _get_water_neighbour_coords(world, x, y)
+				if rng.randf() <= ISLAND_CHANCE_SPREAD_LAND:
+					var random_neighbour = water_neighbours.pick_random()
+					new_world[random_neighbour.x][random_neighbour.y] = LAND
+					if rng.randf() <= ISLAND_CHANCE_BECOME_WATER:
+						new_world[x][y] = WATER
+	return new_world
+
+func _get_water_neighbours_count(world: Array, x: int, y: int) -> int:
+	return _get_neighbours(world, x, y).count(WATER)
 
 func _get_land_neighbours_count(world: Array, x: int, y: int) -> int:
+	return _get_neighbours(world, x, y).count(LAND)
+	
+func _get_water_neighbour_coords(world: Array, x: int, y: int) -> Array:
+	var neighbour_coords = _get_neighbour_coords(world, x, y)
+	neighbour_coords.filter(func(cell): return world[cell.x][cell.y] == WATER)
+	return neighbour_coords
+	
+func _get_neighbours(world: Array, x: int, y: int) -> Array:
 	var world_size = world.size()
 	var neighbours = []
 	if _in_bounds(x-1, y-1, world_size):
@@ -109,8 +118,25 @@ func _get_land_neighbours_count(world: Array, x: int, y: int) -> int:
 		neighbours.append(world[x+1][y])
 	if _in_bounds(x+1, y+1, world_size):
 		neighbours.append(world[x+1][y+1])
-		
-	return neighbours.count(LAND)
+	return neighbours
+
+func _get_neighbour_coords(world: Array, x: int, y: int) -> Array:
+	var world_size = world.size()
+	var neighbours = []
+	if _in_bounds(x-1, y-1, world_size):
+		neighbours.append(Vector2i(x-1, y-1))
+	if _in_bounds(x-1, y, world_size):
+		neighbours.append(Vector2i(x-1, y))
+	if _in_bounds(x, y-1, world_size):
+		neighbours.append(Vector2i(x, y-1))
+	if _in_bounds(x, y+1, world_size):
+		neighbours.append(Vector2i(x, y+1))
+	if _in_bounds(x+1, y, world_size):
+		neighbours.append(Vector2i(x+1, y))
+	if _in_bounds(x+1, y+1, world_size):
+		neighbours.append(Vector2i(x+1, y+1))
+	return neighbours
+
 
 
 func _in_bounds(x: int, y: int, upper: int) -> bool:
