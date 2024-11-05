@@ -1,24 +1,12 @@
 extends Node2D
 
-@onready var rng: RandomNumberGenerator
 @onready var island_layer: Node2D = $IslandLayer
 
-func _ready() -> void:
-	rng = RandomNumberGenerator.new()
-
-func generate_world(seed: int) -> Array:
-	rng.seed = seed
+func generate_world(user_seed: int) -> Array:
+	#TODO: the same seed should produce always the same result
 	
 	# This overwrites the seed
-	rng.randomize()
+	#rng.randomize()
 	
-	var world: Array = []
-	
-	var new_world = island_layer.create_island_layer(rng)
-	
+	var new_world = island_layer.create_island_layer(user_seed)
 	return new_world
-
-
-
-func terrain_creation_second_iteration(world: Array):
-	pass

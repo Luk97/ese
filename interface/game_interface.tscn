@@ -23,10 +23,17 @@ mouse_filter = 1
 [node name="FinishRoundButton" parent="Elements" instance=ExtResource("2_bd0v6")]
 unique_name_in_owner = true
 layout_mode = 1
-offset_left = 460.0
-offset_top = 285.5
-offset_right = 569.0
-offset_bottom = 316.5
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -109.0
+offset_top = -31.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 0
 
 [node name="RoundCounterLabel" parent="Elements" instance=ExtResource("2_4d6ly")]
 unique_name_in_owner = true
