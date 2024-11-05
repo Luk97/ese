@@ -12,10 +12,11 @@ func _process(delta: float) -> void:
 		_show_tile_preview()
 		
 func create_new_world(new_world: Array) -> void:
-	for i in range(-16, 16):
-		for j in range(-16, 16):
+	var size = new_world.size()
+	for i in range(size):
+		for j in range(size):
 			var coords = Vector2i(i, j)
-			if new_world[i+16][j+16] == 0:
+			if new_world[i][j] == 0:
 				tile_manager.place_tile(WaterTile.new(coords))
 			else:
 				tile_manager.place_tile(GrassTile.new(coords))

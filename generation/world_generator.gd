@@ -1,10 +1,12 @@
 extends Node2D
 
-const WORLD_SIZE = 32
-const LAND_CHANCE = 0.1
+@onready var rng: RandomNumberGenerator
+@onready var island_layer: Node2D = $IslandLayer
+
+func _ready() -> void:
+	rng = RandomNumberGenerator.new()
 
 func generate_world(seed: int) -> Array:
-	var rng = RandomNumberGenerator.new()
 	rng.seed = seed
 	
 	# This overwrites the seed
@@ -12,11 +14,11 @@ func generate_world(seed: int) -> Array:
 	
 	var world: Array = []
 	
-	for i in range(WORLD_SIZE):
-		world.append([])
-		for j in range(WORLD_SIZE):
-			if rng.randf() <= LAND_CHANCE:
-				world[i].append(1)
-			else:
-				world[i].append(0)
-	return world
+	var new_world = island_layer.create_island_layer(rng)
+	
+	return new_world
+
+
+
+func terrain_creation_second_iteration(world: Array):
+	pass

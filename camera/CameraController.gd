@@ -1,12 +1,24 @@
 extends Camera2D
 
-const MIN_ZOOM = 0.5
+const MIN_ZOOM = 0.1
 const MAX_ZOOM = 3.0
 
 var zoom_speed = 0.1
+var move_speed = 300
 
 func _ready() -> void:
-	zoom = Vector2(3.0, 3.0)
+	zoom = Vector2(0.5, 0.5)
+	
+func _process(delta):
+	if Input.is_action_pressed("ui_left"):
+		global_position += Vector2.LEFT * delta * move_speed
+	elif Input.is_action_pressed("ui_right"):
+		global_position += Vector2.RIGHT * delta * move_speed
+	elif Input.is_action_pressed("ui_up"):
+		global_position += Vector2.UP * delta * move_speed
+	elif Input.is_action_pressed("ui_down"):
+		global_position += Vector2.DOWN * delta * move_speed
+	
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP and event.pressed:
