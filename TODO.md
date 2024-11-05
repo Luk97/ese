@@ -4,14 +4,12 @@
 ## Version 0.1
 
 ### Assets
-- [ ] Terrain: Water tile
-- [ ] Terrain: Grass tile
-- [ ] Terrain: Forest tile
+- [x] Terrain: Water tile
+- [x] Terrain: Grass tile
+- [x] Terrain: Forest tile
 
 ### World Generation
 - [x] Create starter grass tile
-- [ ] Create chunk system for an infinite world
-- [ ] Make all tiles water tiles besides the starter tile
 	  
 ### User Interface
 - [x] Label: round count
@@ -26,34 +24,30 @@
 
 ### Camera
 - [x] Implement camera zooming
-- [ ] Implement camera movement
+- [x] Implement camera movement
 
 
 ## Version 0.2
 
 ### Assets
+- [ ] Building: Headquarter
 - [ ] Building: Woodcutter tile (placed on forest tile)
-- [ ] Building: Farmer tile (placed on grass tile)
-- [ ] Terrain: Field tile
-- [ ] Resource: wood
-- [ ] Resource: grain
+- [ ] Resource: Wood
+- [ ] Tool: Axe to destroy forest and make it grass
+- [ ] UI: Slot background
 
 ### World Generation
-- [ ] Create random islands of grass with size 1 throughout the world
+- [x] Prototype the procedural world generation
 
 ### User Interface
 - [ ] Create theme structure for user interface controles
 - [ ] Label: Wood count
-- [ ] Label: Food count
-- [ ] Create main menu
-  - [ ] New Game button
-  - [ ] Quit Game button
+- [ ] Enhance Finish Round Button
+- [ ] Enhance Round Counter Button
 
 ### Gameplay
 - [ ] Create tile pool with possible tiles to place
 - [ ] Start of round: Get random choice between 3 tiles out of the tile pool
 - [ ] Use chosen tile as preview tile
 - [ ] Woodcutter produces 1 wood every 2 rounds
-- [ ] Farmer produces 0 grain every 3 rounds
-- [ ] Farmer produces 1 extra grain per fields as neighbour
 - [ ] Resource can be collected per mouse click

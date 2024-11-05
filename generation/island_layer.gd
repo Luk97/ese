@@ -3,28 +3,21 @@ extends Node2D
 const WATER = 0
 const LAND = 1
 const INITIAL_WORLD_SIZE = 4
+const INITIAL_LAND_CHANCE = 0.1
 
-const LAND_CHANCE_INITIAL = 0.1
 const LAND_CHANCE_FROM_LAND = 0.9
-const LAND_CHANCE_FROM_WATER_WITH_LAND_NEIGHBOUR = 0.2
-const LAND_CHANCE_FROM_WATER = 0.1
-
-const ISLAND_CHANCE_ZERO_LAND_NEIGHBOURS = 0.0
-const ISLAND_CHANCE_ONE_LAND_NEIGHBOURS = 0.1
-const ISLAND_CHANCE_TWO_LAND_NEIGHBOURS = 0.1
-const ISLAND_CHANCE_THREE_LAND_NEIGHBOURS = 0.2
-const ISLAND_CHANCE_FOUR_LAND_NEIGHBOURS = 0.4
-const ISLAND_CHANCE_FIVE_LAND_NEIGHBOURS = 0.8
-const ISLAND_CHANCE_SIX_LAND_NEIGHBOURS = 0.9
+const LAND_CHANCE_FROM_WATER_WITH_LAND_NEIGHBOUR = 0.1
+const LAND_CHANCE_FROM_WATER = 0.05                     
 
 const ISLAND_CHANCE_SPREAD_LAND = 0.5
-const ISLAND_CHANCE_BECOME_WATER = 0.25
+const ISLAND_CHANCE_BECOME_WATER = 0.3
 
 var rng: RandomNumberGenerator
 
 # Inspired by: https://www.alanzucconi.com/2022/06/05/minecraft-world-generation/
-func create_island_layer(random_number_generator: RandomNumberGenerator) -> Array:
-	self.rng = random_number_generator
+func create_island_layer(user_seed: int) -> Array:
+	self.rng = RandomNumberGenerator.new()
+	rng.seed = user_seed
 	
 	var first_buffer: Array
 	var second_buffer: Array
@@ -39,10 +32,15 @@ func create_island_layer(random_number_generator: RandomNumberGenerator) -> Arra
 	first_buffer = _zoom_iteration(second_buffer)
 	second_buffer = _zoom_iteration(first_buffer)
 	first_buffer = _island_iteration(second_buffer)
-	#var fifth_world_iteration = _zoom_iteration(fourth_world_iteration)
-	#var sixth_world_iteration = _zoom_iteration(fifth_world_iteration)
-	#var seventh_world_iteration = _zoom_iteration(sixth_world_iteration)
-	#var eigth_world_iteration = _zoom_iteration(seventh_world_iteration)
+	second_buffer = _zoom_iteration(first_buffer)
+	first_buffer = _zoom_iteration(second_buffer)
+	second_buffer = _zoom_iteration(first_buffer)
+	first_buffer = _zoom_iteration(second_buffer)
+	second_buffer = _island_iteration(first_buffer)
+	first_buffer = _island_iteration(second_buffer)
+	second_buffer = _island_iteration(first_buffer)
+	first_buffer = _island_iteration(second_buffer)
+	
 	return first_buffer
 	
 
@@ -52,7 +50,7 @@ func _first_zoom_iteration() -> Array:
 	for x in range(INITIAL_WORLD_SIZE):
 		new_world.append([])
 		for y in range(INITIAL_WORLD_SIZE):
-			var cell_value = LAND if rng.randf() <= LAND_CHANCE_INITIAL else WATER
+			var cell_value = LAND if rng.randf() <= INITIAL_LAND_CHANCE else WATER
 			new_world[x].append(cell_value)
 	return new_world
 
@@ -66,6 +64,8 @@ func _zoom_iteration(previous_world: Array) -> Array:
 		new_world.append([])
 		for y in range(new_world_size):
 			
+	
+		
 			var land_chance: float
 			var previous_world_index = Vector2i(floor(x / 2), floor(y / 2))
 			
