@@ -13,13 +13,13 @@ func _process(delta: float) -> void:
 		
 func create_new_world(new_world: Array) -> void:
 	var size = new_world.size()
-	for i in range(size):
-		for j in range(size):
-			var coords = Vector2i(i, j)
-			if new_world[i][j] == 0:
-				tile_manager.place_tile(WaterTile.new(coords))
-			else:
-				tile_manager.place_tile(GrassTile.new(coords))
+	for x in range(size):
+		for y in range(size):
+			var coords = Vector2i(x, y)
+			match new_world[x][y]:
+				0: tile_manager.place_tile(WaterTile.new(coords))
+				1: tile_manager.place_tile(GrassTile.new(coords))
+				2: tile_manager.place_tile(ForestTile.new(coords))
 
 func enable_preview() -> void:
 	# TODO: it is hardcoded for a grass tile for now. Generalize it.

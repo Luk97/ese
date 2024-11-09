@@ -4,7 +4,7 @@ const MIN_ZOOM = 0.1
 const MAX_ZOOM = 3.0
 
 var zoom_speed = 0.1
-var move_speed = 300
+var move_speed = 600
 
 func _ready() -> void:
 	zoom = Vector2(0.5, 0.5)
