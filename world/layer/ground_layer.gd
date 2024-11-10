@@ -4,6 +4,7 @@ extends TileMapLayer
 @export var temperature_noise = FastNoiseLite.new()
 @export var moisture_noise = FastNoiseLite.new()
 
+@onready var decoration_layer: TileMapLayer = %DecorationLayer
 @onready var rng: RandomNumberGenerator
 
 # TODO: this needs to be input from the user when starting a new game
@@ -43,6 +44,9 @@ func generate_chunk(radius: Vector2i) -> void:
 			
 			var tile = get_tile_from_environment(altitude, temperature, moisture, tile_coords)
 			set_cell(tile.global_coords, tile.source_id, tile.atlas_coords)
+			if tile is ForestTile:
+				# TODO: check why offset of Vector2i(1, 1) is neccesary
+				decoration_layer.set_cell(tile.global_coords - Vector2i(1, 1), 1, Vector2i(0, 0))
 
 func get_center_tile_coords() -> Vector2i:
 	var center = CameraController.get_center()
