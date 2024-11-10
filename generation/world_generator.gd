@@ -1,12 +1,56 @@
 extends Node2D
 
-@onready var island_layer: Node2D = $IslandLayer
+@export var land_noise = FastNoiseLite.new()
+@export var biome_noise = FastNoiseLite.new()
 
-func generate_world(user_seed: int) -> Array:
-	#TODO: the same seed should produce always the same result
+@onready var utils: Node2D = %Utils
+
+const WATER = 0
+const GRASS = 1
+const FOREST = 2
+
+const INITIAL_WORLD_SIZE = 128
+const LAND_THRESHOLD = 0   
+const BIOME_THRESHOLD = -0.15
+
+func generate_world(seed: int) -> Array:
+	land_noise.set_seed(seed)
+	biome_noise.set_seed(seed)
 	
-	# This overwrites the seed
-	#rng.randomize()
+	var first_buffer: Array
+	var second_buffer: Array
 	
-	var new_world = island_layer.create_island_layer(user_seed)
+	_generate_land_mass(first_buffer)
+	second_buffer = _plug_holes(first_buffer)
+	first_buffer = _set_biomes(second_buffer)
+	return first_buffer
+
+func _generate_land_mass(world: Array) -> void:
+	for x in range(INITIAL_WORLD_SIZE):
+		world.append([])
+		for y in range(INITIAL_WORLD_SIZE):
+			var cell_value = land_noise.get_noise_2d(x, y)
+			world[x].append(GRASS if cell_value > LAND_THRESHOLD else WATER)
+
+func _plug_holes(previous_world: Array) -> Array:
+	var new_world = previous_world.duplicate()
+	var previous_world_size = previous_world.size()
+	for x in range(previous_world_size):
+		for y in range(previous_world_size):
+			if previous_world[x][y] == WATER and utils.get_land_neighbours_count(previous_world, x, y) >= 5:
+				new_world[x][y] = GRASS
+			elif previous_world[x][y] == GRASS and utils.get_water_neighbours_count(previous_world, x, y) >= 5:
+				new_world[x][y] = WATER
 	return new_world
+	
+func _set_biomes(previous_world: Array) -> Array:
+	var new_world = previous_world.duplicate()
+	var previous_world_size = previous_world.size()
+	for x in range(previous_world_size):
+		for y in range(previous_world_size):
+			if previous_world[x][y] == GRASS:
+				var cell_value = biome_noise.get_noise_2d(x, y)
+				new_world[x][y] = GRASS if cell_value > BIOME_THRESHOLD else FOREST
+			
+	return new_world
+	

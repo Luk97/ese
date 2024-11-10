@@ -6,15 +6,13 @@
 [ext_resource type="Script" path="res://generation/world_generator.gd" id="4_ne8qr"]
 [ext_resource type="Script" path="res://generation/island_layer.gd" id="5_h0uqh"]
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_ofqi5"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ylf2j"]
 noise_type = 3
-frequency = 0.08
-domain_warp_enabled = true
-domain_warp_fractal_octaves = 10
+frequency = 0.1
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_8ofhv"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_hdr3h"]
 noise_type = 3
-frequency = 0.04
+frequency = 0.2
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_5b6wp")
@@ -29,10 +27,11 @@ position = Vector2(2, 2)
 [node name="WorldGenerator" type="Node2D" parent="."]
 unique_name_in_owner = true
 script = ExtResource("4_ne8qr")
+land_noise = SubResource("FastNoiseLite_ylf2j")
+biome_noise = SubResource("FastNoiseLite_hdr3h")
 
-[node name="IslandLayer" type="Node2D" parent="WorldGenerator"]
+[node name="Utils" type="Node2D" parent="WorldGenerator"]
+unique_name_in_owner = true
 script = ExtResource("5_h0uqh")
-land_noise = SubResource("FastNoiseLite_ofqi5")
-biome_noise = SubResource("FastNoiseLite_8ofhv")
 
 [connection signal="round_finished" from="GameInterface" to="." method="_on_round_finished"]
