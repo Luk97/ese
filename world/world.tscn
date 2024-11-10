@@ -1,22 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://ncp2pxfii11a"]
+[gd_scene load_steps=4 format=3 uid="uid://ncp2pxfii11a"]
 
 [ext_resource type="Script" path="res://world/world.gd" id="1_htl8q"]
 [ext_resource type="TileSet" uid="uid://crd6g2q3ow7a1" path="res://assets/tiles_sets/main_tiles.tres" id="1_kugf7"]
-[ext_resource type="Script" path="res://world/chunk/chunk_manager.gd" id="3_4c6ny"]
-[ext_resource type="Script" path="res://world/tile/tile_manager.gd" id="5_dxh5v"]
+[ext_resource type="Script" path="res://world/generation/world_generation.gd" id="4_aux1h"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_htl8q")
-
-[node name="ChunkManager" type="Node2D" parent="."]
-unique_name_in_owner = true
-script = ExtResource("3_4c6ny")
 
 [node name="GroundLayer" type="TileMapLayer" parent="."]
 unique_name_in_owner = true
 position = Vector2(-16, -8)
 tile_set = ExtResource("1_kugf7")
-
-[node name="TileManager" type="Node2D" parent="."]
-unique_name_in_owner = true
-script = ExtResource("5_dxh5v")
+script = ExtResource("4_aux1h")

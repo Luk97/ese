@@ -1,18 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cc30mnccj5g6g"]
+[gd_scene load_steps=4 format=3 uid="uid://cc30mnccj5g6g"]
 
 [ext_resource type="Script" path="res://core/game.gd" id="1_5b6wp"]
 [ext_resource type="PackedScene" uid="uid://ncp2pxfii11a" path="res://world/world.tscn" id="3_60nti"]
 [ext_resource type="PackedScene" uid="uid://bna15bbgjgwfe" path="res://interface/game_interface.tscn" id="3_fm1gd"]
-[ext_resource type="Script" path="res://generation/world_generator.gd" id="4_ne8qr"]
-[ext_resource type="Script" path="res://generation/island_layer.gd" id="5_h0uqh"]
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_ylf2j"]
-noise_type = 3
-frequency = 0.1
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_hdr3h"]
-noise_type = 3
-frequency = 0.2
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_5b6wp")
@@ -23,15 +13,5 @@ unique_name_in_owner = true
 [node name="World" parent="." instance=ExtResource("3_60nti")]
 unique_name_in_owner = true
 position = Vector2(2, 2)
-
-[node name="WorldGenerator" type="Node2D" parent="."]
-unique_name_in_owner = true
-script = ExtResource("4_ne8qr")
-land_noise = SubResource("FastNoiseLite_ylf2j")
-biome_noise = SubResource("FastNoiseLite_hdr3h")
-
-[node name="Utils" type="Node2D" parent="WorldGenerator"]
-unique_name_in_owner = true
-script = ExtResource("5_h0uqh")
 
 [connection signal="round_finished" from="GameInterface" to="." method="_on_round_finished"]
