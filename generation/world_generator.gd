@@ -21,9 +21,8 @@ func generate_world(seed: int) -> Array:
 	var second_buffer: Array
 	
 	_generate_land_mass(first_buffer)
-	second_buffer = _plug_holes(first_buffer)
-	first_buffer = _set_biomes(second_buffer)
-	return first_buffer
+	second_buffer = _set_biomes(first_buffer)
+	return second_buffer
 
 func _generate_land_mass(world: Array) -> void:
 	for x in range(INITIAL_WORLD_SIZE):
@@ -32,17 +31,6 @@ func _generate_land_mass(world: Array) -> void:
 			var cell_value = land_noise.get_noise_2d(x, y)
 			world[x].append(GRASS if cell_value > LAND_THRESHOLD else WATER)
 
-func _plug_holes(previous_world: Array) -> Array:
-	var new_world = previous_world.duplicate()
-	var previous_world_size = previous_world.size()
-	for x in range(previous_world_size):
-		for y in range(previous_world_size):
-			if previous_world[x][y] == WATER and utils.get_land_neighbours_count(previous_world, x, y) >= 5:
-				new_world[x][y] = GRASS
-			elif previous_world[x][y] == GRASS and utils.get_water_neighbours_count(previous_world, x, y) >= 5:
-				new_world[x][y] = WATER
-	return new_world
-	
 func _set_biomes(previous_world: Array) -> Array:
 	var new_world = previous_world.duplicate()
 	var previous_world_size = previous_world.size()
