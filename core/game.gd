@@ -7,8 +7,6 @@ extends Node2D
 @onready var world_generator: Node2D = %WorldGenerator
 
 func _ready() -> void:
-	var new_world = world_generator.generate_world(123)
-	world.create_new_world(new_world)
 	world.enable_preview()
 
 func _on_round_finished() -> void:

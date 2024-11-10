@@ -1,13 +1,13 @@
 extends Camera2D
 
-const MIN_ZOOM = 0.1
-const MAX_ZOOM = 3.0
+const MIN_ZOOM = 1.0
+const MAX_ZOOM = 5.0
 
 var zoom_speed = 0.1
 var move_speed = 600
 
 func _ready() -> void:
-	zoom = Vector2(0.5, 0.5)
+	zoom = Vector2(5.0, 5.0)
 	
 func _process(delta):
 	if Input.is_action_pressed("ui_left"):
@@ -42,15 +42,11 @@ func zoom_out():
 	
 func getMousePosition() -> Vector2:
 	return get_viewport().get_mouse_position()
-	
-func get_visible_tile_area(tile_size: Vector2) -> Rect2:
-	var screen_size = get_viewport().size
-	var scaled_screen_size = Vector2(screen_size.x / zoom.x, screen_size.y / zoom.y)
 
-	var top_left_world = global_position - Vector2(scaled_screen_size.x / 2, scaled_screen_size.y / 2)
-	var bottom_right_world = global_position + Vector2(scaled_screen_size.x * zoom.x / 2, scaled_screen_size.y * zoom.y / 2)
-
-	var top_left_tile = top_left_world / tile_size
-	var bottom_right_tile = bottom_right_world / tile_size
+func get_center() -> Vector2:
+	return get_target_position()
 	
-	return Rect2(top_left_tile, bottom_right_tile - top_left_tile)
+func get_visible_area() -> Vector2:
+	var area = get_viewport_rect()
+	var scaled_area = Vector2(area.size.x / zoom.x, area.size.y / zoom.y)
+	return scaled_area

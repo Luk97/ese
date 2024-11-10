@@ -1,6 +1,10 @@
 class_name Tile
 extends Object
 
+const TILE_WIDTH = 32
+const TILE_HEIGHT = 16
+const TILE_SIZE = Vector2i(TILE_WIDTH, TILE_HEIGHT)
+
 var name: String
 var global_coords: Vector2i
 var replaceable: bool
