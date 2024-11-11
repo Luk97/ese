@@ -6,5 +6,5 @@ func _init(global_coords: Vector2i) -> void:
 	var source_id = 0
 	var atlas_coords = Vector2i(5, 0)
 	var replaceable = false
-	var decorations = {}
-	super(name, global_coords, source_id, atlas_coords, replaceable, decorations)
+	var decoration = TreeDecoration.new()
+	super(name, global_coords, source_id, atlas_coords, replaceable, decoration)

@@ -50,3 +50,6 @@ func get_visible_area() -> Vector2:
 	var area = get_viewport_rect()
 	var scaled_area = Vector2(area.size.x / zoom.x, area.size.y / zoom.y)
 	return scaled_area
+
+func center_view(global_coords: Vector2) -> void:
+	global_position = global_coords
