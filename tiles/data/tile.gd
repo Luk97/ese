@@ -12,12 +12,12 @@ var replaceable: bool
 var source_id: int
 var atlas_coords: Vector2i
 
-var decorations: Dictionary
+var decoration: Decoration = null
 
-func _init(name: String, global_coords: Vector2i, source_id: int, atlas_coords: Vector2i, replaceable: bool, decorations: Dictionary) -> void:
+func _init(name: String, global_coords: Vector2i, source_id: int, atlas_coords: Vector2i, replaceable: bool, decoration: Decoration) -> void:
 	self.name = name
 	self.global_coords = global_coords
 	self.source_id = source_id
 	self.atlas_coords = atlas_coords
 	self.replaceable = replaceable
-	self.decorations = decorations
+	self.decoration = decoration

@@ -38,6 +38,7 @@
 
 ### World Generation
 - [x] Prototype the procedural world generation
+- [x] Add forest biome
 
 ### User Interface
 - [ ] Create theme structure for user interface controles
@@ -46,7 +47,7 @@
 - [ ] Enhance Round Counter Button
 
 ### Gameplay
-- [ ] Create tile pool with possible tiles to place
+- [x] Place starter tile on grass tile
 - [ ] Start of round: Get random choice between 3 tiles out of the tile pool
 - [ ] Use chosen tile as preview tile
 - [ ] Woodcutter produces 1 wood every 2 rounds
