@@ -13,7 +13,7 @@ var tiles: Dictionary = {}
 
 func _ready() -> void:
 	_initialize_starter_area()
-	_place_starter_tile()
+	#_place_starter_tile()
 
 #=================== PUBLIC FUNCTIONS ===================
 
@@ -24,7 +24,8 @@ func set_tile(tile: Tile) -> void:
 	if decoration != null:
 		decoration_layer.set_cell(tile.global_coords - Vector2i(1, 1), decoration.source_id, decoration.atlas_coords)
 
-
+func get_cursor_tile() -> Tile:
+	return tiles[ground_layer.get_cursor_tile_coords()]
 
 #=================== PRIVATE FUNCTIONS ===================
 
