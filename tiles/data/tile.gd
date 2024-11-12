@@ -13,6 +13,7 @@ var source_id: int
 var atlas_coords: Vector2i
 
 var decoration: Decoration = null
+var building: Building = null
 
 func _init(name: String, global_coords: Vector2i, source_id: int, atlas_coords: Vector2i, replaceable: bool, decoration: Decoration) -> void:
 	self.name = name
