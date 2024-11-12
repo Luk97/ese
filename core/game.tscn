@@ -84,6 +84,7 @@ offset_bottom = 69.0
 text = "Headquarter"
 
 [node name="Button2" type="Button" parent="ActionManager/ActionSelection/Frame"]
+layout_mode = 0
 offset_left = 123.0
 offset_top = 39.0
 offset_right = 231.0
