@@ -1,17 +1,96 @@
-[gd_scene load_steps=4 format=3 uid="uid://cc30mnccj5g6g"]
+[gd_scene load_steps=12 format=3 uid="uid://cc30mnccj5g6g"]
 
 [ext_resource type="Script" path="res://core/game.gd" id="1_5b6wp"]
-[ext_resource type="PackedScene" uid="uid://ncp2pxfii11a" path="res://world/world.tscn" id="3_60nti"]
 [ext_resource type="PackedScene" uid="uid://bna15bbgjgwfe" path="res://interface/game_interface.tscn" id="3_fm1gd"]
+[ext_resource type="TileSet" uid="uid://crd6g2q3ow7a1" path="res://assets/tiles_sets/main_tiles.tres" id="5_ffqnt"]
+[ext_resource type="Script" path="res://world/layer/ground_layer.gd" id="6_8gybr"]
+[ext_resource type="Texture2D" uid="uid://dmhntqcr4suja" path="res://assets/tiles/TestTiles.png" id="7_krubh"]
+[ext_resource type="Script" path="res://action/action_manager.gd" id="8_0ldud"]
+[ext_resource type="Script" path="res://world/layer/structure_layer.gd" id="8_t7hsn"]
+[ext_resource type="Script" path="res://tiles/tile_manager.gd" id="9_oqfgj"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_jpqon"]
+frequency = 0.04
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4a2uu"]
+texture = ExtResource("7_krubh")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 8)
+1:0/0 = 0
+1:0/0/texture_origin = Vector2i(0, 8)
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+2:0/0 = 0
+2:0/0/texture_origin = Vector2i(0, 8)
+
+[sub_resource type="TileSet" id="TileSet_u1yav"]
+tile_shape = 3
+tile_layout = 5
+tile_offset_axis = 1
+tile_size = Vector2i(32, 16)
+sources/1 = SubResource("TileSetAtlasSource_4a2uu")
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_5b6wp")
+rounds = null
 
 [node name="GameInterface" parent="." instance=ExtResource("3_fm1gd")]
 unique_name_in_owner = true
 
-[node name="World" parent="." instance=ExtResource("3_60nti")]
+[node name="layers" type="Node" parent="."]
+
+[node name="GroundLayer" type="TileMapLayer" parent="layers"]
 unique_name_in_owner = true
-position = Vector2(2, 2)
+tile_set = ExtResource("5_ffqnt")
+script = ExtResource("6_8gybr")
+altitude_noise = SubResource("FastNoiseLite_jpqon")
+
+[node name="DecorationLayer" type="TileMapLayer" parent="layers"]
+unique_name_in_owner = true
+tile_set = SubResource("TileSet_u1yav")
+script = ExtResource("8_t7hsn")
+
+[node name="TileManager" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("9_oqfgj")
+
+[node name="ActionManager" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("8_0ldud")
+
+[node name="ActionSelection" type="CanvasLayer" parent="ActionManager"]
+
+[node name="Frame" type="ColorRect" parent="ActionManager/ActionSelection"]
+z_index = 1
+offset_left = 435.0
+offset_top = 279.0
+offset_right = 674.0
+offset_bottom = 382.0
+
+[node name="Button" type="Button" parent="ActionManager/ActionSelection/Frame"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 38.0
+offset_right = 111.0
+offset_bottom = 69.0
+text = "Headquarter"
+
+[node name="Button2" type="Button" parent="ActionManager/ActionSelection/Frame"]
+offset_left = 123.0
+offset_top = 39.0
+offset_right = 231.0
+offset_bottom = 70.0
+text = "Wood Cutter"
 
 [connection signal="round_finished" from="GameInterface" to="." method="_on_round_finished"]
+[connection signal="action_selected" from="ActionManager" to="." method="_on_action_manager_action_selected"]
+[connection signal="pressed" from="ActionManager/ActionSelection/Frame/Button" to="ActionManager" method="_on_button_pressed"]
+[connection signal="pressed" from="ActionManager/ActionSelection/Frame/Button2" to="ActionManager" method="_on_button_2_pressed"]
