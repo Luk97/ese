@@ -34,8 +34,8 @@
 - [x] Building: Woodcutter tile (placed on forest tile)
 - [x] Resource: Wood
 - [x] Tool: Axe to destroy forest and make it grass
-- [ ] UI: Label background
-- [ ] UI: Button background
+- [x] UI: Label background
+- [x] UI: Button background
 - [ ] UI: Action selection background
 - [ ] Tile: Decoration Variants for forest tile (other trees etc.)
 - [ ] Tile: Decoration Variants for grass tile (flowers etc.)
