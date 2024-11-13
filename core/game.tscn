@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cc30mnccj5g6g"]
+[gd_scene load_steps=13 format=3 uid="uid://cc30mnccj5g6g"]
 
 [ext_resource type="Script" path="res://core/game.gd" id="1_5b6wp"]
 [ext_resource type="PackedScene" uid="uid://bna15bbgjgwfe" path="res://interface/game_interface.tscn" id="3_fm1gd"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dmhntqcr4suja" path="res://assets/tiles/TestTiles.png" id="7_krubh"]
 [ext_resource type="Script" path="res://action/action_manager.gd" id="8_0ldud"]
 [ext_resource type="Script" path="res://world/layer/structure_layer.gd" id="8_t7hsn"]
+[ext_resource type="Script" path="res://preview/preview_manager.gd" id="9_lr7dd"]
 [ext_resource type="Script" path="res://tiles/tile_manager.gd" id="9_oqfgj"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_jpqon"]
@@ -40,7 +41,6 @@ sources/1 = SubResource("TileSetAtlasSource_4a2uu")
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_5b6wp")
-rounds = null
 
 [node name="GameInterface" parent="." instance=ExtResource("3_fm1gd")]
 unique_name_in_owner = true
@@ -84,11 +84,16 @@ offset_bottom = 69.0
 text = "Headquarter"
 
 [node name="Button2" type="Button" parent="ActionManager/ActionSelection/Frame"]
+layout_mode = 0
 offset_left = 123.0
 offset_top = 39.0
 offset_right = 231.0
 offset_bottom = 70.0
 text = "Wood Cutter"
+
+[node name="PreviewManager" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("9_lr7dd")
 
 [connection signal="round_finished" from="GameInterface" to="." method="_on_round_finished"]
 [connection signal="action_selected" from="ActionManager" to="." method="_on_action_manager_action_selected"]
