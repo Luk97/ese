@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bna15bbgjgwfe"]
+[gd_scene load_steps=9 format=3 uid="uid://bna15bbgjgwfe"]
 
 [ext_resource type="Script" path="res://interface/game_interface.gd" id="1_bnx4o"]
 [ext_resource type="PackedScene" uid="uid://dgbq5goh7yrtn" path="res://interface/round_counter_label.tscn" id="2_4d6ly"]
 [ext_resource type="PackedScene" uid="uid://c7uwlhqoc4cq1" path="res://interface/finish_round_button.tscn" id="2_bd0v6"]
+[ext_resource type="PackedScene" uid="uid://cab1f30vtpnon" path="res://interface/runde_beenden.tscn" id="2_rr3je"]
+[ext_resource type="Script" path="res://interface/runde_beenden.gd" id="3_f5x0r"]
+[ext_resource type="PackedScene" path="res://interface/label.tscn" id="5_2oxxh"]
+[ext_resource type="PackedScene" uid="uid://vw775152hyl8" path="res://interface/beenden_button.tscn" id="6_l1fpc"]
+[ext_resource type="Script" path="res://interface/label.gd" id="7_12kv5"]
 
 [node name="GameInterface" type="CanvasLayer"]
 script = ExtResource("1_bnx4o")
@@ -19,6 +24,18 @@ offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+
+[node name="RundeBeenden" parent="Elements" instance=ExtResource("2_rr3je")]
+layout_mode = 1
+anchor_left = 0.92
+anchor_top = 0.86
+offset_left = 0.319946
+offset_top = 0.299988
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("3_f5x0r")
 
 [node name="FinishRoundButton" parent="Elements" instance=ExtResource("2_bd0v6")]
 unique_name_in_owner = true
@@ -38,9 +55,24 @@ grow_vertical = 0
 [node name="RoundCounterLabel" parent="Elements" instance=ExtResource("2_4d6ly")]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 9.0
-offset_top = 11.0
-offset_right = 110.0
-offset_bottom = 60.0
+offset_left = 13.0
+offset_top = -1.0
+offset_right = 114.0
+offset_bottom = 48.0
+
+[node name="Label" parent="Elements" instance=ExtResource("5_2oxxh")]
+layout_mode = 1
+anchor_left = 0.163
+anchor_top = 0.022
+anchor_right = 0.198
+anchor_bottom = 0.04
+offset_left = -0.102005
+offset_top = -0.190001
+offset_right = -0.422012
+offset_bottom = 11.2
+script = ExtResource("7_12kv5")
+
+[node name="BeendenButton" parent="Elements" instance=ExtResource("6_l1fpc")]
+layout_mode = 1
 
 [connection signal="pressed" from="Elements/FinishRoundButton" to="." method="_on_finish_round_button_pressed"]

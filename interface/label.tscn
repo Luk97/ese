@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2abood1hgxtc"]
+
+[ext_resource type="Script" path="res://label.gd" id="1_c20f1"]
+
+[node name="Label" type="Label"]
+anchors_preset = -1
+anchor_right = 0.035
+anchor_bottom = 0.035
+offset_right = -0.32
+offset_bottom = 0.32
+text = "Holz"
+text_direction = 1
+script = ExtResource("1_c20f1")

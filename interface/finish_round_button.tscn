@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://c7uwlhqoc4cq1"]
+[gd_scene load_steps=2 format=3 uid="uid://c7uwlhqoc4cq1"]
+
+[ext_resource type="Script" path="res://interface/finish_round_button.gd" id="1_vf42i"]
 
 [node name="FinishRoundButton" type="Button"]
 anchors_preset = 8
@@ -13,3 +15,4 @@ offset_bottom = 15.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Finish Round"
+script = ExtResource("1_vf42i")

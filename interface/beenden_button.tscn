@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://vw775152hyl8"]
+
+[ext_resource type="Script" path="res://interface/beenden_button.gd" id="1_qx2lr"]
+
+[node name="BeendenButton" type="Button"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -77.0
+offset_bottom = 31.0
+grow_horizontal = 0
+tooltip_text = "Spiel beenden"
+text = "Beenden"
+expand_icon = true
+script = ExtResource("1_qx2lr")
