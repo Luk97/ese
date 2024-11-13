@@ -37,10 +37,10 @@
 - [x] UI: Label background
 - [x] UI: Button background
 - [ ] UI: Action selection background
-- [ ] Tile: Decoration Variants for forest tile (other trees etc.)
-- [ ] Tile: Decoration Variants for grass tile (flowers etc.)
-- [ ] Building: Animate Headquarter
-- [ ] Building: Animate Wood Cutter
+- [x] Tile: Decoration Variants for forest tile (other trees etc.)
+- [x] Tile: Decoration Variants for grass tile (flowers etc.)
+- [x] Building: Animate Headquarter
+- [x] Building: Animate Wood Cutter
 
 ### World Generation
 - [x] Prototype the procedural world generation
