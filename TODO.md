@@ -30,11 +30,17 @@
 ## Version 0.2
 
 ### Assets
-- [ ] Building: Headquarter
-- [ ] Building: Woodcutter tile (placed on forest tile)
-- [ ] Resource: Wood
-- [ ] Tool: Axe to destroy forest and make it grass
-- [ ] UI: Slot background
+- [x] Building: Headquarter
+- [x] Building: Woodcutter tile (placed on forest tile)
+- [x] Resource: Wood
+- [x] Tool: Axe to destroy forest and make it grass
+- [x] UI: Label background
+- [x] UI: Button background
+- [ ] UI: Action selection background
+- [x] Tile: Decoration Variants for forest tile (other trees etc.)
+- [x] Tile: Decoration Variants for grass tile (flowers etc.)
+- [x] Building: Animate Headquarter
+- [x] Building: Animate Wood Cutter
 
 ### World Generation
 - [x] Prototype the procedural world generation
@@ -45,10 +51,12 @@
 - [ ] Label: Wood count
 - [ ] Enhance Finish Round Button
 - [ ] Enhance Round Counter Button
+- [ ] Action Selection Card
+- [ ] Basic Main Menu
 
 ### Gameplay
 - [x] Place starter tile on grass tile
 - [ ] Start of round: Get random choice between 3 tiles out of the tile pool
-- [ ] Use chosen tile as preview tile
+- [x] Use chosen tile as preview tile
 - [ ] Woodcutter produces 1 wood every 2 rounds
 - [ ] Resource can be collected per mouse click
