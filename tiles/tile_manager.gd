@@ -2,7 +2,9 @@ class_name TileManager
 extends Node2D
 
 @onready var ground_layer: GroundLayer = %GroundLayer
-@onready var decoration_layer: DecorationLayer = %DecorationLayer
+@onready var top_layer: DecorationLayer = %TopLayer
+@onready var decoration_manager: DecorationManager = %DecorationManager
+
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 
 const SEED = 123
@@ -18,9 +20,11 @@ func _ready() -> void:
 func set_tile(tile: Tile) -> void:
 	tiles[tile.global_coords] = tile
 	ground_layer.set_cell(tile.global_coords, tile.source_id, tile.atlas_coords)
-	var decoration = tile.decoration
-	if decoration != null:
-		decoration_layer.set_cell(tile.global_coords - Vector2i(1, 1), decoration.source_id, decoration.atlas_coords)
+	decoration_manager.set_random_decoration(tile)
+
+func set_building(building: Building, coords: Vector2i) -> void:
+	if tiles.has(coords):
+		top_layer.set_cell(coords - Vector2i(1, 1), building.source_id, building.atlas_coords)
 
 func get_cursor_tile() -> Tile:
 	return tiles[ground_layer.get_cursor_tile_coords()]

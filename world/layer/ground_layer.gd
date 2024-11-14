@@ -15,7 +15,9 @@ func _ready() -> void:
 	temperature_noise.seed = tile_manager.rng.randi()
 	moisture_noise.seed = tile_manager.rng.randi()
 
+# NOTE: This is used for testing the world generation
 func _process(delta: float) -> void:
+	pass
 	var radius = _calculate_radius()
 	generate_chunk(radius)
 
