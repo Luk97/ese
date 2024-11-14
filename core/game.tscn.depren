@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://core/game.gd" id="1_5b6wp"]
 [ext_resource type="PackedScene" uid="uid://bna15bbgjgwfe" path="res://interface/game_interface.tscn" id="3_fm1gd"]
-[ext_resource type="Script" path="res://world/decoration/decoration_manager.gd" id="3_r6c8w"]
+[ext_resource type="Script" path="res://world/decoration/decoration_manager.gd" id="3_pwgiw"]
 [ext_resource type="TileSet" uid="uid://crd6g2q3ow7a1" path="res://assets/tiles_sets/main_tiles.tres" id="5_ffqnt"]
 [ext_resource type="Script" path="res://world/layer/ground_layer.gd" id="6_8gybr"]
 [ext_resource type="Texture2D" uid="uid://dt1sknjy6c7o8" path="res://assets/Forest.png" id="6_lgram"]
@@ -37,19 +37,19 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hapsn"]
 texture = ExtResource("6_lgram")
-texture_region_size = Vector2i(32, 32)
+texture_region_size = Vector2i(32, 16)
+0:0/size_in_atlas = Vector2i(1, 2)
 0:0/0 = 0
-0:0/0/texture_origin = Vector2i(0, 8)
+1:0/size_in_atlas = Vector2i(1, 2)
 1:0/0 = 0
-1:0/0/texture_origin = Vector2i(0, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_otoq8"]
 texture = ExtResource("7_l61cb")
-texture_region_size = Vector2i(32, 32)
+texture_region_size = Vector2i(32, 16)
+0:0/size_in_atlas = Vector2i(1, 2)
 0:0/0 = 0
-0:0/0/texture_origin = Vector2i(0, 8)
+1:0/size_in_atlas = Vector2i(1, 2)
 1:0/0 = 0
-1:0/0/texture_origin = Vector2i(0, 8)
 
 [sub_resource type="TileSet" id="TileSet_u1yav"]
 tile_shape = 3
@@ -68,7 +68,7 @@ unique_name_in_owner = true
 
 [node name="DecorationManager" type="Node" parent="."]
 unique_name_in_owner = true
-script = ExtResource("3_r6c8w")
+script = ExtResource("3_pwgiw")
 
 [node name="layers" type="Node" parent="."]
 
