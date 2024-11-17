@@ -1,55 +1,7 @@
-[gd_resource type="TileSet" load_steps=11 format=3 uid="uid://crd6g2q3ow7a1"]
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://crd6g2q3ow7a1"]
 
-[ext_resource type="Texture2D" uid="uid://bj7tpix5ynok2" path="res://assets/tiles/MainTiles.png" id="1_brjx2"]
-[ext_resource type="Texture2D" uid="uid://blqppoufsvqgh" path="res://assets/tiles/DebugTiles.png" id="1_gxxj3"]
-[ext_resource type="Texture2D" uid="uid://b6e7epvcn0xfs" path="res://assets/HexTiles.png" id="2_f4y2u"]
 [ext_resource type="Texture2D" uid="uid://due4cd4ymxwn6" path="res://assets/tiles/WaterTiles.png" id="3_nyoky"]
 [ext_resource type="Texture2D" uid="uid://7ojdr1nrsip3" path="res://assets/tiles/TerrainTiles.png" id="5_1de6y"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3rpn3"]
-texture = ExtResource("1_brjx2")
-texture_region_size = Vector2i(32, 32)
-0:0/animation_speed = 2.0
-0:0/animation_frame_0/duration = 1.0
-0:0/animation_frame_1/duration = 1.0
-0:0/animation_frame_2/duration = 1.0
-0:0/animation_frame_3/duration = 1.0
-0:0/0 = 0
-0:0/0/texture_origin = Vector2i(0, 8)
-4:0/0 = 0
-4:0/0/texture_origin = Vector2i(0, 8)
-5:0/0 = 0
-5:0/0/texture_origin = Vector2i(0, 8)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0wdk4"]
-texture = ExtResource("1_gxxj3")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-0:0/0/texture_origin = Vector2i(0, 8)
-1:0/0 = 0
-1:0/0/texture_origin = Vector2i(0, 8)
-2:0/0 = 0
-2:0/0/texture_origin = Vector2i(0, 8)
-3:0/0 = 0
-3:0/0/texture_origin = Vector2i(0, 8)
-4:0/0 = 0
-4:0/0/texture_origin = Vector2i(0, 8)
-5:0/0 = 0
-5:0/0/texture_origin = Vector2i(0, 8)
-6:0/0 = 0
-6:0/0/texture_origin = Vector2i(0, 8)
-7:0/0 = 0
-7:0/0/texture_origin = Vector2i(0, 8)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n7ibq"]
-texture = ExtResource("2_f4y2u")
-texture_region_size = Vector2i(32, 16)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uo7mx"]
 texture = ExtResource("3_nyoky")
@@ -80,8 +32,5 @@ tile_shape = 3
 tile_layout = 5
 tile_offset_axis = 1
 tile_size = Vector2i(32, 16)
-sources/2 = SubResource("TileSetAtlasSource_uo7mx")
-sources/10 = SubResource("TileSetAtlasSource_n7ibq")
-sources/1 = SubResource("TileSetAtlasSource_0wdk4")
-sources/3 = SubResource("TileSetAtlasSource_354se")
-sources/0 = SubResource("TileSetAtlasSource_3rpn3")
+sources/0 = SubResource("TileSetAtlasSource_uo7mx")
+sources/1 = SubResource("TileSetAtlasSource_354se")

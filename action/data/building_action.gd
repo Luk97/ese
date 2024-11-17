@@ -5,6 +5,4 @@ var building: Building
 
 func _init(building: Building) -> void:
 	self.building = building
-	var name = building.name
-	var type = ActionType.BUILDING
-	super(name, type)
+	super(building.name)

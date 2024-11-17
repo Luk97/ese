@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=3 uid="uid://dpi3e1l5ihonh"]
+
+[ext_resource type="Script" path="res://preview/preview_manager.gd" id="1_3qkvr"]
+[ext_resource type="Texture2D" uid="uid://ciyyc6353vlsd" path="res://assets/axe.png" id="2_angg5"]
+[ext_resource type="Texture2D" uid="uid://dcduycwdhj4mv" path="res://assets/Home.png" id="2_opx0f"]
+[ext_resource type="Texture2D" uid="uid://fql16pdaoa0m" path="res://assets/Woodcutter.png" id="3_ikkvw"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oyfim"]
+texture = ExtResource("2_angg5")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_57fv4"]
+texture = ExtResource("2_opx0f")
+texture_region_size = Vector2i(32, 32)
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+0:0/animation_speed = 4.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tvp3m"]
+texture = ExtResource("3_ikkvw")
+texture_region_size = Vector2i(32, 32)
+0:0/animation_speed = 4.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 8)
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_n556q"]
+tile_shape = 3
+tile_layout = 5
+tile_offset_axis = 1
+tile_size = Vector2i(32, 16)
+sources/4 = SubResource("TileSetAtlasSource_57fv4")
+sources/5 = SubResource("TileSetAtlasSource_tvp3m")
+sources/3 = SubResource("TileSetAtlasSource_oyfim")
+
+[node name="PreviewManager" type="Node2D"]
+script = ExtResource("1_3qkvr")
+
+[node name="PreviewLayer" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+z_index = 2
+tile_set = SubResource("TileSet_n556q")
