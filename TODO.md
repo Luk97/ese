@@ -56,7 +56,7 @@
 
 ### Gameplay
 - [x] Place starter tile on grass tile
-- [ ] Start of round: Get random choice between 3 tiles out of the tile pool
+- [x] Start of round: Get choice between 3 actions out of the tile pool
 - [x] Use chosen tile as preview tile
 - [ ] Woodcutter produces 1 wood every 2 rounds
 - [ ] Resource can be collected per mouse click
