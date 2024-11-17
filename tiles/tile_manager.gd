@@ -8,7 +8,7 @@ extends Node2D
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 
 const SEED = 123
-const SPAWN_RADIUS = Vector2i(2, 2)
+const SPAWN_RADIUS = 4
 
 var tiles: Dictionary = {}
 
@@ -31,6 +31,7 @@ func place_building(building: Building, coords: Vector2i) -> void:
 	if tiles.has(coords):
 		tiles[coords].building = building
 		top_layer.set_cell(coords - Vector2i(1, 1), building.source_id, building.atlas_coords)
+		ground_layer.generate_tiles(coords, 2)
 
 func get_cursor_tile() -> Tile:
 	var coords = ground_layer.get_cursor_tile_coords()
@@ -42,4 +43,4 @@ func get_cursor_tile() -> Tile:
 #=================== PRIVATE FUNCTIONS ===================
 
 func _initialize_starter_area() -> void:
-	ground_layer.generate_start_tiles(4)
+	ground_layer.generate_tiles(Vector2i(0, 0), SPAWN_RADIUS)
