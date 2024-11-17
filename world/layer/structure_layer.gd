@@ -1,2 +1,0 @@
-class_name DecorationLayer
-extends TileMapLayer

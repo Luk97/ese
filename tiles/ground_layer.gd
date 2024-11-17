@@ -18,8 +18,8 @@ func _ready() -> void:
 # NOTE: This is used for testing the world generation
 func _process(delta: float) -> void:
 	pass
-	var radius = _calculate_radius()
-	generate_chunk(radius)
+	#var radius = _calculate_radius()
+	#generate_chunk(radius)
 
 
 
@@ -33,7 +33,7 @@ func generate_chunk(radius: Vector2i) -> void:
 	var center_coords = _get_center_tile_coords()
 	for x in range(radius.x):
 		for y in range(radius.y):
-			var tile_coords = Vector2i(center_coords.x - radius.x / 2 + x, center_coords.y - radius.y / 2 + y)
+			var tile_coords = Vector2i(center_coords.x + x, center_coords.y + y)
 			if get_cell_source_id(tile_coords) == -1:
 				
 				# values from [-1..1]
@@ -47,7 +47,26 @@ func generate_chunk(radius: Vector2i) -> void:
 				moisture = _stretch_noise_value(moisture)
 				
 				var tile = _get_tile_from_environment(altitude, temperature, moisture, tile_coords)
-				tile_manager.set_tile(tile)
+				tile_manager.place_new_tile(tile)
+
+func generate_start_tiles(radius: int) -> void:
+	for x in range(-radius, radius + 1):
+		for y in range(-radius, radius + 1):
+			var tile_coords = Vector2i(x, y)
+			
+			if abs(x - y) <= radius:
+				# values from [-1..1]
+				var altitude = altitude_noise.get_noise_2d(tile_coords.x, tile_coords.y)
+				var temperature = temperature_noise.get_noise_2d(tile_coords.x, tile_coords.y)
+				var moisture = moisture_noise.get_noise_2d(tile_coords.x, tile_coords.y)
+				
+				# values from [0..10]
+				altitude = _stretch_noise_value(altitude)
+				temperature = _stretch_noise_value(temperature)
+				moisture = _stretch_noise_value(moisture)
+				
+				var tile = _get_tile_from_environment(altitude, temperature, moisture, tile_coords)				
+				tile_manager.place_tile(tile)
 
 
 #=================== PRIVATE FUNCTIONS ===================

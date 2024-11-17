@@ -5,6 +5,4 @@ func _init(global_coords: Vector2i) -> void:
 	var name = "Water"
 	var source_id = 0
 	var atlas_coords = Vector2i(0, 0)
-	var replaceable = true
-	var decorations = null
-	super(name, global_coords, source_id, atlas_coords, replaceable, decoration)
+	super(name, global_coords, source_id, atlas_coords)

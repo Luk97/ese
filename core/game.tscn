@@ -1,17 +1,18 @@
-[gd_scene load_steps=18 format=3 uid="uid://cc30mnccj5g6g"]
+[gd_scene load_steps=21 format=3 uid="uid://cc30mnccj5g6g"]
 
 [ext_resource type="Script" path="res://core/game.gd" id="1_5b6wp"]
 [ext_resource type="PackedScene" uid="uid://bna15bbgjgwfe" path="res://interface/game_interface.tscn" id="3_fm1gd"]
-[ext_resource type="Script" path="res://world/decoration/decoration_manager.gd" id="3_r6c8w"]
+[ext_resource type="Script" path="res://decoration/decoration_manager.gd" id="3_r6c8w"]
 [ext_resource type="TileSet" uid="uid://crd6g2q3ow7a1" path="res://assets/tiles_sets/main_tiles.tres" id="5_ffqnt"]
-[ext_resource type="Script" path="res://world/layer/ground_layer.gd" id="6_8gybr"]
+[ext_resource type="Script" path="res://tiles/ground_layer.gd" id="6_8gybr"]
+[ext_resource type="Texture2D" uid="uid://fql16pdaoa0m" path="res://assets/Woodcutter.png" id="6_32qek"]
 [ext_resource type="Texture2D" uid="uid://dt1sknjy6c7o8" path="res://assets/Forest.png" id="6_lgram"]
 [ext_resource type="Texture2D" uid="uid://dmhntqcr4suja" path="res://assets/tiles/TestTiles.png" id="7_krubh"]
 [ext_resource type="Texture2D" uid="uid://b30b2cenhqcq4" path="res://assets/Grass.png" id="7_l61cb"]
 [ext_resource type="Script" path="res://action/action_manager.gd" id="8_0ldud"]
-[ext_resource type="Script" path="res://world/layer/structure_layer.gd" id="8_t7hsn"]
-[ext_resource type="Script" path="res://preview/preview_manager.gd" id="9_lr7dd"]
+[ext_resource type="Texture2D" uid="uid://dcduycwdhj4mv" path="res://assets/Home.png" id="9_g7s2r"]
 [ext_resource type="Script" path="res://tiles/tile_manager.gd" id="9_oqfgj"]
+[ext_resource type="PackedScene" uid="uid://dpi3e1l5ihonh" path="res://preview/preview_manager.tscn" id="12_gpy66"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_jpqon"]
 frequency = 0.04
@@ -51,6 +52,36 @@ texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
 1:0/0/texture_origin = Vector2i(0, 8)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q0ksn"]
+texture = ExtResource("9_g7s2r")
+texture_region_size = Vector2i(32, 32)
+0:0/animation_speed = 4.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 8)
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yw1sv"]
+texture = ExtResource("6_32qek")
+texture_region_size = Vector2i(32, 32)
+0:0/animation_speed = 4.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 8)
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_u1yav"]
 tile_shape = 3
 tile_layout = 5
@@ -59,6 +90,8 @@ tile_size = Vector2i(32, 16)
 sources/1 = SubResource("TileSetAtlasSource_4a2uu")
 sources/2 = SubResource("TileSetAtlasSource_hapsn")
 sources/3 = SubResource("TileSetAtlasSource_otoq8")
+sources/4 = SubResource("TileSetAtlasSource_q0ksn")
+sources/5 = SubResource("TileSetAtlasSource_yw1sv")
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_5b6wp")
@@ -80,8 +113,8 @@ altitude_noise = SubResource("FastNoiseLite_jpqon")
 
 [node name="TopLayer" type="TileMapLayer" parent="layers"]
 unique_name_in_owner = true
+z_index = 1
 tile_set = SubResource("TileSet_u1yav")
-script = ExtResource("8_t7hsn")
 
 [node name="TileManager" type="Node2D" parent="."]
 unique_name_in_owner = true
@@ -97,7 +130,7 @@ script = ExtResource("8_0ldud")
 z_index = 1
 offset_left = 435.0
 offset_top = 279.0
-offset_right = 674.0
+offset_right = 789.0
 offset_bottom = 382.0
 
 [node name="Button" type="Button" parent="ActionManager/ActionSelection/Frame"]
@@ -116,11 +149,20 @@ offset_right = 231.0
 offset_bottom = 70.0
 text = "Wood Cutter"
 
-[node name="PreviewManager" type="Node2D" parent="."]
+[node name="Button3" type="Button" parent="ActionManager/ActionSelection/Frame"]
+layout_mode = 0
+offset_left = 242.0
+offset_top = 39.0
+offset_right = 350.0
+offset_bottom = 70.0
+text = "Grub Forest"
+
+[node name="PreviewManager" parent="." instance=ExtResource("12_gpy66")]
 unique_name_in_owner = true
-script = ExtResource("9_lr7dd")
 
 [connection signal="round_finished" from="GameInterface" to="." method="_on_round_finished"]
 [connection signal="action_selected" from="ActionManager" to="." method="_on_action_manager_action_selected"]
 [connection signal="pressed" from="ActionManager/ActionSelection/Frame/Button" to="ActionManager" method="_on_button_pressed"]
 [connection signal="pressed" from="ActionManager/ActionSelection/Frame/Button2" to="ActionManager" method="_on_button_2_pressed"]
+[connection signal="pressed" from="ActionManager/ActionSelection/Frame/Button3" to="ActionManager" method="_on_button_3_pressed"]
+[connection signal="preview_done" from="PreviewManager" to="." method="_on_preview_manager_preview_done"]

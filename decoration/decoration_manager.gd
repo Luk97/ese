@@ -6,7 +6,7 @@ const ATLAS_COORDS = "atlas_coords"
 const PICK_CHANCE = "pick_chance"
 const EMPTY = "empty"
 
-@onready var top_layer: DecorationLayer = %TopLayer
+@onready var top_layer: TileMapLayer = %TopLayer
 
 var grass_decorations: Dictionary = {
 	EMPTY: {
@@ -40,16 +40,14 @@ var forest_decorations: Dictionary = {
 		PICK_CHANCE: 10
 	}
 }
-func set_random_decoration(tile: Tile) -> void:
+
+func get_random_decoration(tile: Tile) -> Decoration:
 	var decoration: Decoration = null
 	if tile is GrassTile:
 		decoration = _get_random_decoration(grass_decorations)
 	elif tile is ForestTile:
 		decoration = _get_random_decoration(forest_decorations)
-		
-	if decoration != null:
-		
-		top_layer.set_cell(tile.global_coords - Vector2i(1, 1), decoration.source_id, decoration.atlas_coords)
+	return decoration
 
 func _get_random_decoration(decorations: Dictionary) -> Decoration:
 	var overall_chance = 0
