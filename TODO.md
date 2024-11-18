@@ -58,5 +58,5 @@
 - [x] Place starter tile on grass tile
 - [x] Start of round: Get choice between 3 actions out of the tile pool
 - [x] Use chosen tile as preview tile
-- [ ] Woodcutter produces 1 wood every 2 rounds
-- [ ] Resource can be collected per mouse click
+- [x] Woodcutter produces 1 wood every round
+- [x] Resource can be collected per mouse click
