@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cc30mnccj5g6g"]
+[gd_scene load_steps=22 format=3 uid="uid://cc30mnccj5g6g"]
 
 [ext_resource type="Script" path="res://core/game.gd" id="1_5b6wp"]
 [ext_resource type="PackedScene" uid="uid://bna15bbgjgwfe" path="res://interface/game_interface.tscn" id="3_fm1gd"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dcduycwdhj4mv" path="res://assets/Home.png" id="9_g7s2r"]
 [ext_resource type="Script" path="res://tiles/tile_manager.gd" id="9_oqfgj"]
 [ext_resource type="PackedScene" uid="uid://dpi3e1l5ihonh" path="res://preview/preview_manager.tscn" id="12_gpy66"]
+[ext_resource type="PackedScene" uid="uid://6kwaj4oiqir3" path="res://buildings/building_manager.tscn" id="15_ucn6x"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_jpqon"]
 frequency = 0.04
@@ -158,6 +159,9 @@ offset_bottom = 70.0
 text = "Grub Forest"
 
 [node name="PreviewManager" parent="." instance=ExtResource("12_gpy66")]
+unique_name_in_owner = true
+
+[node name="BuildingManager" parent="." instance=ExtResource("15_ucn6x")]
 unique_name_in_owner = true
 
 [connection signal="round_finished" from="GameInterface" to="." method="_on_round_finished"]

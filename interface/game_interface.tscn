@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bna15bbgjgwfe"]
+[gd_scene load_steps=5 format=3 uid="uid://bna15bbgjgwfe"]
 
 [ext_resource type="Script" path="res://interface/game_interface.gd" id="1_bnx4o"]
 [ext_resource type="PackedScene" uid="uid://dgbq5goh7yrtn" path="res://interface/round_counter_label.tscn" id="2_4d6ly"]
 [ext_resource type="PackedScene" uid="uid://c7uwlhqoc4cq1" path="res://interface/finish_round_button.tscn" id="2_bd0v6"]
+[ext_resource type="PackedScene" uid="uid://boue7eb1kh2kg" path="res://interface/wood_counter_label.tscn" id="4_bv3na"]
 
 [node name="GameInterface" type="CanvasLayer"]
 script = ExtResource("1_bnx4o")
@@ -38,9 +39,17 @@ grow_vertical = 0
 [node name="RoundCounterLabel" parent="Elements" instance=ExtResource("2_4d6ly")]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 9.0
-offset_top = 11.0
-offset_right = 110.0
-offset_bottom = 60.0
+offset_left = 12.0
+offset_top = 2.0
+offset_right = 113.0
+offset_bottom = 51.0
+
+[node name="WoodCounterLabel" parent="Elements" instance=ExtResource("4_bv3na")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 119.0
+offset_top = 2.0
+offset_right = 220.0
+offset_bottom = 51.0
 
 [connection signal="pressed" from="Elements/FinishRoundButton" to="." method="_on_finish_round_button_pressed"]

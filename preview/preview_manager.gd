@@ -36,6 +36,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				tile_manager.place_tile(action.destination_tile[0].new(cursor_tile.global_coords))
 				enabled = false
 				emit_signal("preview_done")
+
 func _show_preview():
 	preview_layer.clear()
 	
