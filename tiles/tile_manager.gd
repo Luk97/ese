@@ -39,8 +39,18 @@ func get_cursor_tile() -> Tile:
 		return tiles[coords]
 	return null
 
+func get_building_tiles() -> Array:
+	return tiles.values().filter(_has_building)
+
+func get_global_coords(tile: Tile) -> Vector2:
+	if tiles.has(tile.global_coords):
+		return ground_layer.map_to_local(tile.global_coords - Vector2i(1, 1))
+	return Vector2(-1, -1)
 
 #=================== PRIVATE FUNCTIONS ===================
 
 func _initialize_starter_area() -> void:
 	ground_layer.generate_tiles(Vector2i(0, 0), SPAWN_RADIUS)
+
+func _has_building(tile: Tile) -> bool:
+	return tile.building != null
