@@ -12,5 +12,4 @@ func _process(delta: float) -> void:
 
 
 func _on_pressed() -> void:
-	get_tree().change_scene("res://interface/game_interface.tscn")
-	pass # Replace with function body.
+	get_tree().change_scene("res://core/game.tscn")

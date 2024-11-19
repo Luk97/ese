@@ -1,13 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://bna15bbgjgwfe"]
+[gd_scene load_steps=7 format=3 uid="uid://bna15bbgjgwfe"]
 
 [ext_resource type="Script" path="res://interface/game_interface.gd" id="1_bnx4o"]
 [ext_resource type="PackedScene" uid="uid://dgbq5goh7yrtn" path="res://interface/round_counter_label.tscn" id="2_4d6ly"]
 [ext_resource type="PackedScene" uid="uid://c7uwlhqoc4cq1" path="res://interface/finish_round_button.tscn" id="2_bd0v6"]
-[ext_resource type="PackedScene" path="res://interface/runde_beenden.tscn" id="3_vjbiu"]
-[ext_resource type="Texture2D" uid="uid://bypuqognsqoxk" path="res://interface/Checkbox_placeholder.png" id="4_117nh"]
+[ext_resource type="PackedScene" uid="uid://go5qe7tje8xn" path="res://interface/runde_beenden.tscn" id="3_vjbiu"]
 [ext_resource type="PackedScene" uid="uid://boue7eb1kh2kg" path="res://interface/wood_counter_label.tscn" id="4_bv3na"]
-[ext_resource type="PackedScene" path="res://interface/beenden_button.tscn" id="5_hmy8k"]
-[ext_resource type="Script" path="res://interface/beenden_button.gd" id="6_utt24"]
+[ext_resource type="PackedScene" uid="uid://vw775152hyl8" path="res://interface/beenden_button.tscn" id="5_hmy8k"]
 
 [node name="GameInterface" type="CanvasLayer"]
 script = ExtResource("1_bnx4o")
@@ -51,8 +49,6 @@ offset_right = 0.0
 offset_bottom = 0.0
 grow_horizontal = 0
 grow_vertical = 0
-icon = ExtResource("4_117nh")
-script = null
 
 [node name="RoundCounterLabel" parent="Elements" instance=ExtResource("2_4d6ly")]
 unique_name_in_owner = true
@@ -77,7 +73,6 @@ anchor_left = 0.933
 anchor_bottom = 0.048
 offset_left = 0.317993
 offset_bottom = 0.039999
-script = ExtResource("6_utt24")
 
 [connection signal="pressed" from="Elements/FinishRoundButton" to="." method="_on_finish_round_button_pressed"]
 [connection signal="pressed" from="Elements/RundeBeenden" to="." method="_on_finish_round_button_pressed"]
