@@ -25,39 +25,69 @@ grow_horizontal = 2
 texture = ExtResource("1_jakxa")
 expand_mode = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 13
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -53.0
-offset_top = -68.0
-offset_right = 53.0
-offset_bottom = 68.0
+anchor_bottom = 1.0
+offset_left = -289.0
+offset_right = 289.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="StartGame" type="Button" parent="VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/separation = 24
+
+[node name="Seperator" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/outline_size = 12
+theme_override_constants/shadow_outline_size = 24
+theme_override_font_sizes/font_size = 64
+text = "ESE (Arbeitstitel)"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="Seperator2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="StartGame" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "Spiel starten"
 script = ExtResource("1_1nxty")
 
-[node name="Showcase" type="Button" parent="VBoxContainer"]
+[node name="Showcase" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "Showcase
 "
 
-[node name="Credits" type="Button" parent="VBoxContainer"]
+[node name="Credits" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "Credits
 "
 
-[node name="BeendenButton" type="Button" parent="VBoxContainer"]
+[node name="BeendenButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 tooltip_text = "Spiel beenden"
 text = "Beenden"
 script = ExtResource("2_1x6tn")
 
-[connection signal="pressed" from="VBoxContainer/StartGame" to="VBoxContainer/StartGame" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/StartGame" to="MarginContainer/HBoxContainer/VBoxContainer/StartGame" method="_on_pressed"]
