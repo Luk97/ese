@@ -93,6 +93,5 @@
 ### User Interface
 - [ ] Basic Main Menu
 	- [ ] New Game Button
-	- [ ] Quit Game Button
+	- [X] Quit Game Button
 	- [ ] Credits Button
-
