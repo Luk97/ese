@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://chg7f0tjh88pj"]
+[gd_scene load_steps=3 format=3 uid="uid://chg7f0tjh88pj"]
 
 [ext_resource type="Script" path="res://interface/beenden_button.gd" id="1_5lyur"]
+[ext_resource type="Script" path="res://interface/start_game.gd" id="1_go2eg"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -25,6 +26,7 @@ offset_bottom = -0.0520325
 grow_horizontal = 2
 grow_vertical = 2
 text = "Spiel starten"
+script = ExtResource("1_go2eg")
 
 [node name="BeendenButton" type="Button" parent="."]
 layout_mode = 1
@@ -74,3 +76,5 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Showcase
 "
+
+[connection signal="pressed" from="StartGame" to="StartGame" method="_on_pressed"]
