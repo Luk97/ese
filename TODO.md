@@ -52,7 +52,6 @@
 - [ ] Enhance Finish Round Button
 - [ ] Enhance Round Counter Button
 - [ ] Action Selection Card
-- [ ] Basic Main Menu
 
 ### Gameplay
 - [x] Place starter tile on grass tile
@@ -60,3 +59,19 @@
 - [x] Use chosen tile as preview tile
 - [x] Woodcutter produces 1 wood every round
 - [x] Resource can be collected per mouse click
+
+
+## Version 0.3
+
+### Assets
+- [ ] Pixel font
+- [ ] Water Decoration
+- [ ] Background for Building info
+
+### Gameplay
+
+### User Interface
+- [ ] Basic Main Menu
+	- [ ] New Game Button
+	- [ ] Quit Game Button
+	- [ ] Credits Button
