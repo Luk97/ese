@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://go5qe7tje8xn"]
+[gd_scene load_steps=2 format=3 uid="uid://go5qe7tje8xn"]
 
-[ext_resource type="Texture2D" uid="uid://clvcb4sxnutew" path="res://Checkbox.png" id="1_ei3n8"]
-[ext_resource type="Script" path="res://RundeBeenden.gd" id="2_wkqv6"]
+[ext_resource type="Texture2D" uid="uid://bypuqognsqoxk" path="res://interface/Checkbox_placeholder.png" id="1_ei3n8"]
 
 [node name="RundeBeenden" type="Button"]
 anchors_preset = -1
@@ -16,4 +15,3 @@ offset_bottom = -7.0
 tooltip_text = "Runde beenden."
 icon = ExtResource("1_ei3n8")
 expand_icon = true
-script = ExtResource("2_wkqv6")
