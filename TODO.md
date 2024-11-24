@@ -84,10 +84,10 @@
 
 ### Gameplay
 - [ ] Buildings cost resources
-- [ ] Sharp Interfaces for Tiles
+- [x] Sharp Interfaces for Tiles
 - [ ] Buildup fire wood production chain
 - [ ] Buildup Food produdction chain
-- [ ] Action Selection Card
+- [x] Action Selection Card
 - [ ] Lookup Fog implementation
 
 ### User Interface
