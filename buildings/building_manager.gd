@@ -11,8 +11,8 @@ func update_pickups() -> void:
 	var building_tiles = tile_manager.get_building_tiles()
 	for tile in building_tiles:
 		if tile.building is WoodCutter:
-			var coords = tile_manager.get_global_coords(tile)
-			if coords != Vector2(-1, -1):
+			var coords = tile_manager.get_map_coords(tile)
+			if coords != Vector2i(-1, -1):
 				var scene_instance = wood.instantiate()
 				scene_instance.position = coords
 				scene_instance.connect("pickup_collected", _on_pickup_collected)

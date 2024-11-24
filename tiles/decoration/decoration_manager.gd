@@ -6,8 +6,10 @@ const ATLAS_COORDS = "atlas_coords"
 const PICK_CHANCE = "pick_chance"
 const EMPTY = "empty"
 
-@onready var top_layer: TileMapLayer = %TopLayer
-
+# MODIFY DECORATIONS HERE
+# This configures the different decorations placed on the top layer of the tile.
+# The likeness of a specific decoration increases with its pick chance. The name
+# of a decoration can be descriptive, but is just used for better readability.
 var grass_decorations: Dictionary = {
 	EMPTY: {
 		PICK_CHANCE: 20
@@ -23,6 +25,7 @@ var grass_decorations: Dictionary = {
 		PICK_CHANCE: 1
 	}
 }
+
 var forest_decorations: Dictionary = {
 	"trees_1": {
 		SOURCE_ID: 2,
@@ -41,15 +44,28 @@ var forest_decorations: Dictionary = {
 	}
 }
 
-func get_random_decoration(tile: Tile) -> Decoration:
-	var decoration: Decoration = null
-	if tile is GrassTile:
-		decoration = _get_random_decoration(grass_decorations)
-	elif tile is ForestTile:
-		decoration = _get_random_decoration(forest_decorations)
-	return decoration
+var water_decorations: Dictionary = {
+	EMPTY: {
+		PICK_CHANCE: 1
+	}
+}
 
-func _get_random_decoration(decorations: Dictionary) -> Decoration:
+
+#=================== PUBLIC FUNCTIONS ===================
+
+func get_random_decoration(tile: Tile) -> Decoration:
+	if tile is GrassTile:
+		return _pick_random_decoration(grass_decorations)
+	elif tile is ForestTile:
+		return _pick_random_decoration(forest_decorations)
+	elif tile is WaterTile:
+		return _pick_random_decoration(water_decorations)
+	return null
+
+
+#=================== PRIVATE FUNCTIONS ===================
+
+func _pick_random_decoration(decorations: Dictionary) -> Decoration:
 	var overall_chance = 0
 	for key in decorations:
 		overall_chance += decorations[key][PICK_CHANCE]

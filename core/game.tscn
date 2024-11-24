@@ -1,98 +1,13 @@
-[gd_scene load_steps=22 format=3 uid="uid://cc30mnccj5g6g"]
+[gd_scene load_steps=9 format=3 uid="uid://cc30mnccj5g6g"]
 
 [ext_resource type="Script" path="res://core/game.gd" id="1_5b6wp"]
 [ext_resource type="PackedScene" uid="uid://bna15bbgjgwfe" path="res://interface/game_interface.tscn" id="3_fm1gd"]
-[ext_resource type="Script" path="res://decoration/decoration_manager.gd" id="3_r6c8w"]
-[ext_resource type="TileSet" uid="uid://crd6g2q3ow7a1" path="res://assets/tiles_sets/main_tiles.tres" id="5_ffqnt"]
-[ext_resource type="Script" path="res://tiles/ground_layer.gd" id="6_8gybr"]
-[ext_resource type="Texture2D" uid="uid://fql16pdaoa0m" path="res://assets/Woodcutter.png" id="6_32qek"]
-[ext_resource type="Texture2D" uid="uid://dt1sknjy6c7o8" path="res://assets/Forest.png" id="6_lgram"]
-[ext_resource type="Texture2D" uid="uid://dmhntqcr4suja" path="res://assets/tiles/TestTiles.png" id="7_krubh"]
-[ext_resource type="Texture2D" uid="uid://b30b2cenhqcq4" path="res://assets/Grass.png" id="7_l61cb"]
+[ext_resource type="Texture2D" uid="uid://boyt2d2row2jo" path="res://assets/Label.png" id="5_a7i05"]
+[ext_resource type="Texture2D" uid="uid://ciyyc6353vlsd" path="res://assets/axe.png" id="6_iw8n7"]
 [ext_resource type="Script" path="res://action/action_manager.gd" id="8_0ldud"]
-[ext_resource type="Texture2D" uid="uid://dcduycwdhj4mv" path="res://assets/Home.png" id="9_g7s2r"]
-[ext_resource type="Script" path="res://tiles/tile_manager.gd" id="9_oqfgj"]
+[ext_resource type="PackedScene" uid="uid://xo55sqx1lwyd" path="res://tiles/tile_manager.tscn" id="8_8npch"]
 [ext_resource type="PackedScene" uid="uid://dpi3e1l5ihonh" path="res://preview/preview_manager.tscn" id="12_gpy66"]
 [ext_resource type="PackedScene" uid="uid://6kwaj4oiqir3" path="res://buildings/building_manager.tscn" id="15_ucn6x"]
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_jpqon"]
-frequency = 0.04
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4a2uu"]
-texture = ExtResource("7_krubh")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-0:0/0/texture_origin = Vector2i(0, 8)
-1:0/0 = 0
-1:0/0/texture_origin = Vector2i(0, 8)
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
-2:0/0 = 0
-2:0/0/texture_origin = Vector2i(0, 8)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hapsn"]
-texture = ExtResource("6_lgram")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-0:0/0/texture_origin = Vector2i(0, 8)
-1:0/0 = 0
-1:0/0/texture_origin = Vector2i(0, 8)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_otoq8"]
-texture = ExtResource("7_l61cb")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-0:0/0/texture_origin = Vector2i(0, 8)
-1:0/0 = 0
-1:0/0/texture_origin = Vector2i(0, 8)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q0ksn"]
-texture = ExtResource("9_g7s2r")
-texture_region_size = Vector2i(32, 32)
-0:0/animation_speed = 4.0
-0:0/animation_frame_0/duration = 1.0
-0:0/animation_frame_1/duration = 1.0
-0:0/animation_frame_2/duration = 1.0
-0:0/animation_frame_3/duration = 1.0
-0:0/0 = 0
-0:0/0/texture_origin = Vector2i(0, 8)
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yw1sv"]
-texture = ExtResource("6_32qek")
-texture_region_size = Vector2i(32, 32)
-0:0/animation_speed = 4.0
-0:0/animation_frame_0/duration = 1.0
-0:0/animation_frame_1/duration = 1.0
-0:0/animation_frame_2/duration = 1.0
-0:0/animation_frame_3/duration = 1.0
-0:0/0 = 0
-0:0/0/texture_origin = Vector2i(0, 8)
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_u1yav"]
-tile_shape = 3
-tile_layout = 5
-tile_offset_axis = 1
-tile_size = Vector2i(32, 16)
-sources/1 = SubResource("TileSetAtlasSource_4a2uu")
-sources/2 = SubResource("TileSetAtlasSource_hapsn")
-sources/3 = SubResource("TileSetAtlasSource_otoq8")
-sources/4 = SubResource("TileSetAtlasSource_q0ksn")
-sources/5 = SubResource("TileSetAtlasSource_yw1sv")
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_5b6wp")
@@ -100,26 +15,8 @@ script = ExtResource("1_5b6wp")
 [node name="GameInterface" parent="." instance=ExtResource("3_fm1gd")]
 unique_name_in_owner = true
 
-[node name="DecorationManager" type="Node" parent="."]
+[node name="TileManager" parent="." instance=ExtResource("8_8npch")]
 unique_name_in_owner = true
-script = ExtResource("3_r6c8w")
-
-[node name="layers" type="Node" parent="."]
-
-[node name="GroundLayer" type="TileMapLayer" parent="layers"]
-unique_name_in_owner = true
-tile_set = ExtResource("5_ffqnt")
-script = ExtResource("6_8gybr")
-altitude_noise = SubResource("FastNoiseLite_jpqon")
-
-[node name="TopLayer" type="TileMapLayer" parent="layers"]
-unique_name_in_owner = true
-z_index = 1
-tile_set = SubResource("TileSet_u1yav")
-
-[node name="TileManager" type="Node2D" parent="."]
-unique_name_in_owner = true
-script = ExtResource("9_oqfgj")
 
 [node name="ActionManager" type="Node2D" parent="."]
 unique_name_in_owner = true
@@ -157,6 +54,41 @@ offset_top = 39.0
 offset_right = 350.0
 offset_bottom = 70.0
 text = "Grub Forest"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="ActionManager/ActionSelection"]
+offset_left = 162.0
+offset_top = 164.0
+offset_right = 377.0
+offset_bottom = 498.0
+texture = ExtResource("5_a7i05")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ActionManager/ActionSelection/NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.039
+anchor_bottom = 0.039
+offset_left = 44.0
+offset_top = 161.974
+offset_right = 173.0
+offset_bottom = 229.974
+text = "This is an example text."
+
+[node name="Label" type="Label" parent="ActionManager/ActionSelection/NinePatchRect"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 17.0
+offset_right = 181.0
+offset_bottom = 40.0
+text = "Headquarter"
+horizontal_alignment = 1
+
+[node name="Node2D" type="Node2D" parent="ActionManager/ActionSelection/NinePatchRect"]
+position = Vector2(-1, 28)
+
+[node name="Sprite2D" type="Sprite2D" parent="ActionManager/ActionSelection/NinePatchRect/Node2D"]
+position = Vector2(109, 87)
+scale = Vector2(2.95313, 3.5)
+texture = ExtResource("6_iw8n7")
 
 [node name="PreviewManager" parent="." instance=ExtResource("12_gpy66")]
 unique_name_in_owner = true

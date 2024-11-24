@@ -6,4 +6,5 @@ func _init() -> void:
 	var possible_tiles = [ForestTile]
 	var source_id = 5
 	var atlas_coords = Vector2i(0, 0)
-	super(name, possible_tiles, source_id, atlas_coords)
+	var view_radius = 1
+	super(name, possible_tiles, source_id, atlas_coords, view_radius)
