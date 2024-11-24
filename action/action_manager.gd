@@ -1,18 +1,39 @@
 class_name ActionManager
 extends Node2D
 
-@onready var action_selection: CanvasLayer = $ActionSelection
+@onready var action_selection: ActionSelection = %ActionSelection
 
 signal action_selected(action: Action)
 
-var pool: Dictionary = {}
+var total_actions: Dictionary = {
+	"headquarter": BuildingAction.new(
+		"This has no further function yet.",
+		"res://assets/Home.png",
+		Headquarter.new()
+	),
+	"wood_cutter": BuildingAction.new(
+		"This produces wood each round.",
+		"res://assets/Woodcutter.png",
+		WoodCutter.new()
+	),
+	"grub_forest": TerrainAction.new(
+		"Grub Forest",
+		"Remove one forest tile. It becomes a grass tile.",
+		"res://assets/axe.png",
+		[ForestTile],
+		[GrassTile],
+		3,
+		Vector2i(0, 0)
+	)
+}
 
-func _ready() -> void:
-	_initialize_action_pool()
-	action_selection.visible = false
+var pool: Dictionary = {}
 
 
 #=================== PUBLIC FUNCTIONS ===================
+
+func get_starter_action() -> Action:
+	return total_actions["headquarter"]
 
 func start_action_selection() -> void:
 	action_selection.visible = true
@@ -20,25 +41,19 @@ func start_action_selection() -> void:
 
 #=================== PRIVATE FUNCTIONS ===================
 
+func _ready() -> void:
+	_initialize_action_pool()
+	action_selection.visible = false
+	var action_1 = pool["headquarter"]
+	var action_2 = pool["wood_cutter"]
+	var action_3 = pool["grub_forest"]
+	action_selection.set_action_selection_content(action_1, action_2, action_3)
+
 func _initialize_action_pool():
-	var headquarter_action = BuildingAction.new(Headquarter.new())
-	var wood_cutter_action = BuildingAction.new(WoodCutter.new())
-	var forest_grub_action = TerrainAction.new()
-	pool[headquarter_action.name] = headquarter_action
-	pool[wood_cutter_action.name] = wood_cutter_action
-	pool[forest_grub_action.name] = forest_grub_action
+	pool["headquarter"] = total_actions["headquarter"]
+	pool["wood_cutter"] = total_actions["wood_cutter"]
+	pool["grub_forest"] = total_actions["grub_forest"]
 
-
-func _on_button_pressed() -> void:
+func _on_action_selection_action_selected(action: Action) -> void:
 	action_selection.visible = false
-	emit_signal("action_selected", pool["Headquarter"])
-
-
-func _on_button_2_pressed() -> void:
-	action_selection.visible = false
-	emit_signal("action_selected", pool["Wood Cutter"])
-
-
-func _on_button_3_pressed() -> void:
-	action_selection.visible = false
-	emit_signal("action_selected", pool["Grub Forest"])
+	emit_signal("action_selected", action)

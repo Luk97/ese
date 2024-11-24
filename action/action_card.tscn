@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://dji6noqfedsmf"]
+
+[ext_resource type="Texture2D" uid="uid://boyt2d2row2jo" path="res://assets/Label.png" id="1_8682s"]
+[ext_resource type="Script" path="res://action/action_card.gd" id="2_pd13f"]
+[ext_resource type="Texture2D" uid="uid://ciyyc6353vlsd" path="res://assets/axe.png" id="3_wrq3j"]
+
+[node name="ActionCard" type="NinePatchRect"]
+offset_left = 162.0
+offset_top = 164.0
+offset_right = 377.0
+offset_bottom = 498.0
+mouse_filter = 0
+texture = ExtResource("1_8682s")
+script = ExtResource("2_pd13f")
+
+[node name="Title" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 45.0
+offset_top = 12.0
+offset_right = 180.0
+offset_bottom = 35.0
+text = "Headquarter"
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 36.0
+offset_top = 172.0
+offset_right = 185.0
+offset_bottom = 263.0
+text = "Description"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Type" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 48.0
+offset_top = 300.0
+offset_right = 169.0
+offset_bottom = 323.0
+text = "BUILDING"
+horizontal_alignment = 1
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(-1, 28)
+
+[node name="Image" type="Sprite2D" parent="Node2D"]
+unique_name_in_owner = true
+position = Vector2(109, 87)
+scale = Vector2(2.95313, 3.5)
+texture = ExtResource("3_wrq3j")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

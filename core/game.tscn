@@ -1,10 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://cc30mnccj5g6g"]
+[gd_scene load_steps=7 format=3 uid="uid://cc30mnccj5g6g"]
 
 [ext_resource type="Script" path="res://core/game.gd" id="1_5b6wp"]
 [ext_resource type="PackedScene" uid="uid://bna15bbgjgwfe" path="res://interface/game_interface.tscn" id="3_fm1gd"]
-[ext_resource type="Texture2D" uid="uid://boyt2d2row2jo" path="res://assets/Label.png" id="5_a7i05"]
-[ext_resource type="Texture2D" uid="uid://ciyyc6353vlsd" path="res://assets/axe.png" id="6_iw8n7"]
-[ext_resource type="Script" path="res://action/action_manager.gd" id="8_0ldud"]
+[ext_resource type="PackedScene" uid="uid://d0k2poflbowa0" path="res://action/action_manager.tscn" id="4_oivsg"]
 [ext_resource type="PackedScene" uid="uid://xo55sqx1lwyd" path="res://tiles/tile_manager.tscn" id="8_8npch"]
 [ext_resource type="PackedScene" uid="uid://dpi3e1l5ihonh" path="res://preview/preview_manager.tscn" id="12_gpy66"]
 [ext_resource type="PackedScene" uid="uid://6kwaj4oiqir3" path="res://buildings/building_manager.tscn" id="15_ucn6x"]
@@ -18,77 +16,8 @@ unique_name_in_owner = true
 [node name="TileManager" parent="." instance=ExtResource("8_8npch")]
 unique_name_in_owner = true
 
-[node name="ActionManager" type="Node2D" parent="."]
+[node name="ActionManager" parent="." instance=ExtResource("4_oivsg")]
 unique_name_in_owner = true
-script = ExtResource("8_0ldud")
-
-[node name="ActionSelection" type="CanvasLayer" parent="ActionManager"]
-
-[node name="Frame" type="ColorRect" parent="ActionManager/ActionSelection"]
-z_index = 1
-offset_left = 435.0
-offset_top = 279.0
-offset_right = 789.0
-offset_bottom = 382.0
-
-[node name="Button" type="Button" parent="ActionManager/ActionSelection/Frame"]
-layout_mode = 0
-offset_left = 3.0
-offset_top = 38.0
-offset_right = 111.0
-offset_bottom = 69.0
-text = "Headquarter"
-
-[node name="Button2" type="Button" parent="ActionManager/ActionSelection/Frame"]
-layout_mode = 0
-offset_left = 123.0
-offset_top = 39.0
-offset_right = 231.0
-offset_bottom = 70.0
-text = "Wood Cutter"
-
-[node name="Button3" type="Button" parent="ActionManager/ActionSelection/Frame"]
-layout_mode = 0
-offset_left = 242.0
-offset_top = 39.0
-offset_right = 350.0
-offset_bottom = 70.0
-text = "Grub Forest"
-
-[node name="NinePatchRect" type="NinePatchRect" parent="ActionManager/ActionSelection"]
-offset_left = 162.0
-offset_top = 164.0
-offset_right = 377.0
-offset_bottom = 498.0
-texture = ExtResource("5_a7i05")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="ActionManager/ActionSelection/NinePatchRect"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.039
-anchor_bottom = 0.039
-offset_left = 44.0
-offset_top = 161.974
-offset_right = 173.0
-offset_bottom = 229.974
-text = "This is an example text."
-
-[node name="Label" type="Label" parent="ActionManager/ActionSelection/NinePatchRect"]
-layout_mode = 0
-offset_left = 46.0
-offset_top = 17.0
-offset_right = 181.0
-offset_bottom = 40.0
-text = "Headquarter"
-horizontal_alignment = 1
-
-[node name="Node2D" type="Node2D" parent="ActionManager/ActionSelection/NinePatchRect"]
-position = Vector2(-1, 28)
-
-[node name="Sprite2D" type="Sprite2D" parent="ActionManager/ActionSelection/NinePatchRect/Node2D"]
-position = Vector2(109, 87)
-scale = Vector2(2.95313, 3.5)
-texture = ExtResource("6_iw8n7")
 
 [node name="PreviewManager" parent="." instance=ExtResource("12_gpy66")]
 unique_name_in_owner = true
@@ -98,7 +27,4 @@ unique_name_in_owner = true
 
 [connection signal="round_finished" from="GameInterface" to="." method="_on_round_finished"]
 [connection signal="action_selected" from="ActionManager" to="." method="_on_action_manager_action_selected"]
-[connection signal="pressed" from="ActionManager/ActionSelection/Frame/Button" to="ActionManager" method="_on_button_pressed"]
-[connection signal="pressed" from="ActionManager/ActionSelection/Frame/Button2" to="ActionManager" method="_on_button_2_pressed"]
-[connection signal="pressed" from="ActionManager/ActionSelection/Frame/Button3" to="ActionManager" method="_on_button_3_pressed"]
 [connection signal="preview_done" from="PreviewManager" to="." method="_on_preview_manager_preview_done"]
