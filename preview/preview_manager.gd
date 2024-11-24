@@ -28,20 +28,19 @@ func _unhandled_input(event: InputEvent) -> void:
 			var cursor_tile = tile_manager.get_cursor_tile()
 			if action is BuildingAction and _is_valid_building_tile(action.building, cursor_tile):
 				preview_layer.clear()
-				tile_manager.place_building(action.building, cursor_tile.global_coords)
+				tile_manager.place_building(action.building, cursor_tile.map_coords)
 				enabled = false
 				emit_signal("preview_done")
 			elif action is TerrainAction and _is_valid_terrain_tile(action.source_tiles, cursor_tile):
 				preview_layer.clear()
-				tile_manager.place_tile(action.destination_tile[0].new(cursor_tile.global_coords))
+				tile_manager.place_tile(action.destination_tile[0].new(cursor_tile.map_coords))
 				enabled = false
 				emit_signal("preview_done")
 
 func _show_preview():
 	preview_layer.clear()
 	
-	if action == null:
-		return
+	if action == null: return
 	
 	var cursor_tile = tile_manager.get_cursor_tile()
 	if cursor_tile == null: return
@@ -63,7 +62,7 @@ func _show_preview():
 	
 	var modulate_color = Color(0, 1, 0, 0.75) if is_valid else Color(1, 0, 0, 0.75)
 	preview_layer.set_modulate(modulate_color)
-	_set_preview(cursor_tile.global_coords, source_id, atlas_coords)
+	_set_preview(cursor_tile.map_coords, source_id, atlas_coords)
 
 func _is_valid_building_tile(building: Building, tile: Tile) -> bool:
 	for possible_tile_type in building.possible_tiles:
