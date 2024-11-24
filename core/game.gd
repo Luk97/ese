@@ -11,7 +11,7 @@ extends Node2D
 
 func _ready() -> void:
 	var headquarter = Headquarter.new()
-	var starter_action = BuildingAction.new(headquarter)
+	var starter_action = action_manager.get_starter_action()
 	preview_manager.enable_preview(starter_action)
 	building_manager.connect("pickup_collected", _on_pickup_collected)
 
@@ -23,10 +23,8 @@ func _on_round_finished() -> void:
 func _on_action_manager_action_selected(action: Action) -> void:
 	preview_manager.enable_preview(action)
 
-
 func _on_preview_manager_preview_done() -> void:
 	building_manager.update_pickups()
-
 
 func _on_pickup_collected() -> void:
 	wood_count += 1

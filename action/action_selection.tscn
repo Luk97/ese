@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1yxhxgyqagug"]
+
+[ext_resource type="Script" path="res://action/action_selection.gd" id="1_15468"]
+[ext_resource type="PackedScene" uid="uid://dji6noqfedsmf" path="res://action/action_card.tscn" id="2_x1nv6"]
+
+[node name="ActionSelection" type="CanvasLayer"]
+script = ExtResource("1_15468")
+
+[node name="ActionCard1" parent="." instance=ExtResource("2_x1nv6")]
+unique_name_in_owner = true
+offset_left = 230.0
+offset_top = 170.0
+offset_right = 445.0
+offset_bottom = 504.0
+
+[node name="ActionCard2" parent="." instance=ExtResource("2_x1nv6")]
+unique_name_in_owner = true
+offset_left = 464.0
+offset_top = 170.0
+offset_right = 679.0
+offset_bottom = 504.0
+
+[node name="ActionCard3" parent="." instance=ExtResource("2_x1nv6")]
+unique_name_in_owner = true
+offset_left = 699.0
+offset_top = 169.0
+offset_right = 914.0
+offset_bottom = 503.0
+
+[connection signal="action_card_clicked" from="ActionCard1" to="." method="_on_action_card_1_action_card_clicked"]
+[connection signal="action_card_clicked" from="ActionCard2" to="." method="_on_action_card_2_action_card_clicked"]
+[connection signal="action_card_clicked" from="ActionCard3" to="." method="_on_action_card_3_action_card_clicked"]
