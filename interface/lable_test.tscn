@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpmqdrtysrvht"]
+
+[ext_resource type="Texture2D" uid="uid://cyx45bcefi3ym" path="res://assets/theme/label_bg.png" id="1_6b4du"]
+[ext_resource type="Texture2D" uid="uid://cc4knyc2bod0e" path="res://assets/wood.png" id="2_cyc6i"]
+[ext_resource type="Theme" uid="uid://brtg0up4yc4j" path="res://Themes/new_Test_theme.tres" id="3_8sd6b"]
+[ext_resource type="Script" path="res://interface/rich_text_label.gd" id="4_kpprm"]
+
+[node name="lable_test" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("1_6b4du")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/NinePatchRect"]
+layout_mode = 2
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/NinePatchRect/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_cyc6i")
+expand_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/NinePatchRect/HBoxContainer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme = ExtResource("3_8sd6b")
+visible_characters = 5
+visible_ratio = 1.66667
+script = ExtResource("4_kpprm")

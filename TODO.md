@@ -91,7 +91,7 @@
 - [ ] Lookup Fog implementation
 
 ### User Interface
-- [ ] Basic Main Menu
-	- [ ] New Game Button
+- [X] Basic Main Menu
+	- [X] New Game Button
 	- [X] Quit Game Button
-	- [ ] Credits Button
+	- [X] Credits Button
