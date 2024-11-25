@@ -63,16 +63,16 @@
 ## Version 0.3
 
 ### Assets
-- [ ] UI: Pixel font
-- [ ] Terrain: Water Decoration
-- [ ] UI: Background for Building info
-- [ ] Building: Charcoal Burner
-- [ ] Building: Farm
-- [ ] Building: Field (wheat)
-- [ ] Building: Windmill
-- [ ] Icon: Wheat
-- [ ] Building: Outpost
-- [ ] Icon: Bomb (used to destroy buildings)
+- [ ] (!) UI: Pixel font
+- [x] Terrain: Water Decoration
+- [x] UI: Background for Building info
+- [x] Building: Charcoal Burner
+- [x] Building: Farm
+- [ ] (!) Building: Field (wheat)
+- [ ] (!) Building: Windmill
+- [x] Icon: Wheat
+- [x] Building: Outpost
+- [x] Icon: Bomb (used to destroy buildings)
 - [ ] Icon: Firewood
 - [ ] Icon: Fish
 - [ ] Icon: Flour
