@@ -36,7 +36,7 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("2_cyc6i")
-expand_mode = 2
+expand_mode = 3
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(0, 300)
