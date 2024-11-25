@@ -47,10 +47,10 @@
 - [x] Add forest biome
 
 ### User Interface
-- [ ] Create theme structure for user interface controles
-- [ ] Label: Wood count
-- [ ] Enhance Finish Round Button
-- [ ] Enhance Round Counter Button
+- [ ] Create theme structure for user interface controles	//Need to discuss about wishes about font and other things for all parts of the UI!
+- [ ] Label: Wood count				//Prototype Scene for all Lables is created, but needs testing!
+- [ ] Enhance Finish Round Button	//Just needs a makeover
+- [ ] Enhance Round Counter Button	//Will be adjusted according to the lable adjustment! Should have the same Style at the beginning
 
 
 ### Gameplay
@@ -91,7 +91,8 @@
 - [ ] Lookup Fog implementation
 
 ### User Interface
-- [X] Basic Main Menu
-	- [X] New Game Button
-	- [X] Quit Game Button
-	- [X] Credits Button
+- [X] Basic Main Menu			//Implemented
+	- [X] New Game Button		//Implemented, works
+	- [X] Quit Game Button		//Implemented, works
+	- [X] Credits Button		//Implemented, doesn´t word
+								//Idea for the future: Load Save?
