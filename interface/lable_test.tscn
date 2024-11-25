@@ -24,22 +24,21 @@ grow_vertical = 2
 [node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer"]
 layout_mode = 2
 texture = ExtResource("1_6b4du")
+region_rect = Rect2(-4, -2.05859, 127.521, 51.0586)
 patch_margin_left = 3
 patch_margin_top = 3
 patch_margin_right = 3
 patch_margin_bottom = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/NinePatchRect"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-offset_right = 1152.0
-offset_bottom = 648.0
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/NinePatchRect/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("2_cyc6i")
 expand_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/NinePatchRect/HBoxContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 size_flags_horizontal = 3
