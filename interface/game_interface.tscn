@@ -26,6 +26,7 @@ mouse_filter = 1
 
 [node name="FinishRoundButton" parent="Elements" instance=ExtResource("2_bd0v6")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -40,7 +41,6 @@ grow_horizontal = 0
 grow_vertical = 0
 
 [node name="RundeBeenden" parent="Elements" instance=ExtResource("3_vjbiu")]
-visible = false
 layout_mode = 1
 anchor_left = 0.906
 anchor_top = 0.834
