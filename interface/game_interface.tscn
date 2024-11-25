@@ -24,6 +24,32 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
+[node name="UI_Margin" type="MarginContainer" parent="Elements"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Top_Container" type="VBoxContainer" parent="Elements/UI_Margin"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Elements/UI_Margin/Top_Container"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="Bottoom_Container" type="VBoxContainer" parent="Elements/UI_Margin"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_vertical = 8
+
 [node name="FinishRoundButton" parent="Elements" instance=ExtResource("2_bd0v6")]
 unique_name_in_owner = true
 visible = false
@@ -86,32 +112,6 @@ anchor_bottom = 0.048
 offset_left = 0.317993
 offset_bottom = 0.039999
 script = ExtResource("7_htivo")
-
-[node name="UI_Margin" type="MarginContainer" parent="Elements"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="Top_Container" type="VBoxContainer" parent="Elements/UI_Margin"]
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-size_flags_vertical = 0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Elements/UI_Margin/Top_Container"]
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-
-[node name="Bottoom_Container" type="VBoxContainer" parent="Elements/UI_Margin"]
-custom_minimum_size = Vector2(0, 80)
-layout_mode = 2
-size_flags_vertical = 8
 
 [connection signal="pressed" from="Elements/FinishRoundButton" to="." method="_on_finish_round_button_pressed"]
 [connection signal="pressed" from="Elements/RundeBeenden" to="." method="_on_finish_round_button_pressed"]
