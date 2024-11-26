@@ -1,12 +1,23 @@
-[gd_scene load_steps=8 format=3 uid="uid://bna15bbgjgwfe"]
+[gd_scene load_steps=13 format=3 uid="uid://bna15bbgjgwfe"]
 
 [ext_resource type="Script" path="res://interface/game_interface.gd" id="1_bnx4o"]
 [ext_resource type="PackedScene" uid="uid://dgbq5goh7yrtn" path="res://interface/round_counter_label.tscn" id="2_4d6ly"]
 [ext_resource type="PackedScene" uid="uid://c7uwlhqoc4cq1" path="res://interface/finish_round_button.tscn" id="2_bd0v6"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" path="res://interface/runde_beenden.tscn" id="3_vjbiu"]
 [ext_resource type="PackedScene" uid="uid://boue7eb1kh2kg" path="res://interface/wood_counter_label.tscn" id="4_bv3na"]
 [ext_resource type="PackedScene" path="res://interface/beenden_button.tscn" id="5_hmy8k"]
+=======
+[ext_resource type="PackedScene" uid="uid://go5qe7tje8xn" path="res://interface/runde_beenden.tscn" id="3_vjbiu"]
+[ext_resource type="PackedScene" uid="uid://ducgu2fqryiv4" path="res://interface/wood_counter_label.tscn" id="4_bv3na"]
+[ext_resource type="PackedScene" uid="uid://vw775152hyl8" path="res://interface/beenden_button.tscn" id="5_hmy8k"]
+>>>>>>> master
 [ext_resource type="Script" path="res://interface/menu.gd" id="7_htivo"]
+[ext_resource type="Texture2D" uid="uid://cyx45bcefi3ym" path="res://assets/theme/label_bg.png" id="8_ejywj"]
+[ext_resource type="Texture2D" uid="uid://cc4knyc2bod0e" path="res://assets/wood.png" id="9_3ojph"]
+[ext_resource type="Script" path="res://interface/wood_lable_container.gd" id="9_jn2ds"]
+[ext_resource type="Script" path="res://interface/wood_counter_lable.gd" id="10_4htbb"]
+[ext_resource type="Texture2D" uid="uid://dmq8fmn2vg0a0" path="res://assets/Wheat.png" id="10_noos1"]
 
 [node name="GameInterface" type="CanvasLayer"]
 script = ExtResource("1_bnx4o")
@@ -40,10 +51,6 @@ theme_override_constants/margin_bottom = 10
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_vertical = 0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Elements/UI_Margin/Top_Container"]
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
 
 [node name="Bottoom_Container" type="VBoxContainer" parent="Elements/UI_Margin"]
 custom_minimum_size = Vector2(0, 80)
@@ -112,6 +119,104 @@ anchor_bottom = 0.048
 offset_left = 0.317993
 offset_bottom = 0.039999
 script = ExtResource("7_htivo")
+
+[node name="Wood_Label" type="NinePatchRect" parent="Elements"]
+layout_mode = 2
+offset_left = 230.0
+offset_top = 6.0
+offset_right = 306.0
+offset_bottom = 38.0
+texture = ExtResource("8_ejywj")
+
+[node name="WoodLabelContainer" type="GridContainer" parent="Elements/Wood_Label"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = -1.0
+offset_right = 69.0
+offset_bottom = 31.0
+columns = 2
+script = ExtResource("9_jn2ds")
+
+[node name="TextureRect" type="TextureRect" parent="Elements/Wood_Label/WoodLabelContainer"]
+layout_mode = 2
+texture = ExtResource("9_3ojph")
+
+[node name="wood_counter_lable" type="Label" parent="Elements/Wood_Label/WoodLabelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+script = ExtResource("10_4htbb")
+
+[node name="Wheat_Lable" type="NinePatchRect" parent="Elements"]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 5.0
+offset_right = 404.0
+offset_bottom = 37.0
+texture = ExtResource("8_ejywj")
+
+[node name="LableContainer" type="GridContainer" parent="Elements/Wheat_Lable"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = -1.0
+offset_right = 69.0
+offset_bottom = 31.0
+columns = 2
+
+[node name="TextureRect" type="TextureRect" parent="Elements/Wheat_Lable/LableContainer"]
+layout_mode = 2
+texture = ExtResource("10_noos1")
+
+[node name="wheat_counter_lable" type="Label" parent="Elements/Wheat_Lable/LableContainer"]
+layout_mode = 2
+
+[node name="People Lable" type="NinePatchRect" parent="Elements"]
+visible = false
+layout_mode = 0
+offset_left = 230.0
+offset_top = 6.0
+offset_right = 306.0
+offset_bottom = 38.0
+texture = ExtResource("8_ejywj")
+
+[node name="LableContainer" type="GridContainer" parent="Elements/People Lable"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = -1.0
+offset_right = 69.0
+offset_bottom = 31.0
+columns = 2
+
+[node name="TextureRect" type="TextureRect" parent="Elements/People Lable/LableContainer"]
+layout_mode = 2
+texture = ExtResource("10_noos1")
+
+[node name="people_counter_lable" type="Label" parent="Elements/People Lable/LableContainer"]
+layout_mode = 2
+
+[node name="Round_Lable" type="NinePatchRect" parent="Elements"]
+visible = false
+layout_mode = 0
+offset_left = 230.0
+offset_top = 6.0
+offset_right = 306.0
+offset_bottom = 38.0
+texture = ExtResource("8_ejywj")
+
+[node name="LableContainer" type="GridContainer" parent="Elements/Round_Lable"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = -1.0
+offset_right = 69.0
+offset_bottom = 31.0
+columns = 2
+
+[node name="TextureRect" type="TextureRect" parent="Elements/Round_Lable/LableContainer"]
+layout_mode = 2
+texture = ExtResource("10_noos1")
+
+[node name="round_counter_lable" type="Label" parent="Elements/Round_Lable/LableContainer"]
+layout_mode = 2
 
 [connection signal="pressed" from="Elements/FinishRoundButton" to="." method="_on_finish_round_button_pressed"]
 [connection signal="pressed" from="Elements/RundeBeenden" to="." method="_on_finish_round_button_pressed"]

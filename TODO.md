@@ -47,10 +47,10 @@
 - [x] Add forest biome
 
 ### User Interface
-- [ ] Create theme structure for user interface controles	//Need to discuss about wishes about font and other things for all parts of the UI!
-- [ ] Label: Wood count				//Prototype Scene for all Lables is created, but needs testing!
+- [x] Create theme structure for user interface controles	//Need to discuss about wishes about font and other things for all parts of the UI!
+- [x] Label: Wood count				//Prototype Scene for all Lables is created, but needs testing!
 - [ ] Enhance Finish Round Button	//Just needs a makeover
-- [ ] Enhance Round Counter Button	//Will be adjusted according to the lable adjustment! Should have the same Style at the beginning
+- [ ] Enhance Round Counter Label	//Will be adjusted according to the lable adjustment! Should have the same Style at the beginning
 
 
 ### Gameplay
@@ -91,8 +91,25 @@
 - [ ] Lookup Fog implementation
 
 ### User Interface
-- [X] Basic Main Menu			//Implemented
-	- [X] New Game Button		//Implemented, works
-	- [X] Quit Game Button		//Implemented, works
-	- [X] Credits Button		//Implemented, doesn´t word
-								//Idea for the future: Load Save?
+- [X] Basic Main Menu		
+	- [X] New Game Button	
+	- [X] Quit Game Button	
+	- [X] Credits Button		
+
+## Version 0.4
+
+### Assets
+- [ ] Fix Godot Atlas Error messages
+- [ ] Check why outpost.png doesn't work in tileset
+- [ ] Terrain: Sand
+- [ ] Terrain: Mountain (stone)
+
+### Gameplay
+- [ ] Global Gamestats
+
+### User Interface
+- [ ] Fix scaling of the ui
+- [ ] Basic Credits Screen
+- [ ] Fix scaling of Action Selection
+- [ ] Basic Bars for Food and Warmth
+
