@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://boue7eb1kh2kg"]
+[gd_scene load_steps=3 format=3 uid="uid://ducgu2fqryiv4"]
 
 [ext_resource type="Texture2D" uid="uid://cyx45bcefi3ym" path="res://assets/theme/label_bg.png" id="1_sga6m"]
 [ext_resource type="Script" path="res://interface/wood_counter_label.gd" id="2_ypone"]
