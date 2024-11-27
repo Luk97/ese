@@ -31,9 +31,9 @@ func _unhandled_input(event: InputEvent) -> void:
 				tile_manager.place_building(action.building, cursor_tile.map_coords)
 				enabled = false
 				emit_signal("preview_done")
-			elif action is TerrainAction and _is_valid_terrain_tile(action.source_tiles, cursor_tile):
+			elif action is TerrainAction and _is_valid_terrain_tile(action.origins, cursor_tile):
 				preview_layer.clear()
-				tile_manager.place_tile(action.destination_tile[0].new(cursor_tile.map_coords))
+				tile_manager.place_tile(action.destination[0].new(cursor_tile.map_coords))
 				enabled = false
 				emit_signal("preview_done")
 
@@ -57,7 +57,7 @@ func _show_preview():
 	elif action is TerrainAction:
 		source_id = action.source_id
 		atlas_coords = action.atlas_coords
-		if _is_valid_terrain_tile(action.source_tiles, cursor_tile):
+		if _is_valid_terrain_tile(action.origins, cursor_tile):
 			is_valid = true
 	
 	var modulate_color = Color(0, 1, 0, 0.75) if is_valid else Color(1, 0, 0, 0.75)

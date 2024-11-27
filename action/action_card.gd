@@ -13,7 +13,7 @@ func set_content(action: Action) -> void:
 	title.text = action.title
 	type.text = _get_action_type(action)
 	description.text = action.description
-	image.texture = load(action.preview_image_path)
+	image.texture = load(action.image_path)
 
 func _get_action_type(action: Action) -> String:
 	if action is BuildingAction: return "BUILDING"

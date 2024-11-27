@@ -1,15 +1,22 @@
 class_name Building
 extends Object
 
+enum Type {
+	headquarter,
+	wood_cutter
+}
+
 var name: String
+var type: Type
 var possible_tiles: Array
 var view_radius: int
 
 var source_id: int
 var atlas_coords: Vector2i
 
-func _init(name: String, possible_tiles: Array, source_id: int, atlas_coords: Vector2i, view_radius: int) -> void:
+func _init(name: String, type: Type, possible_tiles: Array, source_id: int, atlas_coords: Vector2i, view_radius: int) -> void:
 	self.name = name
+	self.type = type
 	self.possible_tiles = possible_tiles
 	self.source_id = source_id
 	self.atlas_coords = atlas_coords
