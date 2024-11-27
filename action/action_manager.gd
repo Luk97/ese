@@ -2,29 +2,47 @@ class_name ActionManager
 extends Node2D
 
 @onready var action_selection: ActionSelection = %ActionSelection
+@onready var building_manager: BuildingManager = %BuildingManager
 
 signal action_selected(action: Action)
 
+const NAME = "name"
+const TYPE = "type"
+const DESCRIPTION = "description"
+const IMAGE_PATH = "image_path"
+
+const BUILDING_NAME = "building_name"
+
+const TERRAIN_ORIGINS = "terrain_origins"
+const TERRAIN_DESTINATION = "terrain_destination"
+const TERRAIN_SOURCE_ID = "terrain_source_id"
+const TERRAIN_ATLAS_COORDS = "terrain_atlas_coords"
+
 var total_actions: Dictionary = {
-	"headquarter": BuildingAction.new(
-		"This has no further function yet.",
-		"res://assets/Home.png",
-		Headquarter.new()
-	),
-	"wood_cutter": BuildingAction.new(
-		"This produces wood each round.",
-		"res://assets/Woodcutter.png",
-		WoodCutter.new()
-	),
-	"grub_forest": TerrainAction.new(
-		"Grub Forest",
-		"Remove one forest tile. It becomes a grass tile.",
-		"res://assets/axe.png",
-		[ForestTile],
-		[GrassTile],
-		3,
-		Vector2i(0, 0)
-	)
+	"headquarter": {
+		NAME: "Headquarter",
+		TYPE: BuildingAction,
+		DESCRIPTION: "This does nothing yet.",
+		IMAGE_PATH: "res://assets/action/Home-Icon.png" ,
+		BUILDING_NAME: Building.Type.headquarter
+	},
+	"wood_cutter": {
+		NAME: "Wood Cutter",
+		TYPE: BuildingAction,
+		DESCRIPTION: "This produces wood each round.",
+		IMAGE_PATH: "res://assets/action/Woodcutter-Icon.png",
+		BUILDING_NAME: Building.Type.wood_cutter
+	},
+	"grub_forest": {
+		NAME: "Grub Forest",
+		TYPE: TerrainAction,
+		DESCRIPTION: "Remove one forest tile. It becomes a grass tile.",
+		IMAGE_PATH: "res://assets/action/axe.png",
+		TERRAIN_ORIGINS: [ForestTile],
+		TERRAIN_DESTINATION: [GrassTile],
+		TERRAIN_SOURCE_ID: 3,
+		TERRAIN_ATLAS_COORDS: Vector2i(0, 0)
+	}
 }
 
 var pool: Dictionary = {}
@@ -33,10 +51,18 @@ var pool: Dictionary = {}
 #=================== PUBLIC FUNCTIONS ===================
 
 func get_starter_action() -> Action:
-	return total_actions["headquarter"]
+	return _get_building_action("headquarter")
 
 func start_action_selection() -> void:
 	action_selection.visible = true
+	
+	#TODO: this needs to be a random selection out of the pool.
+	var actions = [
+		_get_building_action("headquarter"),
+		_get_building_action("wood_cutter"),
+		_get_terrain_action("grub_forest")
+	]
+	action_selection.set_action_selection_content(actions[0], actions[1], actions[2])
 
 
 #=================== PRIVATE FUNCTIONS ===================
@@ -44,10 +70,6 @@ func start_action_selection() -> void:
 func _ready() -> void:
 	_initialize_action_pool()
 	action_selection.visible = false
-	var action_1 = pool["headquarter"]
-	var action_2 = pool["wood_cutter"]
-	var action_3 = pool["grub_forest"]
-	action_selection.set_action_selection_content(action_1, action_2, action_3)
 
 func _initialize_action_pool():
 	pool["headquarter"] = total_actions["headquarter"]
@@ -57,3 +79,28 @@ func _initialize_action_pool():
 func _on_action_selection_action_selected(action: Action) -> void:
 	action_selection.visible = false
 	emit_signal("action_selected", action)
+
+func _get_building_action(name: String) -> BuildingAction:
+	if pool.has(name):
+		var building = building_manager.get_building(pool[name][BUILDING_NAME])
+		if building == null:
+			return null
+		return BuildingAction.new(
+			pool[name][DESCRIPTION],
+			pool[name][IMAGE_PATH],
+			building
+		)
+	return null
+
+func _get_terrain_action(name: String) -> TerrainAction:
+	if pool.has(name):
+		return TerrainAction.new(
+			pool[name][NAME],
+			pool[name][DESCRIPTION],
+			pool[name][IMAGE_PATH],
+			pool[name][TERRAIN_ORIGINS],
+			pool[name][TERRAIN_DESTINATION],
+			pool[name][TERRAIN_SOURCE_ID],
+			pool[name][TERRAIN_ATLAS_COORDS]
+		)
+	return null

@@ -10,7 +10,7 @@ extends Node2D
 @onready var building_manager: BuildingManager = %BuildingManager
 
 func _ready() -> void:
-	var headquarter = Headquarter.new()
+	var headquarter = building_manager.get_building(Building.Type.headquarter)
 	var starter_action = action_manager.get_starter_action()
 	preview_manager.enable_preview(starter_action)
 	building_manager.connect("pickup_collected", _on_pickup_collected)
