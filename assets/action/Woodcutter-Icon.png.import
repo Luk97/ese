@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdwg87pxsugsf"
-path="res://.godot/imported/Bomb.png-7215c80d3f197e27080bb65321e75e7f.ctex"
+uid="uid://jj4eg4vs5rwk"
+path="res://.godot/imported/Woodcutter-Icon.png-26eee7a7e98fe0cbd081e5f1942bc385.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Bomb.png"
-dest_files=["res://.godot/imported/Bomb.png-7215c80d3f197e27080bb65321e75e7f.ctex"]
+source_file="res://assets/action/Woodcutter-Icon.png"
+dest_files=["res://.godot/imported/Woodcutter-Icon.png-26eee7a7e98fe0cbd081e5f1942bc385.ctex"]
 
 [params]
 

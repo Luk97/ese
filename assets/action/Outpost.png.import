@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jj4eg4vs5rwk"
-path="res://.godot/imported/Woodcutter-Icon.png-1b24ff37af4014d329392627d4249718.ctex"
+uid="uid://243k5hyjmsr3"
+path="res://.godot/imported/Outpost.png-10697b02c6be9c049d420136df9496aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Woodcutter-Icon.png"
-dest_files=["res://.godot/imported/Woodcutter-Icon.png-1b24ff37af4014d329392627d4249718.ctex"]
+source_file="res://assets/action/Outpost.png"
+dest_files=["res://.godot/imported/Outpost.png-10697b02c6be9c049d420136df9496aa.ctex"]
 
 [params]
 

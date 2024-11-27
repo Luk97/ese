@@ -16,15 +16,13 @@ var seed = hash("Lukas") #NOTE: this is temporary and should be seleceted by the
 
 func place_tile(tile: Tile) -> void:
 	tiles[tile.map_coords] = tile
-	tiles[tile.map_coords].decoration = null
-	
-	top_layer.erase_cell(tile.map_coords)
 	ground_layer.set_cell(tile.map_coords, tile.source_id, tile.atlas_coords)
 	
-	var decoration = decoration_manager.get_random_decoration(tile)
-	if (decoration != null):
-		tiles[tile.map_coords].decoration = decoration
-		top_layer.set_cell(tile.map_coords - Vector2i(1, 1), decoration.source_id, decoration.atlas_coords)
+	if tiles[tile.map_coords].building == null:
+		top_layer.erase_cell(tile.map_coords - Vector2i(1, 1))
+		var decoration = decoration_manager.get_random_decoration(tile)
+		if (decoration != null):
+			top_layer.set_cell(tile.map_coords - Vector2i(1, 1), decoration.source_id, decoration.atlas_coords)
 
 func place_building(building: Building, coords: Vector2i) -> void:
 	if tiles.has(coords):

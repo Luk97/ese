@@ -11,7 +11,6 @@ var map_coords: Vector2i
 var source_id: int
 var atlas_coords: Vector2i
 
-var decoration: Decoration = null
 var building: Building = null
 
 func _init(name: String, map_coords: Vector2i, source_id: int, atlas_coords: Vector2i) -> void:

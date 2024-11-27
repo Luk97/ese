@@ -3,15 +3,9 @@
 [ext_resource type="Script" path="res://interface/game_interface.gd" id="1_bnx4o"]
 [ext_resource type="PackedScene" uid="uid://dgbq5goh7yrtn" path="res://interface/round_counter_label.tscn" id="2_4d6ly"]
 [ext_resource type="PackedScene" uid="uid://c7uwlhqoc4cq1" path="res://interface/finish_round_button.tscn" id="2_bd0v6"]
-<<<<<<< HEAD
 [ext_resource type="PackedScene" path="res://interface/runde_beenden.tscn" id="3_vjbiu"]
-[ext_resource type="PackedScene" uid="uid://boue7eb1kh2kg" path="res://interface/wood_counter_label.tscn" id="4_bv3na"]
-[ext_resource type="PackedScene" path="res://interface/beenden_button.tscn" id="5_hmy8k"]
-=======
-[ext_resource type="PackedScene" uid="uid://go5qe7tje8xn" path="res://interface/runde_beenden.tscn" id="3_vjbiu"]
 [ext_resource type="PackedScene" uid="uid://ducgu2fqryiv4" path="res://interface/wood_counter_label.tscn" id="4_bv3na"]
-[ext_resource type="PackedScene" uid="uid://vw775152hyl8" path="res://interface/beenden_button.tscn" id="5_hmy8k"]
->>>>>>> master
+[ext_resource type="PackedScene" path="res://interface/beenden_button.tscn" id="5_hmy8k"]
 [ext_resource type="Script" path="res://interface/menu.gd" id="7_htivo"]
 [ext_resource type="Texture2D" uid="uid://cyx45bcefi3ym" path="res://assets/theme/label_bg.png" id="8_ejywj"]
 [ext_resource type="Texture2D" uid="uid://cc4knyc2bod0e" path="res://assets/wood.png" id="9_3ojph"]

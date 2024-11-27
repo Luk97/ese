@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://243k5hyjmsr3"
-path="res://.godot/imported/Outpost.png-1bc2b00a8e176d4692f6d80a80a4a671.ctex"
+uid="uid://ch8s1rjhaubs6"
+path="res://.godot/imported/Home-Icon.png-380cd2e0552a78410327ecd0594978cc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tiles/Outpost.png"
-dest_files=["res://.godot/imported/Outpost.png-1bc2b00a8e176d4692f6d80a80a4a671.ctex"]
+source_file="res://assets/action/Home-Icon.png"
+dest_files=["res://.godot/imported/Home-Icon.png-380cd2e0552a78410327ecd0594978cc.ctex"]
 
 [params]
 
