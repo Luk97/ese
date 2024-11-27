@@ -112,4 +112,3 @@
 - [ ] Basic Credits Screen
 - [ ] Fix scaling of Action Selection
 - [ ] Basic Bars for Food and Warmth
-

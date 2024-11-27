@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://boyt2d2row2jo" path="res://assets/Label.png" id="1_8682s"]
 [ext_resource type="Script" path="res://action/action_card.gd" id="2_pd13f"]
-[ext_resource type="Texture2D" uid="uid://ciyyc6353vlsd" path="res://assets/axe.png" id="3_wrq3j"]
+[ext_resource type="Texture2D" uid="uid://ciyyc6353vlsd" path="res://assets/action/axe.png" id="3_wrq3j"]
 
 [node name="ActionCard" type="NinePatchRect"]
 offset_left = 162.0

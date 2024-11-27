@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dpi3e1l5ihonh"]
 
 [ext_resource type="Script" path="res://preview/preview_manager.gd" id="1_3qkvr"]
-[ext_resource type="Texture2D" uid="uid://ciyyc6353vlsd" path="res://assets/axe.png" id="2_angg5"]
+[ext_resource type="Texture2D" uid="uid://ciyyc6353vlsd" path="res://assets/action/axe.png" id="2_angg5"]
 [ext_resource type="Texture2D" uid="uid://dcduycwdhj4mv" path="res://assets/Home.png" id="2_opx0f"]
 [ext_resource type="Texture2D" uid="uid://fql16pdaoa0m" path="res://assets/Woodcutter.png" id="3_ikkvw"]
 
