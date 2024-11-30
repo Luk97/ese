@@ -12,6 +12,7 @@ extends Node2D
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 var seed = hash("Lukas") #NOTE: this is temporary and should be seleceted by the user
 
+
 #=================== PUBLIC FUNCTIONS ===================
 
 func place_tile(tile: Tile) -> void:
@@ -30,6 +31,10 @@ func place_building(building: Building, coords: Vector2i) -> void:
 		top_layer.set_cell(coords - Vector2i(1, 1), building.source_id, building.atlas_coords)
 		ground_layer.generate_tiles(coords, building.view_radius)
 
+func update_producable(producable: Producable, tile: Tile) -> void:
+	if tiles.has(tile.map_coords) and tiles[tile.map_coords].building != null:
+		tiles[tile.map_coords].building.producable = producable
+
 func get_cursor_tile() -> Tile:
 	var coords = ground_layer.get_cursor_tile_coords()
 	if tiles.has(coords):
@@ -39,7 +44,7 @@ func get_cursor_tile() -> Tile:
 func get_building_tiles() -> Array:
 	return tiles.values().filter(_has_building)
 
-func get_map_coords(tile: Tile) -> Vector2i:
+func get_global_coords(tile: Tile) -> Vector2i:
 	if tiles.has(tile.map_coords):
 		return ground_layer.map_to_local(tile.map_coords - Vector2i(1, 1))
 	return Vector2i(-1, -1)
