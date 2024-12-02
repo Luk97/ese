@@ -3,6 +3,6 @@
 [ext_resource type="FontFile" uid="uid://byiu3lccawsbh" path="res://assets/PixelArt.ttf" id="1_4n50r"]
 
 [resource]
-Label/fonts/font = ExtResource("1_4n50r")
+Label/fonts/font = null
 RichTextLabel/font_sizes/normal_font_size = 200
 RichTextLabel/fonts/normal_font = ExtResource("1_4n50r")
