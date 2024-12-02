@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://chg7f0tjh88pj"]
+[gd_scene load_steps=6 format=3 uid="uid://chg7f0tjh88pj"]
 
 [ext_resource type="Script" path="res://main_menu/start_game.gd" id="1_1nxty"]
 [ext_resource type="Texture2D" uid="uid://d1px8fudvkgd7" path="res://main_menu/background_1.png" id="1_jakxa"]
 [ext_resource type="Script" path="res://interface/beenden_button.gd" id="2_1x6tn"]
+[ext_resource type="FontFile" uid="uid://byiu3lccawsbh" path="res://assets/PixelArt.ttf" id="2_waccv"]
 [ext_resource type="Script" path="res://main_menu/credits.gd" id="3_tjfmy"]
 
 [node name="Menu" type="CanvasLayer"]
@@ -27,14 +28,13 @@ expand_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="MainMenu"]
 layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
+anchors_preset = -1
+anchor_left = 0.249132
+anchor_right = 0.750868
 anchor_bottom = 1.0
-offset_left = -289.0
-offset_right = 289.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/MarginContainer"]
 layout_mode = 2
@@ -47,9 +47,10 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="MainMenu/MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 0
+size_flags_vertical = 2
 theme_override_constants/outline_size = 12
 theme_override_constants/shadow_outline_size = 24
+theme_override_fonts/font = ExtResource("2_waccv")
 theme_override_font_sizes/font_size = 64
 text = "ESE (Arbeitstitel)"
 horizontal_alignment = 1
@@ -59,10 +60,11 @@ uppercase = true
 [node name="HBoxContainer" type="HBoxContainer" parent="MainMenu/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/MarginContainer/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_constants/separation = 5
 alignment = 1
 
