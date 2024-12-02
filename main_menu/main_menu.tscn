@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://chg7f0tjh88pj"]
+[gd_scene load_steps=5 format=3 uid="uid://chg7f0tjh88pj"]
 
 [ext_resource type="Script" path="res://main_menu/start_game.gd" id="1_1nxty"]
 [ext_resource type="Texture2D" uid="uid://d1px8fudvkgd7" path="res://main_menu/background_1.png" id="1_jakxa"]
 [ext_resource type="Script" path="res://interface/beenden_button.gd" id="2_1x6tn"]
+[ext_resource type="Script" path="res://main_menu/credits.gd" id="3_tjfmy"]
 
 [node name="Menu" type="CanvasLayer"]
 
@@ -84,6 +85,7 @@ text = "Showcase
 layout_mode = 2
 text = "Credits
 "
+script = ExtResource("3_tjfmy")
 
 [node name="BeendenButton" type="Button" parent="MainMenu/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -92,3 +94,4 @@ text = "Beenden"
 script = ExtResource("2_1x6tn")
 
 [connection signal="pressed" from="MainMenu/MarginContainer/HBoxContainer/VBoxContainer/StartGame" to="MainMenu/MarginContainer/HBoxContainer/VBoxContainer/StartGame" method="_on_pressed"]
+[connection signal="pressed" from="MainMenu/MarginContainer/HBoxContainer/VBoxContainer/Credits" to="MainMenu/MarginContainer/HBoxContainer/VBoxContainer/Credits" method="_on_pressed"]
