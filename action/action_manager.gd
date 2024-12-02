@@ -47,8 +47,6 @@ var total_actions: Dictionary = {
 }
 
 
-
-
 #=================== PUBLIC FUNCTIONS ===================
 
 func get_starter_action() -> Action:

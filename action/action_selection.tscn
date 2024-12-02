@@ -8,24 +8,24 @@ script = ExtResource("1_15468")
 
 [node name="ActionCard1" parent="." instance=ExtResource("2_x1nv6")]
 unique_name_in_owner = true
-offset_left = 230.0
-offset_top = 170.0
-offset_right = 445.0
-offset_bottom = 504.0
+offset_left = 144.0
+offset_top = 103.0
+offset_right = 425.0
+offset_bottom = 558.0
 
 [node name="ActionCard2" parent="." instance=ExtResource("2_x1nv6")]
 unique_name_in_owner = true
-offset_left = 464.0
-offset_top = 170.0
-offset_right = 679.0
-offset_bottom = 504.0
+offset_left = 449.0
+offset_top = 109.0
+offset_right = 731.0
+offset_bottom = 564.0
 
 [node name="ActionCard3" parent="." instance=ExtResource("2_x1nv6")]
 unique_name_in_owner = true
-offset_left = 699.0
-offset_top = 169.0
-offset_right = 914.0
-offset_bottom = 503.0
+offset_left = 758.0
+offset_top = 104.0
+offset_right = 1029.0
+offset_bottom = 561.0
 
 [connection signal="action_card_clicked" from="ActionCard1" to="." method="_on_action_card_1_action_card_clicked"]
 [connection signal="action_card_clicked" from="ActionCard2" to="." method="_on_action_card_2_action_card_clicked"]
