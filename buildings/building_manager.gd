@@ -5,6 +5,7 @@ signal pickup_collected()
 
 const NAME = "name"
 const PLACEMENTS = "placements"
+const COST = "cost"
 const VIEW_RADIUS = "view_radius"
 const SOURCE_ID = "source_id"
 const ATLAS_COORDS = "atlas_coords"
@@ -18,6 +19,7 @@ const PRODUCABLE_RATE = "producable_rate"
 	Building.Type.headquarter: {
 		NAME: "Headquarter",
 		PLACEMENTS: [GrassTile],
+		COST: 5,
 		VIEW_RADIUS: 2,
 		SOURCE_ID: 4,
 		ATLAS_COORDS: Vector2i(0, 0),
@@ -27,6 +29,7 @@ const PRODUCABLE_RATE = "producable_rate"
 	Building.Type.wood_cutter: {
 		NAME: "Wood Cutter",
 		PLACEMENTS: [ForestTile],
+		COST: 3,
 		VIEW_RADIUS: 1,
 		SOURCE_ID: 5,
 		ATLAS_COORDS: Vector2i(0, 0),
@@ -49,6 +52,7 @@ func create_building(type: Building.Type) -> Building:
 	return Building.new(
 		info[NAME], type,
 		info[PLACEMENTS],
+		info[COST],
 		info[SOURCE_ID],
 		info[ATLAS_COORDS],
 		info[VIEW_RADIUS],
