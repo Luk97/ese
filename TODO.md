@@ -52,7 +52,6 @@
 - [ ] Enhance Finish Round Button	//Just needs a makeover
 - [ ] Enhance Round Counter Label	//Will be adjusted according to the lable adjustment! Should have the same Style at the beginning
 
-
 ### Gameplay
 - [x] Place starter tile on grass tile
 - [x] Start of round: Get choice between 3 actions out of the tile pool
@@ -83,7 +82,7 @@
 - [x] Building: Buoy
 
 ### Gameplay
-- [ ] Buildings cost resources
+- [x] Buildings cost resources
 - [x] Sharp Interfaces for Tiles
 - [ ] Buildup fire wood production chain
 - [ ] Buildup Food produdction chain
