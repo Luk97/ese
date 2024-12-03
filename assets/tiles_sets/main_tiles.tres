@@ -1,26 +1,15 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://crd6g2q3ow7a1"]
-
-[ext_resource type="Texture2D" path="res://assets/tiles/WaterTiles.png" id="3_nyoky"]
-[ext_resource type="Texture2D" path="res://assets/tiles/TerrainTiles.png" id="5_1de6y"]
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://crd6g2q3ow7a1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uo7mx"]
-texture = ExtResource("3_nyoky")
 texture_region_size = Vector2i(32, 32)
 0:1/0 = 0
 1:1/0 = 0
 2:1/0 = 0
 3:1/0 = 0
-0:0/animation_columns = 4
-0:0/animation_speed = 2.0
-0:0/animation_frame_0/duration = 1.0
-0:0/animation_frame_1/duration = 1.0
-0:0/animation_frame_2/duration = 1.0
-0:0/animation_frame_3/duration = 1.0
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_354se"]
-texture = ExtResource("5_1de6y")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, 8)
