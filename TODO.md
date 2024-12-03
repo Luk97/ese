@@ -68,19 +68,19 @@
 - [x] UI: Background for Building info
 - [x] Building: Charcoal Burner
 - [x] Building: Farm
-- [ ] (!) Building: Field (wheat)
-- [ ] (!) Building: Windmill
+- [x] Building: Field (wheat)
+- [x] Building: Windmill
 - [x] Icon: Wheat
 - [x] Building: Outpost
 - [x] Icon: Bomb (used to destroy buildings)
-- [ ] Icon: Firewood
-- [ ] Icon: Fish
-- [ ] Icon: Flour
-- [ ] Icon: Bread
+- [x] Icon: Firewood
+- [x] Icon: Fish
+- [x] Icon: Flour
+- [x] Icon: Bread
 - [ ] Building: Bakery
-- [ ] Building: Fisherboat (placed on water)
-- [ ] Building: Harbour (only then you get fisherboats, built on coast tile)
-- [ ] Building: Buoy
+- [x] Building: Fisherboat (placed on water)
+- [x] (!) Building: Harbour (only then you get fisherboats, built on coast tile)
+- [x] Building: Buoy
 
 ### Gameplay
 - [ ] Buildings cost resources
