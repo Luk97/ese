@@ -103,6 +103,11 @@
 - [ ] Terrain: Sand
 - [ ] Terrain: Mountain (stone)
 
+- [ ] UI Background for Food and Warmth Bar #Ergaenzung von Tobias für die UI
+- [ ] UI Bar for Food and Warmth Bar #Ergaenzung von Tobias für die UI
+- [ ] (!) UI: Pixel font #Ergaenzung von Tobias für die UI
+	- [ ] Numbers and basic special character
+
 ### Gameplay
 - [ ] Global Gamestats
 
