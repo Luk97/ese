@@ -107,10 +107,12 @@
 - [ ] UI Bar for Food and Warmth Bar #Ergaenzung von Tobias für die UI
 - [ ] (!) UI: Pixel font #Ergaenzung von Tobias für die UI
 	- [ ] Numbers and basic special character
+	- [ ] Rework the "S"
 	- Anm. 	Ich habe ein paar Testlabels im Hauptmenü eingebaut. 
 			Links normal und rechts mit Outline 1px. Dann kannst Du sehen, 
 			wie die Schrift in verschiedenen Schriftgrößen zur Geltung kommt.
 			Am Spieltitel habe ich ein paar mehr Spielereien eingebaut.
+			Der Titel skaliert jetzt im Übrigen mit.
 
 ### Gameplay
 - [ ] Global Gamestats
