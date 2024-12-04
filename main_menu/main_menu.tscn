@@ -49,8 +49,8 @@ size_flags_vertical = 3
 theme_override_constants/outline_size = 12
 theme_override_constants/shadow_outline_size = 24
 theme_override_fonts/font = ExtResource("2_waccv")
-theme_override_font_sizes/font_size = 80
-text = "ESE (Arbeitstitel)"
+theme_override_font_sizes/font_size = 100
+text = "ESE Arbeitstitel"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
@@ -105,6 +105,60 @@ layout_mode = 2
 tooltip_text = "Spiel beenden"
 text = "Beenden"
 script = ExtResource("2_1x6tn")
+
+[node name="Test" type="VBoxContainer" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="MainMenu/Test"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_waccv")
+theme_override_font_sizes/font_size = 10
+text = "Schriftgroesse 10"
+
+[node name="Label2" type="Label" parent="MainMenu/Test"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_waccv")
+theme_override_font_sizes/font_size = 20
+text = "Schriftgroesse 20
+"
+
+[node name="Label3" type="Label" parent="MainMenu/Test"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_waccv")
+theme_override_font_sizes/font_size = 30
+text = "Schriftgroesse 30
+"
+
+[node name="Label4" type="Label" parent="MainMenu/Test"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_waccv")
+theme_override_font_sizes/font_size = 40
+text = "Schriftgroesse 40
+"
+
+[node name="Label5" type="Label" parent="MainMenu/Test"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_waccv")
+theme_override_font_sizes/font_size = 50
+text = "Schriftgroesse 50
+"
+
+[node name="Label6" type="Label" parent="MainMenu/Test"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_waccv")
+theme_override_font_sizes/font_size = 60
+text = "Schriftgroesse 60
+"
+
+[node name="Label7" type="Label" parent="MainMenu/Test"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_waccv")
+theme_override_font_sizes/font_size = 70
+text = "Schriftgroesse 70
+"
 
 [connection signal="pressed" from="MainMenu/MarginContainer/HBoxContainer/VBoxContainer/StartGame" to="MainMenu/MarginContainer/HBoxContainer/VBoxContainer/StartGame" method="_on_pressed"]
 [connection signal="pressed" from="MainMenu/MarginContainer/HBoxContainer/VBoxContainer/Credits" to="MainMenu/MarginContainer/HBoxContainer/VBoxContainer/Credits" method="_on_pressed"]
