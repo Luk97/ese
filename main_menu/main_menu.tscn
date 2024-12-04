@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://chg7f0tjh88pj"]
+[gd_scene load_steps=8 format=3 uid="uid://chg7f0tjh88pj"]
 
 [ext_resource type="Script" path="res://main_menu/start_game.gd" id="1_1nxty"]
 [ext_resource type="Texture2D" uid="uid://d1px8fudvkgd7" path="res://main_menu/background_1.png" id="1_jakxa"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://interface/beenden_button.gd" id="2_1x6tn"]
 [ext_resource type="FontFile" uid="uid://byiu3lccawsbh" path="res://assets/ui/PixelArt.ttf" id="2_waccv"]
 [ext_resource type="Script" path="res://main_menu/credits.gd" id="3_tjfmy"]
+[ext_resource type="Script" path="res://main_menu/label.gd" id="4_k4kst"]
 
 [node name="Menu" type="CanvasLayer"]
 
@@ -49,11 +50,11 @@ size_flags_vertical = 3
 theme_override_constants/outline_size = 12
 theme_override_constants/shadow_outline_size = 24
 theme_override_fonts/font = ExtResource("2_waccv")
-theme_override_font_sizes/font_size = 100
 text = "ESE Arbeitstitel"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
+script = ExtResource("4_k4kst")
 
 [node name="MarginContainer" type="MarginContainer" parent="MainMenu"]
 layout_mode = 1
