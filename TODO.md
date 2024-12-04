@@ -118,7 +118,8 @@
 - [ ] Global Gamestats
 
 ### User Interface
-- [ ] Fix scaling of the ui
-- [X] Basic Credits Screen			//Weiterführend: Daten einpflegen, schick machen
+- [ ] Fix scaling of the ui					
+- [X] Basic Credits Screen					//Weiterführend: Daten einpflegen, schick machen
 - [ ] Fix scaling of Action Selection
 - [ ] Basic Bars for Food and Warmth		//Grafiken für später wären toll :D
+- [ ] Improve auto-scaling of lables.
