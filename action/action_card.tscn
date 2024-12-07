@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dji6noqfedsmf"]
 
-[ext_resource type="Texture2D" uid="uid://boyt2d2row2jo" path="res://assets/Label.png" id="1_8682s"]
+[ext_resource type="Texture2D" uid="uid://boyt2d2row2jo" path="res://assets/ui/Label.png" id="1_8682s"]
 [ext_resource type="Script" path="res://action/action_card.gd" id="2_pd13f"]
-[ext_resource type="Texture2D" uid="uid://cc4knyc2bod0e" path="res://assets/wood.png" id="3_e2ta0"]
+[ext_resource type="Texture2D" uid="uid://cc4knyc2bod0e" path="res://assets/items/wood.png" id="3_e2ta0"]
 [ext_resource type="Texture2D" uid="uid://ciyyc6353vlsd" path="res://assets/action/axe.png" id="3_wrq3j"]
 
 [node name="ActionCard" type="NinePatchRect"]

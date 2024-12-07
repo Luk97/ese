@@ -1,20 +1,18 @@
-[gd_scene load_steps=17 format=3 uid="uid://xo55sqx1lwyd"]
+[gd_scene load_steps=16 format=3 uid="uid://xo55sqx1lwyd"]
 
 [ext_resource type="Script" path="res://tiles/tile_manager.gd" id="1_6pc0r"]
 [ext_resource type="TileSet" uid="uid://crd6g2q3ow7a1" path="res://assets/tiles_sets/main_tiles.tres" id="2_6bhbm"]
 [ext_resource type="Script" path="res://tiles/ground_layer.gd" id="3_1cqcs"]
 [ext_resource type="Script" path="res://tiles/decoration/decoration_manager.gd" id="4_hfeke"]
-[ext_resource type="Texture2D" uid="uid://dmhntqcr4suja" path="res://assets/tiles/TestTiles.png" id="5_oyp72"]
-[ext_resource type="Texture2D" uid="uid://dt1sknjy6c7o8" path="res://assets/Forest.png" id="6_3kbqs"]
-[ext_resource type="Texture2D" uid="uid://b30b2cenhqcq4" path="res://assets/Grass.png" id="7_6fwn7"]
-[ext_resource type="Texture2D" uid="uid://dcduycwdhj4mv" path="res://assets/Home.png" id="8_0iqty"]
-[ext_resource type="Texture2D" uid="uid://fql16pdaoa0m" path="res://assets/Woodcutter.png" id="9_tr005"]
+[ext_resource type="Texture2D" uid="uid://dt1sknjy6c7o8" path="res://assets/tiles/overlay/on_land/on_forest/Forest.png" id="6_3kbqs"]
+[ext_resource type="Texture2D" uid="uid://b30b2cenhqcq4" path="res://assets/tiles/overlay/on_land/on_grass/Grass.png" id="7_6fwn7"]
+[ext_resource type="Texture2D" uid="uid://dcduycwdhj4mv" path="res://assets/tiles/overlay/on_land/on_grass/Home.png" id="8_0iqty"]
+[ext_resource type="Texture2D" uid="uid://fql16pdaoa0m" path="res://assets/tiles/overlay/on_land/on_forest/Woodcutter.png" id="9_tr005"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_jpqon"]
 frequency = 0.04
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x4e2f"]
-texture = ExtResource("5_oyp72")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, 8)
