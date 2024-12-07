@@ -1,20 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://ducgu2fqryiv4"]
+[gd_scene load_steps=3 format=3 uid="uid://dgbq5goh7yrtn"]
 
-[ext_resource type="Texture2D" uid="uid://cyx45bcefi3ym" path="res://assets/theme/label_bg.png" id="1_sga6m"]
-[ext_resource type="Script" path="res://interface/wood_counter_label.gd" id="2_ypone"]
+[ext_resource type="Texture2D" uid="uid://cyx45bcefi3ym" path="res://assets/theme/label_bg.png" id="1_bdsfv"]
+[ext_resource type="Script" path="res://interface/labels/round_counter_label.gd" id="2_so3jq"]
 
 [node name="Container" type="NinePatchRect"]
 offset_right = 101.0
 offset_bottom = 49.0
-texture = ExtResource("1_sga6m")
+texture = ExtResource("1_bdsfv")
 patch_margin_left = 8
 patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
-script = ExtResource("2_ypone")
 
-[node name="WoodCounterLabel" type="Label" parent="."]
-unique_name_in_owner = true
+[node name="RoundCounterLabel" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -27,6 +25,7 @@ offset_right = 45.5
 offset_bottom = 24.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "Wood: 0"
+text = "Round: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("2_so3jq")

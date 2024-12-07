@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://preview/preview_manager.gd" id="1_3qkvr"]
 [ext_resource type="Texture2D" uid="uid://ciyyc6353vlsd" path="res://assets/action/axe.png" id="2_angg5"]
-[ext_resource type="Texture2D" uid="uid://dcduycwdhj4mv" path="res://assets/Home.png" id="2_opx0f"]
-[ext_resource type="Texture2D" uid="uid://fql16pdaoa0m" path="res://assets/Woodcutter.png" id="3_ikkvw"]
+[ext_resource type="Texture2D" uid="uid://dcduycwdhj4mv" path="res://assets/tiles/overlay/on_land/on_grass/Home.png" id="2_opx0f"]
+[ext_resource type="Texture2D" uid="uid://fql16pdaoa0m" path="res://assets/tiles/overlay/on_land/on_forest/Woodcutter.png" id="3_ikkvw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oyfim"]
 texture = ExtResource("2_angg5")

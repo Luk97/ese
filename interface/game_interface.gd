@@ -1,15 +1,18 @@
 extends CanvasLayer
 
-signal round_finished()
+@onready var wood_label: NinePatchRect = %WoodLabel
+@onready var wheat_label: NinePatchRect = %WheatLabel
 
-@onready var round_counter_label: NinePatchRect = %RoundCounterLabel
-@onready var wood_counter_label: NinePatchRect = %WoodCounterLabel
+signal round_finished
 
-func set_round_count(rounds: int) -> void:
-	round_counter_label.set_round_count(rounds)
-	
-func set_wood_count(wood_count: int) -> void:
-	wood_counter_label.set_wood_count(wood_count)
+func _ready() -> void:
+	GameManager.wood_updated.connect(update_wood_label)
 
 func _on_finish_round_button_pressed() -> void:
 	emit_signal("round_finished")
+
+func update_wood_label(wood: int) -> void:
+	wood_label.set_resource_count(wood)
+
+func update_wheat_label(wheat: int) -> void:
+	wheat_label.set_resource_count(wheat)
