@@ -44,6 +44,13 @@ custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_vertical = 0
 
+[node name="Menu" parent="Elements/UI_Margin/Top_Container" instance=ExtResource("5_hmy8k")]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Menü
+"
+script = ExtResource("7_htivo")
+
 [node name="Bottoom_Container" type="VBoxContainer" parent="Elements/UI_Margin"]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
@@ -58,9 +65,6 @@ custom_minimum_size = Vector2(400, 60)
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 10
-
-[node name="VSeparator" type="VSeparator" parent="Elements/UI_Margin/Bottoom_Container/HBoxContainer"]
-layout_mode = 2
 
 [node name="ProgressBar_Food" parent="Elements/UI_Margin/Bottoom_Container/HBoxContainer" instance=ExtResource("10_coaw6")]
 custom_minimum_size = Vector2(400, 60)
@@ -107,15 +111,6 @@ offset_left = 0.317993
 offset_right = 1.33997
 offset_bottom = 27.16
 size_flags_horizontal = 8
-
-[node name="Menu" parent="Elements" instance=ExtResource("5_hmy8k")]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.933
-anchor_bottom = 0.048
-offset_left = 0.317993
-offset_bottom = 0.039999
-script = ExtResource("7_htivo")
 
 [node name="WoodLabel" parent="Elements" instance=ExtResource("7_xl27s")]
 unique_name_in_owner = true
@@ -182,6 +177,6 @@ texture = ExtResource("10_noos1")
 [node name="round_counter_lable" type="Label" parent="Elements/Round_Lable/LableContainer"]
 layout_mode = 2
 
+[connection signal="pressed" from="Elements/UI_Margin/Top_Container/Menu" to="Elements/UI_Margin/Top_Container/Menu" method="_on_pressed"]
 [connection signal="pressed" from="Elements/UI_Margin/Bottoom_Container/HBoxContainer/RundeBeenden" to="." method="_on_finish_round_button_pressed"]
 [connection signal="pressed" from="Elements/FinishRoundButton" to="." method="_on_finish_round_button_pressed"]
-[connection signal="pressed" from="Elements/Menu" to="Elements/Menu" method="_on_pressed"]
