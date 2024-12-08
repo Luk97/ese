@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://csl3gkoguyj4k"]
+
+[ext_resource type="Texture2D" uid="uid://pr8t0vhkoufo" path="res://assets/ui/HG.png" id="1_xfn6w"]
+[ext_resource type="Texture2D" uid="uid://bjh7dhb5dbbcn" path="res://assets/ui/Vordergrund.png" id="2_gmci1"]
+[ext_resource type="Texture2D" uid="uid://cke3b2trgyr11" path="res://assets/ui/Button.png" id="3_k7hiu"]
+
+[node name="NinePatchRect" type="NinePatchRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+icon = ExtResource("3_k7hiu")
+expand_icon = true
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="HBoxContainer"]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+value = 100.0
+nine_patch_stretch = true
+stretch_margin_left = 5
+stretch_margin_top = 5
+stretch_margin_right = 5
+stretch_margin_bottom = 5
+texture_under = ExtResource("1_xfn6w")
+texture_progress = ExtResource("2_gmci1")

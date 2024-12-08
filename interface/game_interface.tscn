@@ -1,13 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://bna15bbgjgwfe"]
+[gd_scene load_steps=11 format=3 uid="uid://bna15bbgjgwfe"]
 
 [ext_resource type="Script" path="res://interface/game_interface.gd" id="1_bnx4o"]
 [ext_resource type="PackedScene" uid="uid://dgbq5goh7yrtn" path="res://interface/labels/round_counter_label.tscn" id="2_4d6ly"]
 [ext_resource type="PackedScene" uid="uid://c7uwlhqoc4cq1" path="res://interface/finish_round_button.tscn" id="2_bd0v6"]
-[ext_resource type="PackedScene" path="res://interface/runde_beenden.tscn" id="3_vjbiu"]
-[ext_resource type="PackedScene" path="res://interface/beenden_button.tscn" id="5_hmy8k"]
+[ext_resource type="PackedScene" uid="uid://go5qe7tje8xn" path="res://interface/runde_beenden.tscn" id="3_vjbiu"]
+[ext_resource type="PackedScene" uid="uid://vw775152hyl8" path="res://interface/beenden_button.tscn" id="5_hmy8k"]
 [ext_resource type="Script" path="res://interface/menu.gd" id="7_htivo"]
 [ext_resource type="PackedScene" uid="uid://ckgpun112k64h" path="res://interface/labels/resource_label.tscn" id="7_xl27s"]
 [ext_resource type="Texture2D" uid="uid://cyx45bcefi3ym" path="res://assets/theme/label_bg.png" id="8_ejywj"]
+[ext_resource type="PackedScene" uid="uid://csl3gkoguyj4k" path="res://interface/Balken.tscn" id="10_coaw6"]
 [ext_resource type="Texture2D" uid="uid://dmq8fmn2vg0a0" path="res://assets/items/Wheat.png" id="10_noos1"]
 
 [node name="GameInterface" type="CanvasLayer"]
@@ -167,6 +168,18 @@ texture = ExtResource("10_noos1")
 
 [node name="round_counter_lable" type="Label" parent="Elements/Round_Lable/LableContainer"]
 layout_mode = 2
+
+[node name="ProgressBar_Heat" parent="." instance=ExtResource("10_coaw6")]
+custom_minimum_size = Vector2(400, 20)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_right = 0.0
+offset_top = -49.0
+offset_right = 400.0
+grow_horizontal = 1
+grow_vertical = 0
+size_flags_horizontal = 2
+size_flags_vertical = 10
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 anchors_preset = 6
