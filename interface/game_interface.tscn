@@ -45,13 +45,13 @@ layout_mode = 2
 size_flags_vertical = 0
 
 [node name="Bottoom_Container" type="VBoxContainer" parent="Elements/UI_Margin"]
-custom_minimum_size = Vector2(0, 80)
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 size_flags_vertical = 8
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Elements/UI_Margin/Bottoom_Container"]
 layout_mode = 2
-size_flags_vertical = 10
+size_flags_vertical = 6
 
 [node name="ProgressBar_Heat" parent="Elements/UI_Margin/Bottoom_Container/HBoxContainer" instance=ExtResource("10_coaw6")]
 custom_minimum_size = Vector2(400, 20)
