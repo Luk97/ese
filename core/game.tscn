@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cc30mnccj5g6g"]
+[gd_scene load_steps=6 format=3 uid="uid://cc30mnccj5g6g"]
 
 [ext_resource type="Script" path="res://core/game.gd" id="1_5b6wp"]
 [ext_resource type="PackedScene" uid="uid://bna15bbgjgwfe" path="res://interface/game_interface.tscn" id="3_fm1gd"]
 [ext_resource type="PackedScene" uid="uid://d0k2poflbowa0" path="res://action/action_manager.tscn" id="4_oivsg"]
-[ext_resource type="PackedScene" uid="uid://xo55sqx1lwyd" path="res://tiles/tile_manager.tscn" id="8_8npch"]
 [ext_resource type="PackedScene" uid="uid://dpi3e1l5ihonh" path="res://preview/preview_manager.tscn" id="12_gpy66"]
 [ext_resource type="PackedScene" uid="uid://6kwaj4oiqir3" path="res://buildings/building_manager.tscn" id="15_ucn6x"]
 
@@ -11,9 +10,6 @@
 script = ExtResource("1_5b6wp")
 
 [node name="GameInterface" parent="." instance=ExtResource("3_fm1gd")]
-unique_name_in_owner = true
-
-[node name="TileManager" parent="." instance=ExtResource("8_8npch")]
 unique_name_in_owner = true
 
 [node name="ActionManager" parent="." instance=ExtResource("4_oivsg")]

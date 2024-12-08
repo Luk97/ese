@@ -1,29 +1,36 @@
-class_name TileManager
 extends Node2D
 
 @export var tiles: Dictionary = {}
-@export var spawn_coords = Vector2i(0, 0)
-@export var spawn_radius = 0
 
 @onready var ground_layer: GroundLayer = %GroundLayer
 @onready var top_layer: TileMapLayer = %TopLayer
-@onready var decoration_manager: DecorationManager = %DecorationManager
 
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 var seed = hash("Lukas") #NOTE: this is temporary and should be seleceted by the user
 
 
+
 #=================== PUBLIC FUNCTIONS ===================
 
-func place_tile(tile: Tile) -> void:
+func get_tile(coords: Vector2i) -> Tile:
+	return tiles[coords] if tiles.has(coords) else null
+
+func upsert_tile(tile: Tile) -> void:
 	tiles[tile.map_coords] = tile
 	ground_layer.set_cell(tile.map_coords, tile.source_id, tile.atlas_coords)
+	if tile.building != null:
+		top_layer.set_cell(tile.map_coords - Vector2i(1, 1), tile.building.source_id, tile.building.atlas_coords)
+		ground_layer.generate_tiles(tile.map_coords, tile.building.view_radius)
+	elif tile.decoration != null:
+		top_layer.set_cell(tile.map_coords - Vector2i(1, 1), tile.decoration.source_id, tile.decoration.atlas_coords)
 	
-	if tiles[tile.map_coords].building == null:
-		top_layer.erase_cell(tile.map_coords - Vector2i(1, 1))
-		var decoration = decoration_manager.get_random_decoration(tile)
-		if (decoration != null):
-			top_layer.set_cell(tile.map_coords - Vector2i(1, 1), decoration.source_id, decoration.atlas_coords)
+
+func get_cursor_tile() -> Tile:
+	var coords = ground_layer.get_cursor_tile_coords()
+	return tiles[coords] if tiles.has(coords) else null
+
+
+
 
 func place_building(building: Building, coords: Vector2i) -> void:
 	if tiles.has(coords):
@@ -35,11 +42,7 @@ func update_producable(producable: Producable, tile: Tile) -> void:
 	if tiles.has(tile.map_coords) and tiles[tile.map_coords].building != null:
 		tiles[tile.map_coords].building.producable = producable
 
-func get_cursor_tile() -> Tile:
-	var coords = ground_layer.get_cursor_tile_coords()
-	if tiles.has(coords):
-		return tiles[coords]
-	return null
+
 
 func get_building_tiles() -> Array:
 	return tiles.values().filter(_has_building)
@@ -63,7 +66,8 @@ func _initialize_random() -> void:
 	ground_layer.moisture_noise.seed = rng.randi()
 
 func _initialize_starter_area() -> void:
-	ground_layer.generate_tiles(spawn_coords, spawn_radius)
+	# TODO: this should find a valid starting point
+	ground_layer.generate_tiles(Vector2i(0, 0), 0)
 
 func _has_building(tile: Tile) -> bool:
 	return tile.building != null

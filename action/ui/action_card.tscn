@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://dji6noqfedsmf"]
 
-[ext_resource type="Texture2D" uid="uid://boyt2d2row2jo" path="res://assets/ui/Label.png" id="1_8682s"]
-[ext_resource type="Script" path="res://action/action_card.gd" id="2_pd13f"]
-[ext_resource type="Texture2D" uid="uid://cc4knyc2bod0e" path="res://assets/items/wood.png" id="3_e2ta0"]
-[ext_resource type="Texture2D" uid="uid://ciyyc6353vlsd" path="res://assets/action/axe.png" id="3_wrq3j"]
+[ext_resource type="Texture2D" uid="uid://boyt2d2row2jo" path="res://assets/ui/Label.png" id="1_v0uvy"]
+[ext_resource type="Script" path="res://action/ui/action_card.gd" id="2_dfm2f"]
+[ext_resource type="Texture2D" uid="uid://cc4knyc2bod0e" path="res://assets/items/wood.png" id="3_nvpoj"]
+[ext_resource type="Texture2D" uid="uid://ciyyc6353vlsd" path="res://assets/action/axe.png" id="4_akdu4"]
 
 [node name="ActionCard" type="NinePatchRect"]
 offset_left = 162.0
@@ -11,8 +11,8 @@ offset_top = 97.0
 offset_right = 422.0
 offset_bottom = 538.0
 mouse_filter = 0
-texture = ExtResource("1_8682s")
-script = ExtResource("2_pd13f")
+texture = ExtResource("1_v0uvy")
+script = ExtResource("2_dfm2f")
 
 [node name="Title" type="Label" parent="."]
 unique_name_in_owner = true
@@ -45,7 +45,7 @@ offset_bottom = 318.0
 
 [node name="CostIcon" type="TextureRect" parent="CostContainer"]
 layout_mode = 2
-texture = ExtResource("3_e2ta0")
+texture = ExtResource("3_nvpoj")
 
 [node name="Cost" type="Label" parent="CostContainer"]
 unique_name_in_owner = true
@@ -69,6 +69,6 @@ position = Vector2(-1, 28)
 unique_name_in_owner = true
 position = Vector2(129, 86)
 scale = Vector2(2.95313, 3.5)
-texture = ExtResource("3_wrq3j")
+texture = ExtResource("4_akdu4")
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

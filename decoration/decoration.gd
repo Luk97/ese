@@ -1,5 +1,5 @@
 class_name Decoration
-extends Object
+extends Resource
 
 var source_id: int
 var atlas_coords: Vector2i

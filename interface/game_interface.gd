@@ -6,7 +6,8 @@ extends CanvasLayer
 signal round_finished
 
 func _ready() -> void:
-	GameManager.wood_updated.connect(update_wood_label)
+	ResourceManager.wood_updated.connect(update_wood_label)
+	ResourceManager.wheat_updated.connect(update_wheat_label)
 
 func _on_finish_round_button_pressed() -> void:
 	emit_signal("round_finished")

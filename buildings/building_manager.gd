@@ -3,63 +3,13 @@ extends Node2D
 
 signal pickup_collected()
 
-const NAME = "name"
-const PLACEMENTS = "placements"
-const COST = "cost"
-const VIEW_RADIUS = "view_radius"
-const SOURCE_ID = "source_id"
-const ATLAS_COORDS = "atlas_coords"
-const PRODUCABLE_TYPE = "producable_type"
-const PRODUCABLE_RATE = "producable_rate"
-
 @onready var tile_manager: TileManager = %TileManager
 @export var wood: PackedScene
 
-@export var buildings: Dictionary = {
-	Building.Type.headquarter: {
-		NAME: "Headquarter",
-		PLACEMENTS: [GrassTile],
-		COST: 5,
-		VIEW_RADIUS: 2,
-		SOURCE_ID: 4,
-		ATLAS_COORDS: Vector2i(0, 0),
-		PRODUCABLE_TYPE: null,
-		PRODUCABLE_RATE: null
-	},
-	Building.Type.wood_cutter: {
-		NAME: "Wood Cutter",
-		PLACEMENTS: [ForestTile],
-		COST: 3,
-		VIEW_RADIUS: 1,
-		SOURCE_ID: 5,
-		ATLAS_COORDS: Vector2i(0, 0),
-		PRODUCABLE_TYPE: Producable.Type.wood,
-		PRODUCABLE_RATE: 3
-	}
-}
-
-
-
 #=================== PUBLIC FUNCTIONS ===================
 
-func create_building(type: Building.Type) -> Building:
-	var info = buildings[type]
-	var producable: Producable = null
-		
-	if info[PRODUCABLE_TYPE] != null and info[PRODUCABLE_RATE] != null:
-		producable = Producable.new(info[PRODUCABLE_TYPE], info[PRODUCABLE_RATE])
-		
-	return Building.new(
-		info[NAME], type,
-		info[PLACEMENTS],
-		info[COST],
-		info[SOURCE_ID],
-		info[ATLAS_COORDS],
-		info[VIEW_RADIUS],
-		producable
-	) 
-
 func update_building_productions() -> void:
+	return
 	var building_tiles = tile_manager.get_building_tiles()
 	for tile in building_tiles:
 		var producable = tile.building.producable

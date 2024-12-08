@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dpi3e1l5ihonh"]
+[gd_scene load_steps=11 format=3 uid="uid://dpi3e1l5ihonh"]
 
 [ext_resource type="Script" path="res://preview/preview_manager.gd" id="1_3qkvr"]
 [ext_resource type="Texture2D" uid="uid://ciyyc6353vlsd" path="res://assets/action/axe.png" id="2_angg5"]
 [ext_resource type="Texture2D" uid="uid://dcduycwdhj4mv" path="res://assets/tiles/overlay/on_land/on_grass/Home.png" id="2_opx0f"]
 [ext_resource type="Texture2D" uid="uid://fql16pdaoa0m" path="res://assets/tiles/overlay/on_land/on_forest/Woodcutter.png" id="3_ikkvw"]
+[ext_resource type="Texture2D" uid="uid://b5dax8ekear38" path="res://assets/tiles/overlay/on_land/on_grass/outpost.png" id="5_7dd0p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oyfim"]
 texture = ExtResource("2_angg5")
@@ -49,6 +50,13 @@ texture_region_size = Vector2i(32, 32)
 2:1/0 = 0
 3:1/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tqacl"]
+texture = ExtResource("5_7dd0p")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 8)
+0:1/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_n556q"]
 tile_shape = 3
 tile_layout = 5
@@ -57,6 +65,7 @@ tile_size = Vector2i(32, 16)
 sources/4 = SubResource("TileSetAtlasSource_57fv4")
 sources/5 = SubResource("TileSetAtlasSource_tvp3m")
 sources/3 = SubResource("TileSetAtlasSource_oyfim")
+sources/9 = SubResource("TileSetAtlasSource_tqacl")
 
 [node name="PreviewManager" type="Node2D"]
 script = ExtResource("1_3qkvr")

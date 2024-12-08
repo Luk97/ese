@@ -40,7 +40,7 @@ func generate_tiles(center: Vector2i, radius: int) -> void:
 				moisture = _stretch_noise_value(moisture)
 				
 				var tile = _get_tile_from_environment(altitude, temperature, moisture, tile_coords)
-				tile_manager.place_tile(tile)
+				tile_manager.upsert_tile(tile)
 
 
 #=================== PRIVATE FUNCTIONS ===================
@@ -61,11 +61,11 @@ func _stretch_noise_value(value: float) -> float:
 	
 func _get_tile_from_environment(altitude: float, temperature: float, moisture: float, coords: Vector2i) -> Tile:
 	if altitude < 5:
-		return WaterTile.new(coords)
+		return TileFactory.create_tile(TileFactory.Type.Water, coords)
 	elif temperature < 5:
-		return ForestTile.new(coords)
+		return TileFactory.create_tile(TileFactory.Type.Forest, coords)
 	else:
-		return GrassTile.new(coords)
+		return TileFactory.create_tile(TileFactory.Type.Grass, coords)
 
 func _get_center_tile_coords() -> Vector2i:
 	var center = CameraController.get_center()

@@ -1,4 +1,3 @@
-class_name DecorationManager
 extends Node
 
 const SOURCE_ID = "source_id"
@@ -37,11 +36,6 @@ var forest_decorations: Dictionary = {
 		ATLAS_COORDS: Vector2i(1, 0),
 		PICK_CHANCE: 6
 	},
-	"trees_3": {
-		SOURCE_ID: 1,
-		ATLAS_COORDS: Vector2i(0, 0),
-		PICK_CHANCE: 10
-	}
 }
 
 var water_decorations: Dictionary = {
@@ -53,12 +47,12 @@ var water_decorations: Dictionary = {
 
 #=================== PUBLIC FUNCTIONS ===================
 
-func get_random_decoration(tile: Tile) -> Decoration:
-	if tile is GrassTile:
+func get_random_decoration(tile_name: String) -> Decoration:
+	if tile_name == "Grass":
 		return _pick_random_decoration(grass_decorations)
-	elif tile is ForestTile:
+	elif tile_name == "Forest":
 		return _pick_random_decoration(forest_decorations)
-	elif tile is WaterTile:
+	elif tile_name == "Water":
 		return _pick_random_decoration(water_decorations)
 	return null
 

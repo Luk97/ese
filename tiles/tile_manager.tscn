@@ -1,11 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://xo55sqx1lwyd"]
+[gd_scene load_steps=17 format=3 uid="uid://xo55sqx1lwyd"]
 
 [ext_resource type="Script" path="res://tiles/tile_manager.gd" id="1_6pc0r"]
 [ext_resource type="TileSet" uid="uid://crd6g2q3ow7a1" path="res://assets/tiles_sets/main_tiles.tres" id="2_6bhbm"]
 [ext_resource type="Script" path="res://tiles/ground_layer.gd" id="3_1cqcs"]
-[ext_resource type="Script" path="res://tiles/decoration/decoration_manager.gd" id="4_hfeke"]
 [ext_resource type="Texture2D" uid="uid://dt1sknjy6c7o8" path="res://assets/tiles/overlay/on_land/on_forest/Forest.png" id="6_3kbqs"]
 [ext_resource type="Texture2D" uid="uid://b30b2cenhqcq4" path="res://assets/tiles/overlay/on_land/on_grass/Grass.png" id="7_6fwn7"]
+[ext_resource type="Texture2D" uid="uid://b5dax8ekear38" path="res://assets/tiles/overlay/on_land/on_grass/outpost.png" id="8_0gvli"]
 [ext_resource type="Texture2D" uid="uid://dcduycwdhj4mv" path="res://assets/tiles/overlay/on_land/on_grass/Home.png" id="8_0iqty"]
 [ext_resource type="Texture2D" uid="uid://fql16pdaoa0m" path="res://assets/tiles/overlay/on_land/on_forest/Woodcutter.png" id="9_tr005"]
 
@@ -76,6 +76,13 @@ texture_region_size = Vector2i(32, 32)
 2:1/0 = 0
 3:1/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3aq2l"]
+texture = ExtResource("8_0gvli")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 8)
+0:1/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_o0drx"]
 tile_shape = 3
 tile_layout = 5
@@ -86,13 +93,10 @@ sources/2 = SubResource("TileSetAtlasSource_7bfwg")
 sources/3 = SubResource("TileSetAtlasSource_jcgxg")
 sources/4 = SubResource("TileSetAtlasSource_rqgga")
 sources/5 = SubResource("TileSetAtlasSource_7r6s3")
+sources/9 = SubResource("TileSetAtlasSource_3aq2l")
 
 [node name="TileManager" type="Node2D"]
 script = ExtResource("1_6pc0r")
-
-[node name="DecorationManager" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("4_hfeke")
 
 [node name="GroundLayer" type="TileMapLayer" parent="."]
 unique_name_in_owner = true
