@@ -19,10 +19,6 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -3.0
-offset_top = 4.0
-offset_right = -1.0
-offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
@@ -59,13 +55,14 @@ size_flags_vertical = 8
 [node name="HBoxContainer" type="HBoxContainer" parent="Elements/UI_Margin/Bottoom_Container"]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
-size_flags_vertical = 6
+size_flags_vertical = 3
 
 [node name="ProgressBar_Heat" parent="Elements/UI_Margin/Bottoom_Container/HBoxContainer" instance=ExtResource("10_coaw6")]
 custom_minimum_size = Vector2(400, 60)
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 10
+size_flags_stretch_ratio = 0.0
 
 [node name="ProgressBar_Food" parent="Elements/UI_Margin/Bottoom_Container/HBoxContainer" instance=ExtResource("10_coaw6")]
 custom_minimum_size = Vector2(400, 60)
@@ -76,23 +73,8 @@ size_flags_vertical = 10
 [node name="RundeBeenden" parent="Elements/UI_Margin/Bottoom_Container/HBoxContainer" instance=ExtResource("3_vjbiu")]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
-size_flags_horizontal = 10
-
-[node name="FinishRoundButton" parent="Elements" instance=ExtResource("2_bd0v6")]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -109.0
-offset_top = -31.0
-offset_right = 0.0
-offset_bottom = 0.0
-grow_horizontal = 0
-grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="RoundCounterLabel" parent="Elements" instance=ExtResource("2_4d6ly")]
 unique_name_in_owner = true
@@ -101,17 +83,6 @@ offset_left = 12.0
 offset_top = 2.0
 offset_right = 113.0
 offset_bottom = 51.0
-
-[node name="BeendenButton" parent="Elements" instance=ExtResource("5_hmy8k")]
-visible = false
-layout_mode = 2
-anchors_preset = 0
-anchor_left = 0.933
-anchor_bottom = 0.048
-offset_left = 0.317993
-offset_right = 1.33997
-offset_bottom = 27.16
-size_flags_horizontal = 8
 
 [node name="WoodLabel" parent="Elements" instance=ExtResource("7_xl27s")]
 unique_name_in_owner = true
@@ -177,6 +148,33 @@ texture = ExtResource("10_noos1")
 
 [node name="round_counter_lable" type="Label" parent="Elements/Round_Lable/LableContainer"]
 layout_mode = 2
+
+[node name="FinishRoundButton" parent="Elements" instance=ExtResource("2_bd0v6")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -109.0
+offset_top = -31.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="BeendenButton" parent="Elements" instance=ExtResource("5_hmy8k")]
+visible = false
+layout_mode = 2
+anchors_preset = 0
+anchor_left = 0.933
+anchor_bottom = 0.048
+offset_left = 0.317993
+offset_right = 1.33997
+offset_bottom = 27.16
+size_flags_horizontal = 8
 
 [connection signal="pressed" from="Elements/UI_Margin/Top_Container/Menu" to="Elements/UI_Margin/Top_Container/Menu" method="_on_pressed"]
 [connection signal="pressed" from="Elements/UI_Margin/Bottoom_Container/HBoxContainer/RundeBeenden" to="." method="_on_finish_round_button_pressed"]
