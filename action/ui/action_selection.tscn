@@ -1,26 +1,26 @@
 [gd_scene load_steps=3 format=3 uid="uid://b1yxhxgyqagug"]
 
-[ext_resource type="Script" path="res://action/action_selection.gd" id="1_15468"]
-[ext_resource type="PackedScene" uid="uid://dji6noqfedsmf" path="res://action/action_card.tscn" id="2_x1nv6"]
+[ext_resource type="Script" path="res://action/ui/action_selection.gd" id="1_bdfc4"]
+[ext_resource type="PackedScene" uid="uid://dji6noqfedsmf" path="res://action/ui/action_card.tscn" id="2_xl1gj"]
 
 [node name="ActionSelection" type="CanvasLayer"]
-script = ExtResource("1_15468")
+script = ExtResource("1_bdfc4")
 
-[node name="ActionCard1" parent="." instance=ExtResource("2_x1nv6")]
+[node name="ActionCard1" parent="." instance=ExtResource("2_xl1gj")]
 unique_name_in_owner = true
 offset_left = 144.0
 offset_top = 103.0
 offset_right = 425.0
 offset_bottom = 558.0
 
-[node name="ActionCard2" parent="." instance=ExtResource("2_x1nv6")]
+[node name="ActionCard2" parent="." instance=ExtResource("2_xl1gj")]
 unique_name_in_owner = true
 offset_left = 449.0
 offset_top = 109.0
 offset_right = 731.0
 offset_bottom = 564.0
 
-[node name="ActionCard3" parent="." instance=ExtResource("2_x1nv6")]
+[node name="ActionCard3" parent="." instance=ExtResource("2_xl1gj")]
 unique_name_in_owner = true
 offset_left = 758.0
 offset_top = 104.0

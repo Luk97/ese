@@ -18,6 +18,10 @@ config/icon="res://assets/icon.svg"
 [autoload]
 
 CameraController="*res://camera/camera_controller.gd"
+DecorationManager="*res://decoration/decoration_manager.gd"
+TileFactory="*res://tiles/tile_factory.gd"
+TileManager="*res://tiles/tile_manager.tscn"
+ResourceManager="*res://core/resource_manager.gd"
 GameManager="*res://core/game_manager.gd"
 
 [debug]

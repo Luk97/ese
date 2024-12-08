@@ -1,7 +1,6 @@
 class_name PreviewManager
 extends Node2D
 
-@onready var tile_manager: TileManager = %TileManager
 @onready var preview_layer: TileMapLayer = %PreviewLayer
 
 var enabled: bool = false
@@ -24,16 +23,17 @@ func _process(delta: float) -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if enabled and event is InputEventMouse:
-		if event.button_mask == MOUSE_BUTTON_LEFT and event.is_pressed():
-			var cursor_tile = tile_manager.get_cursor_tile()
+		var cursor_tile = TileManager.get_cursor_tile()
+		if event.button_mask == MOUSE_BUTTON_LEFT and event.is_pressed() and cursor_tile != null:
 			if action is BuildingAction and _is_valid_building_tile(action.building, cursor_tile):
 				preview_layer.clear()
-				tile_manager.place_building(action.building, cursor_tile.map_coords)
+				cursor_tile.building = action.building
+				TileManager.upsert_tile(cursor_tile)
 				enabled = false
 				emit_signal("preview_done")
 			elif action is TerrainAction and _is_valid_terrain_tile(action.origins, cursor_tile):
 				preview_layer.clear()
-				tile_manager.place_tile(action.destination[0].new(cursor_tile.map_coords))
+				#tile_manager.place_tile(action.destination[0].new(cursor_tile.map_coords))
 				enabled = false
 				emit_signal("preview_done")
 
@@ -42,7 +42,7 @@ func _show_preview():
 	
 	if action == null: return
 	
-	var cursor_tile = tile_manager.get_cursor_tile()
+	var cursor_tile = TileManager.get_cursor_tile()
 	if cursor_tile == null: return
 	
 	var source_id: int
@@ -65,8 +65,8 @@ func _show_preview():
 	_set_preview(cursor_tile.map_coords, source_id, atlas_coords)
 
 func _is_valid_building_tile(building: Building, tile: Tile) -> bool:
-	for possible_tile_type in building.possible_tiles:
-		if is_instance_of(tile, possible_tile_type) and tile.building == null:
+	for placement_tile in building.placement_tiles:
+		if placement_tile.name == tile.name:
 			return true
 	return false
 

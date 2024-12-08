@@ -15,7 +15,7 @@ func set_content(action: Action) -> void:
 	title.text = action.title
 	type.text = _get_action_type(action)
 	description.text = action.description
-	image.texture = load(action.image_path)
+	image.texture = action.texture
 	if action is BuildingAction:
 		cost_container.visible = true
 		cost.text = str(action.building.cost)

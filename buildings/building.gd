@@ -1,28 +1,13 @@
 class_name Building
-extends Object
+extends Resource
 
-enum Type {
-	headquarter,
-	wood_cutter
-}
+@export var name: String
+@export var cost: Dictionary
+@export var placement_tiles: Array[Tile]
+@export var view_radius: int
 
-var name: String
-var type: Type
-var possible_tiles: Array
-var cost: int
-var view_radius: int
-var producable: Producable = null
+@export var educts: Dictionary
+@export var product: ResourceManager.Type
 
-
-var source_id: int
-var atlas_coords: Vector2i
-
-func _init(name: String, type: Type, possible_tiles: Array, cost: int, source_id: int, atlas_coords: Vector2i, view_radius: int, producable: Producable = null) -> void:
-	self.name = name
-	self.type = type
-	self.possible_tiles = possible_tiles
-	self.cost = cost
-	self.source_id = source_id
-	self.atlas_coords = atlas_coords
-	self.view_radius = view_radius
-	self.producable = producable
+@export var source_id: int
+@export var atlas_coords: Vector2i
