@@ -98,14 +98,14 @@
 ## Version 0.4
 
 ### Assets
-- [ ] Fix Godot Atlas Error messages
-- [ ] Check why outpost.png doesn't work in tileset
-- [ ] Terrain: Sand
-- [ ] Terrain: Mountain (stone)
+- [ ] (!) Fix Godot Atlas Error messages 	=> 	Müssten behoben werden, wenn man im finalen Produkt, alles in einen Atlas merged
+- [x] Check why outpost.png doesn't work in tileset
+- [x] Terrain: Sand
+- [x] Terrain: Mountain (stone)
 
-- [ ] UI Background for Food and Warmth Bar #Ergaenzung von Tobias für die UI
-- [ ] UI Bar for Food and Warmth Bar #Ergaenzung von Tobias für die UI
-- [ ] (!) UI: Pixel font #Ergaenzung von Tobias für die UI
+- [x] UI Background for Food and Warmth Bar #Ergaenzung von Tobias für die UI
+- [x] UI Bar for Food and Warmth Bar #Ergaenzung von Tobias für die UI
+- [ ] (!) UI: Pixel font #Ergaenzung von Tobias für die UI 	=> 	Arebit für die kommende Woche
 	- [ ] Numbers and basic special character
 	- [ ] Rework the "S"
 	- Anm. 	Ich habe ein paar Testlabels im Hauptmenü eingebaut. 

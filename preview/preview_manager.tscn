@@ -74,7 +74,7 @@ texture_region_size = Vector2i(32, 32)
 2:1/0 = 0
 3:1/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tqacl"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3ns33"]
 texture = ExtResource("5_7dd0p")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -89,10 +89,10 @@ tile_size = Vector2i(32, 16)
 sources/4 = SubResource("TileSetAtlasSource_57fv4")
 sources/5 = SubResource("TileSetAtlasSource_tvp3m")
 sources/3 = SubResource("TileSetAtlasSource_oyfim")
-sources/9 = SubResource("TileSetAtlasSource_tqacl")
 sources/10 = SubResource("TileSetAtlasSource_63bst")
 sources/11 = SubResource("TileSetAtlasSource_u23d2")
 sources/12 = SubResource("TileSetAtlasSource_5vqy5")
+sources/9 = SubResource("TileSetAtlasSource_3ns33")
 
 [node name="PreviewManager" type="Node2D"]
 script = ExtResource("1_3qkvr")
