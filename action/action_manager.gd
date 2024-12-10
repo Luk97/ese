@@ -31,11 +31,18 @@ func _initialize_catalog() -> void:
 	catalog.append(load("res://action/building_action/home_action.tres"))
 	catalog.append(load("res://action/building_action/wood_cutter_action.tres"))
 	catalog.append(load("res://action/building_action/outpost_action.tres"))
+	catalog.append(load("res://action/building_action/burner_action.tres"))
+	catalog.append(load("res://action/building_action/farm_action.tres"))
+	catalog.append(load("res://action/building_action/field_action.tres"))
+
 
 func _initialize_pool() -> void:
 	pool.append(load("res://action/building_action/home_action.tres"))
 	pool.append(load("res://action/building_action/wood_cutter_action.tres"))
 	pool.append(load("res://action/building_action/outpost_action.tres"))
+	pool.append(load("res://action/building_action/burner_action.tres"))
+	pool.append(load("res://action/building_action/farm_action.tres"))
+	pool.append(load("res://action/building_action/field_action.tres"))
 
 func _get_random_selection() -> Array:
 	var pool_copy = pool.duplicate()

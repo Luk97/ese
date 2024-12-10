@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="BuildingAction" load_steps=4 format=3 uid="uid://c4nf4i1go5ooc"]
+
+[ext_resource type="Resource" uid="uid://da3rko8b2kip4" path="res://buildings/data/field.tres" id="1_i6qyk"]
+[ext_resource type="Script" path="res://action/building_action/building_action.gd" id="1_v0w5o"]
+[ext_resource type="Texture2D" uid="uid://bwigo76qxns1w" path="res://assets/tiles/overlay/on_land/on_grass/Field.png" id="3_6f335"]
+
+[resource]
+script = ExtResource("1_v0w5o")
+building = ExtResource("1_i6qyk")
+title = "Build field."
+description = "Produces wheat."
+texture = ExtResource("3_6f335")
