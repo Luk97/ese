@@ -178,7 +178,7 @@ theme_override_constants/separation = 24
 [node name="Seperator" type="Control" parent="MainMenu/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MainMenu/VBoxContainer"]
+[node name="Titel" type="Label" parent="MainMenu/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/outline_size = 12
