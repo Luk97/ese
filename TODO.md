@@ -105,7 +105,7 @@
 
 - [x] UI Background for Food and Warmth Bar #Ergaenzung von Tobias für die UI
 - [x] UI Bar for Food and Warmth Bar #Ergaenzung von Tobias für die UI
-- [ ] (!) UI: Pixel font #Ergaenzung von Tobias für die UI 	=> 	Arebit für die kommende Woche
+- [ ] (!) UI: Pixel font #Ergaenzung von Tobias für die UI 	=> 	Arbeit für die kommende Woche
 	- [ ] Numbers and basic special character
 	- [ ] Rework the "S"
 	- Anm. 	Ich habe ein paar Testlabels im Hauptmenü eingebaut. 
