@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bl7qqsho00lkw"]
 
-[ext_resource type="Texture2D" uid="uid://pr8t0vhkoufo" path="res://assets/ui/HG.png" id="1_xfn6w"]
-[ext_resource type="Texture2D" uid="uid://bjh7dhb5dbbcn" path="res://assets/ui/Vordergrund.png" id="2_gmci1"]
+[ext_resource type="Texture2D" uid="uid://cxmkcoajd0qi5" path="res://assets/ui/ui_bar_empty.png" id="2_21idf"]
 [ext_resource type="Texture2D" uid="uid://cke3b2trgyr11" path="res://assets/ui/Button.png" id="3_k7hiu"]
+[ext_resource type="Texture2D" uid="uid://c1aqkp8hom5jx" path="res://assets/ui/ui_bar_full.png" id="3_uv12b"]
 
 [node name="NinePatchRect" type="NinePatchRect"]
 anchors_preset = 12
@@ -38,11 +38,8 @@ expand_icon = true
 [node name="TextureProgressBar" type="TextureProgressBar" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-value = 100.0
+max_value = 10.0
+value = 5.0
 nine_patch_stretch = true
-stretch_margin_left = 5
-stretch_margin_top = 5
-stretch_margin_right = 5
-stretch_margin_bottom = 5
-texture_under = ExtResource("1_xfn6w")
-texture_progress = ExtResource("2_gmci1")
+texture_under = ExtResource("2_21idf")
+texture_progress = ExtResource("3_uv12b")
