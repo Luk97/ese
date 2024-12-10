@@ -60,7 +60,8 @@ func _ready() -> void:
 	_initialize_starter_area()
 
 func _initialize_random() -> void:
-	rng.seed = seed
+	#NOTE: this is disabled for random worlds each game start
+	#rng.seed = seed
 	ground_layer.altitude_noise.seed = rng.randi()
 	ground_layer.temperature_noise.seed = rng.randi()
 	ground_layer.moisture_noise.seed = rng.randi()

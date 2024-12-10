@@ -3,7 +3,8 @@ extends Node
 enum Type {
 	Water,
 	Grass,
-	Forest
+	Forest,
+	Beach,
 }
 
 func create_tile(type: Type, coords: Vector2i) -> Tile:
@@ -15,6 +16,8 @@ func create_tile(type: Type, coords: Vector2i) -> Tile:
 			tile = load("res://tiles/data/grass_tile.tres").duplicate()
 		Type.Forest:
 			tile = load("res://tiles/data/forest_tile.tres").duplicate()
+		Type.Beach:
+			tile = load("res://tiles/data/beach_tile.tres").duplicate()
 	if tile:
 		tile.map_coords = coords
 		tile.decoration = DecorationManager.get_random_decoration(tile.name)
