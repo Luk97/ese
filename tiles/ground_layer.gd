@@ -34,7 +34,7 @@ func generate_tiles(center: Vector2i, radius: int) -> void:
 				var temperature = temperature_noise.get_noise_2d(tile_coords.x, tile_coords.y)
 				var moisture = moisture_noise.get_noise_2d(tile_coords.x, tile_coords.y)
 				
-				# values from [0..10]
+				# values from [0..100]
 				altitude = _stretch_noise_value(altitude)
 				temperature = _stretch_noise_value(temperature)
 				moisture = _stretch_noise_value(moisture)
@@ -57,12 +57,14 @@ func _calculate_radius() -> int:
 	return visible_area.x / Tile.TILE_WIDTH
 
 func _stretch_noise_value(value: float) -> float:
-	return 5 * value + 5
+	return 50 * value + 50
 	
 func _get_tile_from_environment(altitude: float, temperature: float, moisture: float, coords: Vector2i) -> Tile:
-	if altitude < 5:
+	if altitude < 50:
 		return TileFactory.create_tile(TileFactory.Type.Water, coords)
-	elif temperature < 5:
+	elif altitude < 54:
+		return TileFactory.create_tile(TileFactory.Type.Beach, coords)
+	elif temperature < 50:
 		return TileFactory.create_tile(TileFactory.Type.Forest, coords)
 	else:
 		return TileFactory.create_tile(TileFactory.Type.Grass, coords)

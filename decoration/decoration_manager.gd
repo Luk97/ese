@@ -54,6 +54,8 @@ func get_random_decoration(tile_name: String) -> Decoration:
 		return _pick_random_decoration(forest_decorations)
 	elif tile_name == "Water":
 		return _pick_random_decoration(water_decorations)
+	elif tile_name == "Beach":
+		return null
 	return null
 
 

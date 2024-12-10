@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Tile" load_steps=2 format=3 uid="uid://byibd37vh4ily"]
+
+[ext_resource type="Script" path="res://tiles/tile.gd" id="1_toyq6"]
+
+[resource]
+script = ExtResource("1_toyq6")
+name = "Beach"
+source_id = 3
+atlas_coords = Vector2i(0, 0)
