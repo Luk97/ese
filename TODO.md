@@ -49,8 +49,8 @@
 ### User Interface
 - [x] Create theme structure for user interface controles	//Need to discuss about wishes about font and other things for all parts of the UI!
 - [x] Label: Wood count				//Prototype Scene for all Lables is created, but needs testing!
-- [ ] Enhance Finish Round Button	//Just needs a makeover
-- [ ] Enhance Round Counter Label	//Will be adjusted according to the lable adjustment! Should have the same Style at the beginning
+- [X] Enhance Finish Round Button	//Just needs a makeover
+- [X] Enhance Round Counter Label	//Will be adjusted according to the lable adjustment! Should have the same Style at the beginning
 
 ### Gameplay
 - [x] Place starter tile on grass tile
@@ -121,5 +121,5 @@
 - [ ] Fix scaling of the ui					
 - [X] Basic Credits Screen					//Weiterführend: Daten einpflegen, schick machen
 - [ ] Fix scaling of Action Selection
-- [ ] Basic Bars for Food and Warmth		//Grafiken für später wären toll :D
+- [X] Basic Bars for Food and Warmth		//Grafiken für später wären toll :D
 - [ ] Improve auto-scaling of lables.
