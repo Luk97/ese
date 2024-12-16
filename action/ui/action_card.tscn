@@ -14,58 +14,51 @@ mouse_filter = 0
 texture = ExtResource("1_v0uvy")
 script = ExtResource("2_dfm2f")
 
-[node name="Title" type="Label" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="VBoxContainer"]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 41.0
-offset_top = 16.0
-offset_right = 211.0
-offset_bottom = 57.0
+layout_mode = 2
 text = "Headquarter"
 horizontal_alignment = 1
 
-[node name="Description" type="Label" parent="."]
+[node name="Type" type="Label" parent="VBoxContainer"]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 36.0
-offset_top = 172.0
-offset_right = 226.0
-offset_bottom = 275.0
+layout_mode = 2
+text = "BUILDING"
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
 text = "Description"
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="CostContainer" type="HBoxContainer" parent="."]
+[node name="CostContainer" type="HBoxContainer" parent="VBoxContainer"]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 34.0
-offset_top = 278.0
-offset_right = 228.0
-offset_bottom = 318.0
+layout_mode = 2
 
-[node name="CostIcon" type="TextureRect" parent="CostContainer"]
+[node name="CostIcon" type="TextureRect" parent="VBoxContainer/CostContainer"]
 layout_mode = 2
 texture = ExtResource("3_nvpoj")
 
-[node name="Cost" type="Label" parent="CostContainer"]
+[node name="Cost" type="Label" parent="VBoxContainer/CostContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "5"
 
-[node name="Type" type="Label" parent="."]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 72.0
-offset_top = 403.0
-offset_right = 193.0
-offset_bottom = 426.0
-text = "BUILDING"
-horizontal_alignment = 1
-
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Node2D" type="Node2D" parent="VBoxContainer"]
 position = Vector2(-1, 28)
 
-[node name="Image" type="Sprite2D" parent="Node2D"]
+[node name="Image" type="Sprite2D" parent="VBoxContainer/Node2D"]
 unique_name_in_owner = true
 position = Vector2(129, 86)
 scale = Vector2(2.95313, 3.5)
