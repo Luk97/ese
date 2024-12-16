@@ -37,7 +37,7 @@ offset_top = -163.5
 offset_bottom = 175.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 1
+theme_override_constants/separation = 4
 
 [node name="Title" type="Label" parent="ActionCardDesign/VerticalCardStructure"]
 unique_name_in_owner = true
