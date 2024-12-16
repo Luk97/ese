@@ -37,6 +37,7 @@ offset_top = -163.5
 offset_bottom = 175.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 1
 
 [node name="Title" type="Label" parent="ActionCardDesign/VerticalCardStructure"]
 unique_name_in_owner = true
@@ -51,17 +52,27 @@ text = "BUILDING"
 horizontal_alignment = 1
 
 [node name="Control" type="Control" parent="ActionCardDesign/VerticalCardStructure"]
+clip_contents = true
 layout_mode = 2
 size_flags_vertical = 3
 
 [node name="Node2D" type="Node2D" parent="ActionCardDesign/VerticalCardStructure/Control"]
-position = Vector2(-1, -26)
 
 [node name="Image" type="Sprite2D" parent="ActionCardDesign/VerticalCardStructure/Control/Node2D"]
 unique_name_in_owner = true
 position = Vector2(93, 109)
 scale = Vector2(2.95313, 3.5)
 texture = ExtResource("4_akdu4")
+offset = Vector2(20, -15)
+
+[node name="ReferenceRect" type="ReferenceRect" parent="ActionCardDesign/VerticalCardStructure/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+border_width = 2.0
 
 [node name="Description" type="Label" parent="ActionCardDesign/VerticalCardStructure"]
 unique_name_in_owner = true
@@ -70,6 +81,16 @@ layout_mode = 2
 text = "Description"
 horizontal_alignment = 1
 autowrap_mode = 3
+
+[node name="ReferenceRect" type="ReferenceRect" parent="ActionCardDesign/VerticalCardStructure/Description"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+border_width = 2.0
+metadata/_edit_use_anchors_ = true
 
 [node name="CostContainer" type="HBoxContainer" parent="ActionCardDesign/VerticalCardStructure"]
 unique_name_in_owner = true
