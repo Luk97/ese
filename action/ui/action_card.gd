@@ -8,8 +8,13 @@ extends NinePatchRect
 @onready var cost_container: HBoxContainer = %CostContainer
 @onready var type: Label = %Type
 @onready var image: Sprite2D = %Image
+@onready var action_card_design: NinePatchRect = %ActionCardDesign
 
 signal action_card_clicked()
+
+var fontScaleXTitle=20
+var fontScaleYTitle=20
+
 
 func set_content(action: Action) -> void:
 	title.text = action.title
@@ -30,3 +35,8 @@ func _get_action_type(action: Action) -> String:
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
 		emit_signal("action_card_clicked")
+
+func _process(delta: float) -> void:
+	var thisFontSize = min(get_window().size.x / fontScaleXTitle, get_window().size.y / fontScaleYTitle)
+	title.add_theme_font_size_override("font_size",thisFontSize)
+	

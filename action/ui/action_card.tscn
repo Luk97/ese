@@ -14,27 +14,56 @@ mouse_filter = 0
 texture = ExtResource("1_v0uvy")
 script = ExtResource("2_dfm2f")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="ActionCardDesign" type="NinePatchRect" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 36.0
+offset_top = 30.0
+offset_right = -29.0
+offset_bottom = -44.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Title" type="Label" parent="VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ActionCardDesign"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -163.5
+offset_bottom = 175.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="ActionCardDesign/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Headquarter"
 horizontal_alignment = 1
 
-[node name="Type" type="Label" parent="VBoxContainer"]
+[node name="Type" type="Label" parent="ActionCardDesign/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "BUILDING"
 horizontal_alignment = 1
 
-[node name="Description" type="Label" parent="VBoxContainer"]
+[node name="Control" type="Control" parent="ActionCardDesign/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Node2D" type="Node2D" parent="ActionCardDesign/VBoxContainer/Control"]
+position = Vector2(-1, -26)
+
+[node name="Image" type="Sprite2D" parent="ActionCardDesign/VBoxContainer/Control/Node2D"]
+unique_name_in_owner = true
+position = Vector2(93, 109)
+scale = Vector2(2.95313, 3.5)
+texture = ExtResource("4_akdu4")
+
+[node name="Description" type="Label" parent="ActionCardDesign/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
@@ -42,26 +71,18 @@ text = "Description"
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="CostContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="CostContainer" type="HBoxContainer" parent="ActionCardDesign/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_vertical = 10
 
-[node name="CostIcon" type="TextureRect" parent="VBoxContainer/CostContainer"]
+[node name="CostIcon" type="TextureRect" parent="ActionCardDesign/VBoxContainer/CostContainer"]
 layout_mode = 2
 texture = ExtResource("3_nvpoj")
 
-[node name="Cost" type="Label" parent="VBoxContainer/CostContainer"]
+[node name="Cost" type="Label" parent="ActionCardDesign/VBoxContainer/CostContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "5"
-
-[node name="Node2D" type="Node2D" parent="VBoxContainer"]
-position = Vector2(-1, 28)
-
-[node name="Image" type="Sprite2D" parent="VBoxContainer/Node2D"]
-unique_name_in_owner = true
-position = Vector2(129, 86)
-scale = Vector2(2.95313, 3.5)
-texture = ExtResource("4_akdu4")
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
