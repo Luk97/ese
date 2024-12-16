@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bl7qqsho00lkw"]
+[gd_scene load_steps=6 format=3 uid="uid://bl7qqsho00lkw"]
 
+[ext_resource type="Script" path="res://interface/heat_progress.gd" id="1_n3fqa"]
 [ext_resource type="Texture2D" uid="uid://cxmkcoajd0qi5" path="res://assets/ui/ui_bar_empty.png" id="2_21idf"]
+[ext_resource type="Script" path="res://interface/heat_progress_button.gd" id="2_50cfp"]
 [ext_resource type="Texture2D" uid="uid://cke3b2trgyr11" path="res://assets/ui/Button.png" id="3_k7hiu"]
 [ext_resource type="Texture2D" uid="uid://c1aqkp8hom5jx" path="res://assets/ui/ui_bar_full.png" id="3_uv12b"]
 
@@ -13,6 +15,7 @@ grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource("1_n3fqa")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -26,7 +29,8 @@ grow_vertical = 2
 clip_contents = true
 layout_mode = 2
 
-[node name="Button" type="Button" parent="MarginContainer/HBoxContainer"]
+[node name="heat_Progress_Button" type="Button" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
 clip_contents = true
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
@@ -34,8 +38,10 @@ size_flags_horizontal = 2
 size_flags_stretch_ratio = 0.0
 icon = ExtResource("3_k7hiu")
 expand_icon = true
+script = ExtResource("2_50cfp")
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="MarginContainer/HBoxContainer"]
+[node name="heat_Progress_Bar" type="TextureProgressBar" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 max_value = 10.0
@@ -43,3 +49,5 @@ value = 5.0
 nine_patch_stretch = true
 texture_under = ExtResource("2_21idf")
 texture_progress = ExtResource("3_uv12b")
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/heat_Progress_Button" to="MarginContainer/HBoxContainer/heat_Progress_Button" method="_on_pressed"]
