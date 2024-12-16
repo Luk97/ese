@@ -225,8 +225,14 @@ text = "Spiel starten
 "
 script = ExtResource("1_1nxty")
 
+[node name="Speichern" type="Button" parent="MainMenu/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+disabled = true
+text = "Speichern"
+
 [node name="Showcase" type="Button" parent="MainMenu/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+disabled = true
 text = "Showcase
 "
 
