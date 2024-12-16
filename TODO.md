@@ -118,9 +118,14 @@
 - [ ] Global Gamestats
 
 ### User Interface
-- [ ] Fix scaling of the ui					
+- [ ] Fix scaling of the ui	
 - [X] Basic Credits Screen					//Weiterführend: Daten einpflegen, schick machen
 - [ ] Fix Action Selection
+		-[X] Autoscaling of Cards(not the content)
+		-[X] Restructoring Cards
+		-[X] Scaling Card Lables
+		-[ ] Scaling Card Picture
+		-[ ] Autopositioning of Text and Picture of the Cards
 - [X] Basic Bars for Food and Warmth		
 - [ ] Improve auto-scaling of lables.
 - [ ] Subscribing the UI Lables and bars to Managers after variables were added
