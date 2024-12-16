@@ -10,11 +10,13 @@ extends NinePatchRect
 @onready var image: Sprite2D = %Image
 @onready var action_card_design: NinePatchRect = %ActionCardDesign
 
+
 signal action_card_clicked()
 
 var fontScaleXTitle=20
 var fontScaleYTitle=20
-
+var fontScaleXText=40
+var fontScaleYText=40
 
 func set_content(action: Action) -> void:
 	title.text = action.title
@@ -37,6 +39,9 @@ func _on_gui_input(event: InputEvent) -> void:
 		emit_signal("action_card_clicked")
 
 func _process(delta: float) -> void:
-	var thisFontSize = min(get_window().size.x / fontScaleXTitle, get_window().size.y / fontScaleYTitle)
-	title.add_theme_font_size_override("font_size",thisFontSize)
-	
+	var titleFontSize = min(get_window().size.x / fontScaleXTitle, get_window().size.y / fontScaleYTitle)
+	title.add_theme_font_size_override("font_size",titleFontSize)
+	var textFontSize = min(get_window().size.x / fontScaleXText, get_window().size.y / fontScaleYText)
+	type.add_theme_font_size_override("font_size",textFontSize)
+	description.add_theme_font_size_override("font_size",textFontSize)
+	cost.add_theme_font_size_override("font_size",textFontSize)
