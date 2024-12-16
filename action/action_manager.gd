@@ -26,8 +26,11 @@ func start_action_selection() -> void:
 func _ready() -> void:
 	_initialize_catalog()
 	_initialize_pool()
+	
+	#Scaling the Container for the cards
 	var scale=Vector2(0.8,0.8);
 	action_selection.scale=(scale);
+	action_selection.offset=(Vector2(10*get_window().size.x/100,10*get_window().size.y/100));
 
 func _initialize_catalog() -> void:
 	catalog.append(load("res://action/building_action/home_action.tres"))
