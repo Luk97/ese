@@ -26,6 +26,8 @@ func start_action_selection() -> void:
 func _ready() -> void:
 	_initialize_catalog()
 	_initialize_pool()
+	var scale=Vector2(0.8,0.8);
+	action_selection.scale=(scale);
 
 func _initialize_catalog() -> void:
 	catalog.append(load("res://action/building_action/home_action.tres"))
