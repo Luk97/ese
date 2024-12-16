@@ -2,6 +2,8 @@ extends CanvasLayer
 
 @onready var wood_label: NinePatchRect = %WoodLabel
 @onready var wheat_label: NinePatchRect = %WheatLabel
+@onready var food_Progress: NinePatchRect = %food_Progress
+@onready var heat_Progress: NinePatchRect = %heat_Progress
 
 signal round_finished
 

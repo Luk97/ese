@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cke3b2trgyr11" path="res://assets/ui/Button.png" id="3_k7hiu"]
 [ext_resource type="Texture2D" uid="uid://c1aqkp8hom5jx" path="res://assets/ui/ui_bar_full.png" id="3_uv12b"]
 
-[node name="NinePatchRect" type="NinePatchRect"]
+[node name="heat_Progress" type="NinePatchRect"]
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
