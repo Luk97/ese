@@ -1,5 +1,6 @@
 extends Button
 
+signal food_Button_Pressed
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,4 +16,4 @@ func _pressed() -> void:
 
 
 func _on_pressed() -> void:
-	pass # Replace with function body.
+	emit_signal("food_Button_Pressed")

@@ -63,7 +63,8 @@ theme_override_constants/separation = 5
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="NinePatchRect" parent="Elements/UI_Margin/Bottoom_Container/HBoxContainer" instance=ExtResource("5_usw0a")]
+[node name="heatProgressBar" parent="Elements/UI_Margin/Bottoom_Container/HBoxContainer" instance=ExtResource("5_usw0a")]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="RundeBeenden" parent="Elements/UI_Margin/Bottoom_Container/HBoxContainer" instance=ExtResource("3_vjbiu")]
