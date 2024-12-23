@@ -130,3 +130,5 @@
 - [X] Basic Bars for Food and Warmth		
 - [ ] Improve auto-scaling of lables.	//Needs Numbers as part of the Font
 - [ ] Subscribing the UI Lables and bars to Managers after variables were added
+- [ ] Polish MainMenu
+- [ ] Polish Credits
