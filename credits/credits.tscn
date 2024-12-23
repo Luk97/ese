@@ -46,11 +46,11 @@ text = "UI: Tobias Rinne (10040933)"
 
 [node name="Graphics" type="Label" parent="Control/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "Graphics: "
+text = "Graphics: Damian Ernst (10050965)"
 
 [node name="Gamelogic" type="Label" parent="Control/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "Gamelogic:"
+text = "Gamelogic: Lukas Nickel (10003014)"
 
 [node name="BeendenButton" type="Button" parent="Control"]
 layout_mode = 1
