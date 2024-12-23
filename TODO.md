@@ -126,6 +126,7 @@
 		-[X] Scaling Card Lables
 		-[ ] Scaling Card Picture
 		-[ ] Autopositioning of Text and Picture of the Cards
+		-[ ] Picture Clickable for action
 - [X] Basic Bars for Food and Warmth		
 - [ ] Improve auto-scaling of lables.	//Needs Numbers as part of the Font
 - [ ] Subscribing the UI Lables and bars to Managers after variables were added
