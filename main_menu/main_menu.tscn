@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://chg7f0tjh88pj"]
 
 [ext_resource type="Script" path="res://main_menu/start_game.gd" id="1_1nxty"]
-[ext_resource type="Texture2D" uid="uid://d1px8fudvkgd7" path="res://main_menu/background_1.png" id="1_jakxa"]
 [ext_resource type="Script" path="res://main_menu/main_menu.gd" id="1_qyel5"]
 [ext_resource type="Script" path="res://interface/beenden_button.gd" id="2_1x6tn"]
+[ext_resource type="Texture2D" uid="uid://b4cy83ox4lga8" path="res://assets/menus/menu_BG.png" id="2_m55e1"]
 [ext_resource type="FontFile" uid="uid://byiu3lccawsbh" path="res://assets/ui/PixelArt.ttf" id="2_waccv"]
-[ext_resource type="FontFile" uid="uid://dmasnp31ufoxp" path="res://assets/ui/Pixelfont-Regular.ttf" id="3_li520"]
+[ext_resource type="FontFile" uid="uid://blavdbdxjgql1" path="res://assets/ui/Pixelfont-Regular.ttf" id="3_li520"]
 [ext_resource type="Script" path="res://main_menu/credits.gd" id="3_tjfmy"]
 [ext_resource type="Script" path="res://main_menu/label.gd" id="4_k4kst"]
 
@@ -29,7 +29,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_jakxa")
+texture = ExtResource("2_m55e1")
 expand_mode = 2
 
 [node name="Test" type="VBoxContainer" parent="MainMenu"]
