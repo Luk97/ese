@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://chg7f0tjh88pj"]
+[gd_scene load_steps=8 format=3 uid="uid://chg7f0tjh88pj"]
 
 [ext_resource type="Script" path="res://main_menu/start_game.gd" id="1_1nxty"]
 [ext_resource type="Script" path="res://main_menu/main_menu.gd" id="1_qyel5"]
@@ -7,7 +7,6 @@
 [ext_resource type="FontFile" uid="uid://byiu3lccawsbh" path="res://assets/ui/PixelArt.ttf" id="2_waccv"]
 [ext_resource type="Theme" uid="uid://dl35k1wgcyjff" path="res://Themes/standard_Theme.tres" id="3_gccap"]
 [ext_resource type="Script" path="res://main_menu/credits.gd" id="3_tjfmy"]
-[ext_resource type="Script" path="res://main_menu/label.gd" id="4_k4kst"]
 
 [node name="Menu" type="CanvasLayer"]
 
@@ -191,7 +190,6 @@ QWERTZUIOPASDFGHJKLYXCVBNM!;:,.?"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
-script = ExtResource("4_k4kst")
 
 [node name="MarginContainer" type="MarginContainer" parent="MainMenu"]
 layout_mode = 1
