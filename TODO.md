@@ -113,12 +113,13 @@
 			wie die Schrift in verschiedenen Schriftgrößen zur Geltung kommt.
 			Am Spieltitel habe ich ein paar mehr Spielereien eingebaut.
 			Der Titel skaliert jetzt im Übrigen mit.
+	- Anm. Numbers müssten ein wenig größer sein, damit sie zur Textgröße passen
 
 ### Gameplay
 - [ ] Global Gamestats
 
 ### User Interface
-- [ ] Fix scaling of the ui	
+- [ ] Fix scaling of the ui	//ToDo: Lables of GameUI and ActionSelection
 - [X] Basic Credits Screen					//Weiterführend: Daten einpflegen, schick machen
 - [ ] Fix Action Selection
 		-[X] Autoscaling of Cards(not the content)
