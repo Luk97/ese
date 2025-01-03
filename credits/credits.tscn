@@ -62,6 +62,7 @@ theme = ExtResource("3_stiry")
 text = "Gamelogic: Lukas Nickel (10003014)"
 
 [node name="BeendenButton" type="Button" parent="Control"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -70,7 +71,8 @@ offset_left = -77.0
 offset_bottom = 31.0
 grow_horizontal = 0
 tooltip_text = "Spiel beenden"
-text = "Hauptmenü"
+theme = ExtResource("3_stiry")
+text = "Mainmenu"
 script = ExtResource("2_cyykn")
 
 [connection signal="pressed" from="Control/BeendenButton" to="Control/BeendenButton" method="_on_pressed"]

@@ -221,7 +221,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("3_gccap")
-text = "Spiel starten
+text = "Start Game
 "
 script = ExtResource("1_1nxty")
 
@@ -230,7 +230,7 @@ unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("3_gccap")
 disabled = true
-text = "Speichern"
+text = "Save"
 
 [node name="Showcase" type="Button" parent="MainMenu/MarginContainer/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -253,7 +253,7 @@ unique_name_in_owner = true
 layout_mode = 2
 tooltip_text = "Spiel beenden"
 theme = ExtResource("3_gccap")
-text = "Beenden"
+text = "Quit"
 script = ExtResource("2_1x6tn")
 
 [connection signal="pressed" from="MainMenu/MarginContainer/HBoxContainer/VBoxContainer/StartGame" to="MainMenu/MarginContainer/HBoxContainer/VBoxContainer/StartGame" method="_on_pressed"]
