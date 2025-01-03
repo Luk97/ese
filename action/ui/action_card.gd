@@ -44,3 +44,10 @@ func _process(delta: float) -> void:
 	type.add_theme_font_size_override("font_size",textFontSize)
 	description.add_theme_font_size_override("font_size",textFontSize)
 	cost.add_theme_font_size_override("font_size",textFontSize)
+
+func signal_clicked_emit() -> void:
+	emit_signal("action_card_clicked")
+
+
+func _on_picture_picture_clicked() -> void:
+	signal_clicked_emit()

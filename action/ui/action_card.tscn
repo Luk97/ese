@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dji6noqfedsmf"]
+[gd_scene load_steps=6 format=3 uid="uid://dji6noqfedsmf"]
 
 [ext_resource type="Texture2D" uid="uid://boyt2d2row2jo" path="res://assets/ui/Label.png" id="1_v0uvy"]
 [ext_resource type="Script" path="res://action/ui/action_card.gd" id="2_dfm2f"]
 [ext_resource type="Texture2D" uid="uid://cc4knyc2bod0e" path="res://assets/items/wood.png" id="3_nvpoj"]
 [ext_resource type="Texture2D" uid="uid://ciyyc6353vlsd" path="res://assets/action/axe.png" id="4_akdu4"]
+[ext_resource type="Script" path="res://action/ui/picture.gd" id="4_d0xi8"]
 
 [node name="ActionCard" type="NinePatchRect"]
 offset_left = 162.0
@@ -56,6 +57,15 @@ clip_contents = true
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="ReferenceRect" type="ReferenceRect" parent="ActionCardDesign/VerticalCardStructure/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+border_width = 2.0
+
 [node name="Picture" type="TextureRect" parent="ActionCardDesign/VerticalCardStructure/Control"]
 unique_name_in_owner = true
 layout_mode = 1
@@ -65,15 +75,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_akdu4")
-
-[node name="ReferenceRect" type="ReferenceRect" parent="ActionCardDesign/VerticalCardStructure/Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-border_width = 2.0
+script = ExtResource("4_d0xi8")
 
 [node name="Description" type="Label" parent="ActionCardDesign/VerticalCardStructure"]
 unique_name_in_owner = true
@@ -108,3 +110,5 @@ layout_mode = 2
 text = "5"
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="gui_input" from="ActionCardDesign/VerticalCardStructure/Control/Picture" to="ActionCardDesign/VerticalCardStructure/Control/Picture" method="_on_gui_input"]
+[connection signal="picture_clicked" from="ActionCardDesign/VerticalCardStructure/Control/Picture" to="." method="_on_picture_picture_clicked"]
