@@ -113,12 +113,13 @@
 			wie die Schrift in verschiedenen Schriftgrößen zur Geltung kommt.
 			Am Spieltitel habe ich ein paar mehr Spielereien eingebaut.
 			Der Titel skaliert jetzt im Übrigen mit.
+	- Anm. Numbers müssten ein wenig größer sein, damit sie zur Textgröße passen
 
 ### Gameplay
 - [ ] Global Gamestats
 
 ### User Interface
-- [ ] Fix scaling of the ui	
+- [ ] Fix scaling of the ui	//ToDo: Lables of GameUI and ActionSelection
 - [X] Basic Credits Screen					//Weiterführend: Daten einpflegen, schick machen
 - [ ] Fix Action Selection
 		-[X] Autoscaling of Cards(not the content)
@@ -128,7 +129,7 @@
 		-[ ] Autopositioning of Text and Picture of the Cards
 		-[ ] Picture Clickable for action
 - [X] Basic Bars for Food and Warmth		
-- [ ] Improve auto-scaling of lables.	//Needs Numbers as part of the Font
+- [X] Improve auto-scaling of lables.
 - [ ] Subscribing the UI Lables and bars to Managers after variables were added
 - [ ] Polish MainMenu
 - [ ] Polish Credits
