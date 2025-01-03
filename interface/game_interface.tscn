@@ -72,6 +72,7 @@ custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+tooltip_text = "Finish Round"
 
 [node name="RoundCounterLabel" parent="Elements" instance=ExtResource("2_4d6ly")]
 unique_name_in_owner = true
@@ -172,6 +173,7 @@ offset_left = 0.317993
 offset_right = 1.33997
 offset_bottom = 27.16
 size_flags_horizontal = 8
+text = "End"
 
 [connection signal="pressed" from="Elements/UI_Margin/Top_Container/Menu" to="Elements/UI_Margin/Top_Container/Menu" method="_on_pressed"]
 [connection signal="pressed" from="Elements/UI_Margin/Bottoom_Container/HBoxContainer/RundeBeenden" to="." method="_on_finish_round_button_pressed"]
