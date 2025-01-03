@@ -7,9 +7,8 @@ extends NinePatchRect
 @onready var cost: Label = %Cost
 @onready var cost_container: HBoxContainer = %CostContainer
 @onready var type: Label = %Type
-@onready var image: Sprite2D = %Image
 @onready var action_card_design: NinePatchRect = %ActionCardDesign
-
+@onready var picture: TextureRect = %Picture
 
 signal action_card_clicked()
 
@@ -22,7 +21,7 @@ func set_content(action: Action) -> void:
 	title.text = action.title
 	type.text = _get_action_type(action)
 	description.text = action.description
-	image.texture = action.texture
+	picture.texture = action.texture
 	if action is BuildingAction:
 		cost_container.visible = true
 		cost.text = str(action.building.cost)
