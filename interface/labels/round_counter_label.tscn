@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgbq5goh7yrtn"]
+[gd_scene load_steps=4 format=3 uid="uid://dgbq5goh7yrtn"]
 
 [ext_resource type="Texture2D" uid="uid://cyx45bcefi3ym" path="res://assets/theme/label_bg.png" id="1_bdsfv"]
+[ext_resource type="Theme" uid="uid://dl35k1wgcyjff" path="res://Themes/standard_Theme.tres" id="2_gqwjd"]
 [ext_resource type="Script" path="res://interface/labels/round_counter_label.gd" id="2_so3jq"]
 
 [node name="Container" type="NinePatchRect"]
@@ -25,6 +26,7 @@ offset_right = 45.5
 offset_bottom = 24.5
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_gqwjd")
 text = "Round: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
