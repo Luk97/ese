@@ -41,9 +41,42 @@ custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="Menu" parent="Elements/UI_Margin/Top_Container" instance=ExtResource("5_hmy8k")]
+[node name="HBoxContainer" type="HBoxContainer" parent="Elements/UI_Margin/Top_Container"]
 layout_mode = 2
-size_flags_horizontal = 8
+size_flags_vertical = 3
+
+[node name="Left" type="Control" parent="Elements/UI_Margin/Top_Container/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RoundCounterLabel" parent="Elements/UI_Margin/Top_Container/HBoxContainer/Left" instance=ExtResource("2_4d6ly")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 2.0
+offset_top = -8.0
+offset_right = 103.0
+offset_bottom = 41.0
+
+[node name="WoodLabel" parent="Elements/UI_Margin/Top_Container/HBoxContainer/Left" instance=ExtResource("7_xl27s")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 107.0
+offset_top = 3.0
+offset_right = 183.0
+offset_bottom = 35.0
+
+[node name="WheatLabel" parent="Elements/UI_Margin/Top_Container/HBoxContainer/Left" instance=ExtResource("7_xl27s")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 193.0
+offset_top = 3.0
+offset_right = 269.0
+offset_bottom = 35.0
+resource_texture = ExtResource("10_noos1")
+
+[node name="Menu" parent="Elements/UI_Margin/Top_Container/HBoxContainer" instance=ExtResource("5_hmy8k")]
+layout_mode = 2
+size_flags_horizontal = 10
 text = "Menü
 "
 script = ExtResource("7_htivo")
@@ -73,31 +106,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 tooltip_text = "Finish Round"
-
-[node name="RoundCounterLabel" parent="Elements" instance=ExtResource("2_4d6ly")]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 12.0
-offset_top = 2.0
-offset_right = 113.0
-offset_bottom = 51.0
-
-[node name="WoodLabel" parent="Elements" instance=ExtResource("7_xl27s")]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 117.0
-offset_top = 13.0
-offset_right = 193.0
-offset_bottom = 45.0
-
-[node name="WheatLabel" parent="Elements" instance=ExtResource("7_xl27s")]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 203.0
-offset_top = 13.0
-offset_right = 279.0
-offset_bottom = 45.0
-resource_texture = ExtResource("10_noos1")
 
 [node name="People Lable" type="NinePatchRect" parent="Elements"]
 visible = false
@@ -175,6 +183,6 @@ offset_bottom = 27.16
 size_flags_horizontal = 8
 text = "End"
 
-[connection signal="pressed" from="Elements/UI_Margin/Top_Container/Menu" to="Elements/UI_Margin/Top_Container/Menu" method="_on_pressed"]
+[connection signal="pressed" from="Elements/UI_Margin/Top_Container/HBoxContainer/Menu" to="Elements/UI_Margin/Top_Container/HBoxContainer/Menu" method="_on_pressed"]
 [connection signal="pressed" from="Elements/UI_Margin/Bottoom_Container/HBoxContainer/RundeBeenden" to="." method="_on_finish_round_button_pressed"]
 [connection signal="pressed" from="Elements/FinishRoundButton" to="." method="_on_finish_round_button_pressed"]
