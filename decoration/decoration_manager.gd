@@ -44,20 +44,29 @@ var water_decorations: Dictionary = {
 	}
 }
 
+var beach_decorations: Dictionary = {
+	EMPTY: {
+		PICK_CHANCE: 1
+	}
+}
+
+
 
 #=================== PUBLIC FUNCTIONS ===================
 
-func get_random_decoration(tile_name: String) -> Decoration:
-	if tile_name == "Grass":
-		return _pick_random_decoration(grass_decorations)
-	elif tile_name == "Forest":
-		return _pick_random_decoration(forest_decorations)
-	elif tile_name == "Water":
-		return _pick_random_decoration(water_decorations)
-	elif tile_name == "Beach":
-		return null
-	return null
-
+func get_random_decoration(type: Types.TileType) -> Decoration:
+	match type:
+		Types.TileType.WATER:
+			return _pick_random_decoration(water_decorations)
+		Types.TileType.GRASS:
+			return _pick_random_decoration(grass_decorations)
+		Types.TileType.BEACH:
+			return _pick_random_decoration(beach_decorations)
+		Types.TileType.FOREST:
+			return _pick_random_decoration(forest_decorations)
+		_:
+			push_error("Undefined tile type for decoration: ", type)
+			return null 
 
 #=================== PRIVATE FUNCTIONS ===================
 

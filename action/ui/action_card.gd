@@ -22,19 +22,15 @@ var scaleCardInside=0.8
 
 func set_content(action: Action) -> void:
 	title.text = action.title
-	type.text = _get_action_type(action)
+	type.text = str(action.type)
 	description.text = action.description
 	picture.texture = action.texture
-	if action is BuildingAction:
+	if action.type == Types.ActionType.BUILD_NEW_BUILDING:
 		cost_container.visible = true
 		cost.text = str(action.building.cost)
 	else:
 		cost_container.visible = false
 
-func _get_action_type(action: Action) -> String:
-	if action is BuildingAction: return "BUILDING"
-	elif action is TerrainAction: return "TERRAIN"
-	else: return "default"
 
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
