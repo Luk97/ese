@@ -12,10 +12,10 @@ func _ready() -> void:
 	building_manager.connect("pickup_collected", _on_pickup_collected)
 
 func _on_action_manager_action_selected(action: Action) -> void:
-	if action is BuildingAction:
-		var cost = action.building.cost
-		var wood_cost = cost["Wood"]
-		ResourceManager.update_wood(-wood_cost)
+	#if action is BuildingAction:
+	#	var cost = action.building.cost
+	#	var wood_cost = cost["Wood"]
+	#	ResourceManager.update_wood(-wood_cost)
 	preview_manager.enable_preview(action)
 
 func _on_preview_manager_preview_done() -> void:

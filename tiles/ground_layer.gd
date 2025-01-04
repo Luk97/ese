@@ -40,10 +40,15 @@ func generate_tiles(center: Vector2i, radius: int) -> void:
 				moisture = _stretch_noise_value(moisture)
 				
 				var tile = _get_tile_from_environment(altitude, temperature, moisture, tile_coords)
-				tile_manager.upsert_tile(tile)
+				tile_manager.place_tile(tile)
 
 
 #=================== PRIVATE FUNCTIONS ===================
+
+func _ready() -> void:
+	altitude_noise.seed = GameManager.rng.randi()
+	temperature_noise.seed = GameManager.rng.randi()
+	moisture_noise.seed = GameManager.rng.randi()
 
 # NOTE: This is used for show casing the world generation
 func _process(delta: float) -> void:
@@ -61,13 +66,13 @@ func _stretch_noise_value(value: float) -> float:
 	
 func _get_tile_from_environment(altitude: float, temperature: float, moisture: float, coords: Vector2i) -> Tile:
 	if altitude < 50:
-		return TileFactory.create_tile(TileFactory.Type.Water, coords)
+		return Tile.new(Types.TileType.WATER, coords)
 	elif altitude < 54:
-		return TileFactory.create_tile(TileFactory.Type.Beach, coords)
+		return Tile.new(Types.TileType.BEACH, coords)
 	elif temperature < 50:
-		return TileFactory.create_tile(TileFactory.Type.Forest, coords)
+		return Tile.new(Types.TileType.GRASS, coords)
 	else:
-		return TileFactory.create_tile(TileFactory.Type.Grass, coords)
+		return Tile.new(Types.TileType.FOREST, coords)
 
 func _get_center_tile_coords() -> Vector2i:
 	var center = CameraController.get_center()

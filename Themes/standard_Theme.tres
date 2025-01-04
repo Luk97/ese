@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://dl35k1wgcyjff"]
 
-[ext_resource type="FontFile" uid="uid://dlrj7c8whwtre" path="res://assets/ui/Pixelfont-Regular.ttf" id="1_cokxb"]
+[ext_resource type="FontFile" uid="uid://uaunmse5674g" path="res://assets/ui/Pixelfont-Regular.ttf" id="1_cokxb"]
 
 [resource]
 default_font = ExtResource("1_cokxb")

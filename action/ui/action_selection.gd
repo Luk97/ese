@@ -7,9 +7,9 @@ extends CanvasLayer
 
 signal action_selected(action: Action)
 
-var action_1: Action = null
-var action_2: Action = null
-var action_3: Action = null
+var action_1: Action
+var action_2: Action
+var action_3: Action
 
 func set_action_selection_content(action_1: Action, action_2: Action, action_3: Action) -> void:
 	self.action_1 = action_1
