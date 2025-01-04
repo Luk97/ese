@@ -12,13 +12,14 @@ extends NinePatchRect
 
 signal action_card_clicked()
 
-var fontScaleXTitle=10
-var fontScaleYTitle=10
-var fontScaleXSubtitle=15
-var fontScaleYSubtitle=15
-var fontScaleXText=20
-var fontScaleYText=20
-var scaleCardInside=0.8
+var fontScaleXTitle=5
+var fontScaleYTitle=5
+var fontScaleXSubtitle=6.5
+var fontScaleYSubtitle=6.5
+var fontScaleXText=8
+var fontScaleYText=8
+var scaleCardInside=0.85
+var scalingPicture=3
 
 func set_content(action: Action) -> void:
 	title.text = action.title
@@ -41,14 +42,21 @@ func _on_gui_input(event: InputEvent) -> void:
 		emit_signal("action_card_clicked")
 
 func _process(delta: float) -> void:
-	var titleFontSize = min(get_window().size.x / fontScaleXTitle, get_window().size.y / fontScaleYTitle)
+	fontsScale()
+	action_card_design.size=Vector2(size.x*scaleCardInside,size.y*scaleCardInside)
+	action_card_design.set_position(Vector2(action_card_design.position.x,position.y+0.1*size.y))
+	var sizing=action_card_design.size.y/scalingPicture
+	picture.size=Vector2(sizing,sizing)
+	picture.set_position(Vector2(action_card_design.position.x,0))
+
+func fontsScale()->void:
+	var titleFontSize = min(action_card_design.size.x / fontScaleXTitle, action_card_design.size.y / fontScaleYTitle)
 	title.add_theme_font_size_override("font_size",titleFontSize)
-	var fontScaleXubtitle = min(get_window().size.x / fontScaleXSubtitle, get_window().size.y / fontScaleYSubtitle)
+	var fontScaleXubtitle = min(action_card_design.size.x / fontScaleXSubtitle, action_card_design.size.y / fontScaleYSubtitle)
 	type.add_theme_font_size_override("font_size",fontScaleXubtitle)
-	var textFontSize = min(get_window().size.x / fontScaleXText, get_window().size.y / fontScaleYText)
+	var textFontSize = min(action_card_design.size.x / fontScaleXText, action_card_design.size.y / fontScaleYText)
 	description.add_theme_font_size_override("font_size",textFontSize)
 	cost.add_theme_font_size_override("font_size",textFontSize)
-	action_card_design.size=Vector2(size.x*scaleCardInside,size.y*scaleCardInside)
 
 func signal_clicked_emit() -> void:
 	emit_signal("action_card_clicked")
@@ -59,8 +67,4 @@ func _on_picture_picture_clicked() -> void:
 
 
 func _on_picture_box_picture_clicked() -> void:
-	signal_clicked_emit()
-
-
-func _on_karten_rahmen_picture_clicked() -> void:
 	signal_clicked_emit()
