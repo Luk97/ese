@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dji6noqfedsmf"]
+[gd_scene load_steps=8 format=3 uid="uid://dji6noqfedsmf"]
 
 [ext_resource type="Texture2D" uid="uid://boyt2d2row2jo" path="res://assets/ui/Label.png" id="1_v0uvy"]
 [ext_resource type="Script" path="res://action/ui/action_card.gd" id="2_dfm2f"]
+[ext_resource type="Theme" uid="uid://dl35k1wgcyjff" path="res://Themes/standard_Theme.tres" id="3_eryyb"]
 [ext_resource type="Script" path="res://action/ui/picture_box.gd" id="3_le15o"]
 [ext_resource type="Texture2D" uid="uid://cc4knyc2bod0e" path="res://assets/items/wood.png" id="3_nvpoj"]
 [ext_resource type="Texture2D" uid="uid://ciyyc6353vlsd" path="res://assets/action/axe.png" id="4_akdu4"]
@@ -44,12 +45,15 @@ theme_override_constants/separation = 4
 [node name="Title" type="Label" parent="ActionCardDesign/VerticalCardStructure"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("3_eryyb")
 text = "Headquarter"
 horizontal_alignment = 1
 
 [node name="Type" type="Label" parent="ActionCardDesign/VerticalCardStructure"]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("3_eryyb")
 text = "BUILDING"
 horizontal_alignment = 1
 
@@ -85,6 +89,7 @@ border_width = 2.0
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
+theme = ExtResource("3_eryyb")
 text = "Description"
 horizontal_alignment = 1
 autowrap_mode = 3
@@ -111,8 +116,10 @@ texture = ExtResource("3_nvpoj")
 [node name="Cost" type="Label" parent="ActionCardDesign/VerticalCardStructure/CostContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("3_eryyb")
 text = "5"
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="picture_clicked" from="ActionCardDesign/VerticalCardStructure/PictureBox" to="." method="_on_picture_box_picture_clicked"]
 [connection signal="gui_input" from="ActionCardDesign/VerticalCardStructure/PictureBox/Picture" to="ActionCardDesign/VerticalCardStructure/PictureBox/Picture" method="_on_gui_input"]
 [connection signal="picture_clicked" from="ActionCardDesign/VerticalCardStructure/PictureBox/Picture" to="." method="_on_picture_picture_clicked"]

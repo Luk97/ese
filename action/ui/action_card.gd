@@ -12,10 +12,13 @@ extends NinePatchRect
 
 signal action_card_clicked()
 
-var fontScaleXTitle=20
-var fontScaleYTitle=20
-var fontScaleXText=40
-var fontScaleYText=40
+var fontScaleXTitle=10
+var fontScaleYTitle=10
+var fontScaleXSubtitle=15
+var fontScaleYSubtitle=15
+var fontScaleXText=20
+var fontScaleYText=20
+var scaleCardInside=0.8
 
 func set_content(action: Action) -> void:
 	title.text = action.title
@@ -40,14 +43,24 @@ func _on_gui_input(event: InputEvent) -> void:
 func _process(delta: float) -> void:
 	var titleFontSize = min(get_window().size.x / fontScaleXTitle, get_window().size.y / fontScaleYTitle)
 	title.add_theme_font_size_override("font_size",titleFontSize)
+	var fontScaleXubtitle = min(get_window().size.x / fontScaleXSubtitle, get_window().size.y / fontScaleYSubtitle)
+	type.add_theme_font_size_override("font_size",fontScaleXubtitle)
 	var textFontSize = min(get_window().size.x / fontScaleXText, get_window().size.y / fontScaleYText)
-	type.add_theme_font_size_override("font_size",textFontSize)
 	description.add_theme_font_size_override("font_size",textFontSize)
 	cost.add_theme_font_size_override("font_size",textFontSize)
+	action_card_design.size=Vector2(size.x*scaleCardInside,size.y*scaleCardInside)
 
 func signal_clicked_emit() -> void:
 	emit_signal("action_card_clicked")
 
 
 func _on_picture_picture_clicked() -> void:
+	signal_clicked_emit()
+
+
+func _on_picture_box_picture_clicked() -> void:
+	signal_clicked_emit()
+
+
+func _on_karten_rahmen_picture_clicked() -> void:
 	signal_clicked_emit()
