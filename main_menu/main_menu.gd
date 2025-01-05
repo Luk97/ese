@@ -6,7 +6,7 @@ extends Control
 @onready var showcase: Button = %Showcase
 @onready var credits: Button = %Credits
 @onready var beendenButton: Button = %BeendenButton
-
+@onready var menuContainer: MarginContainer = %MenuContainer
 
 var fontScale=70
 var titleFontScale=0.15
@@ -25,7 +25,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _process(delta: float) -> void:
-	var thisTitleFontSize = min(get_window().size.x * titleFontScale, get_window().size.y * titleFontScale)
+	var thisTitleFontSize = min(get_window().size.x * titleFontScale*1.3, get_window().size.y * titleFontScale)
 	title.add_theme_font_size_override("font_size",thisTitleFontSize)
 	
 	var thisButtonFontSize=min(get_window().size.x * ButtonScale/buttons, get_window().size.y * ButtonScale/buttons)

@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://chg7f0tjh88pj"]
+[gd_scene load_steps=7 format=3 uid="uid://chg7f0tjh88pj"]
 
 [ext_resource type="Script" path="res://main_menu/start_game.gd" id="1_1nxty"]
 [ext_resource type="Script" path="res://main_menu/main_menu.gd" id="1_qyel5"]
 [ext_resource type="Script" path="res://interface/beenden_button.gd" id="2_1x6tn"]
 [ext_resource type="Texture2D" uid="uid://b4cy83ox4lga8" path="res://assets/menus/menu_BG.png" id="2_m55e1"]
-[ext_resource type="FontFile" uid="uid://byiu3lccawsbh" path="res://assets/ui/PixelArt.ttf" id="2_waccv"]
 [ext_resource type="Theme" uid="uid://dl35k1wgcyjff" path="res://Themes/standard_Theme.tres" id="3_gccap"]
 [ext_resource type="Script" path="res://main_menu/credits.gd" id="3_tjfmy"]
 
@@ -31,140 +30,6 @@ grow_vertical = 2
 texture = ExtResource("2_m55e1")
 expand_mode = 2
 
-[node name="Test" type="VBoxContainer" parent="MainMenu"]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -614.0
-offset_right = 550.0
-grow_vertical = 0
-
-[node name="Label" type="Label" parent="MainMenu/Test"]
-layout_mode = 2
-theme = ExtResource("3_gccap")
-theme_override_font_sizes/font_size = 10
-text = "Schriftgroesse 10
-QWERTZUIOPASDFGHJKLYXCVBNM"
-
-[node name="Label2" type="Label" parent="MainMenu/Test"]
-layout_mode = 2
-theme = ExtResource("3_gccap")
-theme_override_font_sizes/font_size = 20
-text = "Schriftgroesse 20
-QWERTZUIOPASDFGHJKLYXCVBNM"
-
-[node name="Label3" type="Label" parent="MainMenu/Test"]
-layout_mode = 2
-theme = ExtResource("3_gccap")
-theme_override_font_sizes/font_size = 30
-text = "Schriftgroesse 30
-QWERTZUIOPASDFGHJKLYXCVBNM"
-
-[node name="Label4" type="Label" parent="MainMenu/Test"]
-layout_mode = 2
-theme = ExtResource("3_gccap")
-theme_override_font_sizes/font_size = 40
-text = "Schriftgroesse 40
-QWERTZUIOPASDFGHJKLYXCVBNM"
-
-[node name="Label5" type="Label" parent="MainMenu/Test"]
-layout_mode = 2
-theme = ExtResource("3_gccap")
-theme_override_font_sizes/font_size = 50
-text = "Schriftgroesse 50
-QWERTZUIOPASDFGHJKLYXCVBNM"
-
-[node name="Label6" type="Label" parent="MainMenu/Test"]
-layout_mode = 2
-theme = ExtResource("3_gccap")
-theme_override_font_sizes/font_size = 60
-text = "Schriftgroesse 60
-QWERTZUIOPASDFGHJKLYXCVBNM"
-
-[node name="Label7" type="Label" parent="MainMenu/Test"]
-layout_mode = 2
-theme = ExtResource("3_gccap")
-theme_override_font_sizes/font_size = 70
-text = "Schriftgroesse 70
-QWERTZUIOPASDFGHJKLYXCVBNM"
-
-[node name="Test2" type="VBoxContainer" parent="MainMenu"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -550.0
-offset_top = -614.0
-grow_horizontal = 0
-grow_vertical = 0
-alignment = 2
-
-[node name="Label" type="Label" parent="MainMenu/Test2"]
-layout_mode = 2
-theme_override_constants/outline_size = 1
-theme_override_fonts/font = ExtResource("2_waccv")
-theme_override_font_sizes/font_size = 10
-text = "Schriftgroesse 10
-QWERTZUIOPASDFGHJKLYXCVBNM"
-horizontal_alignment = 2
-
-[node name="Label2" type="Label" parent="MainMenu/Test2"]
-layout_mode = 2
-theme_override_constants/outline_size = 1
-theme_override_fonts/font = ExtResource("2_waccv")
-theme_override_font_sizes/font_size = 20
-text = "Schriftgroesse 20
-QWERTZUIOPASDFGHJKLYXCVBNM"
-horizontal_alignment = 2
-
-[node name="Label3" type="Label" parent="MainMenu/Test2"]
-layout_mode = 2
-theme_override_constants/outline_size = 1
-theme_override_fonts/font = ExtResource("2_waccv")
-theme_override_font_sizes/font_size = 30
-text = "Schriftgroesse 30
-QWERTZUIOPASDFGHJKLYXCVBNM"
-horizontal_alignment = 2
-
-[node name="Label4" type="Label" parent="MainMenu/Test2"]
-layout_mode = 2
-theme_override_constants/outline_size = 1
-theme_override_fonts/font = ExtResource("2_waccv")
-theme_override_font_sizes/font_size = 40
-text = "Schriftgroesse 40
-QWERTZUIOPASDFGHJKLYXCVBNM"
-horizontal_alignment = 2
-
-[node name="Label5" type="Label" parent="MainMenu/Test2"]
-layout_mode = 2
-theme_override_constants/outline_size = 1
-theme_override_fonts/font = ExtResource("2_waccv")
-theme_override_font_sizes/font_size = 50
-text = "Schriftgroesse 50
-QWERTZUIOPASDFGHJKLYXCVBNM"
-horizontal_alignment = 2
-
-[node name="Label6" type="Label" parent="MainMenu/Test2"]
-layout_mode = 2
-theme_override_constants/outline_size = 1
-theme_override_fonts/font = ExtResource("2_waccv")
-theme_override_font_sizes/font_size = 60
-text = "Schriftgroesse 60
-QWERTZUIOPASDFGHJKLYXCVBNM"
-horizontal_alignment = 2
-
-[node name="Label7" type="Label" parent="MainMenu/Test2"]
-layout_mode = 2
-theme_override_constants/outline_size = 1
-theme_override_fonts/font = ExtResource("2_waccv")
-theme_override_font_sizes/font_size = 70
-text = "Schriftgroesse 70
-QWERTZUIOPASDFGHJKLYXCVBNM"
-horizontal_alignment = 2
-
 [node name="VBoxContainer" type="VBoxContainer" parent="MainMenu"]
 layout_mode = 1
 anchors_preset = 10
@@ -185,13 +50,18 @@ size_flags_vertical = 3
 theme = ExtResource("3_gccap")
 theme_override_constants/outline_size = 12
 theme_override_constants/shadow_outline_size = 24
-text = "ESE Arbeitstitel
-QWERTZUIOPASDFGHJKLYXCVBNM!;:,.?"
+text = "ESE Arbeitstitel"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="MarginContainer" type="MarginContainer" parent="MainMenu"]
+[node name="Label" type="Label" parent="MainMenu/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "QWERTZUIOPASDFGHJKLYXCVBNM!;:,.?"
+
+[node name="MenuContainer" type="MarginContainer" parent="MainMenu"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -203,20 +73,20 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MainMenu/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MainMenu/MenuContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/MarginContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/MenuContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_override_constants/separation = 5
 alignment = 1
 
-[node name="Seperator2" type="Control" parent="MainMenu/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Seperator2" type="Control" parent="MainMenu/MenuContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="StartGame" type="Button" parent="MainMenu/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="StartGame" type="Button" parent="MainMenu/MenuContainer/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
@@ -225,14 +95,14 @@ text = "Start Game
 "
 script = ExtResource("1_1nxty")
 
-[node name="Speichern" type="Button" parent="MainMenu/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Speichern" type="Button" parent="MainMenu/MenuContainer/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("3_gccap")
 disabled = true
 text = "Save"
 
-[node name="Showcase" type="Button" parent="MainMenu/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Showcase" type="Button" parent="MainMenu/MenuContainer/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("3_gccap")
@@ -240,7 +110,7 @@ disabled = true
 text = "Showcase
 "
 
-[node name="Credits" type="Button" parent="MainMenu/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Credits" type="Button" parent="MainMenu/MenuContainer/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("3_gccap")
@@ -248,7 +118,7 @@ text = "Credits
 "
 script = ExtResource("3_tjfmy")
 
-[node name="BeendenButton" type="Button" parent="MainMenu/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="BeendenButton" type="Button" parent="MainMenu/MenuContainer/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 tooltip_text = "Spiel beenden"
@@ -256,5 +126,5 @@ theme = ExtResource("3_gccap")
 text = "Quit"
 script = ExtResource("2_1x6tn")
 
-[connection signal="pressed" from="MainMenu/MarginContainer/HBoxContainer/VBoxContainer/StartGame" to="MainMenu/MarginContainer/HBoxContainer/VBoxContainer/StartGame" method="_on_pressed"]
-[connection signal="pressed" from="MainMenu/MarginContainer/HBoxContainer/VBoxContainer/Credits" to="MainMenu/MarginContainer/HBoxContainer/VBoxContainer/Credits" method="_on_pressed"]
+[connection signal="pressed" from="MainMenu/MenuContainer/HBoxContainer/VBoxContainer/StartGame" to="MainMenu/MenuContainer/HBoxContainer/VBoxContainer/StartGame" method="_on_pressed"]
+[connection signal="pressed" from="MainMenu/MenuContainer/HBoxContainer/VBoxContainer/Credits" to="MainMenu/MenuContainer/HBoxContainer/VBoxContainer/Credits" method="_on_pressed"]
