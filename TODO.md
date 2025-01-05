@@ -131,8 +131,8 @@
 - [X] Basic Bars for Food and Warmth
 - [X] Improve auto-scaling of lables.
 - [ ] Subscribing the UI Lables and bars to Managers after variables were added
-- [ ] Polish MainMenu
-- [ ] Polish Credits
+- [X] Polish MainMenu
+- [X] Polish Credits
 
 ## Version 0.5
 
@@ -155,3 +155,7 @@
 	- [ ] Navigation to Main Menu
 	- [ ] Navigation to New Game
 - [ ] Clean up Main Menu
+- [ ] new Screenshot for Background
+- [X] add showcase Function to Interface
+- [ ] Fix Action Selection
+	-[ ]Centering (e.g. Fullscreen)
