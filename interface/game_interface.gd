@@ -28,6 +28,12 @@ func update_wheat_label(wheat: int) -> void:
 	wheat_label.set_resource_count(wheat)
 
 func _process(delta: float) -> void:
+	
+	#top_Interface_Container.size.y=min(60,0.1*get_window().size.y) #noch unschoen
+	roundCounter.size=Vector2(top_Interface_Container.size.x*0.1,top_Interface_Container.size.y);
+	wood_label.size=Vector2(top_Interface_Container.size.x*0.075,top_Interface_Container.size.y);
+	wheat_label.size=Vector2(top_Interface_Container.size.x*0.075,top_Interface_Container.size.y);
+	
 	var margin=top_Interface_Container.size.x*0.01
 	roundCounter.position=Vector2(0,0)
 	wood_label.position=Vector2(roundCounter.position.x+roundCounter.size.x+margin,0)
