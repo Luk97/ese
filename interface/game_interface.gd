@@ -5,6 +5,12 @@ extends CanvasLayer
 @onready var food_Progress: NinePatchRect = %food_Progress
 @onready var heat_Progress: NinePatchRect = %heat_Progress
 
+
+@onready var top_Interface_Container: VBoxContainer = %Top_Interface_Container
+@onready var bottom_Interface_Container: VBoxContainer = %Bottom_Interface_Container
+
+
+
 signal round_finished
 
 func _ready() -> void:
@@ -19,3 +25,6 @@ func update_wood_label(wood: int) -> void:
 
 func update_wheat_label(wheat: int) -> void:
 	wheat_label.set_resource_count(wheat)
+
+func _process(delta: float) -> void:
+	pass
