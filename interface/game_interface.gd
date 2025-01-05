@@ -4,6 +4,7 @@ extends CanvasLayer
 @onready var wheat_label: NinePatchRect = %WheatLabel
 @onready var food_Progress: NinePatchRect = %food_Progress
 @onready var heat_Progress: NinePatchRect = %heat_Progress
+@onready var roundCounter: NinePatchRect = %RoundCounterLabel
 
 
 @onready var top_Interface_Container: VBoxContainer = %Top_Interface_Container
@@ -27,4 +28,8 @@ func update_wheat_label(wheat: int) -> void:
 	wheat_label.set_resource_count(wheat)
 
 func _process(delta: float) -> void:
+	var margin=top_Interface_Container.size.x*0.01
+	roundCounter.position=Vector2(0,0)
+	wood_label.position=Vector2(roundCounter.position.x+roundCounter.size.x+margin,0)
+	wheat_label.position=Vector2(wood_label.position.x+wheat_label.size.x+margin,0)
 	pass
