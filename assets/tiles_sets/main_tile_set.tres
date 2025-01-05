@@ -1,9 +1,9 @@
 [gd_resource type="TileSet" load_steps=3 format=3 uid="uid://d0it2y0up4n6x"]
 
-[ext_resource type="Texture2D" uid="uid://cpjs8pp4btvsc" path="res://assets/tiles/tiles.png" id="1_sugia"]
+[ext_resource type="Texture2D" uid="uid://cpjs8pp4btvsc" path="res://assets/tiles/tiles.png" id="1_7dxju"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r5ffy"]
-texture = ExtResource("1_sugia")
+texture = ExtResource("1_7dxju")
 margins = Vector2i(24, 16)
 separation = Vector2i(16, 16)
 texture_region_size = Vector2i(32, 32)
@@ -84,7 +84,7 @@ texture_region_size = Vector2i(32, 32)
 3:5/0 = 0
 3:5/0/texture_origin = Vector2i(0, 8)
 0:6/animation_columns = 4
-0:6/animation_speed = 8.0
+0:6/animation_speed = 4.0
 0:6/animation_frame_0/duration = 1.0
 0:6/animation_frame_1/duration = 1.0
 0:6/animation_frame_2/duration = 1.0
@@ -92,7 +92,7 @@ texture_region_size = Vector2i(32, 32)
 0:6/0 = 0
 0:6/0/texture_origin = Vector2i(0, 8)
 4:6/animation_columns = 4
-4:6/animation_speed = 8.0
+4:6/animation_speed = 4.0
 4:6/animation_frame_0/duration = 1.0
 4:6/animation_frame_1/duration = 1.0
 4:6/animation_frame_2/duration = 1.0
@@ -100,7 +100,7 @@ texture_region_size = Vector2i(32, 32)
 4:6/0 = 0
 4:6/0/texture_origin = Vector2i(0, 8)
 0:7/animation_columns = 4
-0:7/animation_speed = 8.0
+0:7/animation_speed = 4.0
 0:7/animation_frame_0/duration = 1.0
 0:7/animation_frame_1/duration = 1.0
 0:7/animation_frame_2/duration = 1.0
@@ -108,7 +108,7 @@ texture_region_size = Vector2i(32, 32)
 0:7/0 = 0
 0:7/0/texture_origin = Vector2i(0, 8)
 4:7/animation_columns = 4
-4:7/animation_speed = 8.0
+4:7/animation_speed = 4.0
 4:7/animation_frame_0/duration = 1.0
 4:7/animation_frame_1/duration = 1.0
 4:7/animation_frame_2/duration = 1.0
@@ -116,7 +116,7 @@ texture_region_size = Vector2i(32, 32)
 4:7/0 = 0
 4:7/0/texture_origin = Vector2i(0, 8)
 0:8/animation_columns = 4
-0:8/animation_speed = 8.0
+0:8/animation_speed = 4.0
 0:8/animation_frame_0/duration = 1.0
 0:8/animation_frame_1/duration = 1.0
 0:8/animation_frame_2/duration = 1.0
