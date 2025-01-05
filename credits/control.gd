@@ -7,8 +7,8 @@ extends Control
 @onready var beendenButton: Button = %BeendenButton
 
 
-var labelFontScaleX=10
-var labelFontScaleY=5
+var labelFontScale=0.3
+var labels=3
 var ButtonFontScaleX=30
 var ButtonFontScaleY=15
 
@@ -19,7 +19,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	var thisLabelFontSize=min(get_window().size.x / labelFontScaleX, get_window().size.y / labelFontScaleY)
+	var thisLabelFontSize=min(get_window().size.x * labelFontScale/labels, get_window().size.y  * labelFontScale/labels)
 	ui.add_theme_font_size_override("font_size",thisLabelFontSize)
 	graphics.add_theme_font_size_override("font_size",thisLabelFontSize)
 	gamelogic.add_theme_font_size_override("font_size",thisLabelFontSize)
