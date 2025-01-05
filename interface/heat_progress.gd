@@ -13,5 +13,5 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _set_new_heat_value(val: int)->void:
+func setNewHeatValue(val: int)->void:
 	heat_Progress_Bar.value=val;

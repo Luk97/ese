@@ -13,5 +13,5 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _set_new_heat_value(val: int)->void:
+func setNewFoodValue(val: int)->void:
 	food_Progress_Bar.value=val;

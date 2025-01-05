@@ -27,6 +27,12 @@ func update_wood_label(wood: int) -> void:
 func update_wheat_label(wheat: int) -> void:
 	wheat_label.set_resource_count(wheat)
 
+func update_food_Progress(food: int) -> void:
+	food_Progress.setNewFoodValue(food)
+	
+func update_heat_Progress(heat: int) -> void:
+	heat_Progress.setNewHeatValue(heat)
+
 func _process(delta: float) -> void:
 	
 	#top_Interface_Container.size.y=min(60,0.1*get_window().size.y) #noch unschoen
