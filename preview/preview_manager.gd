@@ -21,6 +21,7 @@ func enable_preview(action: Action):
 
 func _process(delta: float) -> void:
 	if enabled:
+		self.preview_layer.clear()
 		_update_cursor_tile()
 		if self.action == null or self.cursor_tile == null:
 			return
@@ -30,9 +31,9 @@ func _process(delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if enabled and event is InputEventMouse:
 		if event.button_mask == MOUSE_BUTTON_LEFT and event.is_pressed() and self.cursor_tile != null and self.valid_placement:
-			preview_layer.clear()
+			self.preview_layer.clear()
 			ActionExecutor.perform_action(action, cursor_tile)
-			enabled = false
+			self.enabled = false
 			emit_signal("preview_done")
 
 func _update_cursor_tile() -> void:
@@ -53,6 +54,5 @@ func _show_preview() -> void:
 	var modulate_color = Color(0, 1, 0, 0.75) if self.valid_placement else Color(1, 0, 0, 0.75)
 	var source_id = action.source_id if action.building == null else action.building.source_id
 	var atlas_coords = action.atlas_coords if action.building == null else action.building.atlas_coords
-	preview_layer.clear()
 	preview_layer.set_modulate(modulate_color)
 	preview_layer.set_cell(cursor_tile.map_coords - Vector2i(1, 1), source_id, atlas_coords)

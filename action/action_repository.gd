@@ -15,7 +15,7 @@ var catalog: Array[Action] = [
 		Constants.ACTION_ID_BUILD_HOME,
 		Types.ActionType.BUILD_NEW_BUILDING,
 		"Build new Home",
-		"Placeholder Description",
+		"Slows down the need for warmth.",
 		load("res://assets/action/Home-Icon.png"),
 		Home.new()
 	),
@@ -23,7 +23,7 @@ var catalog: Array[Action] = [
 		Constants.ACTION_ID_BUILD_WOOOD_CUTTER,
 		Types.ActionType.BUILD_NEW_BUILDING,
 		"Build new Wood Cutter",
-		"Placeholder Description",
+		"Produces one wood every two rounds.",
 		load("res://assets/action/Woodcutter-Icon.png"),
 		WoodCutter.new()
 	),
@@ -31,7 +31,7 @@ var catalog: Array[Action] = [
 		Constants.ACTION_ID_BUILD_OUTPOST,
 		Types.ActionType.BUILD_NEW_BUILDING,
 		"Build new Outpost",
-		"Placeholder Description",
+		"Has a large view radius to scout the surroundings.",
 		load("res://assets/tiles/overlay/on_land/on_grass/outpost.png"),
 		Outpost.new()
 	),
