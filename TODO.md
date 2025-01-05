@@ -98,16 +98,16 @@
 ## Version 0.4
 
 ### Assets
-- [ ] (!) Fix Godot Atlas Error messages 	=> 	Müssten behoben werden, wenn man im finalen Produkt, alles in einen Atlas merged
+- [x] (!) Fix Godot Atlas Error messages 	=> 	Müssten behoben werden, wenn man im finalen Produkt, alles in einen Atlas merged
 - [x] Check why outpost.png doesn't work in tileset
 - [x] Terrain: Sand
 - [x] Terrain: Mountain (stone)
 
 - [x] UI Background for Food and Warmth Bar #Ergaenzung von Tobias für die UI
 - [x] UI Bar for Food and Warmth Bar #Ergaenzung von Tobias für die UI
-- [ ] (!) UI: Pixel font #Ergaenzung von Tobias für die UI 	=> 	Arbeit für die kommende Woche
-	- [ ] Numbers and basic special character
-	- [ ] Rework the "S"
+- [x] (!) UI: Pixel font #Ergaenzung von Tobias für die UI 	=> 	Arbeit für die kommende Woche
+	- [x] Numbers and basic special character
+	- [x] Rework the "S"
 	- Anm. 	Ich habe ein paar Testlabels im Hauptmenü eingebaut. 
 			Links normal und rechts mit Outline 1px. Dann kannst Du sehen, 
 			wie die Schrift in verschiedenen Schriftgrößen zur Geltung kommt.
@@ -139,7 +139,7 @@
 ### Assets
 - [ ] Icon: Stone
 - [ ] Building: Quarry
-- [ ] Animate all buildings
+- [x] Animate all buildings
 
 ### Gameplay
 - [ ] Progress Bars
