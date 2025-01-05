@@ -13,3 +13,7 @@ func _process(delta: float) -> void:
 
 func _on_pressed() -> void:
 	get_tree().change_scene_to_file("res://main_menu/main_menu.tscn")
+
+
+func setFontSize(thisLabelFontSize:int)->void:
+	add_theme_font_size_override("font_size",thisLabelFontSize)

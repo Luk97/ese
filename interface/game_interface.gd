@@ -7,11 +7,14 @@ extends CanvasLayer
 @onready var heat_Progress: NinePatchRect = %heat_Progress
 @onready var roundCounter: NinePatchRect = %RoundCounterLabel
 @onready var topLeftMenu: Control = %TopLeftMenu
+@onready var menu: Button = %Menu
 
 @onready var top_Interface_Container: VBoxContainer = %Top_Interface_Container
 @onready var bottom_Interface_Container: VBoxContainer = %Bottom_Interface_Container
 
-
+var fontScale=1
+var resourceLabelRatio=3
+var roundLabelRatio=4
 
 signal round_finished
 
@@ -50,12 +53,28 @@ func _process(delta: float) -> void:
 	scaling()
 
 func scaling()->void:
-		#top_Interface_Container.size.y=min(60,0.1*get_window().size.y) #noch unschoen
-	roundCounter.size=Vector2(top_Interface_Container.size.x*0.1,top_Interface_Container.size.y);
+	#Size Scaling
+	top_Interface_Container.size.y=0.1*get_window().size.y
+	#if(top_Interface_Container.size.y*resourceLabelRatio<0.075*top_Interface_Container.size.x):
+	roundCounter.size=Vector2(top_Interface_Container.size.x*0.11,top_Interface_Container.size.y);
 	wood_label.size=Vector2(top_Interface_Container.size.x*0.075,top_Interface_Container.size.y);
 	stone_label.size=Vector2(top_Interface_Container.size.x*0.075,top_Interface_Container.size.y);
 	wheat_label.size=Vector2(top_Interface_Container.size.x*0.075,top_Interface_Container.size.y);
+	#else:
+		#pass
 	
+	
+	
+	
+	#FontSize
+	var fontSize=fontScale*roundCounter.size.y
+	roundCounter.setFontSize(fontSize)
+	wood_label.setFontSize(fontSize)
+	stone_label.setFontSize(fontSize)
+	wheat_label.setFontSize(fontSize)
+	menu.setFontSize(fontSize)
+	
+	#Positioning
 	var margin=top_Interface_Container.size.x*0.01
 	roundCounter.position=Vector2(0,0)
 	wood_label.position=Vector2(roundCounter.position.x+roundCounter.size.x+margin,0)

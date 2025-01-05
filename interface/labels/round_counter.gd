@@ -1,5 +1,5 @@
 extends NinePatchRect
-
+@onready var label: Label = %RoundCounterLabel
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,4 +11,4 @@ func _process(delta: float) -> void:
 	pass
 
 func setFontSize(thisLabelFontSize:int)->void:
-	add_theme_font_size_override("font_size",thisLabelFontSize)
+	label.add_theme_font_size_override("font_size",thisLabelFontSize)

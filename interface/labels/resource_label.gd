@@ -13,7 +13,7 @@ func set_resource_count(resource_count: int) -> void:
 	label.text = str(resource_count)
 	
 func setFontSize(thisLabelFontSize:int)->void:
-	add_theme_font_size_override("font_size",thisLabelFontSize)
+	label.add_theme_font_size_override("font_size",thisLabelFontSize)
 	
 func _process(delta: float) -> void:
 	pass
