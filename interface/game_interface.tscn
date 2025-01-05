@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://interface/game_interface.gd" id="1_bnx4o"]
 [ext_resource type="PackedScene" uid="uid://dgbq5goh7yrtn" path="res://interface/labels/round_counter_label.tscn" id="2_4d6ly"]
 [ext_resource type="PackedScene" uid="uid://c7uwlhqoc4cq1" path="res://interface/finish_round_button.tscn" id="2_bd0v6"]
-[ext_resource type="PackedScene" path="res://interface/runde_beenden.tscn" id="3_vjbiu"]
+[ext_resource type="PackedScene" uid="uid://go5qe7tje8xn" path="res://interface/runde_beenden.tscn" id="3_vjbiu"]
 [ext_resource type="PackedScene" uid="uid://clg4fyuhs8tbm" path="res://interface/food_Progress.tscn" id="4_asx76"]
-[ext_resource type="PackedScene" path="res://interface/beenden_button.tscn" id="5_hmy8k"]
+[ext_resource type="PackedScene" uid="uid://vw775152hyl8" path="res://interface/beenden_button.tscn" id="5_hmy8k"]
 [ext_resource type="PackedScene" uid="uid://bl7qqsho00lkw" path="res://interface/heat_Progress.tscn" id="5_usw0a"]
 [ext_resource type="Script" path="res://interface/menu.gd" id="7_htivo"]
 [ext_resource type="PackedScene" uid="uid://ckgpun112k64h" path="res://interface/labels/resource_label.tscn" id="7_xl27s"]
@@ -36,71 +36,70 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="Top_Container" type="VBoxContainer" parent="Elements/UI_Margin"]
+[node name="Top_Interface_Container" type="VBoxContainer" parent="Elements/UI_Margin"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Elements/UI_Margin/Top_Container"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Elements/UI_Margin/Top_Interface_Container"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Left" type="Control" parent="Elements/UI_Margin/Top_Container/HBoxContainer"]
+[node name="Left" type="Control" parent="Elements/UI_Margin/Top_Interface_Container/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="RoundCounterLabel" parent="Elements/UI_Margin/Top_Container/HBoxContainer/Left" instance=ExtResource("2_4d6ly")]
+[node name="RoundCounterLabel" parent="Elements/UI_Margin/Top_Interface_Container/HBoxContainer/Left" instance=ExtResource("2_4d6ly")]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 2.0
-offset_top = -8.0
-offset_right = 103.0
-offset_bottom = 41.0
 
-[node name="WoodLabel" parent="Elements/UI_Margin/Top_Container/HBoxContainer/Left" instance=ExtResource("7_xl27s")]
+[node name="WoodLabel" parent="Elements/UI_Margin/Top_Interface_Container/HBoxContainer/Left" instance=ExtResource("7_xl27s")]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 107.0
-offset_top = 3.0
-offset_right = 183.0
-offset_bottom = 35.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 76.0
+offset_bottom = 32.0
 
-[node name="WheatLabel" parent="Elements/UI_Margin/Top_Container/HBoxContainer/Left" instance=ExtResource("7_xl27s")]
+[node name="WheatLabel" parent="Elements/UI_Margin/Top_Interface_Container/HBoxContainer/Left" instance=ExtResource("7_xl27s")]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 193.0
-offset_top = 3.0
-offset_right = 269.0
-offset_bottom = 35.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 76.0
+offset_bottom = 32.0
 resource_texture = ExtResource("10_noos1")
 
-[node name="Menu" parent="Elements/UI_Margin/Top_Container/HBoxContainer" instance=ExtResource("5_hmy8k")]
+[node name="Menu" parent="Elements/UI_Margin/Top_Interface_Container/HBoxContainer" instance=ExtResource("5_hmy8k")]
 layout_mode = 2
 size_flags_horizontal = 10
-text = "Menü
+text = "Menu
 "
 script = ExtResource("7_htivo")
 
-[node name="Bottoom_Container" type="VBoxContainer" parent="Elements/UI_Margin"]
+[node name="Bottom_Interface_Container" type="VBoxContainer" parent="Elements/UI_Margin"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 size_flags_vertical = 8
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Elements/UI_Margin/Bottoom_Container"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Elements/UI_Margin/Bottom_Interface_Container"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 5
 
-[node name="foodProgressBar" parent="Elements/UI_Margin/Bottoom_Container/HBoxContainer" instance=ExtResource("4_asx76")]
+[node name="foodProgressBar" parent="Elements/UI_Margin/Bottom_Interface_Container/HBoxContainer" instance=ExtResource("4_asx76")]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="heatProgressBar" parent="Elements/UI_Margin/Bottoom_Container/HBoxContainer" instance=ExtResource("5_usw0a")]
+[node name="heatProgressBar" parent="Elements/UI_Margin/Bottom_Interface_Container/HBoxContainer" instance=ExtResource("5_usw0a")]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="RundeBeenden" parent="Elements/UI_Margin/Bottoom_Container/HBoxContainer" instance=ExtResource("3_vjbiu")]
+[node name="RundeBeenden" parent="Elements/UI_Margin/Bottom_Interface_Container/HBoxContainer" instance=ExtResource("3_vjbiu")]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -183,6 +182,6 @@ offset_bottom = 27.16
 size_flags_horizontal = 8
 text = "End"
 
-[connection signal="pressed" from="Elements/UI_Margin/Top_Container/HBoxContainer/Menu" to="Elements/UI_Margin/Top_Container/HBoxContainer/Menu" method="_on_pressed"]
-[connection signal="pressed" from="Elements/UI_Margin/Bottoom_Container/HBoxContainer/RundeBeenden" to="." method="_on_finish_round_button_pressed"]
+[connection signal="pressed" from="Elements/UI_Margin/Top_Interface_Container/HBoxContainer/Menu" to="Elements/UI_Margin/Top_Interface_Container/HBoxContainer/Menu" method="_on_pressed"]
+[connection signal="pressed" from="Elements/UI_Margin/Bottom_Interface_Container/HBoxContainer/RundeBeenden" to="." method="_on_finish_round_button_pressed"]
 [connection signal="pressed" from="Elements/FinishRoundButton" to="." method="_on_finish_round_button_pressed"]

@@ -14,26 +14,26 @@ var grass_decorations: Dictionary = {
 		PICK_CHANCE: 20
 	},
 	"flowers": {
-		SOURCE_ID: 3,
-		ATLAS_COORDS: Vector2i(0, 0),
+		SOURCE_ID: 0,
+		ATLAS_COORDS: Vector2i(4, 2),
 		PICK_CHANCE: 10
 	},
 	"pond": {
-		SOURCE_ID: 3,
-		ATLAS_COORDS: Vector2i(1, 0),
+		SOURCE_ID: 0,
+		ATLAS_COORDS: Vector2i(5, 2),
 		PICK_CHANCE: 1
 	}
 }
 
 var forest_decorations: Dictionary = {
 	"trees_1": {
-		SOURCE_ID: 2,
-		ATLAS_COORDS: Vector2i(0, 0),
+		SOURCE_ID: 0,
+		ATLAS_COORDS: Vector2i(4, 3),
 		PICK_CHANCE: 4
 	},
 	"trees_2": {
-		SOURCE_ID: 2,
-		ATLAS_COORDS: Vector2i(1, 0),
+		SOURCE_ID: 0,
+		ATLAS_COORDS: Vector2i(5, 3),
 		PICK_CHANCE: 6
 	},
 }
@@ -43,19 +43,25 @@ var water_decorations: Dictionary = {
 		PICK_CHANCE: 30
 	},
 	"water_lillies_1": {
-		SOURCE_ID: 13,
-		ATLAS_COORDS: Vector2i(0, 0),
+		SOURCE_ID: 0,
+		ATLAS_COORDS: Vector2i(6, 2),
 		PICK_CHANCE: 1
 	},
 	"water_lillies_2": {
-		SOURCE_ID: 13,
-		ATLAS_COORDS: Vector2i(1, 0),
+		SOURCE_ID: 0,
+		ATLAS_COORDS: Vector2i(7, 2),
 		PICK_CHANCE: 1
 	},
 	"fish": {
+<<<<<<< HEAD
 		SOURCE_ID: 14,
 		ATLAS_COORDS: Vector2i(0, 0),
 		PICK_CHANCE: 3
+=======
+		SOURCE_ID: 0,
+		ATLAS_COORDS: Vector2i(4, 4),
+		PICK_CHANCE: 2
+>>>>>>> master
 	}
 }
 

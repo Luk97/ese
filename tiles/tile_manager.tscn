@@ -1,162 +1,22 @@
-[gd_scene load_steps=28 format=3 uid="uid://xo55sqx1lwyd"]
+[gd_scene load_steps=5 format=3 uid="uid://xo55sqx1lwyd"]
 
 [ext_resource type="Script" path="res://tiles/tile_manager.gd" id="1_6pc0r"]
-[ext_resource type="TileSet" uid="uid://crd6g2q3ow7a1" path="res://assets/tiles_sets/main_tiles.tres" id="2_6bhbm"]
+[ext_resource type="TileSet" uid="uid://d0it2y0up4n6x" path="res://assets/tiles_sets/main_tile_set.tres" id="2_vhidk"]
 [ext_resource type="Script" path="res://tiles/ground_layer.gd" id="3_1cqcs"]
-[ext_resource type="Texture2D" uid="uid://ddh1khh8pasa3" path="res://assets/tiles/overlay/on_water/Fish-Anim.png" id="4_7fc7n"]
-[ext_resource type="Texture2D" uid="uid://cdk385xlum8ot" path="res://assets/tiles/overlay/on_land/on_grass/burner.png" id="4_751l8"]
-[ext_resource type="Texture2D" uid="uid://bmwbkpgdnhtd" path="res://assets/tiles/overlay/on_land/on_grass/Farm.png" id="4_s1245"]
-[ext_resource type="Texture2D" uid="uid://dt1sknjy6c7o8" path="res://assets/tiles/overlay/on_land/on_forest/Forest.png" id="6_3kbqs"]
-[ext_resource type="Texture2D" uid="uid://bwigo76qxns1w" path="res://assets/tiles/overlay/on_land/on_grass/Field.png" id="6_d002o"]
-[ext_resource type="Texture2D" uid="uid://b30b2cenhqcq4" path="res://assets/tiles/overlay/on_land/on_grass/Grass.png" id="7_6fwn7"]
-[ext_resource type="Texture2D" uid="uid://0xlh1pprvjx4" path="res://assets/tiles/overlay/on_water/WaterLilies.png" id="7_b6fph"]
-[ext_resource type="Texture2D" uid="uid://b5dax8ekear38" path="res://assets/tiles/overlay/on_land/on_grass/outpost.png" id="8_0gvli"]
-[ext_resource type="Texture2D" uid="uid://dcduycwdhj4mv" path="res://assets/tiles/overlay/on_land/on_grass/Home.png" id="8_0iqty"]
-[ext_resource type="Texture2D" uid="uid://fql16pdaoa0m" path="res://assets/tiles/overlay/on_land/on_forest/Woodcutter.png" id="9_tr005"]
-[ext_resource type="Texture2D" uid="uid://bk16c2ai2jsun" path="res://assets/tiles/overlay/on_land/on_grass/windmill.png" id="13_ubp47"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_jpqon"]
 frequency = 0.04
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fs2ax"]
-texture = ExtResource("4_751l8")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-0:0/0/texture_origin = Vector2i(0, 8)
-0:1/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3wkp3"]
-texture = ExtResource("4_s1245")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-0:0/0/texture_origin = Vector2i(0, 8)
-0:1/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lqniv"]
-texture = ExtResource("6_d002o")
-texture_region_size = Vector2i(32, 32)
-0:1/0 = 0
-0:0/0 = 0
-0:0/0/texture_origin = Vector2i(0, 8)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xedkc"]
-texture = ExtResource("7_b6fph")
-texture_region_size = Vector2i(32, 32)
-0:1/0 = 0
-1:1/0 = 0
-0:0/0 = 0
-0:0/0/texture_origin = Vector2i(0, 8)
-1:0/0 = 0
-1:0/0/texture_origin = Vector2i(0, 8)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_84e62"]
-texture = ExtResource("4_7fc7n")
-texture_region_size = Vector2i(32, 32)
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-0:0/animation_columns = 5
-0:0/animation_speed = 4.0
-0:0/animation_mode = 1
-0:0/animation_frame_0/duration = 1.0
-0:0/animation_frame_1/duration = 1.0
-0:0/animation_frame_2/duration = 1.0
-0:0/animation_frame_3/duration = 1.0
-0:0/animation_frame_4/duration = 1.0
-0:0/0 = 0
-0:0/0/texture_origin = Vector2i(0, 8)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7bfwg"]
-texture = ExtResource("6_3kbqs")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-0:0/0/texture_origin = Vector2i(0, 8)
-1:0/0 = 0
-1:0/0/texture_origin = Vector2i(0, 8)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jcgxg"]
-texture = ExtResource("7_6fwn7")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-0:0/0/texture_origin = Vector2i(0, 8)
-1:0/0 = 0
-1:0/0/texture_origin = Vector2i(0, 8)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rqgga"]
-texture = ExtResource("8_0iqty")
-texture_region_size = Vector2i(32, 32)
-0:0/animation_speed = 4.0
-0:0/animation_mode = 1
-0:0/animation_frame_0/duration = 1.0
-0:0/animation_frame_1/duration = 1.0
-0:0/animation_frame_2/duration = 1.0
-0:0/animation_frame_3/duration = 1.0
-0:0/0 = 0
-0:0/0/texture_origin = Vector2i(0, 8)
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7r6s3"]
-texture = ExtResource("9_tr005")
-texture_region_size = Vector2i(32, 32)
-0:0/animation_speed = 4.0
-0:0/animation_mode = 1
-0:0/animation_frame_0/duration = 1.0
-0:0/animation_frame_1/duration = 1.0
-0:0/animation_frame_2/duration = 1.0
-0:0/animation_frame_3/duration = 1.0
-0:0/0 = 0
-0:0/0/texture_origin = Vector2i(0, 8)
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i4x7d"]
-texture = ExtResource("13_ubp47")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-0:0/0/texture_origin = Vector2i(0, 8)
-0:1/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3aq2l"]
-texture = ExtResource("8_0gvli")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-0:0/0/texture_origin = Vector2i(0, 8)
-0:1/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_o0drx"]
-tile_shape = 3
-tile_layout = 5
-tile_offset_axis = 1
-tile_size = Vector2i(32, 16)
-sources/2 = SubResource("TileSetAtlasSource_7bfwg")
-sources/3 = SubResource("TileSetAtlasSource_jcgxg")
-sources/4 = SubResource("TileSetAtlasSource_rqgga")
-sources/5 = SubResource("TileSetAtlasSource_7r6s3")
-sources/9 = SubResource("TileSetAtlasSource_3aq2l")
-sources/10 = SubResource("TileSetAtlasSource_fs2ax")
-sources/11 = SubResource("TileSetAtlasSource_3wkp3")
-sources/12 = SubResource("TileSetAtlasSource_lqniv")
-sources/13 = SubResource("TileSetAtlasSource_xedkc")
-sources/14 = SubResource("TileSetAtlasSource_84e62")
-sources/6 = SubResource("TileSetAtlasSource_i4x7d")
 
 [node name="TileManager" type="Node2D"]
 script = ExtResource("1_6pc0r")
 
 [node name="GroundLayer" type="TileMapLayer" parent="."]
 unique_name_in_owner = true
-tile_set = ExtResource("2_6bhbm")
+tile_set = ExtResource("2_vhidk")
 script = ExtResource("3_1cqcs")
 altitude_noise = SubResource("FastNoiseLite_jpqon")
 
 [node name="TopLayer" type="TileMapLayer" parent="."]
 unique_name_in_owner = true
 z_index = 1
-tile_set = SubResource("TileSet_o0drx")
+tile_set = ExtResource("2_vhidk")
