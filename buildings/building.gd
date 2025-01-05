@@ -11,5 +11,6 @@ extends Node
 @export var atlas_coords: Vector2i
 
 func is_valid_placement_tile(type: Types.TileType) -> bool:
-	push_error("Building class does not implement the function \"is_valid_tile\"")
+	print("check")
+	printerr("Building class does not implement the function \"is_valid_placement_tile\"")
 	return false

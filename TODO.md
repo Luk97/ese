@@ -90,10 +90,10 @@
 - [ ] Lookup Fog implementation
 
 ### User Interface
-- [X] Basic Main Menu		
-	- [X] New Game Button	
-	- [X] Quit Game Button	
-	- [X] Credits Button		
+- [X] Basic Main Menu
+	- [X] New Game Button
+	- [X] Quit Game Button
+	- [X] Credits Button
 
 ## Version 0.4
 
@@ -139,3 +139,19 @@
 ### Assets
 - [ ] Icon: Stone
 - [ ] Building: Quarry
+- [ ] Animate all buildings
+
+### Gameplay
+- [ ] Progress Bars
+- [ ] More Actions
+- [ ] Water Buildings
+- [ ] Random Resource Drops when creating new tiles
+- [ ] Show Case from Main Menu
+- [ ] Make World more interesting
+- [ ] Educts for buildings
+
+### User Interface
+- [ ] Game Over Screen
+	- [ ] Navigation to Main Menu
+	- [ ] Navigation to New Game
+- [ ] Clean up Main Menu

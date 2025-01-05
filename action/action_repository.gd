@@ -11,61 +11,64 @@ extends Node
 # )
 
 var catalog: Array[Action] = [
-	Action.new(
+	BuildingAction.new(
 		Constants.ACTION_ID_BUILD_HOME,
-		Types.ActionType.BUILD_NEW_BUILDING,
 		"Build new Home",
 		"Slows down the need for warmth.",
 		load("res://assets/action/Home-Icon.png"),
 		Home.new()
 	),
-	Action.new(
+	BuildingAction.new(
 		Constants.ACTION_ID_BUILD_WOOOD_CUTTER,
-		Types.ActionType.BUILD_NEW_BUILDING,
 		"Build new Wood Cutter",
 		"Produces one wood every two rounds.",
 		load("res://assets/action/Woodcutter-Icon.png"),
 		WoodCutter.new()
 	),
-	Action.new(
+	BuildingAction.new(
 		Constants.ACTION_ID_BUILD_OUTPOST,
-		Types.ActionType.BUILD_NEW_BUILDING,
 		"Build new Outpost",
 		"Has a large view radius to scout the surroundings.",
 		load("res://assets/tiles/overlay/on_land/on_grass/outpost.png"),
 		Outpost.new()
 	),
-	Action.new(
+	BuildingAction.new(
 		Constants.ACTION_ID_BUILD_BURNER,
-		Types.ActionType.BUILD_NEW_BUILDING,
 		"Build new Burner",
 		"Placeholder Description",
 		load("res://assets/tiles/overlay/on_land/on_grass/burner.png"),
 		Burner.new()
 	),
-	Action.new(
+	BuildingAction.new(
 		Constants.ACTION_ID_BUILD_FARM,
-		Types.ActionType.BUILD_NEW_BUILDING,
 		"Build new Farm",
 		"Placeholder Description",
 		load("res://assets/tiles/overlay/on_land/on_grass/Farm.png"),
 		Farm.new()
 	),
-	Action.new(
+	BuildingAction.new(
 		Constants.ACTION_ID_BUILD_FIELD,
-		Types.ActionType.BUILD_NEW_BUILDING,
 		"Build new Field",
 		"Placeholder Description",
 		load("res://assets/tiles/overlay/on_land/on_grass/Field.png"),
 		Field.new()
 	),
-	Action.new(
+	BuildingAction.new(
 		Constants.ACTION_ID_BUILD_WINDMILL,
-		Types.ActionType.BUILD_NEW_BUILDING,
 		"Build new Windmill",
 		"Placeholder Description",
 		load("res://assets/tiles/overlay/on_land/on_grass/windmill.png"),
 		Windmill.new()
+	),
+	TerrainAction.new(
+		Constants.ACTION_ID_CLEAR_FOREST,
+		"Clear forest",
+		"Clear a forest tile from all trees receiving 5 wood in the process.",
+		load("res://assets/action/axe.png"),
+		[Types.TileType.FOREST],
+		Types.TileType.GRASS,
+		{ Types.ResourceType.WOOD: 10 },
+		3, Vector2i(0, 0)
 	)
 ]
 
@@ -76,7 +79,8 @@ var starter_pool: Array[Action] = [
 	_find_action_by_id(Constants.ACTION_ID_BUILD_BURNER),
 	_find_action_by_id(Constants.ACTION_ID_BUILD_FARM),
 	_find_action_by_id(Constants.ACTION_ID_BUILD_FIELD),
-	_find_action_by_id(Constants.ACTION_ID_BUILD_WINDMILL)
+	_find_action_by_id(Constants.ACTION_ID_BUILD_WINDMILL),
+	_find_action_by_id(Constants.ACTION_ID_CLEAR_FOREST)
 ]
 
 var pool = starter_pool
@@ -93,8 +97,6 @@ func get_random_selection_from_pool() -> Array:
 	pool_copy.erase(action_2)
 	var action_3 = pool_copy.pick_random()
 	return [action_1, action_2, action_3]
-
-
 
 func _find_action_by_id(id: String) -> Action:
 	for action in catalog:
