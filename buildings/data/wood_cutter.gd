@@ -10,8 +10,8 @@ func _init() -> void:
 		Constants.PRODUCT_UNTIL_YIELD: 2
 	}
 	self.view_radius = 2
-	self.source_id = 5
-	self.atlas_coords = Vector2i(0, 0)
+	self.source_id = 0
+	self.atlas_coords = Vector2i(0, 7)
 
 func is_valid_placement_tile(type: Types.TileType) -> bool:
 	return type in [Types.TileType.FOREST]

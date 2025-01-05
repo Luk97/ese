@@ -1,19 +1,7 @@
-[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://crd6g2q3ow7a1"]
-
-[ext_resource type="Texture2D" uid="uid://7ojdr1nrsip3" path="res://assets/tiles/terrain/TerrainTiles.png" id="1_8oh77"]
-[ext_resource type="Texture2D" uid="uid://due4cd4ymxwn6" path="res://assets/tiles/terrain/WaterTiles.png" id="1_s014t"]
-[ext_resource type="Texture2D" uid="uid://bchkthu7s6eek" path="res://assets/tiles/terrain/Mountain.png" id="3_cu81x"]
-[ext_resource type="Texture2D" uid="uid://cvarlrvm5vhh1" path="res://assets/tiles/terrain/Beach.png" id="4_7aydr"]
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://crd6g2q3ow7a1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hmkax"]
-texture = ExtResource("1_s014t")
 texture_region_size = Vector2i(32, 32)
-0:0/animation_columns = 4
-0:0/animation_speed = 2.0
-0:0/animation_frame_0/duration = 1.0
-0:0/animation_frame_1/duration = 1.0
-0:0/animation_frame_2/duration = 1.0
-0:0/animation_frame_3/duration = 1.0
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, 8)
 0:1/0 = 0
@@ -22,7 +10,6 @@ texture_region_size = Vector2i(32, 32)
 3:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w33oi"]
-texture = ExtResource("1_8oh77")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, 8)
@@ -32,14 +19,12 @@ texture_region_size = Vector2i(32, 32)
 1:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7hrrl"]
-texture = ExtResource("3_cu81x")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, 8)
 0:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8ptcr"]
-texture = ExtResource("4_7aydr")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, 8)
