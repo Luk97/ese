@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dpi3e1l5ihonh"]
+[gd_scene load_steps=19 format=3 uid="uid://dpi3e1l5ihonh"]
 
 [ext_resource type="Script" path="res://preview/preview_manager.gd" id="1_3qkvr"]
 [ext_resource type="Texture2D" uid="uid://cdk385xlum8ot" path="res://assets/tiles/overlay/on_land/on_grass/burner.png" id="2_8o4pt"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://fql16pdaoa0m" path="res://assets/tiles/overlay/on_land/on_forest/Woodcutter.png" id="3_ikkvw"]
 [ext_resource type="Texture2D" uid="uid://bwigo76qxns1w" path="res://assets/tiles/overlay/on_land/on_grass/Field.png" id="4_aovf7"]
 [ext_resource type="Texture2D" uid="uid://b5dax8ekear38" path="res://assets/tiles/overlay/on_land/on_grass/outpost.png" id="5_7dd0p"]
+[ext_resource type="Texture2D" uid="uid://bk16c2ai2jsun" path="res://assets/tiles/overlay/on_land/on_grass/windmill.png" id="8_5jtwn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_63bst"]
 texture = ExtResource("2_8o4pt")
@@ -74,6 +75,13 @@ texture_region_size = Vector2i(32, 32)
 2:1/0 = 0
 3:1/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n3syf"]
+texture = ExtResource("8_5jtwn")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 8)
+0:1/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3ns33"]
 texture = ExtResource("5_7dd0p")
 texture_region_size = Vector2i(32, 32)
@@ -93,6 +101,7 @@ sources/10 = SubResource("TileSetAtlasSource_63bst")
 sources/11 = SubResource("TileSetAtlasSource_u23d2")
 sources/12 = SubResource("TileSetAtlasSource_5vqy5")
 sources/9 = SubResource("TileSetAtlasSource_3ns33")
+sources/6 = SubResource("TileSetAtlasSource_n3syf")
 
 [node name="PreviewManager" type="Node2D"]
 script = ExtResource("1_3qkvr")

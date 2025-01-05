@@ -40,13 +40,28 @@ var forest_decorations: Dictionary = {
 
 var water_decorations: Dictionary = {
 	EMPTY: {
+		PICK_CHANCE: 30
+	},
+	"water_lillies_1": {
+		SOURCE_ID: 13,
+		ATLAS_COORDS: Vector2i(0, 0),
 		PICK_CHANCE: 1
+	},
+	"water_lillies_2": {
+		SOURCE_ID: 13,
+		ATLAS_COORDS: Vector2i(1, 0),
+		PICK_CHANCE: 1
+	},
+	"fish": {
+		SOURCE_ID: 14,
+		ATLAS_COORDS: Vector2i(0, 0),
+		PICK_CHANCE: 2
 	}
 }
 
 var beach_decorations: Dictionary = {
 	EMPTY: {
-		PICK_CHANCE: 1
+		PICK_CHANCE: 10
 	}
 }
 
@@ -65,7 +80,7 @@ func get_random_decoration(type: Types.TileType) -> Decoration:
 		Types.TileType.FOREST:
 			return _pick_random_decoration(forest_decorations)
 		_:
-			push_error("Undefined tile type for decoration: ", type)
+			printerr("Undefined tile type for decoration: ", type)
 			return null 
 
 #=================== PRIVATE FUNCTIONS ===================
