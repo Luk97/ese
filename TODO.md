@@ -159,3 +159,4 @@
 - [X] add showcase Function to Interface
 - [ ] Fix Action Selection
 	-[ ]Centering (e.g. Fullscreen)
+- [ ] opt. Text on Progressbars?
