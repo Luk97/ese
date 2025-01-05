@@ -14,7 +14,6 @@ func get_tile(coords: Vector2i) -> Tile:
 func place_tile(tile: Tile) -> void:
 	tiles[tile.map_coords] = tile
 	ground_layer.set_cell(tile.map_coords, tile.source_id, tile.atlas_coords)
-	
 	if tile.decoration != null:
 		top_layer.set_cell(tile.map_coords - Vector2i(1, 1), tile.decoration.source_id, tile.decoration.atlas_coords)
 	else:
@@ -22,6 +21,10 @@ func place_tile(tile: Tile) -> void:
 		if decoration != null:
 			tiles[tile.map_coords].decoration = decoration
 			top_layer.set_cell(tile.map_coords - Vector2i(1, 1), tile.decoration.source_id, tile.decoration.atlas_coords)
+
+func delete_decoration(tile: Tile):
+	if tile.decoration != null:
+		top_layer.erase_cell(tile.map_coords - Vector2i(1, 1))
 
 func get_cursor_tile() -> Tile:
 	var coords = ground_layer.get_cursor_tile_coords()

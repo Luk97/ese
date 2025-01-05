@@ -53,9 +53,15 @@ var water_decorations: Dictionary = {
 		PICK_CHANCE: 1
 	},
 	"fish": {
+<<<<<<< HEAD
+		SOURCE_ID: 14,
+		ATLAS_COORDS: Vector2i(0, 0),
+		PICK_CHANCE: 3
+=======
 		SOURCE_ID: 0,
 		ATLAS_COORDS: Vector2i(4, 4),
 		PICK_CHANCE: 2
+>>>>>>> master
 	}
 }
 

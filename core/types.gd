@@ -13,7 +13,3 @@ enum ResourceType {
 	WOOD,
 	WHEAT
 }
-
-enum ActionType {
-	BUILD_NEW_BUILDING
-}
