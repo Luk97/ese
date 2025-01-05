@@ -55,7 +55,7 @@ var water_decorations: Dictionary = {
 	"fish": {
 		SOURCE_ID: 14,
 		ATLAS_COORDS: Vector2i(0, 0),
-		PICK_CHANCE: 2
+		PICK_CHANCE: 3
 	}
 }
 

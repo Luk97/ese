@@ -1,9 +1,5 @@
 extends Node
 
-signal pickup_collected()
-
-@export var wood: PackedScene
-
 #=================== PUBLIC FUNCTIONS ===================
 
 func update_building_productions() -> void:
@@ -13,16 +9,7 @@ func update_building_productions() -> void:
 		if not product.is_empty():
 			if product[Constants.PRODUCT_UNTIL_YIELD] == 0:
 				product[Constants.PRODUCT_UNTIL_YIELD] = product[Constants.PRODUCT_RATE]
-				var scene: PackedScene = load("res://producable/producable.tscn")
-				var scene_instance = scene.instantiate()
-				scene_instance.position = TileManager.get_global_coords(tile)
-				scene_instance.connect("pickup_collected", _on_pickup_collected)
-				add_child(scene_instance)
+				var resource_type = product[Constants.PRODUCT_TYPE]
+				ResourceManager.place_resources(resource_type, 1, tile)
 			else:
 				product[Constants.PRODUCT_UNTIL_YIELD] -= 1
-
-
-#=================== PRIVATE FUNCTIONS ===================
-
-func _on_pickup_collected() -> void:
-	emit_signal("pickup_collected")

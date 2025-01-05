@@ -22,7 +22,7 @@ Types="*res://core/types.gd"
 CameraController="*res://camera/camera_controller.gd"
 DecorationManager="*res://decoration/decoration_manager.gd"
 TileManager="*res://tiles/tile_manager.tscn"
-ResourceManager="*res://core/resource_manager.gd"
+ResourceManager="*res://resources/resource_manager.gd"
 BuildingManager="*res://buildings/building_manager.gd"
 GameManager="*res://core/game_manager.gd"
 
@@ -32,6 +32,7 @@ gdscript/warnings/integer_division=0
 
 [display]
 
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
