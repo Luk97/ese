@@ -18,6 +18,7 @@ signal round_finished
 func _ready() -> void:
 	ResourceManager.wood_updated.connect(update_wood_label)
 	ResourceManager.wheat_updated.connect(update_wheat_label)
+	scaling()
 
 func showcase(startShowcase: bool) -> void:
 	if(startShowcase):
@@ -46,7 +47,10 @@ func update_heat_Progress(heat: int) -> void:
 	heat_Progress.setNewHeatValue(heat)
 
 func _process(delta: float) -> void:
-	#top_Interface_Container.size.y=min(60,0.1*get_window().size.y) #noch unschoen
+	scaling()
+
+func scaling()->void:
+		#top_Interface_Container.size.y=min(60,0.1*get_window().size.y) #noch unschoen
 	roundCounter.size=Vector2(top_Interface_Container.size.x*0.1,top_Interface_Container.size.y);
 	wood_label.size=Vector2(top_Interface_Container.size.x*0.075,top_Interface_Container.size.y);
 	stone_label.size=Vector2(top_Interface_Container.size.x*0.075,top_Interface_Container.size.y);
@@ -57,4 +61,3 @@ func _process(delta: float) -> void:
 	wood_label.position=Vector2(roundCounter.position.x+roundCounter.size.x+margin,0)
 	stone_label.position=Vector2(wood_label.position.x+stone_label.size.x+margin,0)
 	wheat_label.position=Vector2(stone_label.position.x+wheat_label.size.x+margin,0)
-	pass
