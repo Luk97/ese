@@ -30,6 +30,11 @@ GameManager="*res://core/game_manager.gd"
 
 gdscript/warnings/integer_division=0
 
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

@@ -36,7 +36,7 @@
 - [x] Tool: Axe to destroy forest and make it grass
 - [x] UI: Label background
 - [x] UI: Button background
-- [ ] UI: Action selection background
+- [x] UI: Action selection background
 - [x] Tile: Decoration Variants for forest tile (other trees etc.)
 - [x] Tile: Decoration Variants for grass tile (flowers etc.)
 - [x] Building: Animate Headquarter
@@ -62,7 +62,7 @@
 ## Version 0.3
 
 ### Assets
-- [ ] (!) UI: Pixel font
+- [x] UI: Pixel font
 - [x] Terrain: Water Decoration
 - [x] UI: Background for Building info
 - [x] Building: Charcoal Burner
@@ -116,11 +116,11 @@
 	- Anm. Numbers müssten ein wenig größer sein, damit sie zur Textgröße passen
 
 ### Gameplay
-- [ ] Global Gamestats
+- [x] Global Gamestats
 
 ### User Interface
-- [ ] Fix scaling of the ui	//ToDo: Lables of GameUI and ActionSelection
-- [X] Basic Credits Screen					//Weiterführend: Daten einpflegen, schick machen
+- [ ] Fix scaling of the ui
+- [X] Basic Credits Screen
 - [ ] Fix Action Selection
 		-[X] Autoscaling of Cards(not the content)
 		-[X] Restructoring Cards
@@ -128,8 +128,14 @@
 		-[ ] Scaling Card Picture
 		-[ ] Autopositioning of Text and Picture of the Cards
 		-[ ] Picture Clickable for action
-- [X] Basic Bars for Food and Warmth		
+- [X] Basic Bars for Food and Warmth
 - [X] Improve auto-scaling of lables.
 - [ ] Subscribing the UI Lables and bars to Managers after variables were added
 - [ ] Polish MainMenu
 - [ ] Polish Credits
+
+## Version 0.5
+
+### Assets
+- [ ] Icon: Stone
+- [ ] Building: Quarry
