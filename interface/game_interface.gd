@@ -2,6 +2,7 @@ extends CanvasLayer
 
 @onready var wood_label: NinePatchRect = %WoodLabel
 @onready var wheat_label: NinePatchRect = %WheatLabel
+@onready var stone_label: NinePatchRect = %StoneLabel
 @onready var food_Progress: NinePatchRect = %food_Progress
 @onready var heat_Progress: NinePatchRect = %heat_Progress
 @onready var roundCounter: NinePatchRect = %RoundCounterLabel
@@ -24,6 +25,9 @@ func _on_finish_round_button_pressed() -> void:
 func update_wood_label(wood: int) -> void:
 	wood_label.set_resource_count(wood)
 
+func update_stone_label(stone: int) -> void:
+	stone_label.set_resource_count(stone)
+
 func update_wheat_label(wheat: int) -> void:
 	wheat_label.set_resource_count(wheat)
 
@@ -37,10 +41,12 @@ func _process(delta: float) -> void:
 	#top_Interface_Container.size.y=min(60,0.1*get_window().size.y) #noch unschoen
 	roundCounter.size=Vector2(top_Interface_Container.size.x*0.1,top_Interface_Container.size.y);
 	wood_label.size=Vector2(top_Interface_Container.size.x*0.075,top_Interface_Container.size.y);
+	stone_label.size=Vector2(top_Interface_Container.size.x*0.075,top_Interface_Container.size.y);
 	wheat_label.size=Vector2(top_Interface_Container.size.x*0.075,top_Interface_Container.size.y);
 	
 	var margin=top_Interface_Container.size.x*0.01
 	roundCounter.position=Vector2(0,0)
 	wood_label.position=Vector2(roundCounter.position.x+roundCounter.size.x+margin,0)
-	wheat_label.position=Vector2(wood_label.position.x+wheat_label.size.x+margin,0)
+	stone_label.position=Vector2(wood_label.position.x+stone_label.size.x+margin,0)
+	wheat_label.position=Vector2(stone_label.position.x+wheat_label.size.x+margin,0)
 	pass
