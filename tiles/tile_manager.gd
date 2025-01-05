@@ -34,12 +34,8 @@ func place_building(building: Building, coords: Vector2i) -> void:
 	for key in building.cost.keys():
 		ResourceManager.update_resource(key, -building.cost[key])
 	tiles[coords].building = building
-	top_layer.set_cell(coords - Vector2i(1, 1), building.source_id, building.atlas_coords)	
+	top_layer.set_cell(coords - Vector2i(1, 1), building.source_id, building.atlas_coords)
 	ground_layer.generate_tiles(coords, building.view_radius)
-
-func update_producable(producable: Producable, tile: Tile) -> void:
-	if tiles.has(tile.map_coords) and tiles[tile.map_coords].building != null:
-		tiles[tile.map_coords].building.producable = producable
 
 func get_building_tiles() -> Array:
 	return tiles.values().filter(_has_building)
@@ -56,8 +52,8 @@ func _ready() -> void:
 	_initialize_starter_area()
 
 func _initialize_starter_area() -> void:
-	# TODO: this should find a valid starting point
-	ground_layer.generate_tiles(Vector2i(0, 0), 0)
+	var coords = ground_layer.place_starter_tile()
+	CameraController.center_view(ground_layer.map_to_local(coords))
 
 func _has_building(tile: Tile) -> bool:
 	return tile.building != null

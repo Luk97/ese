@@ -12,17 +12,13 @@ func _ready() -> void:
 	building_manager.connect("pickup_collected", _on_pickup_collected)
 
 func _on_action_manager_action_selected(action: Action) -> void:
-	#if action is BuildingAction:
-	#	var cost = action.building.cost
-	#	var wood_cost = cost["Wood"]
-	#	ResourceManager.update_wood(-wood_cost)
 	preview_manager.enable_preview(action)
 
 func _on_preview_manager_preview_done() -> void:
 	building_manager.update_building_productions()
 
 func _on_pickup_collected() -> void:
-	ResourceManager.update_wood(1)
+	ResourceManager.update_resource(Types.ResourceType.WOOD, 1)
 
 func _on_game_interface_round_finished() -> void:
 	GameManager.update_rounds()

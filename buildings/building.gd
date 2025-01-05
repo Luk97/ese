@@ -6,8 +6,7 @@ extends Node
 @export var view_radius: int
 
 #@export var educts: Dictionary
-#@export var product: ResourceManager.Type
-
+@export var product: Dictionary
 @export var source_id: int
 @export var atlas_coords: Vector2i
 

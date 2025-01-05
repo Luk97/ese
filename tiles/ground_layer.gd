@@ -42,6 +42,29 @@ func generate_tiles(center: Vector2i, radius: int) -> void:
 				var tile = _get_tile_from_environment(altitude, temperature, moisture, tile_coords)
 				tile_manager.place_tile(tile)
 
+func place_starter_tile() -> Vector2i:
+	var search_radius = 1
+	while true:
+		for x in range(-search_radius, search_radius + 1):
+			for y in range(-search_radius, search_radius + 1):
+				if abs(x - y) <= search_radius:
+					var tile_coords = Vector2i(x, y)
+					var altitude = altitude_noise.get_noise_2d(tile_coords.x, tile_coords.y)
+					var temperature = temperature_noise.get_noise_2d(tile_coords.x, tile_coords.y)
+					var moisture = moisture_noise.get_noise_2d(tile_coords.x, tile_coords.y)
+					
+					# values from [0..100]
+					altitude = _stretch_noise_value(altitude)
+					temperature = _stretch_noise_value(temperature)
+					moisture = _stretch_noise_value(moisture)
+					
+					var tile = _get_tile_from_environment(altitude, temperature, moisture, tile_coords)
+					if tile.type == Types.TileType.GRASS:
+						tile_manager.place_tile(tile)
+						return tile.map_coords
+		search_radius += 1
+	return Vector2i(0, 0)
+
 
 #=================== PRIVATE FUNCTIONS ===================
 
@@ -67,12 +90,28 @@ func _stretch_noise_value(value: float) -> float:
 func _get_tile_from_environment(altitude: float, temperature: float, moisture: float, coords: Vector2i) -> Tile:
 	if altitude < 50:
 		return Tile.new(Types.TileType.WATER, coords)
-	elif altitude < 54:
+	elif altitude < 53:
 		return Tile.new(Types.TileType.BEACH, coords)
-	elif temperature < 50:
-		return Tile.new(Types.TileType.GRASS, coords)
-	else:
+		
+	
+	if temperature > 70 and moisture < 40:
+		return Tile.new(Types.TileType.DESERT, coords)
+	elif temperature > 40 and temperature < 60 and moisture < 20:
+		return Tile.new(Types.TileType.MOUNTAIN, coords)
+	elif temperature > 40 and temperature < 60 and moisture > 80:
+		return Tile.new(Types.TileType.MOUNTAIN, coords)
+	elif temperature < 40 and moisture > 20 and moisture:
 		return Tile.new(Types.TileType.FOREST, coords)
+	elif temperature > 70 and moisture > 80:
+		return Tile.new(Types.TileType.FOREST, coords)
+	else:
+		var random_value = GameManager.rng.randi_range(0, 100)
+		if random_value < 5:
+			return Tile.new(Types.TileType.MOUNTAIN, coords)
+		elif random_value < 8:
+			return Tile.new(Types.TileType.FOREST, coords)
+		else:
+			return Tile.new(Types.TileType.GRASS, coords)
 
 func _get_center_tile_coords() -> Vector2i:
 	var center = CameraController.get_center()

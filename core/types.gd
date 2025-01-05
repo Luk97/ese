@@ -4,7 +4,9 @@ enum TileType {
 	WATER,
 	GRASS,
 	FOREST,
-	BEACH
+	BEACH,
+	MOUNTAIN,
+	DESERT
 }
 
 enum ResourceType {
