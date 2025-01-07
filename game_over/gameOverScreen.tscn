@@ -1,3 +1,61 @@
-[gd_scene format=3 uid="uid://cl8nqq00nlpo4"]
+[gd_scene load_steps=3 format=3 uid="uid://cl8nqq00nlpo4"]
+
+[ext_resource type="Texture2D" uid="uid://b4cy83ox4lga8" path="res://assets/menus/menu_BG.png" id="1_nb63y"]
+[ext_resource type="Theme" uid="uid://dl35k1wgcyjff" path="res://Themes/standard_Theme.tres" id="2_7ppbc"]
 
 [node name="GameOverScreen" type="CanvasLayer"]
+
+[node name="GameOverControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="background" type="TextureRect" parent="GameOverControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_nb63y")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameOverControl"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="gameOverTitle" type="Label" parent="GameOverControl/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_7ppbc")
+text = "Game Over"
+
+[node name="gameOverMessage" type="Label" parent="GameOverControl/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="buttonContainer" type="HBoxContainer" parent="GameOverControl/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="NewGame" type="Button" parent="GameOverControl/VBoxContainer/buttonContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_7ppbc")
+text = "New Game"
+
+[node name="Menu" type="Button" parent="GameOverControl/VBoxContainer/buttonContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_7ppbc")
+text = "Back to 
+Menu"
