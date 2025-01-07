@@ -15,3 +15,6 @@ func setFontSize(thisLabelFontSize:int)->void:
 
 func get_Text()->String:
 	return label.text
+	
+func get_Text_Length()->int:
+	return label.text.length()
