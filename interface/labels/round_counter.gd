@@ -12,3 +12,6 @@ func _process(delta: float) -> void:
 
 func setFontSize(thisLabelFontSize:int)->void:
 	label.add_theme_font_size_override("font_size",thisLabelFontSize)
+
+func get_Text()->String:
+	return label.text
