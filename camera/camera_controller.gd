@@ -39,7 +39,13 @@ func zoom_out():
 		clamp(new_zoom.x, MIN_ZOOM, MAX_ZOOM),
 		clamp(new_zoom.y, MIN_ZOOM, MAX_ZOOM)
 	)
-	
+
+func setup() -> void:
+	if GameManager.show_world:
+		zoom = Vector2(1.0, 1.0)
+	else:
+		zoom = Vector2(5.0, 5.0)
+
 func getMousePosition() -> Vector2:
 	return get_viewport().get_mouse_position()
 

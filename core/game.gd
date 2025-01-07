@@ -2,12 +2,17 @@ extends Node2D
 
 @onready var action_manager: ActionManager = %ActionManager
 @onready var preview_manager: PreviewManager = %PreviewManager
+@onready var game_interface: CanvasLayer = %GameInterface
 
 func _ready() -> void:
+	randomize()
 	GameManager.initialize_game()
+	game_interface.showcase(GameManager.show_world)
 	
-	var starter_action = action_manager.get_starter_action()
-	preview_manager.enable_preview(starter_action)
+	if not GameManager.show_world:
+		TileManager.initialize_starter_area()
+		var starter_action = action_manager.get_starter_action()
+		preview_manager.enable_preview(starter_action)
 
 func _on_action_manager_action_selected(action: Action) -> void:
 	preview_manager.enable_preview(action)
