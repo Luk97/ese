@@ -68,7 +68,7 @@ var catalog: Array[Action] = [
 		[Types.TileType.FOREST],
 		Types.TileType.GRASS,
 		{ Types.ResourceType.WOOD: 10 },
-		3, Vector2i(0, 0)
+		0, Vector2i(9, 9)
 	)
 ]
 
