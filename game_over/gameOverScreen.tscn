@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cl8nqq00nlpo4"]
+[gd_scene load_steps=5 format=3 uid="uid://cl8nqq00nlpo4"]
 
 [ext_resource type="Texture2D" uid="uid://b4cy83ox4lga8" path="res://assets/menus/menu_BG.png" id="1_nb63y"]
 [ext_resource type="Script" path="res://game_over/game_over_screen.gd" id="1_qfxkw"]
 [ext_resource type="Theme" uid="uid://dl35k1wgcyjff" path="res://Themes/standard_Theme.tres" id="2_7ppbc"]
+[ext_resource type="Script" path="res://game_over/menu.gd" id="4_crmoe"]
 
 [node name="GameOverScreen" type="CanvasLayer"]
 script = ExtResource("1_qfxkw")
@@ -62,3 +63,6 @@ layout_mode = 2
 theme = ExtResource("2_7ppbc")
 text = "Back to 
 Menu"
+script = ExtResource("4_crmoe")
+
+[connection signal="pressed" from="GameOverControl/VBoxContainer/buttonContainer/Menu" to="GameOverControl/VBoxContainer/buttonContainer/Menu" method="_on_pressed"]
