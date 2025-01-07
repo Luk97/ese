@@ -120,6 +120,8 @@
 
 ### User Interface
 - [ ] Fix scaling of the ui
+	-TODO: Scaling of top container by length to avoid overlapping
+	-TODO: Scaling font with text inside of the labels to fit large numbers
 - [X] Basic Credits Screen
 - [ ] Fix Action Selection
 		-[X] Autoscaling of Cards(not the content)
