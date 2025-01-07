@@ -13,8 +13,8 @@ extends CanvasLayer
 @onready var bottom_Interface_Container: VBoxContainer = %Bottom_Interface_Container
 
 var fontScale=1
-var resourceLabelRatioXY=3
-var roundLabelRatioXY=4
+var resourceLabelRatioXY=2
+var roundLabelRatioXY=3
 
 signal round_finished
 
@@ -58,10 +58,10 @@ func scaling()->void:
 	var roundLabelLength=roundCounter.get_Text_Length()
 	top_Interface_Container.size.y=0.1*get_window().size.y
 	#if(top_Interface_Container.size.y*resourceLabelRatio<0.075*top_Interface_Container.size.x):
-	roundCounter.size=Vector2(top_Interface_Container.size.x*0.11,top_Interface_Container.size.y);
-	wood_label.size=Vector2(top_Interface_Container.size.x*0.075,top_Interface_Container.size.y);
-	stone_label.size=Vector2(top_Interface_Container.size.x*0.075,top_Interface_Container.size.y);
-	wheat_label.size=Vector2(top_Interface_Container.size.x*0.075,top_Interface_Container.size.y);
+	roundCounter.size=Vector2(top_Interface_Container.size.y*roundLabelRatioXY,top_Interface_Container.size.y);
+	wood_label.size=Vector2(top_Interface_Container.size.y*resourceLabelRatioXY,top_Interface_Container.size.y);
+	stone_label.size=Vector2(top_Interface_Container.size.y*resourceLabelRatioXY,top_Interface_Container.size.y);
+	wheat_label.size=Vector2(top_Interface_Container.size.y*resourceLabelRatioXY,top_Interface_Container.size.y);
 	#else:
 		#pass
 	
