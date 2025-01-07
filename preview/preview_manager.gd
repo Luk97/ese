@@ -12,10 +12,9 @@ signal preview_done()
 
 #=================== PUBLIC FUNCTIONS ===================
 
-func enable_preview(action: Action):
+func enable_preview(action: Action) -> void:
 	self.action = action
 	self.enabled = true
-
 
 #=================== PRIVATE FUNCTIONS ===================
 

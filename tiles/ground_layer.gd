@@ -75,14 +75,14 @@ func _ready() -> void:
 
 # NOTE: This is used for show casing the world generation
 func _process(delta: float) -> void:
-	pass
-	#var radius = _calculate_radius()
-	#var center = local_to_map(CameraController.get_center())
-	#generate_tiles(center, radius)
+	if GameManager.show_world:
+		var radius = _calculate_radius()
+		var center = local_to_map(CameraController.get_center())
+		generate_tiles(center, radius)
 
 func _calculate_radius() -> int:
 	var visible_area = CameraController.get_visible_area()
-	return visible_area.x / Tile.TILE_WIDTH
+	return min(visible_area.x / Tile.TILE_WIDTH, 30)
 
 func _stretch_noise_value(value: float) -> float:
 	return 50 * value + 50

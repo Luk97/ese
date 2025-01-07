@@ -48,13 +48,17 @@ func get_global_coords(tile: Tile) -> Vector2i:
 		return ground_layer.map_to_local(tile.map_coords - Vector2i(1, 1))
 	return Vector2i(-1, -1)
 
+func reset_tiles() -> void:
+	ground_layer.altitude_noise.seed = GameManager.rng.randi()
+	ground_layer.temperature_noise.seed = GameManager.rng.randi()
+	ground_layer.moisture_noise.seed = GameManager.rng.randi()
+	ground_layer.clear()
+	top_layer.clear()
+	tiles.clear()
 
 #=================== PRIVATE FUNCTIONS ===================
 
-func _ready() -> void:
-	_initialize_starter_area()
-
-func _initialize_starter_area() -> void:
+func initialize_starter_area() -> void:
 	var coords = ground_layer.place_starter_tile()
 	CameraController.center_view(ground_layer.map_to_local(coords))
 

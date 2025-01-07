@@ -7,6 +7,7 @@ const START_WHEAT = 20
 
 # Global core variables
 var rng = RandomNumberGenerator.new()
+var show_world = false
 
 # Game stats
 @export var rounds: int = START_ROUNDS
@@ -17,9 +18,13 @@ signal round_updated(int)
 
 # Global functions
 func initialize_game() -> void:
-	emit_signal("round_updated", rounds)
-	ResourceManager.initialize_resources()
-
+	rng = RandomNumberGenerator.new()
+	TileManager.reset_tiles()
+	CameraController.setup()
+	
+	if not show_world:
+		emit_signal("round_updated", rounds)
+		ResourceManager.initialize_resources()
 
 
 func update_rounds() -> void:
