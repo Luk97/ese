@@ -13,8 +13,8 @@ extends CanvasLayer
 @onready var bottom_Interface_Container: VBoxContainer = %Bottom_Interface_Container
 
 var fontScale=1
-var resourceLabelRatio=3
-var roundLabelRatio=4
+var resourceLabelRatioXY=3
+var roundLabelRatioXY=4
 
 signal round_finished
 
