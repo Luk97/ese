@@ -154,8 +154,9 @@
 
 ### User Interface
 - [ ] Game Over Screen
-	- [ ] Navigation to Main Menu
-	- [ ] Navigation to New Game
+	- [X] Navigation to Main Menu
+	- [X] Navigation to New Game //How is a new Game started, do i just need to open the scene?
+	- [ ] Autoscaling adding
 - [ ] Clean up Main Menu
 - [ ] new Screenshot for Background
 - [X] add showcase Function to Interface
