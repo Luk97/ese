@@ -17,3 +17,6 @@ func setFontSize(thisLabelFontSize:int)->void:
 	
 func _process(delta: float) -> void:
 	pass
+
+func get_resource_count()->String:
+	return label.text
