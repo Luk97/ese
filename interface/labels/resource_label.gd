@@ -20,3 +20,6 @@ func _process(delta: float) -> void:
 
 func get_resource_count()->String:
 	return label.text
+	
+func get_Text_Length()->int:
+	return label.text.length()
