@@ -20,6 +20,7 @@ func _ready() -> void:
 	#Scaling the Container for the cards
 	var scale=Vector2(0.8,0.8);
 	action_selection.scale=(scale);
+	#Das Offset macht so aktuell ein Scaling Problem!
 	action_selection.offset=(Vector2(10*get_window().size.x/100,10*get_window().size.y/100));
 
 func _on_action_selected(action: Action) -> void:

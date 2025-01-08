@@ -160,7 +160,7 @@
 - [ ] new Screenshot for Background
 - [X] add showcase Function to Interface
 - [ ] Fix Action Selection
-	-[ ]Centering (e.g. Fullscreen)
+	-[ ]Centering (e.g. Fullscreen) #Das Offset erzeugt aktuell das Problem! Ohne Offset sieht es aber nicht gut aus!
 - [ ] opt. Text on Progressbars?
 - [ ] opt. improving Autoscaling 
 - [ ] opt. UI Improvements:
