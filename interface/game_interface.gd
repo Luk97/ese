@@ -56,7 +56,7 @@ func scaling()->void:
 	#Size Scaling
 	var maxLabelTextLength=max(wood_label.get_Text_Length(),stone_label.get_Text_Length(),wheat_label.get_Text_Length())
 	var roundLabelLength=roundCounter.get_Text_Length()
-	top_Interface_Container.size.y=0.1*get_window().size.y
+	top_Interface_Container.size.y=0.05*get_window().size.y
 	#if(top_Interface_Container.size.y*resourceLabelRatio<0.075*top_Interface_Container.size.x):
 	roundCounter.size=Vector2(top_Interface_Container.size.y*roundLabelRatioXY,top_Interface_Container.size.y);
 	wood_label.size=Vector2(top_Interface_Container.size.y*resourceLabelRatioXY,top_Interface_Container.size.y);
