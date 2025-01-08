@@ -97,6 +97,7 @@ script = ExtResource("1_1nxty")
 
 [node name="Speichern" type="Button" parent="MainMenu/MenuContainer/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 theme = ExtResource("3_gccap")
 disabled = true

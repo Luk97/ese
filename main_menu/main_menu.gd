@@ -11,7 +11,7 @@ extends Control
 var fontScale=70
 var titleFontScale=0.15
 var ButtonScale=0.4
-var buttons=5
+var buttons=4
 
 func _process(delta: float) -> void:
 	var thisTitleFontSize = min(get_window().size.x * titleFontScale*1.3, get_window().size.y * titleFontScale)
