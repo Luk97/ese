@@ -156,11 +156,11 @@
 	- [X] Navigation to Main Menu
 	- [X] Navigation to New Game //How is a new Game started, do i just need to open the scene?
 	- [X] Autoscaling adding
-- [ ] Clean up Main Menu
+- [X] Clean up Main Menu
 - [ ] new Screenshot for Background
 - [X] add showcase Function to Interface
 - [ ] Fix Action Selection
-	-[ ]Centering (e.g. Fullscreen) #Das Offset erzeugt aktuell das Problem! Ohne Offset sieht es aber nicht gut aus!
+	-[ ]Centering (e.g. Fullscreen) #Das Offset erzeugt aktuell das Problem! Ohne Offset sieht es aber nicht gut aus! ActionManager
 - [ ] opt. Text on Progressbars?
 - [ ] opt. improving Autoscaling 
 - [ ] opt. UI Improvements:
