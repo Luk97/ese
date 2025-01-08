@@ -153,13 +153,14 @@
 - [ ] Educts for buildings
 
 ### User Interface
-- [ ] Game Over Screen
+- [X] Game Over Screen
 	- [X] Navigation to Main Menu
 	- [X] Navigation to New Game //How is a new Game started, do i just need to open the scene?
-	- [ ] Autoscaling adding
+	- [X] Autoscaling adding
 - [ ] Clean up Main Menu
 - [ ] new Screenshot for Background
 - [X] add showcase Function to Interface
 - [ ] Fix Action Selection
 	-[ ]Centering (e.g. Fullscreen)
 - [ ] opt. Text on Progressbars?
+- [ ] opt. improving Autoscaling 
