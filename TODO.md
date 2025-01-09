@@ -162,6 +162,7 @@
 - [X] Fix Action Selection
 	- [X]Centering (e.g. Fullscreen) #Das Offset erzeugt aktuell das Problem! Ohne Offset sieht es aber nicht gut aus! ActionManager
 - [ ] opt. Text on Progressbars?
+	- [ ]Just needs autoscale //Needs a % symbol in the font!
 - [ ] opt. improving Autoscaling 
 - [ ] opt. UI Improvements:
 	-TODO: Scaling of top container by length to avoid overlapping
