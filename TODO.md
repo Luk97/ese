@@ -122,13 +122,13 @@
 - [X] Fix scaling of the ui
 
 - [X] Basic Credits Screen
-- [ ] Fix Action Selection
+- [X] Fix Action Selection
 		-[X] Autoscaling of Cards(not the content)
 		-[X] Restructoring Cards
 		-[X] Scaling Card Lables
-		-[ ] Scaling Card Picture
-		-[ ] Autopositioning of Text and Picture of the Cards
-		-[ ] Picture Clickable for action
+		-[X] Scaling Card Picture
+		-[X] Autopositioning of Text and Picture of the Cards
+		-[X] Picture Clickable for action
 - [X] Basic Bars for Food and Warmth
 - [X] Improve auto-scaling of lables.
 - [ ] Subscribing the UI Lables and bars to Managers after variables were added
@@ -159,8 +159,8 @@
 - [X] Clean up Main Menu
 - [X] new Screenshot for Background
 - [X] add showcase Function to Interface
-- [ ] Fix Action Selection
-	- [ ]Centering (e.g. Fullscreen) #Das Offset erzeugt aktuell das Problem! Ohne Offset sieht es aber nicht gut aus! ActionManager
+- [X] Fix Action Selection
+	- [X]Centering (e.g. Fullscreen) #Das Offset erzeugt aktuell das Problem! Ohne Offset sieht es aber nicht gut aus! ActionManager
 - [ ] opt. Text on Progressbars?
 - [ ] opt. improving Autoscaling 
 - [ ] opt. UI Improvements:
