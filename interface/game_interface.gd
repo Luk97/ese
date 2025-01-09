@@ -57,16 +57,25 @@ func scaling()->void:
 	var maxLabelTextLength=max(wood_label.get_Text_Length(),stone_label.get_Text_Length(),wheat_label.get_Text_Length())
 	var roundLabelLength=roundCounter.get_Text_Length()
 	top_Interface_Container.size.y=0.05*get_window().size.y
-	#if(top_Interface_Container.size.y*resourceLabelRatio<0.075*top_Interface_Container.size.x):
 	roundCounter.size=Vector2(top_Interface_Container.size.y*roundLabelRatioXY,top_Interface_Container.size.y);
 	wood_label.size=Vector2(top_Interface_Container.size.y*resourceLabelRatioXY,top_Interface_Container.size.y);
 	stone_label.size=Vector2(top_Interface_Container.size.y*resourceLabelRatioXY,top_Interface_Container.size.y);
 	wheat_label.size=Vector2(top_Interface_Container.size.y*resourceLabelRatioXY,top_Interface_Container.size.y);
-	#else:
-		#pass
 	
+	var margin=top_Interface_Container.size.x*0.01
+	roundCounter.position=Vector2(0,0)
+	wood_label.position=Vector2(roundCounter.position.x+roundCounter.size.x+margin,0)
+	stone_label.position=Vector2(wood_label.position.x+stone_label.size.x+margin,0)
+	wheat_label.position=Vector2(stone_label.position.x+wheat_label.size.x+margin,0)
 	
-	
+	#if(stone_label.position.x+wheat_label.size.x>get_window().size.x):
+	#	pass
+		
+		
+	#roundCounter.position=Vector2(0,0)
+	#wood_label.position=Vector2(roundCounter.position.x+roundCounter.size.x+margin,0)
+	#stone_label.position=Vector2(wood_label.position.x+stone_label.size.x+margin,0)
+	#wheat_label.position=Vector2(stone_label.position.x+wheat_label.size.x+margin,0)
 	
 	#FontSize
 	var fontSize=fontScale*roundCounter.size.y
@@ -77,8 +86,3 @@ func scaling()->void:
 	menu.setFontSize(fontSize)
 	
 	#Positioning
-	var margin=top_Interface_Container.size.x*0.01
-	roundCounter.position=Vector2(0,0)
-	wood_label.position=Vector2(roundCounter.position.x+roundCounter.size.x+margin,0)
-	stone_label.position=Vector2(wood_label.position.x+stone_label.size.x+margin,0)
-	wheat_label.position=Vector2(stone_label.position.x+wheat_label.size.x+margin,0)
