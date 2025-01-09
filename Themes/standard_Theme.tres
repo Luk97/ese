@@ -1,10 +1,11 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dl35k1wgcyjff"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://dl35k1wgcyjff"]
 
+[ext_resource type="FontFile" uid="uid://byiu3lccawsbh" path="res://assets/ui/PixelArt.ttf" id="1_8fdot"]
 [ext_resource type="FontFile" uid="uid://uaunmse5674g" path="res://assets/ui/Pixelfont-Regular.ttf" id="1_cokxb"]
 
 [resource]
 default_font = ExtResource("1_cokxb")
 Button/constants/outline_size = 8
-Button/fonts/font = ExtResource("1_cokxb")
+Button/fonts/font = ExtResource("1_8fdot")
 Label/constants/outline_size = 8
-Label/fonts/font = ExtResource("1_cokxb")
+Label/fonts/font = ExtResource("1_8fdot")
