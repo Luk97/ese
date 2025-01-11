@@ -123,11 +123,11 @@ func _get_biome_from_random() -> Types.TileType:
 		return Types.TileType.FOREST
 	elif random < 0.25:
 		return Types.TileType.DEEP_FOREST
-	elif random < 0.3:
+	elif random < 0.28:
 		return Types.TileType.MOUNTAIN
-	elif random < 0.35:
+	elif random < 0.3:
 		return Types.TileType.TALL_MOUNTAIN
-	elif random < 0.45:
+	elif random < 0.4:
 		return Types.TileType.TALL_GRASS
 	else:
 		return Types.TileType.GRASS

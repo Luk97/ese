@@ -13,18 +13,23 @@ func initialize_resources() -> void:
 	emit_signal("wheat_updated", resources[Types.ResourceType.WHEAT])
 
 func update_resource(type: Types.ResourceType, amount: int) -> void:
-	resources[type] += amount
 	match type:
 		Types.ResourceType.WOOD:
+			resources[Types.ResourceType.WOOD] += amount
+			emit_signal("wood_updated", resources[Types.ResourceType.WOOD])
+		Types.ResourceType.CHAR_COAL:
+			resources[Types.ResourceType.WOOD] += amount
 			emit_signal("wood_updated", resources[Types.ResourceType.WOOD])
 		Types.ResourceType.WHEAT:
 			emit_signal("wheat_updated", resources[Types.ResourceType.WHEAT])
 
-func place_resources(type: Types.ResourceType, amount: int, tile: Tile) -> void:
+func place_resources(resource_type: Types.ResourceType, amount: int, tile: Tile) -> void:
 	var scene: PackedScene = load("res://resources/resource.tscn")
-	var scene_instance = scene.instantiate()
-	scene_instance.type = type
+	var scene_instance = scene.instantiate() as Pickup
+	scene_instance.type = resource_type
 	scene_instance.amount = amount
+	scene_instance.set_texture(resource_type)
+	print("tile coords: ", tile.map_coords)
 	scene_instance.position = TileManager.get_global_coords(tile)
 	scene_instance.connect("resource_collected", _on_resource_collected)
 	add_child(scene_instance)

@@ -6,6 +6,16 @@ var amount: int
 
 signal resource_collected(type, amount)
 
+func set_texture(resource_type: Types.ResourceType) -> void:
+	var sprite = get_node("Sprite")
+	match resource_type:
+		Types.ResourceType.WOOD:
+			sprite.texture = load("res://assets/items/wood.png")
+		Types.ResourceType.CHAR_COAL:
+			sprite.texture = load("res://assets/items/charcoal.png")
+		_:
+			printerr("cannon find texture for resource type: ", str(resource_type))
+
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouse and event.button_mask == MOUSE_BUTTON_LEFT and event.is_pressed():
 		emit_signal("resource_collected", self.type, self.amount)

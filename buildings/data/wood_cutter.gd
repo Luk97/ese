@@ -14,4 +14,7 @@ func _init() -> void:
 	self.atlas_coords = Vector2i(0, 7)
 
 func is_valid_placement_tile(type: Types.TileType) -> bool:
-	return type in [Types.TileType.FOREST]
+	return type in [
+		Types.TileType.FOREST,
+		 Types.TileType.DEEP_FOREST
+	]

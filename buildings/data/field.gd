@@ -9,4 +9,7 @@ func _init() -> void:
 	self.atlas_coords = Vector2i(4, 9)
 
 func is_valid_placement_tile(type: Types.TileType) -> bool:
-	return type in [Types.TileType.GRASS]
+	return type in [
+		Types.TileType.GRASS, 
+		Types.TileType.TALL_GRASS
+	]
