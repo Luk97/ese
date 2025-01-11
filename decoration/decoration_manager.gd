@@ -192,7 +192,7 @@ func get_random_decoration(type: Types.TileType) -> Decoration:
 		Types.TileType.TALL_MOUNTAIN:
 			return _pick_random_decoration(tall_mountain_decorations)
 		_:
-			printerr("Undefined tile type for decoration: ", type)
+			printerr("Undefined tile type for decoration: ", str(type))
 			return null 
 
 #=================== PRIVATE FUNCTIONS ===================
