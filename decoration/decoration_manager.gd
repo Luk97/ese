@@ -75,7 +75,7 @@ func get_random_decoration(type: Types.TileType) -> Decoration:
 			return _pick_random_decoration(water_decorations)
 		Types.TileType.GRASS:
 			return _pick_random_decoration(grass_decorations)
-		Types.TileType.BEACH:
+		Types.TileType.SAND:
 			return _pick_random_decoration(beach_decorations)
 		Types.TileType.FOREST:
 			return _pick_random_decoration(forest_decorations)

@@ -21,20 +21,32 @@ func setTextureFromType(tile_type: Types.TileType) -> void:
 		Types.TileType.WATER:
 			self.source_id = 0
 			self.atlas_coords = Vector2i(1, 1)
+		Types.TileType.DEEP_WATER:
+			self.source_id = 0
+			self.atlas_coords = Vector2i(6, 1)
 		Types.TileType.GRASS:
 			self.source_id = 0
 			self.atlas_coords = Vector2i(1, 2)
+		Types.TileType.TALL_GRASS:
+			self.source_id = 0
+			self.atlas_coords = Vector2i(1, 4)
 		Types.TileType.FOREST:
 			self.source_id = 0
 			self.atlas_coords = Vector2i(1, 3)
-		Types.TileType.BEACH:
+		Types.TileType.DEEP_FOREST:
+			self.source_id = 0
+			self.atlas_coords = Vector2i(3, 3)
+		Types.TileType.SAND:
 			self.source_id = 0
 			self.atlas_coords = Vector2i(3, 4)
+		Types.TileType.WET_SAND:
+			self.source_id = 0
+			self.atlas_coords = Vector2i(1, 4)
 		Types.TileType.MOUNTAIN:
 			self.source_id = 0
 			self.atlas_coords = Vector2i(1, 5)
-		Types.TileType.DESERT:
+		Types.TileType.TALL_MOUNTAIN:
 			self.source_id = 0
-			self.atlas_coords = Vector2i(1, 4)
+			self.atlas_coords = Vector2i(3, 5)
 		_:
-			printerr("undefined texture for this tile type: ", tile_type)
+			printerr("undefined texture for this tile type: ", str(tile_type))
