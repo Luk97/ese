@@ -11,5 +11,5 @@ func _init() -> void:
 func is_valid_placement_tile(type: Types.TileType) -> bool:
 	return type in [
 		Types.TileType.WATER,
-		 Types.TileType.DEEP_WATER
+		Types.TileType.DEEP_WATER
 	]

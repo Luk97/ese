@@ -125,13 +125,21 @@ func get_starter_action() -> Action:
 	return _find_action_by_id(Constants.ACTION_ID_BUILD_HOME)
 
 func get_random_selection_from_pool() -> Array:
-	var pool_copy = pool.duplicate()
-	var action_1 = pool_copy.pick_random()
-	pool_copy.erase(action_1)
-	var action_2 = pool_copy.pick_random()
-	pool_copy.erase(action_2)
-	var action_3 = pool_copy.pick_random()
-	return [action_1, action_2, action_3]
+	var action_selection: Array = []
+	var viable_pool: Array = _get_viable_actions()
+	for i in range(0, 3):
+		if not viable_pool.is_empty():
+			var action = viable_pool.pick_random()
+			action_selection.append(action)
+			viable_pool.erase(action)
+	return action_selection
+
+func _get_viable_actions() -> Array:
+	var actions: Array[Action] = []
+	for action: Action in self.pool:
+		if ActionExecutor.check_for_existing_tile(action):
+			actions.append(action)
+	return actions
 
 func _find_action_by_id(id: String) -> Action:
 	for action in catalog:

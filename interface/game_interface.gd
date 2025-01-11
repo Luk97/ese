@@ -69,15 +69,6 @@ func scaling()->void:
 	stone_label.position=Vector2(wood_label.position.x+stone_label.size.x+margin,0)
 	food_label.position=Vector2(stone_label.position.x+food_label.size.x+margin,0)
 	
-	#if(stone_label.position.x+wheat_label.size.x>get_window().size.x):
-	#	pass
-		
-		
-	#roundCounter.position=Vector2(0,0)
-	#wood_label.position=Vector2(roundCounter.position.x+roundCounter.size.x+margin,0)
-	#stone_label.position=Vector2(wood_label.position.x+stone_label.size.x+margin,0)
-	#wheat_label.position=Vector2(stone_label.position.x+wheat_label.size.x+margin,0)
-	
 	#FontSize
 	var fontSize=fontScale*roundCounter.size.y
 	roundCounter.setFontSize(fontSize)
