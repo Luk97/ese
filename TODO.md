@@ -149,7 +149,7 @@
 
 ### Gameplay
 - [ ] Progress Bars
-- [ ] Show only possible action cards
+- [x] Show only possible action cards
 - [x] More Actions
 - [x] Water Buildings
 - [x] Show Case from Main Menu
