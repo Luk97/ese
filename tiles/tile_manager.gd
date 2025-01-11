@@ -34,8 +34,6 @@ func is_free_tile(coords: Vector2i) -> bool:
 	return tiles[coords].building == null
 
 func place_building(building: Building, coords: Vector2i) -> void:
-	for key in building.cost.keys():
-		ResourceManager.update_resource(key, -building.cost[key])
 	tiles[coords].building = building.duplicate()
 	top_layer.set_cell(coords - Vector2i(1, 1), building.source_id, building.atlas_coords)
 	ground_layer.generate_tiles(coords, building.view_radius)

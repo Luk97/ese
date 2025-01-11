@@ -3,7 +3,10 @@ extends Building
 
 func _init() -> void:
 	self.label = "Quarry"
-	self.cost = { Types.ResourceType.WOOD: 7 }
+	self.cost = {
+		Types.ResourceType.WOOD: 5,
+		Types.ResourceType.STONE: 4
+	}
 	self.product = {
 		Constants.PRODUCT_TYPE: Types.ResourceType.STONE,
 		Constants.PRODUCT_AMOUNT: 5,
