@@ -2,11 +2,15 @@ extends Node
 
 enum TileType {
 	WATER,
+	DEEP_WATER,
 	GRASS,
+	TALL_GRASS,
 	FOREST,
-	BEACH,
+	DEEP_FOREST,
+	SAND,
+	WET_SAND,
 	MOUNTAIN,
-	DESERT
+	TALL_MOUNTAIN
 }
 
 enum ResourceType {

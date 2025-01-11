@@ -4,9 +4,11 @@ extends TileMapLayer
 @export var altitude_noise = FastNoiseLite.new()
 @export var temperature_noise = FastNoiseLite.new()
 @export var moisture_noise = FastNoiseLite.new()
+@export var biome_map: Array
 
 @onready var tile_manager: TileManager = get_parent()
 
+const STRETCH_FACTOR = 32
 
 #=================== PUBLIC FUNCTIONS ===================
 
@@ -72,6 +74,7 @@ func _ready() -> void:
 	altitude_noise.seed = GameManager.rng.randi()
 	temperature_noise.seed = GameManager.rng.randi()
 	moisture_noise.seed = GameManager.rng.randi()
+	_generate_biome_map()
 
 # NOTE: This is used for show casing the world generation
 func _process(delta: float) -> void:
@@ -88,31 +91,50 @@ func _stretch_noise_value(value: float) -> float:
 	return 50 * value + 50
 	
 func _get_tile_from_environment(altitude: float, temperature: float, moisture: float, coords: Vector2i) -> Tile:
-	if altitude < 50:
+	if altitude < 40:
+		return Tile.new(Types.TileType.DEEP_WATER, coords)
+	elif altitude < 50:
 		return Tile.new(Types.TileType.WATER, coords)
 	elif altitude < 53:
-		return Tile.new(Types.TileType.BEACH, coords)
-		
-	
-	if temperature > 70 and moisture < 40:
-		return Tile.new(Types.TileType.DESERT, coords)
-	elif temperature > 40 and temperature < 60 and moisture < 20:
-		return Tile.new(Types.TileType.MOUNTAIN, coords)
-	elif temperature > 40 and temperature < 60 and moisture > 80:
-		return Tile.new(Types.TileType.MOUNTAIN, coords)
-	elif temperature < 40 and moisture > 20 and moisture:
-		return Tile.new(Types.TileType.FOREST, coords)
-	elif temperature > 70 and moisture > 80:
-		return Tile.new(Types.TileType.FOREST, coords)
-	else:
-		var random_value = GameManager.rng.randi_range(0, 100)
-		if random_value < 5:
-			return Tile.new(Types.TileType.MOUNTAIN, coords)
-		elif random_value < 8:
-			return Tile.new(Types.TileType.FOREST, coords)
+		if GameManager.rng.randf() < 0.3:
+			return Tile.new(Types.TileType.WET_SAND, coords)
 		else:
-			return Tile.new(Types.TileType.GRASS, coords)
+			return Tile.new(Types.TileType.SAND, coords)
+	else:
+		var tile_type = _get_biome_from_coords(coords)
+		return Tile.new(tile_type, coords)
 
 func _get_center_tile_coords() -> Vector2i:
 	var center = CameraController.get_center()
 	return local_to_map(center)
+
+func _generate_biome_map() -> void:
+	for x in range(0, STRETCH_FACTOR):
+		self.biome_map.append([])
+		for y in range(0, STRETCH_FACTOR):
+			var biome = _get_biome_from_random()
+			self.biome_map[x].append(biome)
+
+func _get_biome_from_random() -> Types.TileType:
+	var random = GameManager.rng.randf()
+	if random < 0.05:
+		return Types.TileType.WATER
+	elif random < 0.2:
+		return Types.TileType.FOREST
+	elif random < 0.25:
+		return Types.TileType.DEEP_FOREST
+	elif random < 0.3:
+		return Types.TileType.MOUNTAIN
+	elif random < 0.35:
+		return Types.TileType.TALL_MOUNTAIN
+	elif random < 0.45:
+		return Types.TileType.TALL_GRASS
+	else:
+		return Types.TileType.GRASS
+
+func _get_biome_from_coords(coords: Vector2i) -> Types.TileType:
+	var chunk_coords = Vector2i(
+		floor((coords.x + STRETCH_FACTOR * 4) / (STRETCH_FACTOR * 8)), 
+		floor((coords.y + STRETCH_FACTOR * 4) / (STRETCH_FACTOR * 8))
+	)
+	return biome_map[abs(coords.x % 16)][abs(coords.y % 16)]
