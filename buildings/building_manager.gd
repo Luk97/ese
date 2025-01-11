@@ -3,7 +3,6 @@ extends Node
 #=================== PUBLIC FUNCTIONS ===================
 
 func update_building_productions() -> void:
-	print("NEW ROUND")
 	var building_tiles: Array = TileManager.get_building_tiles()
 	for tile: Tile in building_tiles:
 		if not tile.building.product.is_empty():
