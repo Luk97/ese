@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 @onready var wood_label: NinePatchRect = %WoodLabel
-@onready var wheat_label: NinePatchRect = %WheatLabel
+@onready var food_label: NinePatchRect = %FoodLabel
 @onready var stone_label: NinePatchRect = %StoneLabel
 @onready var food_Progress: NinePatchRect = %food_Progress
 @onready var heat_Progress: NinePatchRect = %heat_Progress
@@ -20,7 +20,8 @@ signal round_finished
 
 func _ready() -> void:
 	ResourceManager.wood_updated.connect(update_wood_label)
-	ResourceManager.wheat_updated.connect(update_wheat_label)
+	ResourceManager.stone_updated.connect(update_stone_label)
+	ResourceManager.food_updated.connect(update_food_label)
 	scaling()
 
 func showcase(startShowcase: bool) -> void:
@@ -40,8 +41,8 @@ func update_wood_label(wood: int) -> void:
 func update_stone_label(stone: int) -> void:
 	stone_label.set_resource_count(stone)
 
-func update_wheat_label(wheat: int) -> void:
-	wheat_label.set_resource_count(wheat)
+func update_food_label(wheat: int) -> void:
+	food_label.set_resource_count(wheat)
 
 func update_food_Progress(food: int) -> void:
 	food_Progress.setNewFoodValue(food)
@@ -54,19 +55,19 @@ func _process(delta: float) -> void:
 
 func scaling()->void:
 	#Size Scaling
-	var maxLabelTextLength=max(wood_label.get_Text_Length(),stone_label.get_Text_Length(),wheat_label.get_Text_Length())
+	var maxLabelTextLength=max(wood_label.get_Text_Length(),stone_label.get_Text_Length(),food_label.get_Text_Length())
 	var roundLabelLength=roundCounter.get_Text_Length()
 	top_Interface_Container.size.y=0.05*get_window().size.y
 	roundCounter.size=Vector2(top_Interface_Container.size.y*roundLabelRatioXY,top_Interface_Container.size.y);
 	wood_label.size=Vector2(top_Interface_Container.size.y*resourceLabelRatioXY,top_Interface_Container.size.y);
 	stone_label.size=Vector2(top_Interface_Container.size.y*resourceLabelRatioXY,top_Interface_Container.size.y);
-	wheat_label.size=Vector2(top_Interface_Container.size.y*resourceLabelRatioXY,top_Interface_Container.size.y);
+	food_label.size=Vector2(top_Interface_Container.size.y*resourceLabelRatioXY,top_Interface_Container.size.y);
 	
 	var margin=top_Interface_Container.size.x*0.01
 	roundCounter.position=Vector2(0,0)
 	wood_label.position=Vector2(roundCounter.position.x+roundCounter.size.x+margin,0)
 	stone_label.position=Vector2(wood_label.position.x+stone_label.size.x+margin,0)
-	wheat_label.position=Vector2(stone_label.position.x+wheat_label.size.x+margin,0)
+	food_label.position=Vector2(stone_label.position.x+food_label.size.x+margin,0)
 	
 	#if(stone_label.position.x+wheat_label.size.x>get_window().size.x):
 	#	pass
@@ -82,7 +83,7 @@ func scaling()->void:
 	roundCounter.setFontSize(fontSize)
 	wood_label.setFontSize(fontSize)
 	stone_label.setFontSize(fontSize)
-	wheat_label.setFontSize(fontSize)
+	food_label.setFontSize(fontSize)
 	menu.setFontSize(fontSize)
 	
 	#Positioning

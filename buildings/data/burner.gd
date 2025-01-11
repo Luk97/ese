@@ -6,6 +6,7 @@ func _init() -> void:
 	self.cost = { Types.ResourceType.WOOD: 6 }
 	self.product = {
 		Constants.PRODUCT_TYPE: Types.ResourceType.CHAR_COAL,
+		Constants.PRODUCT_AMOUNT: 5,
 		Constants.PRODUCT_RATE: 2,
 		Constants.PRODUCT_UNTIL_YIELD: 2
 	}

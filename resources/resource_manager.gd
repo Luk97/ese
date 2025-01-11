@@ -1,16 +1,19 @@
 extends Node
 
 signal wood_updated(int)
-signal wheat_updated(int)
+signal stone_updated(int)
+signal food_updated(int)
 
 var resources:Dictionary = {
 	Types.ResourceType.WOOD: GameManager.START_WOOD,
-	Types.ResourceType.WHEAT: GameManager.START_WHEAT
+	Types.ResourceType.STONE: GameManager.START_STONE,
+	Types.ResourceType.FOOD: GameManager.START_FOOD
 }
 
 func initialize_resources() -> void:
 	emit_signal("wood_updated", resources[Types.ResourceType.WOOD])
-	emit_signal("wheat_updated", resources[Types.ResourceType.WHEAT])
+	emit_signal("stone_updated", resources[Types.ResourceType.STONE])
+	emit_signal("food_updated", resources[Types.ResourceType.FOOD])
 
 func update_resource(type: Types.ResourceType, amount: int) -> void:
 	match type:
@@ -21,7 +24,17 @@ func update_resource(type: Types.ResourceType, amount: int) -> void:
 			resources[Types.ResourceType.WOOD] += amount
 			emit_signal("wood_updated", resources[Types.ResourceType.WOOD])
 		Types.ResourceType.WHEAT:
-			emit_signal("wheat_updated", resources[Types.ResourceType.WHEAT])
+			resources[Types.ResourceType.FOOD] += amount
+			emit_signal("food_updated", resources[Types.ResourceType.FOOD])
+		Types.ResourceType.BREAD:
+			resources[Types.ResourceType.FOOD] += amount
+			emit_signal("food_updated", resources[Types.ResourceType.FOOD])
+		Types.ResourceType.PORK:
+			resources[Types.ResourceType.FOOD] += amount
+			emit_signal("food_updated", resources[Types.ResourceType.FOOD])
+		Types.ResourceType.STONE:
+			resources[Types.ResourceType.STONE] += amount
+			emit_signal("stone_updated", resources[Types.ResourceType.STONE])
 
 func place_resources(resource_type: Types.ResourceType, amount: int, tile: Tile) -> void:
 	var scene: PackedScene = load("res://resources/resource.tscn")
@@ -29,7 +42,6 @@ func place_resources(resource_type: Types.ResourceType, amount: int, tile: Tile)
 	scene_instance.type = resource_type
 	scene_instance.amount = amount
 	scene_instance.set_texture(resource_type)
-	print("tile coords: ", tile.map_coords)
 	scene_instance.position = TileManager.get_global_coords(tile)
 	scene_instance.connect("resource_collected", _on_resource_collected)
 	add_child(scene_instance)

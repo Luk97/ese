@@ -138,18 +138,21 @@
 ## Version 0.5
 
 ### Assets
-- [ ] Icon: Stone
-- [ ] Building: Quarry
+- [x] Icon: Stone
+- [x] Building: Quarry
 - [x] Animate all buildings
+- [ ] Image: Quarry
+- [ ] Icon: Food (general)
+- [ ] Icon: Pork
+- [ ] Make icons more visible
+- [ ] Fix bomb size
 
 ### Gameplay
 - [ ] Progress Bars
-- [ ] More Actions
+- [x] More Actions
 - [ ] Water Buildings
-- [ ] Random Resource Drops when creating new tiles
-- [ ] Show Case from Main Menu
-- [ ] Make World more interesting
-- [ ] Educts for buildings
+- [x] Show Case from Main Menu
+- [x] Make World more interesting
 
 ### User Interface
 - [X] Game Over Screen

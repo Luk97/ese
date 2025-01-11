@@ -16,5 +16,9 @@ enum TileType {
 enum ResourceType {
 	WOOD,
 	CHAR_COAL,
-	WHEAT
+	FOOD,
+	WHEAT,
+	BREAD,
+	PORK,
+	STONE
 }
