@@ -17,6 +17,10 @@ func set_texture(resource_type: Types.ResourceType) -> void:
 			sprite.texture = load("res://assets/items/Wheat.png")
 		Types.ResourceType.BREAD:
 			sprite.texture = load("res://assets/items/bread.png")
+		Types.ResourceType.PORK:
+			sprite.texture = load("res://assets/items/bread.png")
+		Types.ResourceType.FISH:
+			sprite.texture = load("res://assets/items/fish.png")
 		Types.ResourceType.STONE:
 			sprite.texture = load("res://assets/items/Stone.png")
 		_:

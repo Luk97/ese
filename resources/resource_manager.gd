@@ -32,6 +32,9 @@ func update_resource(type: Types.ResourceType, amount: int) -> void:
 		Types.ResourceType.PORK:
 			resources[Types.ResourceType.FOOD] += amount
 			emit_signal("food_updated", resources[Types.ResourceType.FOOD])
+		Types.ResourceType.FISH:
+			resources[Types.ResourceType.FOOD] += amount
+			emit_signal("food_updated", resources[Types.ResourceType.FOOD])
 		Types.ResourceType.STONE:
 			resources[Types.ResourceType.STONE] += amount
 			emit_signal("stone_updated", resources[Types.ResourceType.STONE])

@@ -9,6 +9,8 @@ const ACTION_ID_BUILD_FARM = "build_farm"
 const ACTION_ID_BUILD_FIELD = "build_field"
 const ACTION_ID_BUILD_WINDMILL = "build_windmill"
 const ACTION_ID_BUILD_QUARRY = "build_quarry"
+const ACTION_ID_BUILD_BUOY = "build_buoy"
+const ACTION_ID_BUILD_FISHERBOAT = "build_fisherboat"
 const ACTION_ID_CLEAR_FOREST = "clear_forest"
 const ACTION_ID_CLEAR_MOUNTAIN = "clear_mountain"
 
