@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dji6noqfedsmf"]
+[gd_scene load_steps=7 format=3 uid="uid://dji6noqfedsmf"]
 
 [ext_resource type="Texture2D" uid="uid://c611g6tyj1si2" path="res://assets/ui/ui_icon_bg.png" id="1_lyooj"]
 [ext_resource type="Script" path="res://action/ui/action_card.gd" id="2_dfm2f"]
 [ext_resource type="Theme" uid="uid://dl35k1wgcyjff" path="res://Themes/standard_Theme.tres" id="3_eryyb"]
 [ext_resource type="Texture2D" uid="uid://cc4knyc2bod0e" path="res://assets/items/wood.png" id="3_nvpoj"]
 [ext_resource type="Texture2D" uid="uid://ciyyc6353vlsd" path="res://assets/action/axe.png" id="4_akdu4"]
+[ext_resource type="Texture2D" uid="uid://c36ejiyt8jmdh" path="res://assets/items/Stone.png" id="6_l0hqf"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -80,15 +81,15 @@ horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="CostContainer" type="Control" parent="."]
-unique_name_in_owner = true
 anchors_preset = 0
 offset_left = 13.0
 offset_top = 297.0
-offset_right = 94.0
+offset_right = 290.0
 offset_bottom = 356.0
 mouse_filter = 2
 
-[node name="CostIcon" type="TextureRect" parent="CostContainer"]
+[node name="WoodIcon" type="TextureRect" parent="CostContainer"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -103,7 +104,7 @@ texture = ExtResource("3_nvpoj")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="Cost" type="Label" parent="CostContainer"]
+[node name="WoodCost" type="Label" parent="CostContainer"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 4
@@ -113,6 +114,42 @@ offset_left = 55.0
 offset_top = -31.5
 offset_right = 80.0
 offset_bottom = 11.5
+grow_vertical = 2
+theme = ExtResource("3_eryyb")
+theme_override_font_sizes/font_size = 64
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StoneIcon" type="TextureRect" parent="CostContainer"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 166.5
+offset_top = 2.5
+offset_right = -53.5
+offset_bottom = 2.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("6_l0hqf")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="StoneCost" type="Label" parent="CostContainer"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 214.5
+offset_top = -27.0
+offset_right = 239.5
+offset_bottom = 16.0
 grow_vertical = 2
 theme = ExtResource("3_eryyb")
 theme_override_font_sizes/font_size = 64

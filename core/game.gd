@@ -15,6 +15,9 @@ func _ready() -> void:
 		preview_manager.enable_preview(starter_action)
 
 func _on_action_manager_action_selected(action: Action) -> void:
+	if action is BuildingAction:
+		for key in action.building.cost.keys():
+			ResourceManager.update_resource(key, -action.building.cost[key])
 	preview_manager.enable_preview(action)
 
 func _on_preview_manager_preview_done() -> void:

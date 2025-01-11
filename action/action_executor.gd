@@ -19,6 +19,10 @@ static func perform_action(action: Action, tile: Tile) -> void:
 			TileManager.place_building(action.building, tile.map_coords)
 		Constants.ACTION_ID_BUILD_QUARRY:
 			TileManager.place_building(action.building, tile.map_coords)
+		Constants.ACTION_ID_BUILD_BUOY:
+			TileManager.place_building(action.building, tile.map_coords)
+		Constants.ACTION_ID_BUILD_FISHERBOAT:
+			TileManager.place_building(action.building, tile.map_coords)
 		Constants.ACTION_ID_CLEAR_FOREST:
 			var terrain_action = action as TerrainAction
 			var updated_tile = Tile.new(terrain_action.destination, tile.map_coords)

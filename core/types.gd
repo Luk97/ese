@@ -20,5 +20,6 @@ enum ResourceType {
 	WHEAT,
 	BREAD,
 	PORK,
+	FISH,
 	STONE
 }

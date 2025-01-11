@@ -67,6 +67,20 @@ var catalog: Array[Action] = [
 		load("res://assets/tiles/overlay/on_land/on_grass/windmill.png"),
 		Quarry.new()
 	),
+	BuildingAction.new(
+		Constants.ACTION_ID_BUILD_BUOY,
+		"Build new Buoy",
+		"Placeholder Description",
+		load("res://assets/tiles/overlay/on_water/buoy.png"),
+		Buoy.new()
+	),
+	BuildingAction.new(
+		Constants.ACTION_ID_BUILD_FISHERBOAT,
+		"Build new Fisherboat",
+		"Placeholder Description",
+		load("res://assets/tiles/overlay/on_water/fisherboat.png"),
+		Fisherboat.new()
+	),
 	TerrainAction.new(
 		Constants.ACTION_ID_CLEAR_FOREST,
 		"Clear forest",
@@ -98,6 +112,8 @@ var starter_pool: Array[Action] = [
 	_find_action_by_id(Constants.ACTION_ID_BUILD_FIELD),
 	_find_action_by_id(Constants.ACTION_ID_BUILD_WINDMILL),
 	_find_action_by_id(Constants.ACTION_ID_BUILD_QUARRY),
+	_find_action_by_id(Constants.ACTION_ID_BUILD_BUOY),
+	_find_action_by_id(Constants.ACTION_ID_BUILD_FISHERBOAT),
 	_find_action_by_id(Constants.ACTION_ID_CLEAR_FOREST),
 	_find_action_by_id(Constants.ACTION_ID_CLEAR_MOUNTAIN)
 ]

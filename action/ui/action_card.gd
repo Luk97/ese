@@ -3,8 +3,10 @@ extends Control
 
 @onready var title: Label = %Title
 @onready var description: Label = %Description
-@onready var cost: Label = %Cost
-@onready var cost_container: Control = %CostContainer
+@onready var wood_icon: TextureRect = %WoodIcon
+@onready var wood_cost: Label = %WoodCost
+@onready var stone_icon: TextureRect = %StoneIcon
+@onready var stone_cost: Label = %StoneCost
 @onready var type: Label = %Type
 @onready var picture: TextureRect = %Picture
 
@@ -37,10 +39,19 @@ func _set_type_text(action: Action) -> void:
 
 func _set_cost_text(action: Action) -> void:
 	if action is BuildingAction:
-		cost_container.visible = true
-		cost.text = str(action.building.cost.values()[0])
+		var wood = action.building.cost.get(Types.ResourceType.WOOD, 0)
+		var stone = action.building.cost.get(Types.ResourceType.STONE, 0)
+		wood_cost.text = str(wood)
+		stone_cost.text = str(stone)
+		wood_icon.visible = wood > 0
+		wood_cost.visible = wood > 0
+		stone_icon.visible = stone > 0
+		stone_cost.visible = stone > 0
 	else:
-		cost_container.visible = false
+		wood_icon.visible = false
+		wood_cost.visible = false
+		stone_icon.visible = false
+		stone_cost.visible = false
 
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
