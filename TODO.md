@@ -149,8 +149,9 @@
 
 ### Gameplay
 - [ ] Progress Bars
+- [ ] Show only possible action cards
 - [x] More Actions
-- [ ] Water Buildings
+- [x] Water Buildings
 - [x] Show Case from Main Menu
 - [x] Make World more interesting
 
