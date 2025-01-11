@@ -29,7 +29,7 @@ func setTextureFromType(tile_type: Types.TileType) -> void:
 			self.atlas_coords = Vector2i(1, 2)
 		Types.TileType.TALL_GRASS:
 			self.source_id = 0
-			self.atlas_coords = Vector2i(1, 4)
+			self.atlas_coords = Vector2i(3, 2)
 		Types.TileType.FOREST:
 			self.source_id = 0
 			self.atlas_coords = Vector2i(1, 3)

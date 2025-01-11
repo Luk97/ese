@@ -127,6 +127,8 @@ func _get_biome_from_random() -> Types.TileType:
 		return Types.TileType.MOUNTAIN
 	elif random < 0.35:
 		return Types.TileType.TALL_MOUNTAIN
+	elif random < 0.45:
+		return Types.TileType.TALL_GRASS
 	else:
 		return Types.TileType.GRASS
 

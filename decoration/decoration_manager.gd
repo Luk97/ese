@@ -25,6 +25,54 @@ var grass_decorations: Dictionary = {
 	}
 }
 
+var tall_grass_decorations: Dictionary = {
+	EMPTY: {
+		PICK_CHANCE: 1
+	},
+	"flowers": {
+		SOURCE_ID: 0,
+		ATLAS_COORDS: Vector2i(4, 2),
+		PICK_CHANCE: 10
+	},
+	"pond": {
+		SOURCE_ID: 0,
+		ATLAS_COORDS: Vector2i(5, 2),
+		PICK_CHANCE: 1
+	}
+}
+
+var sand_decorations: Dictionary = {
+	EMPTY: {
+		PICK_CHANCE: 10
+	},
+	"crab": {
+		SOURCE_ID: 0,
+		ATLAS_COORDS: Vector2i(8, 2),
+		PICK_CHANCE: 2
+	},
+	"shell": {
+		SOURCE_ID: 0,
+		ATLAS_COORDS: Vector2i(9, 2),
+		PICK_CHANCE: 2
+	}
+}
+
+var wet_sand_decorations: Dictionary = {
+	EMPTY: {
+		PICK_CHANCE: 10
+	},
+	"crab": {
+		SOURCE_ID: 0,
+		ATLAS_COORDS: Vector2i(8, 2),
+		PICK_CHANCE: 2
+	},
+	"shell": {
+		SOURCE_ID: 0,
+		ATLAS_COORDS: Vector2i(9, 2),
+		PICK_CHANCE: 2
+	}
+}
+
 var forest_decorations: Dictionary = {
 	"trees_1": {
 		SOURCE_ID: 0,
@@ -34,6 +82,55 @@ var forest_decorations: Dictionary = {
 	"trees_2": {
 		SOURCE_ID: 0,
 		ATLAS_COORDS: Vector2i(5, 3),
+		PICK_CHANCE: 6
+	},
+}
+
+var deep_forest_decorations: Dictionary = {
+	"trees_1": {
+		SOURCE_ID: 0,
+		ATLAS_COORDS: Vector2i(4, 3),
+		PICK_CHANCE: 4
+	},
+	"trees_2": {
+		SOURCE_ID: 0,
+		ATLAS_COORDS: Vector2i(5, 3),
+		PICK_CHANCE: 6
+	},
+}
+
+var mountain_decorations: Dictionary = {
+	"stones_1": {
+		SOURCE_ID: 0,
+		ATLAS_COORDS: Vector2i(7, 3),
+		PICK_CHANCE: 4
+	},
+	"stones_2": {
+		SOURCE_ID: 0,
+		ATLAS_COORDS: Vector2i(8, 3),
+		PICK_CHANCE: 6
+	},
+	"stones_3": {
+		SOURCE_ID: 0,
+		ATLAS_COORDS: Vector2i(9, 3),
+		PICK_CHANCE: 6
+	},
+}
+
+var tall_mountain_decorations: Dictionary = {
+	"stones_1": {
+		SOURCE_ID: 0,
+		ATLAS_COORDS: Vector2i(7, 3),
+		PICK_CHANCE: 4
+	},
+	"stones_2": {
+		SOURCE_ID: 0,
+		ATLAS_COORDS: Vector2i(8, 3),
+		PICK_CHANCE: 6
+	},
+	"stones_3": {
+		SOURCE_ID: 0,
+		ATLAS_COORDS: Vector2i(9, 3),
 		PICK_CHANCE: 6
 	},
 }
@@ -59,13 +156,16 @@ var water_decorations: Dictionary = {
 	}
 }
 
-var beach_decorations: Dictionary = {
+var deep_water_decorations: Dictionary = {
 	EMPTY: {
-		PICK_CHANCE: 10
+		PICK_CHANCE: 8
+	},
+	"fish": {
+		SOURCE_ID: 0,
+		ATLAS_COORDS: Vector2i(4, 4),
+		PICK_CHANCE: 1
 	}
 }
-
-
 
 #=================== PUBLIC FUNCTIONS ===================
 
@@ -73,12 +173,24 @@ func get_random_decoration(type: Types.TileType) -> Decoration:
 	match type:
 		Types.TileType.WATER:
 			return _pick_random_decoration(water_decorations)
+		Types.TileType.DEEP_WATER:
+			return _pick_random_decoration(deep_water_decorations)
 		Types.TileType.GRASS:
 			return _pick_random_decoration(grass_decorations)
+		Types.TileType.TALL_GRASS:
+			return _pick_random_decoration(tall_grass_decorations)
 		Types.TileType.SAND:
-			return _pick_random_decoration(beach_decorations)
+			return _pick_random_decoration(sand_decorations)
+		Types.TileType.WET_SAND:
+			return _pick_random_decoration(wet_sand_decorations)
 		Types.TileType.FOREST:
 			return _pick_random_decoration(forest_decorations)
+		Types.TileType.DEEP_FOREST:
+			return _pick_random_decoration(deep_forest_decorations)
+		Types.TileType.MOUNTAIN:
+			return _pick_random_decoration(mountain_decorations)
+		Types.TileType.TALL_MOUNTAIN:
+			return _pick_random_decoration(tall_mountain_decorations)
 		_:
 			printerr("Undefined tile type for decoration: ", type)
 			return null 
