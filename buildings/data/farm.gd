@@ -4,6 +4,12 @@ extends Building
 func _init() -> void:
 	self.label = "Farm"
 	self.cost = { Types.ResourceType.WOOD: 5 }
+	self.product = {
+		Constants.PRODUCT_TYPE: Types.ResourceType.PORK,
+		Constants.PRODUCT_AMOUNT: 10,
+		Constants.PRODUCT_RATE: 5,
+		Constants.PRODUCT_UNTIL_YIELD: 5
+	}
 	self.view_radius = 2
 	self.source_id = 0
 	self.atlas_coords = Vector2i(0, 9)

@@ -60,15 +60,32 @@ var catalog: Array[Action] = [
 		load("res://assets/tiles/overlay/on_land/on_grass/windmill.png"),
 		Windmill.new()
 	),
+	BuildingAction.new(
+		Constants.ACTION_ID_BUILD_QUARRY,
+		"Build new Quarry",
+		"Placeholder Description",
+		load("res://assets/tiles/overlay/on_land/on_grass/windmill.png"),
+		Quarry.new()
+	),
 	TerrainAction.new(
 		Constants.ACTION_ID_CLEAR_FOREST,
 		"Clear forest",
-		"Clear a forest tile from all trees receiving 5 wood in the process.",
+		"Clear a forest tile from all trees receiving 10 wood in the process.",
 		load("res://assets/action/axe.png"),
-		[Types.TileType.FOREST],
+		[Types.TileType.FOREST, Types.TileType.DEEP_FOREST],
 		Types.TileType.GRASS,
 		{ Types.ResourceType.WOOD: 10 },
 		0, Vector2i(9, 9)
+	),
+	TerrainAction.new(
+		Constants.ACTION_ID_CLEAR_MOUNTAIN,
+		"Clear mountain",
+		"Clear a mountain tile from all stones receiving 10 stone in the process.",
+		load("res://assets/action/Bomb.png"),	
+		[Types.TileType.MOUNTAIN, Types.TileType.TALL_MOUNTAIN],
+		Types.TileType.GRASS,
+		{ Types.ResourceType.STONE: 10 },
+		1, Vector2i(0, 0)
 	)
 ]
 
@@ -80,7 +97,9 @@ var starter_pool: Array[Action] = [
 	_find_action_by_id(Constants.ACTION_ID_BUILD_FARM),
 	_find_action_by_id(Constants.ACTION_ID_BUILD_FIELD),
 	_find_action_by_id(Constants.ACTION_ID_BUILD_WINDMILL),
-	_find_action_by_id(Constants.ACTION_ID_CLEAR_FOREST)
+	_find_action_by_id(Constants.ACTION_ID_BUILD_QUARRY),
+	_find_action_by_id(Constants.ACTION_ID_CLEAR_FOREST),
+	_find_action_by_id(Constants.ACTION_ID_CLEAR_MOUNTAIN)
 ]
 
 var pool = starter_pool
