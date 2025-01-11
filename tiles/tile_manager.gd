@@ -41,6 +41,9 @@ func place_building(building: Building, coords: Vector2i) -> void:
 func update_tile(tile: Tile) -> void:
 	tiles[tile.map_coords] = tile
 
+func get_tiles() -> Array:
+	return tiles.values()
+
 func get_building_tiles() -> Array:
 	return tiles.values().filter(_has_building)
 

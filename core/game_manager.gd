@@ -16,7 +16,6 @@ var show_world = false
 # Global signals
 signal round_updated(int)
 
-
 # Global functions
 func initialize_game() -> void:
 	rng = RandomNumberGenerator.new()
@@ -26,7 +25,6 @@ func initialize_game() -> void:
 	if not show_world:
 		emit_signal("round_updated", rounds)
 		ResourceManager.initialize_resources()
-
 
 func update_rounds() -> void:
 	rounds += 1

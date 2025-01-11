@@ -15,6 +15,12 @@ func initialize_resources() -> void:
 	emit_signal("stone_updated", resources[Types.ResourceType.STONE])
 	emit_signal("food_updated", resources[Types.ResourceType.FOOD])
 
+func building_affordable(building: Building) -> bool:
+	for key in building.cost.keys():
+		if resources.has(key) and resources[key] < building.cost[key]:
+			return false
+	return true
+
 func update_resource(type: Types.ResourceType, amount: int) -> void:
 	match type:
 		Types.ResourceType.WOOD:

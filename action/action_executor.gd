@@ -39,3 +39,19 @@ static func perform_action(action: Action, tile: Tile) -> void:
 			ResourceManager.place_resources(earnings.keys()[0], earnings.values()[0], updated_tile)
 		_:
 			printerr("There is an unhandeled action execution with action: ", action.id)
+
+static func check_for_existing_tile(action: Action) -> bool:
+	var tiles = TileManager.get_tiles()
+	if action is BuildingAction:
+		var building_action = action as BuildingAction
+		for tile: Tile in tiles:
+			if building_action.building.is_valid_placement_tile(tile.type) and ResourceManager.building_affordable(building_action.building):
+				return true
+		return false
+	elif action is TerrainAction:
+		var terrain_action = action as TerrainAction
+		for tile: Tile in tiles:
+			if tile.type in terrain_action.origins and tile.building == null:
+				return true
+		return false
+	return false
