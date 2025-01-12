@@ -90,6 +90,7 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
+tooltip_text = "Here you can start playing a new game."
 theme = ExtResource("3_gccap")
 text = "New Game
 "
@@ -106,6 +107,7 @@ text = "Save"
 [node name="Showcase" type="Button" parent="MainMenu/MenuContainer/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+tooltip_text = "Here you can look at a random generated world just like one you get when you start a new game."
 theme = ExtResource("3_gccap")
 text = "Showcase
 "
@@ -113,6 +115,7 @@ text = "Showcase
 [node name="Credits" type="Button" parent="MainMenu/MenuContainer/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+tooltip_text = "Here you can look at the credits."
 theme = ExtResource("3_gccap")
 text = "Credits
 "
