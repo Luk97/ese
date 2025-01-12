@@ -45,7 +45,7 @@ static func check_for_existing_tile(action: Action) -> bool:
 	if action is BuildingAction:
 		var building_action = action as BuildingAction
 		for tile: Tile in tiles:
-			if building_action.building.is_valid_placement_tile(tile.type) and ResourceManager.building_affordable(building_action.building):
+			if building_action.building.is_valid_placement_tile(tile.type) and ResourceManager.building_affordable(building_action.building) and tile.building == null:
 				return true
 		return false
 	elif action is TerrainAction:
