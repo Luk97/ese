@@ -176,3 +176,6 @@
 	-TODO: Scaling font with text inside of the labels to fit large numbers
 ###All
 - [ ] Spieltitel?
+	- Ideas:
+		- Some Synonym to settlers/pioneers
+		- Something with pixel?
