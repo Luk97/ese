@@ -47,6 +47,9 @@ func update_resource(type: Types.ResourceType, amount: int) -> void:
 		Types.ResourceType.STONE:
 			resources[Types.ResourceType.STONE] += amount
 			emit_signal("stone_updated", resources[Types.ResourceType.STONE])
+		Types.ResourceType.FOOD:
+			resources[Types.ResourceType.FOOD] += amount
+			emit_signal("food_updated", resources[Types.ResourceType.FOOD])
 
 func place_resources(resource_type: Types.ResourceType, amount: int, tile: Tile) -> void:
 	var scene: PackedScene = load("res://resources/resource.tscn")

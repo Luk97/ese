@@ -5,6 +5,7 @@ extends NinePatchRect
 @onready var progress_Bar: ProgressBar = %Progress_Bar
 
 signal bar_empty
+signal bar_increased
 
 func enable_button() -> void:
 	heat_Progress_Button.visible = true
@@ -19,7 +20,8 @@ func decrease() -> void:
 
 func increase() -> void:
 	heat_Progress_Bar.value = heat_Progress_Bar.value + 1
-	ResourceManager.update_resource(Types.ResourceType.WOOD, GameManager.get_warmth_increase_cost())
+	ResourceManager.update_resource(Types.ResourceType.WOOD, -GameManager.get_warmth_increase_cost())
+	emit_signal("bar_increased")
 
 func is_full() -> bool:
 	return heat_Progress_Bar.value >= 10

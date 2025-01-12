@@ -3,12 +3,12 @@ extends Building
 
 func _init() -> void:
 	self.label = "Fisherboat"
-	self.cost = { Types.ResourceType.WOOD: 4 }
+	self.cost = { Types.ResourceType.WOOD: 3 }
 	self.product = {
 		Constants.PRODUCT_TYPE: Types.ResourceType.FISH,
-		Constants.PRODUCT_AMOUNT: 4,
+		Constants.PRODUCT_AMOUNT: 1,
 		Constants.PRODUCT_RATE: 3,
-		Constants.PRODUCT_UNTIL_YIELD: 3
+		Constants.PRODUCT_UNTIL_YIELD: 2
 	}
 	self.view_radius = 1
 	self.source_id = 0

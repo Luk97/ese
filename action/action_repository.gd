@@ -6,22 +6,21 @@ extends Node
 #    Type,
 #    Title,
 #    Description,
-#    Texture,
-#    Building (optional)
+#    Texture
 # )
 
 var catalog: Array[Action] = [
 	BuildingAction.new(
 		Constants.ACTION_ID_BUILD_HOME,
 		"Build new Home",
-		"Slows down the need for warmth.",
+		"Does this even do anything?",
 		load("res://assets/action/Home-Icon.png"),
 		Home.new()
 	),
 	BuildingAction.new(
 		Constants.ACTION_ID_BUILD_WOOOD_CUTTER,
 		"Build new Wood Cutter",
-		"Produces one wood every two rounds.",
+		"Produces 3 wood every 2 rounds.",
 		load("res://assets/action/Woodcutter-Icon.png"),
 		WoodCutter.new()
 	),
@@ -35,49 +34,49 @@ var catalog: Array[Action] = [
 	BuildingAction.new(
 		Constants.ACTION_ID_BUILD_BURNER,
 		"Build new Burner",
-		"Placeholder Description",
+		"Produces 4 wood every 2 rounds.",
 		load("res://assets/tiles/overlay/on_land/on_grass/burner.png"),
 		Burner.new()
 	),
 	BuildingAction.new(
 		Constants.ACTION_ID_BUILD_FARM,
 		"Build new Farm",
-		"Placeholder Description",
+		"Produces 5 food every 4 rounds.",
 		load("res://assets/tiles/overlay/on_land/on_grass/Farm.png"),
 		Farm.new()
 	),
 	BuildingAction.new(
 		Constants.ACTION_ID_BUILD_FIELD,
 		"Build new Field",
-		"Placeholder Description",
+		"Produces 1 food every 2 rounds.",
 		load("res://assets/tiles/overlay/on_land/on_grass/Field.png"),
 		Field.new()
 	),
 	BuildingAction.new(
 		Constants.ACTION_ID_BUILD_WINDMILL,
 		"Build new Windmill",
-		"Placeholder Description",
+		"Produces 4 food every 3 rounds.",
 		load("res://assets/tiles/overlay/on_land/on_grass/windmill.png"),
 		Windmill.new()
 	),
 	BuildingAction.new(
 		Constants.ACTION_ID_BUILD_QUARRY,
 		"Build new Quarry",
-		"Placeholder Description",
+		"Produces 3 stone every 2 rounds.",
 		load("res://assets/tiles/overlay/on_land/on_grass/windmill.png"),
 		Quarry.new()
 	),
 	BuildingAction.new(
 		Constants.ACTION_ID_BUILD_BUOY,
 		"Build new Buoy",
-		"Placeholder Description",
+		"Place on water to scout the surroundings.",
 		load("res://assets/tiles/overlay/on_water/buoy.png"),
 		Buoy.new()
 	),
 	BuildingAction.new(
 		Constants.ACTION_ID_BUILD_FISHERBOAT,
 		"Build new Fisherboat",
-		"Placeholder Description",
+		"Produces 1 food every 2 rounds.",
 		load("res://assets/tiles/overlay/on_water/fisherboat.png"),
 		Fisherboat.new()
 	),

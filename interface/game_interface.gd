@@ -103,3 +103,9 @@ func _on_food_progress_bar_bar_empty() -> void:
 
 func _on_heat_progress_bar_bar_empty() -> void:
 	emit_signal("game_over")
+
+func _on_food_progress_bar_bar_increased() -> void:
+	update_progress_bar_buttons()
+
+func _on_heat_progress_bar_bar_increased() -> void:
+	update_progress_bar_buttons()

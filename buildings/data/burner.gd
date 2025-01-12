@@ -6,8 +6,8 @@ func _init() -> void:
 	self.cost = { Types.ResourceType.STONE: 7 }
 	self.product = {
 		Constants.PRODUCT_TYPE: Types.ResourceType.CHAR_COAL,
-		Constants.PRODUCT_AMOUNT: 5,
-		Constants.PRODUCT_RATE: 2,
+		Constants.PRODUCT_AMOUNT: 4,
+		Constants.PRODUCT_RATE: 3,
 		Constants.PRODUCT_UNTIL_YIELD: 2
 	}
 	self.view_radius = 2

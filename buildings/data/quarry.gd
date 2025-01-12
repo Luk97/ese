@@ -9,9 +9,9 @@ func _init() -> void:
 	}
 	self.product = {
 		Constants.PRODUCT_TYPE: Types.ResourceType.STONE,
-		Constants.PRODUCT_AMOUNT: 5,
+		Constants.PRODUCT_AMOUNT: 3,
 		Constants.PRODUCT_RATE: 3,
-		Constants.PRODUCT_UNTIL_YIELD: 3
+		Constants.PRODUCT_UNTIL_YIELD: 2
 	}
 	self.view_radius = 2
 	self.source_id = 0
