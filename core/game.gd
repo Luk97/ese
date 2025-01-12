@@ -3,11 +3,13 @@ extends Node2D
 @onready var action_manager: ActionManager = %ActionManager
 @onready var preview_manager: PreviewManager = %PreviewManager
 @onready var game_interface: CanvasLayer = %GameInterface
+var is_game_over_executed: bool = false
 
 func _ready() -> void:
 	randomize()
 	GameManager.initialize_game()
 	game_interface.showcase(GameManager.show_world)
+	self.is_game_over_executed = false
 	
 	if not GameManager.show_world:
 		TileManager.initialize_starter_area()
@@ -25,4 +27,12 @@ func _on_preview_manager_preview_done() -> void:
 
 func _on_game_interface_round_finished() -> void:
 	GameManager.update_rounds()
+	game_interface.decrease_warmth_progress()
+	game_interface.decrease_food_progress()
 	action_manager.start_action_selection()
+
+
+func _on_game_interface_game_over() -> void:
+	if not self.is_game_over_executed:
+		self.is_game_over_executed = true
+		get_tree().change_scene_to_file("res://game_over/gameOverScreen.tscn")

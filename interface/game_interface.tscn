@@ -199,5 +199,7 @@ size_flags_horizontal = 8
 text = "End"
 
 [connection signal="pressed" from="Elements/UI_Margin/Top_Interface_Container/HBoxContainer/Menu" to="Elements/UI_Margin/Top_Interface_Container/HBoxContainer/Menu" method="_on_pressed"]
+[connection signal="bar_empty" from="Elements/UI_Margin/Bottom_Interface_Container/HBoxContainer/foodProgressBar" to="." method="_on_food_progress_bar_bar_empty"]
+[connection signal="bar_empty" from="Elements/UI_Margin/Bottom_Interface_Container/HBoxContainer/heatProgressBar" to="." method="_on_heat_progress_bar_bar_empty"]
 [connection signal="pressed" from="Elements/UI_Margin/Bottom_Interface_Container/HBoxContainer/RundeBeenden" to="." method="_on_finish_round_button_pressed"]
 [connection signal="pressed" from="Elements/FinishRoundButton" to="." method="_on_finish_round_button_pressed"]
