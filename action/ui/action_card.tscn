@@ -3,9 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://c611g6tyj1si2" path="res://assets/ui/ui_icon_bg.png" id="1_lyooj"]
 [ext_resource type="Script" path="res://action/ui/action_card.gd" id="2_dfm2f"]
 [ext_resource type="Theme" uid="uid://dl35k1wgcyjff" path="res://Themes/standard_Theme.tres" id="3_eryyb"]
-[ext_resource type="Texture2D" uid="uid://cc4knyc2bod0e" path="res://assets/items/wood.png" id="3_nvpoj"]
+[ext_resource type="Texture2D" uid="uid://d3p75vouvayeo" path="res://assets/items/wood.png" id="3_nvpoj"]
 [ext_resource type="Texture2D" uid="uid://ciyyc6353vlsd" path="res://assets/action/axe.png" id="4_akdu4"]
-[ext_resource type="Texture2D" uid="uid://c36ejiyt8jmdh" path="res://assets/items/Stone.png" id="6_l0hqf"]
+[ext_resource type="Texture2D" uid="uid://blkxa3m018mjm" path="res://assets/items/Stone.png" id="6_l0hqf"]
 
 [node name="Control" type="Control"]
 layout_mode = 3

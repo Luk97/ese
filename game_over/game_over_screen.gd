@@ -23,3 +23,5 @@ func _process(delta: float) -> void:
 	menuButton.size=Vector2(buttonx,buttony)
 	newGameButton.add_theme_font_size_override("font_size",thisButtonsFontSize)
 	menuButton.add_theme_font_size_override("font_size",thisButtonsFontSize)
+	
+	gameOverMessage.text = str("You survived ", GameManager.rounds, " rounds. Congratulations!")
