@@ -121,7 +121,7 @@ script = ExtResource("3_tjfmy")
 [node name="BeendenButton" type="Button" parent="MainMenu/MenuContainer/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-tooltip_text = "Spiel beenden"
+tooltip_text = "Quit Game"
 theme = ExtResource("3_gccap")
 text = "Quit"
 script = ExtResource("2_1x6tn")
