@@ -63,7 +63,7 @@ var catalog: Array[Action] = [
 		Constants.ACTION_ID_BUILD_QUARRY,
 		"Build new Quarry",
 		"Produces 3 stone every 2 rounds.",
-		load("res://assets/tiles/overlay/on_land/on_grass/windmill.png"),
+		load("res://assets/tiles/overlay/on_land/on_grass/Quarry.png"),
 		Quarry.new()
 	),
 	BuildingAction.new(

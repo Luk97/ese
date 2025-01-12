@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bv5p55qi2cvhm"
-path="res://.godot/imported/Quarry.png-c87576dba8d78c30b0fa96f60eb3a169.ctex"
+path="res://.godot/imported/Quarry.png-37665dab1f7e51fa994b81f734ad9897.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/Quarry.png"
-dest_files=["res://.godot/imported/Quarry.png-c87576dba8d78c30b0fa96f60eb3a169.ctex"]
+source_file="res://assets/tiles/overlay/on_land/on_grass/Quarry.png"
+dest_files=["res://.godot/imported/Quarry.png-37665dab1f7e51fa994b81f734ad9897.ctex"]
 
 [params]
 
