@@ -21,6 +21,7 @@ unique_name_in_owner = true
 [node name="BuildingManager" parent="." instance=ExtResource("15_ucn6x")]
 unique_name_in_owner = true
 
+[connection signal="game_over" from="GameInterface" to="." method="_on_game_interface_game_over"]
 [connection signal="round_finished" from="GameInterface" to="." method="_on_game_interface_round_finished"]
 [connection signal="action_selected" from="ActionManager" to="." method="_on_action_manager_action_selected"]
 [connection signal="preview_done" from="PreviewManager" to="." method="_on_preview_manager_preview_done"]

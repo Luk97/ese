@@ -3,11 +3,11 @@ extends CanvasLayer
 @onready var wood_label: NinePatchRect = %WoodLabel
 @onready var food_label: NinePatchRect = %FoodLabel
 @onready var stone_label: NinePatchRect = %StoneLabel
-@onready var food_Progress: NinePatchRect = %food_Progress
-@onready var heat_Progress: NinePatchRect = %heat_Progress
 @onready var roundCounter: NinePatchRect = %RoundCounterLabel
 @onready var topLeftMenu: Control = %TopLeftMenu
 @onready var menu: Button = %Menu
+@onready var food_progress_bar: NinePatchRect = %foodProgressBar
+@onready var heat_progress_bar: NinePatchRect = %heatProgressBar
 
 @onready var top_Interface_Container: VBoxContainer = %Top_Interface_Container
 @onready var bottom_Interface_Container: VBoxContainer = %Bottom_Interface_Container
@@ -17,6 +17,7 @@ var resourceLabelRatioXY=2
 var roundLabelRatioXY=3
 
 signal round_finished
+signal game_over
 
 func _ready() -> void:
 	ResourceManager.wood_updated.connect(update_wood_label)
@@ -44,11 +45,11 @@ func update_stone_label(stone: int) -> void:
 func update_food_label(wheat: int) -> void:
 	food_label.set_resource_count(wheat)
 
-func update_food_Progress(food: int) -> void:
-	food_Progress.setNewFoodValue(food)
+func decrease_food_progress() -> void:
+	food_progress_bar.setNewFoodValue()
 	
-func update_heat_Progress(heat: int) -> void:
-	heat_Progress.setNewHeatValue(heat)
+func decrease_warmth_progress() -> void:
+	heat_progress_bar.setNewHeatValue()
 
 func _process(delta: float) -> void:
 	scaling()
@@ -76,5 +77,9 @@ func scaling()->void:
 	stone_label.setFontSize(fontSize)
 	food_label.setFontSize(fontSize)
 	menu.setFontSize(fontSize)
-	
-	#Positioning
+
+func _on_food_progress_bar_bar_empty() -> void:
+	emit_signal("game_over")
+
+func _on_heat_progress_bar_bar_empty() -> void:
+	emit_signal("game_over")
