@@ -37,6 +37,6 @@ func setTooltip(txt: String)->void:
 
 func setCost(newCost:int)->void:
 	costs=newCost
-	var txt="Costs: %d Wood per step"
+	var txt="Costs: %d Wood per step. If this bar runs out, your people froze to death!"
 	txt=txt %costs
 	setTooltip(txt)
