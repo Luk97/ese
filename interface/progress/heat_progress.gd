@@ -36,4 +36,6 @@ func setTooltip(txt: String)->void:
 
 func setCost(newCost:int)->void:
 	costs=newCost
-	setTooltip("Costs: "+costs)
+	var txt="Costs: %d"
+	txt=txt %costs
+	setTooltip(txt)

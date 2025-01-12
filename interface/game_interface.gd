@@ -59,12 +59,14 @@ func increase_warmth_progress() -> void:
 
 func update_progress_bar_buttons() -> void:
 	var food_cost = GameManager.get_food_increase_cost()
+	food_progress_bar.setCost(food_cost)
 	if food_cost > ResourceManager.get_food_count() or food_progress_bar.is_full():
 		food_progress_bar.disable_button()
 	else:
 		food_progress_bar.enable_button()
 	
 	var warmth_cost = GameManager.get_warmth_increase_cost()
+	heat_progress_bar.setCost(warmth_cost)
 	if warmth_cost > ResourceManager.get_wood_count() or heat_progress_bar.is_full():
 		heat_progress_bar.disable_button()
 	else:
