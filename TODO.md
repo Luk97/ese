@@ -143,7 +143,7 @@
 - [x] Animate all buildings
 - [x] Image: Quarry
 - [x] Icon: Food (general)
-- [ ] Icon: Pork
+- [x] Icon: Pork
 - [x] Make icons more visible
 - [x] Fix bomb size
 
