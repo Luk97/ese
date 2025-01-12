@@ -10,10 +10,10 @@ signal bar_empty
 signal bar_increased
 
 func enable_button() -> void:
-	heat_Progress_Button.visible = true
+	heat_Progress_Button.disabled = false
 
 func disable_button() -> void:
-	heat_Progress_Button.visible = false
+	heat_Progress_Button.disabled = true
 
 func decrease() -> void:
 	heat_Progress_Bar.value = heat_Progress_Bar.value - 1

@@ -9,10 +9,10 @@ signal bar_empty
 signal bar_increased
 
 func enable_button() -> void:
-	food_Progress_Button.visible = true
+	food_Progress_Button.disabled = false
 
 func disable_button() -> void:
-	food_Progress_Button.visible = false
+	food_Progress_Button.disabled = true
 
 func decrease() -> void:
 	food_Progress_Bar.value = food_Progress_Bar.value - 1
