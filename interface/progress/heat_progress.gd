@@ -2,7 +2,7 @@ extends NinePatchRect
 
 @onready var heat_Progress_Button: Button = %heat_Progress_Button
 @onready var heat_Progress_Bar: TextureProgressBar = %heat_Progress_Bar
-@onready var progress_Bar: ProgressBar = %Progress_Bar
+#@onready var progress_Bar: ProgressBar = %Progress_Bar
 var costs
 
 
