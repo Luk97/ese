@@ -156,9 +156,9 @@
 - [x] Make World more interesting
 
 ### User Interface
-- [ ] Enhance Progress Bar
-	- [ ] Text with cost of increasement
- 	- [ ] Icon to identify the needed resource 
+- [X] Enhance Progress Bar
+	- [X] Text with cost of increasement //as tooltip
+ 	- [X] Icon to identify the needed resource 
 - [X] Game Over Screen
 	- [X] Navigation to Main Menu
 	- [X] Navigation to New Game //How is a new Game started, do i just need to open the scene?
