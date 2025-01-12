@@ -24,7 +24,7 @@ func _on_action_manager_action_selected(action: Action) -> void:
 	preview_manager.enable_preview(action)
 
 func _on_preview_manager_preview_done() -> void:
-	BuildingManager.update_building_productions()
+	pass
 
 func _on_game_interface_round_finished() -> void:
 	GameManager.update_rounds()
@@ -32,6 +32,7 @@ func _on_game_interface_round_finished() -> void:
 	game_interface.decrease_food_progress()
 	game_interface.update_progress_bar_buttons()
 	action_manager.start_action_selection()
+	BuildingManager.update_building_productions()
 
 
 func _on_game_interface_game_over() -> void:
