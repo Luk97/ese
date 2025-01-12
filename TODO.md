@@ -189,13 +189,13 @@
 		  <C++-Fehler>   Condition "f.is_null()" is true. Returning: err
 		  <C++-Quelle>   core/io/image_loader.cpp:90 @ load_image()
 
-		-E 0:00:01:0776   food_progress.gd:5 @ _ready(): Node not found: "%Progress_Bar" (relative to "/root/Game/GameInterface/Elements/UI_Margin/Bottom_Interface_Container/HBoxContainer/foodProgressBar").
+		-[X] E 0:00:01:0776   food_progress.gd:5 @ _ready(): Node not found: "%Progress_Bar" (relative to "/root/Game/GameInterface/Elements/UI_Margin/Bottom_Interface_Container/HBoxContainer/foodProgressBar").
 		  <C++-Fehler>   Method/function failed. Returning: nullptr
 		  <C++-Quelle>   scene/main/node.cpp:1792 @ get_node()
 		  <Stacktrace>   food_progress.gd:5 @ _ready()
 
 
-		-E 0:00:01:0776   heat_progress.gd:5 @ _ready(): Node not found: "%Progress_Bar" (relative to "/root/Game/GameInterface/Elements/UI_Margin/Bottom_Interface_Container/HBoxContainer/heatProgressBar").
+		-[X] E 0:00:01:0776   heat_progress.gd:5 @ _ready(): Node not found: "%Progress_Bar" (relative to "/root/Game/GameInterface/Elements/UI_Margin/Bottom_Interface_Container/HBoxContainer/heatProgressBar").
 		  <C++-Fehler>   Method/function failed. Returning: nullptr
 		  <C++-Quelle>   scene/main/node.cpp:1792 @ get_node()
 		  <Stacktrace>   heat_progress.gd:5 @ _ready()
