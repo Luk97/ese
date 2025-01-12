@@ -32,9 +32,10 @@ func _on_food_progress_button_pressed() -> void:
 
 func setTooltip(txt: String)->void:
 	tooltip_text=txt
+	food_Progress_Button.tooltip_text=txt
 
 func setCost(newCost:int)->void:
 	costs=newCost
-	var txt="Costs: %d"
+	var txt="Costs: %d Wheat per step"
 	txt=txt %costs
 	setTooltip(txt)
