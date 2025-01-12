@@ -168,14 +168,9 @@
 - [X] add showcase Function to Interface
 - [X] Fix Action Selection
 	- [X]Centering (e.g. Fullscreen) #Das Offset erzeugt aktuell das Problem! Ohne Offset sieht es aber nicht gut aus! ActionManager
-- [ ] opt. Text on Progressbars?
-	- [ ]Just needs autoscale //Needs a % symbol in the font!
-- [ ] opt. improving Autoscaling 
-- [ ] opt. UI Improvements:
-	-TODO: Scaling of top container by length to avoid overlapping
-	-TODO: Scaling font with text inside of the labels to fit large numbers
+
 ###All
-- [ ] Spieltitel?
+- [(X)] Spieltitel?
 	- Ideas:
 		- Some Synonym to settlers/pioneers
 			- Explorator? nah not really
@@ -185,11 +180,21 @@
 			- Pixelland Pioneers
 			- Pioneering on new pixel lands
 			
-- [ ] Bug Fixing!
-	- [ ] Quarry hat falsche Icon auf ActionSelectionCard
-	- [ ] RoundCounter wird nicht runtergesetzt wenn man in der gleichen Instanz das Spiel via menu schliesst und ein neues startet
-	- [ ] Difficulty raise by building Homes? 
+- [X] Bug Fixing!
+	- [X] Quarry hat falsche Icon auf ActionSelectionCard
+	- [X] RoundCounter wird nicht runtergesetzt wenn man in der gleichen Instanz das Spiel via menu schliesst und ein neues startet
+	- [ ] Fixing debug messages? like XYZ never used...
+	
+-[ ] Optional Improvements
+	- [ ] opt. Difficulty raise by building Homes? 
 		- A Home builded-> Costs for progressbars increase
 		- Building a home necessary every few rounds
-	- [ ] Action Selection can be rerolled by clicking next round again
+	- [ ] opt. Action Selection can be rerolled by clicking next round again
 		- Disabeling next round while cards are shown?
+	- [ ] opt. Text on Progressbars?
+		- [ ]Just needs autoscale //Needs a % symbol in the font!
+	- [ ] opt. improving Autoscaling 
+	- [ ] opt. UI Improvements:
+		-TODO: Scaling of top container by length to avoid overlapping
+		-TODO: Scaling font with text inside of the labels to fit large numbers
+	-[ ] opt. Asset change: BG for Icons on ActionCards for bigger Contrast
