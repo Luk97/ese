@@ -19,6 +19,8 @@ signal round_updated(int)
 # Global functions
 func initialize_game() -> void:
 	rng = RandomNumberGenerator.new()
+	rounds = 0
+	update_rounds()
 	TileManager.reset_tiles()
 	CameraController.setup()
 	ResourceManager.initialize_resources()
