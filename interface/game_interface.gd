@@ -46,10 +46,30 @@ func update_food_label(wheat: int) -> void:
 	food_label.set_resource_count(wheat)
 
 func decrease_food_progress() -> void:
-	food_progress_bar.setNewFoodValue()
+	food_progress_bar.decrease()
 	
 func decrease_warmth_progress() -> void:
-	heat_progress_bar.setNewHeatValue()
+	heat_progress_bar.decrease()
+
+func increase_food_progress() -> void:
+	food_progress_bar.increase()
+	
+func increase_warmth_progress() -> void:
+	heat_progress_bar.increase()
+
+func update_progress_bar_buttons() -> void:
+	var food_cost = GameManager.get_food_increase_cost()
+	if food_cost > ResourceManager.get_food_count() or food_progress_bar.is_full():
+		food_progress_bar.disable_button()
+	else:
+		food_progress_bar.enable_button()
+	
+	var warmth_cost = GameManager.get_warmth_increase_cost()
+	if warmth_cost > ResourceManager.get_wood_count() or heat_progress_bar.is_full():
+		heat_progress_bar.disable_button()
+	else:
+		heat_progress_bar.enable_button()
+
 
 func _process(delta: float) -> void:
 	scaling()

@@ -10,6 +10,7 @@ func _ready() -> void:
 	GameManager.initialize_game()
 	game_interface.showcase(GameManager.show_world)
 	self.is_game_over_executed = false
+	game_interface.update_progress_bar_buttons()
 	
 	if not GameManager.show_world:
 		TileManager.initialize_starter_area()
@@ -29,6 +30,7 @@ func _on_game_interface_round_finished() -> void:
 	GameManager.update_rounds()
 	game_interface.decrease_warmth_progress()
 	game_interface.decrease_food_progress()
+	game_interface.update_progress_bar_buttons()
 	action_manager.start_action_selection()
 
 

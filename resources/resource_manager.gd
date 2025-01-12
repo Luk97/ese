@@ -11,6 +11,9 @@ var resources:Dictionary = {
 }
 
 func initialize_resources() -> void:
+	resources[Types.ResourceType.WOOD] = GameManager.START_WOOD
+	resources[Types.ResourceType.STONE] = GameManager.START_STONE
+	resources[Types.ResourceType.FOOD] = GameManager.START_FOOD
 	emit_signal("wood_updated", resources[Types.ResourceType.WOOD])
 	emit_signal("stone_updated", resources[Types.ResourceType.STONE])
 	emit_signal("food_updated", resources[Types.ResourceType.FOOD])
@@ -54,6 +57,12 @@ func place_resources(resource_type: Types.ResourceType, amount: int, tile: Tile)
 	scene_instance.position = TileManager.get_global_coords(tile)
 	scene_instance.connect("resource_collected", _on_resource_collected)
 	add_child(scene_instance)
+
+func get_wood_count() -> int:
+	return self.resources[Types.ResourceType.WOOD]
+
+func get_food_count() -> int:
+	return self.resources[Types.ResourceType.FOOD]
 
 func _on_resource_collected(type: Types.ResourceType, amount: int) -> void:
 	update_resource(type, amount)
