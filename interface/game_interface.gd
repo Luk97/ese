@@ -8,6 +8,7 @@ extends CanvasLayer
 @onready var menu: Button = %Menu
 @onready var food_progress_bar: NinePatchRect = %foodProgressBar
 @onready var heat_progress_bar: NinePatchRect = %heatProgressBar
+@onready var newRound: Button = %RundeBeenden
 
 @onready var top_Interface_Container: VBoxContainer = %Top_Interface_Container
 @onready var bottom_Interface_Container: VBoxContainer = %Bottom_Interface_Container
@@ -74,6 +75,7 @@ func update_progress_bar_buttons() -> void:
 
 
 func _process(delta: float) -> void:
+	update_progress_bar_buttons()
 	scaling()
 
 func scaling()->void:
@@ -111,3 +113,9 @@ func _on_food_progress_bar_bar_increased() -> void:
 
 func _on_heat_progress_bar_bar_increased() -> void:
 	update_progress_bar_buttons()
+
+func enabelNextRound()->void:
+	newRound.disabled=false
+	
+func disabelNextRound()->void:
+	newRound.disabled=true
