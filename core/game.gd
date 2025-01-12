@@ -37,4 +37,5 @@ func _on_game_interface_round_finished() -> void:
 func _on_game_interface_game_over() -> void:
 	if not self.is_game_over_executed:
 		self.is_game_over_executed = true
+		get_tree().call_group("collectables", "queue_free")
 		get_tree().change_scene_to_file("res://game_over/gameOverScreen.tscn")
