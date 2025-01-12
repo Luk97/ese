@@ -12,6 +12,7 @@ func _process(delta: float) -> void:
 
 
 func _on_pressed() -> void:
+	get_tree().call_group("collectables", "queue_free")
 	get_tree().change_scene_to_file("res://main_menu/main_menu.tscn")
 
 
