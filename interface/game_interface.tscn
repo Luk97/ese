@@ -59,6 +59,7 @@ unique_name_in_owner = true
 layout_mode = 0
 tooltip_text = "Thats the Round Counter. It counts the Rounds you played and shows in which round you are at the moment."
 mouse_filter = 0
+theme = ExtResource("6_xb3d5")
 
 [node name="WoodLabel" parent="Elements/UI_Margin/Top_Interface_Container/HBoxContainer/TopLeftMenu" instance=ExtResource("7_xl27s")]
 unique_name_in_owner = true
@@ -69,6 +70,7 @@ offset_right = 76.0
 offset_bottom = 32.0
 tooltip_text = "This label shows how much wood you have at the moment. You need it to survive and to build new buildings. Do not let your people freeze to death."
 mouse_filter = 0
+theme = ExtResource("6_xb3d5")
 
 [node name="StoneLabel" parent="Elements/UI_Margin/Top_Interface_Container/HBoxContainer/TopLeftMenu" instance=ExtResource("7_xl27s")]
 unique_name_in_owner = true
@@ -79,6 +81,7 @@ offset_right = 76.0
 offset_bottom = 32.0
 tooltip_text = "This label shows how much stone you have at the moment. You need it  to build new buildings."
 mouse_filter = 0
+theme = ExtResource("6_xb3d5")
 resource_texture = ExtResource("4_k4obc")
 
 [node name="FoodLabel" parent="Elements/UI_Margin/Top_Interface_Container/HBoxContainer/TopLeftMenu" instance=ExtResource("7_xl27s")]
@@ -117,10 +120,12 @@ theme_override_constants/separation = 5
 [node name="foodProgressBar" parent="Elements/UI_Margin/Bottom_Interface_Container/HBoxContainer" instance=ExtResource("4_asx76")]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("6_xb3d5")
 
 [node name="heatProgressBar" parent="Elements/UI_Margin/Bottom_Interface_Container/HBoxContainer" instance=ExtResource("5_usw0a")]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("6_xb3d5")
 
 [node name="RundeBeenden" parent="Elements/UI_Margin/Bottom_Interface_Container/HBoxContainer" instance=ExtResource("3_vjbiu")]
 unique_name_in_owner = true
@@ -129,6 +134,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 tooltip_text = "Finish Round"
+theme = ExtResource("6_xb3d5")
 icon = ExtResource("11_2lw0s")
 
 [node name="People Lable" type="NinePatchRect" parent="Elements"]
