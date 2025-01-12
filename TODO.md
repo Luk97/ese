@@ -179,3 +179,4 @@
 	- Ideas:
 		- Some Synonym to settlers/pioneers
 		- Something with pixel?
+- [ ] Bug Fixing!
