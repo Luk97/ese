@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bl7qqsho00lkw"]
+[gd_scene load_steps=6 format=3 uid="uid://bl7qqsho00lkw"]
 
-[ext_resource type="Script" path="res://interface/heat_progress.gd" id="1_n3fqa"]
-[ext_resource type="Texture2D" uid="uid://cxmkcoajd0qi5" path="res://assets/ui/ui_bar_empty.png" id="2_21idf"]
-[ext_resource type="Script" path="res://interface/heat_progress_button.gd" id="2_50cfp"]
-[ext_resource type="Texture2D" uid="uid://cke3b2trgyr11" path="res://assets/ui/Button.png" id="3_k7hiu"]
-[ext_resource type="Texture2D" uid="uid://c1aqkp8hom5jx" path="res://assets/ui/ui_bar_full.png" id="3_uv12b"]
-[ext_resource type="Theme" uid="uid://dl35k1wgcyjff" path="res://Themes/standard_Theme.tres" id="6_a68sx"]
+[ext_resource type="Script" path="res://interface/progress/heat_progress.gd" id="1_hcf7u"]
+[ext_resource type="Texture2D" uid="uid://cke3b2trgyr11" path="res://assets/ui/Button.png" id="2_5uxdu"]
+[ext_resource type="Texture2D" uid="uid://cxmkcoajd0qi5" path="res://assets/ui/ui_bar_empty.png" id="3_tvhj0"]
+[ext_resource type="Texture2D" uid="uid://c1aqkp8hom5jx" path="res://assets/ui/ui_bar_full.png" id="4_m74rc"]
+[ext_resource type="Theme" uid="uid://dl35k1wgcyjff" path="res://Themes/standard_Theme.tres" id="5_xcqkv"]
 
 [node name="heat_Progress" type="NinePatchRect"]
 anchors_preset = 12
@@ -16,7 +15,7 @@ grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("1_n3fqa")
+script = ExtResource("1_hcf7u")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -37,9 +36,8 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_stretch_ratio = 0.0
-icon = ExtResource("3_k7hiu")
+icon = ExtResource("2_5uxdu")
 expand_icon = true
-script = ExtResource("2_50cfp")
 
 [node name="heat_Progress_Bar" type="TextureProgressBar" parent="MarginContainer/HBoxContainer"]
 unique_name_in_owner = true
@@ -48,8 +46,8 @@ size_flags_horizontal = 3
 max_value = 10.0
 value = 10.0
 nine_patch_stretch = true
-texture_under = ExtResource("2_21idf")
-texture_progress = ExtResource("3_uv12b")
+texture_under = ExtResource("3_tvhj0")
+texture_progress = ExtResource("4_m74rc")
 
 [node name="ProgressBar" type="ProgressBar" parent="MarginContainer/HBoxContainer/heat_Progress_Bar"]
 unique_name_in_owner = true
@@ -60,8 +58,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("6_a68sx")
+theme = ExtResource("5_xcqkv")
 max_value = 10.0
 step = 1.0
 
-[connection signal="pressed" from="MarginContainer/HBoxContainer/heat_Progress_Button" to="MarginContainer/HBoxContainer/heat_Progress_Button" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/heat_Progress_Button" to="." method="_on_heat_progress_button_pressed"]
