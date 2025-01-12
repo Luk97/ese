@@ -67,7 +67,7 @@ offset_left = 0.0
 offset_top = 0.0
 offset_right = 76.0
 offset_bottom = 32.0
-tooltip_text = "This label shows how much wood you have at the moment. You need it to survive and to build new buildings."
+tooltip_text = "This label shows how much wood you have at the moment. You need it to survive and to build new buildings. Do not let your people freeze to death."
 mouse_filter = 0
 
 [node name="StoneLabel" parent="Elements/UI_Margin/Top_Interface_Container/HBoxContainer/TopLeftMenu" instance=ExtResource("7_xl27s")]
@@ -88,8 +88,9 @@ offset_left = 0.0
 offset_top = 0.0
 offset_right = 76.0
 offset_bottom = 32.0
-tooltip_text = "This label shows how much food you have at the moment. You only need it to survive."
+tooltip_text = "This label shows how much food you have at the moment. You only need it to survive. Do not let your people starve to death!"
 mouse_filter = 0
+theme = ExtResource("6_xb3d5")
 resource_texture = ExtResource("10_noos1")
 
 [node name="Menu" parent="Elements/UI_Margin/Top_Interface_Container/HBoxContainer" instance=ExtResource("5_hmy8k")]
