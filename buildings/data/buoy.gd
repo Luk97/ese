@@ -3,7 +3,7 @@ extends Building
 
 func _init() -> void:
 	self.label = "Buoy"
-	self.cost = { Types.ResourceType.STONE: 6 }
+	self.cost = { Types.ResourceType.WOOD: 8 }
 	self.view_radius = 5
 	self. source_id = 0
 	self. atlas_coords = Vector2i(4, 8)
