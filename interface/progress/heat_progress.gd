@@ -3,6 +3,8 @@ extends NinePatchRect
 @onready var heat_Progress_Button: Button = %heat_Progress_Button
 @onready var heat_Progress_Bar: TextureProgressBar = %heat_Progress_Bar
 @onready var progress_Bar: ProgressBar = %Progress_Bar
+var costs
+
 
 signal bar_empty
 signal bar_increased
@@ -28,3 +30,10 @@ func is_full() -> bool:
 
 func _on_heat_progress_button_pressed() -> void:
 	increase()
+
+func setTooltip(txt: String)->void:
+	tooltip_text=txt
+
+func setCost(newCost:int)->void:
+	costs=newCost
+	setTooltip("Costs: "+costs)

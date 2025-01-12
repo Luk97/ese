@@ -3,6 +3,7 @@ extends NinePatchRect
 @onready var food_Progress_Button: Button = %food_Progress_Button
 @onready var food_Progress_Bar: TextureProgressBar = %food_Progress_Bar
 @onready var progress_Bar: ProgressBar = %Progress_Bar
+var costs
 
 signal bar_empty
 signal bar_increased
@@ -28,3 +29,10 @@ func is_full() -> bool:
 
 func _on_food_progress_button_pressed() -> void:
 	increase()
+
+func setTooltip(txt: String)->void:
+	tooltip_text=txt
+
+func setCost(newCost:int)->void:
+	costs=newCost
+	setTooltip("Costs: "+costs)
