@@ -141,11 +141,11 @@
 - [x] Icon: Stone
 - [x] Building: Quarry
 - [x] Animate all buildings
-- [ ] Image: Quarry
-- [ ] Icon: Food (general)
+- [x] Image: Quarry
+- [x] Icon: Food (general)
 - [ ] Icon: Pork
-- [ ] Make icons more visible
-- [ ] Fix bomb size
+- [x] Make icons more visible
+- [x] Fix bomb size
 
 ### Gameplay
 - [x] Progress Bars
