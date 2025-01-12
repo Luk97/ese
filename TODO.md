@@ -180,3 +180,10 @@
 		- Some Synonym to settlers/pioneers
 		- Something with pixel?
 - [ ] Bug Fixing!
+	- [ ] Quarry hat falsche Icon auf ActionSelectionCard
+	- [ ] RoundCounter wird nicht runtergesetzt wenn man in der gleichen Instanz das Spiel via menu schliesst und ein neues startet
+	- [ ] Difficulty raise by building Homes? 
+		- A Home builded-> Costs for progressbars increase
+		- Building a home necessary every few rounds
+	- [ ] Action Selection can be rerolled by clicking next round again
+		- Disabeling next round while cards are shown?
