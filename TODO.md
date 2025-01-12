@@ -148,7 +148,7 @@
 - [ ] Fix bomb size
 
 ### Gameplay
-- [ ] Progress Bars
+- [x] Progress Bars
 - [x] Show only possible action cards
 - [x] More Actions
 - [x] Water Buildings
@@ -156,6 +156,9 @@
 - [x] Make World more interesting
 
 ### User Interface
+- [ ] Enhance Progress Bar
+	- [ ] Text with cost of increasement
+ 	- [ ] Icon to identify the needed resource 
 - [X] Game Over Screen
 	- [X] Navigation to Main Menu
 	- [X] Navigation to New Game //How is a new Game started, do i just need to open the scene?
