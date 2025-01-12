@@ -179,6 +179,10 @@
 	- Ideas:
 		- Some Synonym to settlers/pioneers
 		- Something with pixel?
+			- Pixel Pionners (Copyright?)
+			- Pixelland Pioneers
+			- Pioneering on new pixel lands
+			
 - [ ] Bug Fixing!
 	- [ ] Quarry hat falsche Icon auf ActionSelectionCard
 	- [ ] RoundCounter wird nicht runtergesetzt wenn man in der gleichen Instanz das Spiel via menu schliesst und ein neues startet
