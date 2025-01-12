@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://interface/progress/food_progress.gd" id="1_ysx1w"]
 [ext_resource type="Texture2D" uid="uid://cke3b2trgyr11" path="res://assets/ui/Button.png" id="2_7ec4s"]
 [ext_resource type="Texture2D" uid="uid://cxmkcoajd0qi5" path="res://assets/ui/ui_bar_empty.png" id="3_f8uir"]
-[ext_resource type="Texture2D" uid="uid://dmq8fmn2vg0a0" path="res://assets/items/Wheat.png" id="3_ric3v"]
+[ext_resource type="Texture2D" uid="uid://cwagmqo7n3tcs" path="res://assets/items/Wheat.png" id="3_ric3v"]
 [ext_resource type="Texture2D" uid="uid://c1aqkp8hom5jx" path="res://assets/ui/ui_bar_full.png" id="4_mcl2h"]
 [ext_resource type="Theme" uid="uid://dl35k1wgcyjff" path="res://Themes/standard_Theme.tres" id="5_gxdq0"]
 
