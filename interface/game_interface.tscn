@@ -57,6 +57,7 @@ size_flags_horizontal = 3
 [node name="RoundCounterLabel" parent="Elements/UI_Margin/Top_Interface_Container/HBoxContainer/TopLeftMenu" instance=ExtResource("2_4d6ly")]
 unique_name_in_owner = true
 layout_mode = 0
+tooltip_text = "Thats the Round Counter. It counts the Rounds you played and shows in which round you are at the moment."
 
 [node name="WoodLabel" parent="Elements/UI_Margin/Top_Interface_Container/HBoxContainer/TopLeftMenu" instance=ExtResource("7_xl27s")]
 unique_name_in_owner = true
