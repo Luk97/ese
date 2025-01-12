@@ -1,0 +1,12 @@
+Wir haben in unserem Projekt eine prozudurale Welt erschaffen. Unser Spiel
+basiert auf Hexagon Tiles, welche verschiedene Geländetypen repräsentieren. Auf diesen
+Tiles können Gebäude platziert werden, um Rohstoffe zu produzieren und die Ansprüche der
+Bevölkerung zu erfüllen.
+
+Im Hauptmenü kann unter "Showcase" die Weltgenerierung angeschaut werden.
+Um Lags zu verhindern, wird die Welt nur um die Kamera herum generiert, so dass die Kamera
+bewegt werden muss, um die Welt zu erweitern.
+
+Steuerung:
+	- Zoom: Mausrad
+	- Bewegen: Pfeiltasten
