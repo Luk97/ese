@@ -185,7 +185,7 @@
 	- [X] RoundCounter wird nicht runtergesetzt wenn man in der gleichen Instanz das Spiel via menu schliesst und ein neues startet
 	- [ ] Fixing debug messages? like XYZ never used...
 	- [ ] Fixing red debug messages!
-		-E 0:00:01:0086   load_image: Error opening file 'res://assets/icon.svg'.
+		- [ ] E 0:00:01:0086   load_image: Error opening file 'res://assets/icon.svg'.
 		  <C++-Fehler>   Condition "f.is_null()" is true. Returning: err
 		  <C++-Quelle>   core/io/image_loader.cpp:90 @ load_image()
 
