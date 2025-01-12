@@ -178,6 +178,8 @@
 - [ ] Spieltitel?
 	- Ideas:
 		- Some Synonym to settlers/pioneers
+			- Explorator? nah not really
+			-Colonist/Colonizer
 		- Something with pixel?
 			- Pixel Pionners (Copyright?)
 			- Pixelland Pioneers
